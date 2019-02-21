@@ -26,15 +26,20 @@ para Aids.
 imunológica", período entre o contágio e o início da produção de anticorpos em que não há detecção de positividade nos testes, embira ela já seja transmissora.
 
 * Assim transmite: Relação sexual com pessoas infectadas sem o uso de preservativos, Compartilhamento de seringas e agulhas, Reutilização de objetos perfurocortantes com presença de sangue ou 
-fluidos contaminados pelo HIV, Durante a gestação, parto e amamentação quando a mãe é soropositiva. Assim não transmite: Sexo, desde que se use corretamente a camisinha, Masturbação a dois, 
-Beijo no rosto ou na boca, Suor e lágrima, Picada de inseto, Aperto de mão ou abraço, Sabonete/toalha/lençóis, Talheres/copos, Assento de ônibus, Piscina, Banheiro, Pelo ar.
+fluidos contaminados pelo HIV, Durante a amamentação, por isso mulheres HIV + não podem amamentar e seus filhos devem nascer de cesariana programada para que não sejam contaminados; Durante a 
+gravidez, quando a mulher não sabe que tem o vírus, porque os medicamentos antirretrovirais na gravidez e durante o parto diminuem muito as chances do bebê ser contaminado. Contato direto com 
+sangue da pessoa HIV +, em acidente de trânsito, cortes ou outros acidentes com objetos perfurantes como facas, seringas, tesoura ou bisturi, por exemplo.Receber uma transfusão sanguínea era uma 
+das formas de ser contaminado, mas nos últimos anos todos os sangues dos doadores de sangue são testados para HIV 1 e HIV 2, e caso seja verificada a presença do vírus contaminados são descartados
+a pessoa afetada recebe o tratamento adequado.   Assim não transmite: Sexo, desde que se use corretamente a camisinha, Masturbação a dois, Beijo no rosto ou na boca, Suor e lágrima, Picada de 
+inseto, Aperto de mão ou abraço, Sabonete/toalha/lençóis, Talheres/copos, Assento de ônibus, Piscina, Banheiro, Pelo ar.
  
 * O diagnóstico é realizado por meio de testes de saliva ou sangue. Eles podem ser realizados a partir de 30 dias após a exposição
 
-* O tratamento dos pacientes com Hiv tem como objetico reduzir a transmição e melhorar a evolução clínica das pessoas portadoras. Existem muitas medicações
-e o tratmento é sempre com três remédios. Após iniciado, o tratamento não pode ser interrompido sem motivo e a medicação precisa ser tomada todos os dias e nos
-intervalos corretos. Quando o tratamento é feito de maneira inadequad pode ocorrer o surgimentos de vírius resistentes. O medicamento evita a formação de novos 
-vírus e a destruição das células de defesas.
+* O tratamento dos pacientes com Hiv tem como objetico reduzir a transmição e melhorar a evolução clínica das pessoas portadoras. Existem muitas medicações e o tratmento é sempre com três remédios.
+Após iniciado, o tratamento não pode ser interrompido sem motivo e a medicação precisa ser tomada todos os dias e nos intervalos corretos. Quando o tratamento é feito de maneira inadequad pode 
+ocorrer o surgimentos de vírius resistentes. O medicamento evita a formação de novos vírus e a destruição das células de defesas. Os medicamento antirretrovirais surigiram na década de 80 e 
+impedem a multiplicação do HIV no organismo. Esses medicamentos evitam o enfraquecimento do sistema imunológico. Desde 1996, o Brasil fornece gratuitamente os medicamentos à todas as pessoas que 
+necessitam.
 
 
 *Convivendo: atualmente os medicamentos antirretrovirais aumentam a sobrevida dos soropositivos, a Aids continua sendo um desafio muito grande 
@@ -83,161 +88,29 @@ quando perceberam que a doença não acometia apenas gays, passaram a culpa haitia
 nosso sistema imunológico nos defende de ataques de bactéria, vírus e micróbios.Entre as células de defesas do organismo estão os linfócitos T CD4+, principal alvo do HIV. Essas céluas organizam
 e comandam a resposta diante de possíveis microrganismo estranhos no corpo humano. No nosso corpo o HIV passa a ligar-se com o CD4, componente da membrana da célula penetrando no seu interior para 
 se multiplicar(fazer cópias de si mesmo). Depois de se multiplicar ele rompe os linfócitos para continuar a infecção. Com isso o sistema imunológico vai ficando cada vez mais debilitado, deixando o
-corpo vulnerável a doenças. A infecção evolui para Aids quando a pessoa não é tratada adequadamente e sua imunidade vai diminundo ao longo do tempo.
+corpo vulnerável a doenças. A infecção evolui para Aids quando a pessoa não é tratada adequadamente e sua imunidade vai diminundo ao longo do tempo. Existem dois tipo conhecidos do vírus HIV, o 
+HIV 1 e o HIV 2, quando a pessoa descobre que foi infectada o médico precisa saber qual tipo de vírus ela possui para fazer o tratamento adequado. 
 
+* Fazer testes para HIV regularmente é uma prática recomendada para todas as pessoas. Esse exame de sangue está disponível em todas as clínicas, hospitais e laboratórios, e podem ser realizados
+gratuitamente pelo SUS bem como para Hepatite B, C e Sifílis. O teste pode ser feito de maneira anônima. Existe um processo de acolhimento que auxilia o paciente para lidar com o resultado.
 
+* Pacientes soropositivos devem tomar os cuidado necessários para evitar de serem contaminados novamente com outro tipo do vírus.
 
-O HIV liga-se a um componente da membrana dessa célula, o CD4, penetrando no seu interior para se multiplicar. Com isso, o sistema de defesa vai pouco a pouco perdendo a capacidade de responder adequadamente, tornando o corpo mais vulnerável a doenças. Quando o organismo não tem mais forças para combater esses agentes externos, a pessoa começar a ficar doente mais facilmente e então se diz que tem aids.
+* O termo aidético é usado muitas vezes de forma perjorativa.
 
-Todas as pessoas diagnosticadas com HIV têm direito a iniciar o tratamento com antirretrovirais imediatamente, e, assim, poupar o seu sistema imunológico. Esses medicamentos (coquetel) impedem que
-o vírus se replique dentro das células T-CD4+ e evitam, assim, que a imunidade caia e que a aids apareça.
+* Quando o uma pessoa HIV+ tem uma carga viral igual ou inferior a 40 cópias/ml de sangue, essa carga é chamada de indetectável. Estudo feito com casais homossexuais sorodiscordantes(em que apenas um 
+possui o HIV) não detectou a transmissão do vírus. Entre 343 casais em que o parceiro soropositivo tinha carga viral indetectável nenhuma transmissão foi observada.O dado foi obtido pelo estudo 
+Opposites Attract, divulgado em julho de 2017 na 9ª Conferência Internacional da Sociedade de Aids sobre Ciência do HIV, a IAS 2017, em Paris. Outro estudo sobre a transmissão do HIV a partir de 
+parceiros soropositivos em tratamento com carga indetectável foi o HPTN 052, que incluia casais heterossexuais também não encontrou qualquer transmissão. Mas não era certo se seus participantes 
+teriam praticado sexo anal desprotegido em frequência estatisticamente relevante, tal como um casal de homens gays faria. Esses resultados reforçam ainda mais a ideia de que "indetectável =
+intrasmissível". Enquanto uma carga viral abaixo de 200 cópias/ml é considerada "viralmente reprimida" e, tal como a 
+indetectável, não pode transmitir sexualmente o HIV. Em outras palavras, segundo a campanha, uma pessoa vivendo com HIV com uma carga viral consistente de 200 cópias/ml ou menos não pode 
+transmitir o HIV.
 
-O que é janela imunológica?
-Janela imunológica é o intervalo de tempo decorrido entre a infecção pelo HIV até a primeira detecção de anticorpos anti-HIV produzidos pelo sistema de defesa do organismo. Na maioria dos casos, a duração da janela imunológica é de 30 dias. Porém, esse período pode variar, dependendo da reação do organismo do indivíduo frente à infecção e do tipo do teste (método utilizado e sensibilidade).
 
-Se um teste para detecção de anticorpos anti-HIV é realizado durante o período da janela imunológica, há a possibilidade de gerar um resultado não reagente, mesmo que a pessoa esteja infectada. Dessa forma, recomenda-se que, nos casos de testes com resultados não reagentes em que permaneça a suspeita de infecção pelo HIV, a testagem seja repetida após 30 dias com a coleta de uma nova amostra.
 
-É importante ressaltar que, no período de janela imunológica, o vírus do HIV já pode ser transmitido, mesmo nos casos em que o resultado do teste que detecta anticorpos anti-HIV for não reagente.
 
-A AIDS - Síndrome de Imunodeficiência Adquirida - é uma doença grave causada pelo vírus HIV que, até o momento, não tem cura e nem vacina disponível. Esta doença quando não tratada pode levar ao óbito, pois a presença do vírus HIV enfraquece o sistema de defesa do organismo, deixando a pessoa mais susceptível a outras infecções por vírus, fungos ou bactérias que normalmente são combatidas pelo sistema imune saudável.
 
-
-É comum que o vírus se replique lentamente dentro do organismo, afetando as células de defesa chamadas CD4, assim, depois de cerca de 8 à 10 anos da contaminação, muitas células de defesa já foram afetadas e os primeiros sintomas de fragilidade desse sistema de defesa começam a aparecer. 
-
-
-Existem 2 principais tipos do vírus HIV: HIV 1 e HIV 2. No entanto, estes vírus se replicaram de formas diferentes ao longo do tempo, e por isso ainda foram classificados como sendo: 
-
-HIV 1: A, B, C, D, E, F, G, H, I e O
-HIV 2: A, B, C, D, e E 
-Quando a pessoa descobre que ela foi contaminada com o vírus HIV, o médico precisa saber qual o tipo de vírus ela possui, porque existem diferentes esquemas terapêuticos para cada grupo. 
-Enquanto o grupo HIV 1 A responde melhor a uma dose de medicação, o grupo HIV 2 E, responde melhor a outro tipo de dose. Assim, o médico solicita outros exames mais específicos para saber o 
-tipo de vírus e sua carga viral, isso porque o tratamento do HIV é muito individualizado e a dose dos remédios não é exatamente igual para todos os soropositivos. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-O que é AIDS?
-Aids (sigla para acquired immunodeficiency syndrome - síndrome da imunodeficiência adquirida, em português) é uma doença crônica causada pelo vírus HIV, que danifica o sistema imunológico e 
-interfere na habilidade do organismo lutar contra outras infecções (tuberculose, pneumocistose, neurotoxoplasmose, entre outras). 
-
-
-Quanto tempo demora para os sintomas da Aids se manifestarem?
-Uma pessoa pode estar infectada pelo HIV, sendo soropositiva, e não necessariamente apresentar comprometimento do sistema imune com depleção dos linfócitos T, podendo viver por anos 
-sem manifestar sintomas ou desenvolver a AIDS. Existe também o período chamado de janela imunológica, que é o período entre o contágio e o início de produção dos anticorpos pelo organismo. 
-
-Buscando ajuda médica
-Por isso, a testagem para HIV é recomendada para todas as pessoas, especialmente aquelas com vida sexual ativa. Os centros de testagem do SUS (CTA, Centro de Testagem e Acolhimento) realizam não ]
-só o teste rápido para HIV (em sangue ou saliva) bem como exames para hepatites B, C e sífilis.
-
-Tratamento e Cuidados
-Tratamento de AIDS
-A recomendação atual é que todos as pessoas infectadas, independente do CD4, devam ser tratadas o mais brevemente possível. O objetivo é minimizar os danos que o HIV causa no corpo e reduzir a transmissão: pessoas em tratamento e com carga viral indetectável = intransmissível.
-
-
-Há várias medicações disponíveis e o tratamento é sempre combinado com pelo menos três drogas. Há um consenso brasileiro de tratamento de HIV/Aids do Ministério da Saúde, que visa uniformizar o tratamento. A medicação de primeira escolha hoje está disponível em um único comprimido, que é a combinação de três remédios. No caso de contraindicação, efeitos adversos ou resistência, temos opções de outros antirretrovirais que deverão ser individualizados para cada paciente. A escolha do esquema de tratamento deve ser discutida entre o médico e o paciente.
-
-O importante é que uma vez iniciado o tratamento, o paciente deve estar ciente de que ele não deve ser interrompido sem motivo e que as medicações devem ser tomadas todos os dias e nos intervalos prescritos. Quando utilizado de maneira irregular, o tratamento pode falhar por surgimento de vírus resistentes.
-
-Outras medicações utilizadas são as para prevenção de algumas doenças oportunistas, que em geral são suspensas com a melhora da imunidade do paciente.
-
-Convivendo/ Prognóstico
-Uma vez que o paciente soropositivo desenvolve aids significa que o seu sistema imunológico já está bastante comprometido. Por isso, é essencial fazer escolhas saudáveis para que se possa viver por mais tempo e com mais qualidade. As seguintes sugestões podem ajudar os pacientes soropositivos a ficarem saudáveis por maior período de tempo:
-
-Coma alimentos saudáveis
-Frutas e vegetais frescos, grãos e proteínas, em uma dieta equilibrada, ajudam a manter o paciente forte, liberar mais energia e a dar suporte ao sistema imunológico. Mas cuidado, doenças relacionadas a ingestão de alimentos podem ser especialmente mais severas em pessoas vivendo com HIV/aids. Evite produtos lácteos não pasteurizados, ovos crus e frutos do mar crus, como ostras e peixes. Cozinhe a carne até que ela fique bem passada ou até que não haja nenhum traço cor de rosa.
-
-Tome suas vacinas
-A imunização pode prevenir infecções como pneumonia, hepatite B, hepatite A, HPV, meningite, febre amarela, sarampo, tétano e gripe, entre outros. Converse com seu médico, que saberá dizer quando e qual vacina está recomendada para você. Lembre-se que algumas vacinas, compostas de vírus vivos, não deverão ser usadas por pessoas com contagens baixas de CD4, por risco aumentado de efeito adverso grave.
-
-Tome cuidado com os animais de estimação
-Alguns animais podem carregar parasitas que causam infecções em pessoas soropositivas ou com o sistema imunológico enfraquecido. As fezes do gato, por exemplo, podem causar toxoplasmose, répteis podem carregar salmonela e os pássaros certos tipos de fungo. O ideal é conversar com o seu médico para saber se esta é a melhor hora de manter um bichinho em casa e sob quais condições.
-
-Não fume
-Pacientes soropositivos têm o sistema imunológico enfraquecido e estão mais susceptíveis a diversas doenças, inclusive comorbidades relacionadas aos pulmões. Então, se ainda fuma, pare de fumar o quanto antes.
-
-A prática da masturbação com parceiro eventual implica risco de contágio pelo HIV/Aids?
-Não havendo troca de sangue, sêmen ou secreção, a prática da masturbação a dois não implica qualquer risco de infecção pelo HIV/Aids.
-
-Qual o risco de contágio por HIV/Aids com objetos cortantes como aparelhos de barbear, brincos, alicates e piercings?
-Atualmente, a maioria dos aparelhos pérfuro-cortantes fabricados, como seringas, máquinas de tatuar, aparelhos para colocar brincos ou piercings, são feitos com materiais descartáveis, que não podem ser usados mais de uma vez. Em caso de dúvida, sugerimos perguntar no local sobre os materiais utilizados. O risco de contaminação da HIV/Aids no contato do sangue com a pele e mucosa oral é menor do que a exposição percutânea (injeção), porque há maior quantidade de células-alvo suscetíveis à infecção pelo HIV/Aids na corrente sanguínea. Além disso, na pele e na mucosa oral existem barreiras imunológicas e não-imunológicas que conferem um determinado grau de proteção, uma vez que estes lugares estão em permanente contato com o meio externo e com microorganismos.
-
-Mesmo com a ausência de ejaculação durante o ato sexual é possível ser infectado pelo vírus da Aids?
-Apesar de o vírus da Aids estar mais presente no esperma, essa não é a única forma do vírus ser transmitido em uma relação sexual. Há, também, a possibilidade de infecção pela secreção expelida 
-antes da ejaculação ou pela secreção da vagina, por exemplo. Os fatores que aumentam o risco de transmissão do HIV/Aids, nesses casos, são: imunodeficiência avançada, relação anal receptiva,
-relação sexual durante a menstruação e presença de outras doenças sexualmente transmissíveis como cancro mole, sífilis e herpes genital.
-
-O beijo, no caso de um dos parceiros ter feridas ou fissuras na boca, é uma via de contágio da Aids?
-Segundo estudos, não há evidências de transmissão do vírus da Aids pelo beijo. Para que houvesse possibilidade de transmissão, seria necessário que houvesse uma lesão grave de gengiva e sangramento na boca. O HIV pode ser encontrado na saliva, porém as substâncias encontradas nela são capazes de neutralizá-lo. Práticas como beijar na boca, fumar o mesmo cigarro, tomar água no mesmo copo, não oferecem riscos.
-
-A prática do sexo oral sem proteção implica risco de infecção pelo HIV?
-Se comparado a outras formas de contágio (sexo vaginal, sexo anal e compartilhamento de seringas, por exemplo), o risco relacionado ao sexo oral é baixo. Contudo, oferece riscos maiores para 
-quem pratica (ou seja, o parceiro ativo), dependendo fundamentalmente da carga viral (quantidade do vírus no sangue) do indivíduo infectado e se há presença de ferimentos na boca de quem pratica 
-(gengivites, aftas, machucados causados pela escova de dente). Caso não haja nenhum ferimento na boca, o risco de contágio é menor. Isto se explica, talvez, pela acidez do estômago, que pode tornar
-o vírus da Aids inativo, quando deglutido. No entanto, na prática de sexo oral desprotegido, há o risco de se contrair herpes, uretrite, hepatite B, ou HPV, independente da sorologia do parceiro.
-
-O que é janela imunológica?
-Janela imunológica é o tempo que o corpo demora para reconhecer a presença do HIV (ou qualquer outro vírus) na corrente sanguínea e, assim, começar a produzir anticorpos contra ele. E como os 
-testes de diagnóstico buscam esses anticorpos na amostra de sangue colhida, se o exame for feito dentro deste período o resultado pode dar negativo mesmo que a pessoa já esteja infectada.
-
-Qual a chance de me infectar se eu fizer sexo com alguém soropositivo?
-Isso também não é verdade. Poucos sabem, mas é muito mais difícil ser infectado pelo HIV com um soropositivo do que com uma pessoa que desconhece sua sorologia. Isso porque, graças ao tratamento, a carga viral de muitas pessoas que vivem com o vírus está indetectável, ou seja, com menos de 40 cópias de vírus por mililitro de sangue. Isso é insuficiente para que não haja a transmissão. Para se ter uma ideia, se um soropositivo com carga viral indetectável há pelo menos um ano fizer o teste de HIV, o resultado tem muitas chances de ser negativo.
-
-
-
-Como vimos acima, a infecção pelo HIV tem tratamento mas ainda impacta negativamente na saúde dos infectados. Deste modo, prevenir é sempre melhor. A PreP é uma estratégia que deve sempre ser combinada às demais estratégias de prevenção – camisinha, camisinha, camisinha, carga viral indetectável, indetectável, indetectável.
-
-
-AIDS
-
-
-Como é feito o diagnóstico da AIDS / HIV?
-Conhecer o quanto antes a sorologia positiva para o HIV aumenta muito a expectativa de vida de uma pessoa que vive com o vírus. Quem se testa com regularidade, busca tratamento no tempo certo e segue as recomendações da equipe de saúde ganha muito em qualidade de vida.
-
-Por isso, se você passou por uma situação de risco, como ter feito sexo desprotegido ou compartilhado seringas, faça o teste anti-HIV. O diagnóstico da infecção pelo HIV é feito a partir da coleta de sangue ou por fluido oral. No Brasil, temos os exames laboratoriais e os testes rápidos, que detectam os anticorpos contra o HIV em cerca de 30 minutos. Esses testes são realizados gratuitamente pelo Sistema Único de Saúde (SUS), nas unidades da rede pública e nos Centros de Testagem e Aconselhamento (CTA).
-
-Os exames podem ser feitos de forma anônima. Nesses centros, além da coleta e da execução dos testes, há um processo de aconselhamento para facilitar a correta interpretação do resultado pelo(a) usuário(a). Também é possível saber onde fazer o teste pelo Disque Saúde (136).
-
-Além da rede de serviços de saúde, é possível fazer os testes por intermédio de uma Organização da Sociedade Civil, no âmbito do Programa Viva Melhor Sabendo. Em todos os casos, a infecção pelo HIV pode ser detectada em, pelo menos, 30 dias a contar da situação de risco. Isso porque o exame (o laboratorial ou o teste rápido) busca por anticorpos contra o HIV no material coletado. Esse é o período chamado de janela imunológica.
-
-
-Quais são os sintomas da Aids / HIV
-Quando ocorre a infecção pelo vírus causador da aids, o sistema imunológico começa a ser atacado. E é na primeira fase, chamada de infecção aguda, que ocorre a incubação do HIV (tempo da exposição ao vírus até o surgimento dos primeiros sinais da doença). Esse período varia de três a seis semanas. E o organismo leva de 30 a 60 dias após a infecção para produzir anticorpos anti-HIV. Os primeiros sintomas são muito parecidos com os de uma gripe, como febre e mal-estar. Por isso, a maioria dos casos passa despercebida.
-
-A próxima fase é marcada pela forte interação entre as células de defesa e as constantes e rápidas mutações do vírus. Mas isso não enfraquece o organismo o suficiente para permitir novas doenças, pois os vírus amadurecem e morrem de forma equilibrada. Esse período, que pode durar muitos anos, é chamado de assintomático.
-
-Com o frequente ataque, as células de defesa começam a funcionar com menos eficiência até serem destruídas. O organismo fica cada vez mais fraco e vulnerável a infecções comuns. A fase sintomática inicial é caracterizada pela alta redução dos linfócitos T CD4+ (glóbulos brancos do sistema imunológico) que chegam a ficar abaixo de 200 unidades por mm³ de sangue. Em adultos saudáveis, esse valor varia entre 800 a 1.200 unidades. Os sintomas mais comuns nessa fase são: febre, diarreia, suores noturnos e emagrecimento.
-
-A baixa imunidade permite o aparecimento de doenças oportunistas, que recebem esse nome por se aproveitarem da fraqueza do organismo. Com isso, atinge-se o estágio mais avançado da doença, a aids. Quem chega a essa fase, por não saber da sua infecção ou não seguir o tratamento indicado pela equipe de saúde, pode sofrer de hepatites virais, tuberculose, pneumonia, toxoplasmose e alguns tipos de câncer. Por isso, sempre que você transar sem camisinha ou passar por alguma outra situação de risco, procure uma unidade de saúde imediatamente, informe-se sobre a Profilaxia Pós-Exposição (PEP) e faça o teste.
-
-
-Tratamento da AIDS / HIV
-Os medicamentos antirretrovirais (ARV) surgiram na década de 1980 para impedir a multiplicação do HIV no organismo. Esses medicamentos ajudam a evitar o enfraquecimento do sistema imunológico. Por isso, o uso regular dos ARV é fundamental para aumentar o tempo e a qualidade de vida das pessoas que vivem com HIV e reduzir o número de internações e infecções por doenças oportunistas.
-
-Desde 1996, o Brasil distribui gratuitamente os ARV a todas as pessoas vivendo com HIV que necessitam de tratamento. Atualmente, existem 22 medicamentos, em 38 apresentações farmacêuticas, conforme relação abaixo:
-
-
-A melhor técnica de evitar a Aids / HIV é a pretenção combinada, que consiste no uso simultâneo de diferentes abordagens de prevenção, aplicadas em diversos níveis para responder as necessidades específicas de determinados segmentos populacionais e de determinadas formas de transmissão do HIV.
 
 Intervenções biomédicas
 São ações voltadas à redução do risco de exposição, mediante intervenção na interação entre o HIV e a pessoa passível de infecção. Essas estratégias podem ser divididas em dois grupos: intervenções biomédicas clássicas, que empregam métodos de barreira física ao vírus, já largamente utilizados no Brasil; e intervenções biomédicas baseadas no uso de antirretrovirais (ARV).
@@ -257,15 +130,6 @@ Podemos enumerar como exemplos: ações de enfrentamento ao racismo, sexismo, LGBT
 Como forma de subsidiar profissionais, trabalhadores(as) e gestores(as) de saúde para o planejamento e implementação das ações de Prevenção Combinada, o Departamento de IST, HIV/Aids e Hepatites Virais apresenta um conjunto de recomendações, expressas na publicação “Prevenção Combinada do HIV: Bases conceituais para profissionais, trabalhadores(as) e gestores(as) de saúde".
 
 Espera-se que, a partir da leitura do documento, tenham-se mais elementos para responder às necessidades específicas de determinados públicos a determinadas formas de transmissão do HIV.
-
-Representação gráfica da Prevenção Combinada
-Representação HIV e AIDS
-
-Uma das maneiras de pensar a Prevenção Combinada é por meio da "mandala". O princípio da estratégia da Prevenção Combinada baseia-se na livre conjugação dessas ações, sendo essa combinação determinada pelas populações envolvidas nas ações de prevenção estabelecidas (população-chave, prioritária ou geral) e pelos meios em que estão inseridas.
-
-
-
-
 
 População chave AIDS e HIV
 
@@ -298,96 +162,37 @@ População em situação de rua
 
 
 
-Testagem para o HIV
-O Sistema Único de Saúde (SUS) oferece gratuitamente testes para diagnóstico do HIV (o vírus causador da aids), e também para diagnostico da sífilis e das hepatites B e C. Existem, no Brasil, dois tipos de testes: os exames laboratoriais e os testes rápidos.
-
-Os testes rápidos são práticos e de fácil execução; podem ser realizados com a coleta de uma gota de sangue ou com fluido orale fornecem o resultado em, no máximo, 30 minutos.
-
-Quando fazer o teste de HIV?
-O teste de HIV deve ser feito com regularidade e sempre que você tiver passado por uma situação de risco, como ter feito sexo sem camisinha. É muito importante que você saiba se tem HIV, para buscar tratamento no tempo certo, possibilitando que você ganhe muito em qualidade de vida. Procure um profissional de saúde e informe-se sobre o teste.
 
 
-Por que usar preservativos?
-O preservativo, ou camisinha, é o método mais conhecido, acessível e eficaz para se prevenir da infecção pelo HIV e outras infecções sexualmente transmissíveis (IST), como a sífilis, a gonorreia e também alguns tipos de hepatites. Além disso, ele evita uma gravidez não planejada.
 
-Onde pegar os preservativos?
-Os preservativos masculino e feminino são distribuídos gratuitamente em qualquer serviço público de saúde. Caso você não saiba onde retirá-los, ligue para o Disque Saúde (136).
 
-Saiba que a retirada gratuita de preservativo nas unidades de saúde é um direito seu; por isso, não devem ser impostas quaisquer barreiras ou condições para que você os obtenha. Retire quantos preservativos masculinos ou femininos você julgar que necessite.
 
-Como usar os preservativos?
-Manusear a camisinha é muito fácil. Treine antes - assim você não erra na hora. Durante as preliminares, colocar a camisinha no(a) parceiro(a) pode se tornar um momento prazeroso. Só é preciso seguir o modo correto de uso.
 
 
 Direitos das pessoas portadoras do vírus HIV
-Pela Constituição brasileira, as pessoas vivendo com HIV, assim como todo e qualquer cidadão brasileiro, têm obrigações e direitos garantidos; entre eles, estão a dignidade humana e o acesso à saúde pública e, por isso, são amparadas pela lei. O Brasil possui legislação específica quanto aos grupos mais vulneráveis ao preconceito e à discriminação, como homossexuais, mulheres, negros, crianças, idosos, portadores de doenças crônicas infecciosas e de deficiência.
-
-
-HIV é a sigla em inglês do vírus da imunodeficiência humana. Causador da aids, ataca o sistema imunológico, responsável por defender o organismo de doenças. As células mais atingidas são os linfócitos T CD4+. E é alterando o DNA dessa célula que o HIV faz cópias de si mesmo. Depois de se multiplicar, rompe os linfócitos em busca de outros para continuar a infecção.
-
-Ter o HIV não é a mesma coisa que ter aids. Há muitos soropositivos que vivem anos sem apresentar sintomas e sem desenvolver a doença. Mas podem transmitir o vírus a outras pessoas pelas relações sexuais desprotegidas, pelo compartilhamento de seringas contaminadas ou de mãe para filho durante a gravidez e a amamentação, quando não tomam as devidas medidas de prevenção. Por isso, é sempre importante fazer o teste e se proteger em todas as situações.
-
-
-
-Como se pega HIV 
-O vírus HIV encontra-se no sangue e nos fluidos corporais, como leite materno, secreções vaginais e sêmen, por exemplo. Assim, a pessoa pode ser contaminada com o vírus HIV quando entra em contato direto com essas secreções, o que pode acontecer das seguintes formas:
-
-Durante a amamentação, por isso mulheres HIV + não podem amamentar e seus filhos devem nascer de cesariana programada para que não sejam contaminados;
-Durante a gravidez, quando a mulher não sabe que tem o vírus, porque os medicamentos antirretrovirais na gravidez e durante o parto diminuem muito as chances do bebê ser contaminado; 
-Sexo sem camisinha com pessoa HIV +, seja vaginal, oral ou anal;
-Partilha de seringas para uso de drogas injetáveis;
-Contato direto com sangue da pessoa HIV +, em acidente de trânsito, cortes ou outros acidentes com objetos perfurantes como facas, seringas, tesoura ou bisturi, por exemplo.
-Receber uma transfusão sanguínea era uma das formas de ser contaminado, mas nos últimos anos todos os sangues dos doadores de sangue são testados para HIV 1 e HIV 2, e caso seja verificada a presença do vírus contaminados são descartados e a pessoa afetada recebe o tratamento adequado. Assim, todo sangue doado é seguro e livre de HIV, não sendo mais uma fonte de contaminação. 
-
-Os fatores que aumentam o risco de transmissão são carga viral alta, AIDS propriamente dita, sexo anal receptivo, sexo durante a menstruação, sexo com pessoas com cancro mole, sífilis e herpes genital.
-
-
-AIDS e HIV: o que é, sintomas e como se pega
-Como saber se tenho HIV ou AIDS 
-A única forma de confirmar que a pessoa está infectada com o vírus HIV, e que pode desenvolver a AIDS, é fazendo um exame de sangue específico chamado anti-HIV 1 e anti-HIV 2. Esse exame de sangue está disponível em todas as clínicas, hospitais e laboratórios, e podem ser realizados gratuitamente pelo SUS, nos centros de testagem espalhados pelo país. 
-
-Esse exame deve ser realizado por todas as mulheres que desejam engravidar, faz parte do pré-natal de todas as gestantes acompanhadas no SUS ou em clínicas particulares, e todo sangue doado é testado. No entanto, qualquer pessoa pode realizar o teste da AIDS, se achar que pode ter tido contato com vírus porque usou drogas injetáveis ou teve relações sexuais sem camisinha, por exemplo. 
-
-O melhor momento para fazer o teste do HIV é entre 40 e 60 dias após o comportamento de risco, isto é, depois do momento em que a pessoa acha que pode ter sido contaminada, isso porque caso o teste seja feito antes desses 40 dias, seu resultado pode ser falso negativo. Entenda o resultado do teste de HIV.
-
-AIDS e HIV: o que é, sintomas e como se pega
-Tratamento do HIV e da AIDS 
-O tratamento da AIDS é feito com a Terapia Antirretroviral que consiste no uso de um coquetel de medicamentos indicados pelo médico e que devem ser tomados todos os dias e que tem como objetivo fortalecer o sistema imunológico e evitar a replicação do vírus. Todo o tratamento da AIDS é fornecido gratuitamente pelo SUS, embora também possa ser feito no sistema particular.
-
-O tratamento deve ser feito por toda vida e requer exames periódicos, como hemograma completo, avaliação do fígado e rins, testes para sífilis, hepatite B e C, toxoplasmose, citomegalovírus, raio-x de tórax, PPD anualmente, papanicolau, perfil imunológico e carga viral. 
-
-Os remédios indicados contra o vírus HIV são de 2 tipos: 
-
-Inibidores da transcriptase reversa: Zidovudina, Didanosina, Zalcitabina, Lamivudina, Estavudina, Abacavir, Nevirapina, Delavirdina, Efavirenz, Adefovir dipivoxil;
-Inibidores da protease: Indinavir, Ritonavir, Saquinavir, Nelfinavir, Amprenavir. 
-Estes remédios são usados de forma combinada, com doses variadas, que podem ser modificadas pelo médico sempre que achar necessário, dependendo da necessidade que a pessoa apresenta. Doses mais altas são indicadas quando a pessoa apresenta AIDS, e doses mais baixas podem ser recomendadas para pessoas com HIV + na forma latente, e não apresenta sintomas e nenhuma doença associada. Saiba mais detalhes do Tratamento da AIDS. 
-
-Porque o HIV e a AIDS não tem cura 
-O vírus HIV replica-se de formas diferentes e por isso os medicamentos que parecem conseguir travar a sua replicação rapidamente deixam de ter efeito, porque o vírus se adapta dentro do próprio corpo, podendo ser replicar de outra forma.
-
-Cientistas de todo mundo trabalham em seus laboratórios em busca de uma receita que possa ser capaz de eliminar os vírus existem e impedirem a sua replicação dentro do corpo. Houve apenas 1 caso de cura da AIDS mas com tantas particularidades que seria impossível replicar o mesmo tratamento para todas as pessoas afetadas.
-
-Fabricar uma vacina contra HIV também pode ser uma solução, no entanto, sua fórmula ainda não foi encontrada. Entenda porque ainda não há vacina contra o vírus HIV.
-
-AIDS e HIV: o que é, sintomas e como se pega
-Como se prevenir o vírus HIV e a AIDS 
-Para não ser contaminado com o vírus HIV, e consequentemente não desenvolver AIDS, é recomendado:
-
-Usar camisinha masculina ou feminina em todo contato sexual, seja durante as carícias ou penetração vaginal, anal ou oral. O uso correto da camisinha reduz o risco de ser contaminado em mais de 95%;
-Não partilhar seringas usadas;
-Evitar o contato com sangue ou secreções de um indivíduo, que pode estar contaminado;
-Identificar e tratar qualquer doença sexualmente transmissível porque elas aumentam o risco de contaminação com o vírus HIV.
-Pacientes HIV+ também devem ter estes cuidados para evitar serem novamente contaminados com outro tipo do vírus HIV, porque existem diversos subtipos de vírus, que podem dificultar o controle da carga viral.
+Pela Constituição brasileira, as pessoas vivendo com HIV, assim como todo e qualquer cidadão brasileiro, têm obrigações e direitos garantidos; entre eles, estão a dignidade humana e o 
+acesso à saúde pública e, por isso, são amparadas pela lei. O Brasil possui legislação específica quanto aos grupos mais vulneráveis ao preconceito e à discriminação, como homossexuais, 
+mulheres, negros, crianças, idosos, portadores de doenças crônicas infecciosas e de deficiência.
 
 
 
 
-Apesar disso, muitos pré-conceitos ainda resistem sobre as pessoas que vivem com o vírus. Mesmo hoje, superado o pior momento da epidemia e com avanços na medicina que permitem ao soropositivo viver bem e com saúde, diversos equívocos que sobreviveram ao tempo ainda fazem com que os portadores do HIV não consigam falar sobre isso abertamente, com medo de não conseguirem emprego ou dos amigos e familiares se afastarem. Por isso, veja a seguir quais são esses preconceitos:
 
-Quem tem HIV é "aidético"
-O termo "aidético" já caiu em desuso há algum tempo. No entanto, ele ainda é muito usado de forma pejorativa. Além disso, ele também dá a entender que HIV e Aids são a mesma coisa, e não são. HIV é o vírus e Aids, a doença. Só tem Aids as pessoas soropositivas que desenvolvem os sintomas de HIV, que incluem deficiências imunológicas, já que o vírus começa a destruir as células de defesa, deixando o corpo vulnerável a todo tipo de doença. Quem tem HIV - o chamado soropositivo ou HIV-positivo - não necessariamente desenvolverá Aids, desde que siga corretamente o tratamento. Hoje, ele é feito com medicamentos antirretrovirais, que inibem a ação do HIV no organismo e impedem que ele ataque o sistema imunológico. Esse estágio da infecção, que costuma demorar de dois a dez anos após a exposição ao HIV sem tratamento, é conhecido como Aids, ou Síndrome da Imunodeficiência Adquirida.
 
-Portanto, quem é soropositivo não tem a aparência magra, doente e com manchas no corpo. Essa é a imagem que se tem da Aids. Hoje, com as opções de tratamento existentes, é muito difícil encontrar alguém que tenha HIV com essas características.
+
+
+Mesmo hoje, superado o pior momento da epidemia e com avanços na medicina que permitem ao soropositivo viver bem e com saúde, diversos equívocos que sobreviveram ao tempo ainda fazem com que os portadores do HIV não consigam falar sobre isso abertamente, com medo de não conseguirem emprego ou dos amigos e familiares se afastarem. Por isso, veja a seguir quais são esses preconceitos:
+
+
+
+
+
+
+
+
+
+
+
 
 Transei com um soropositivo, então com certeza estou infectado
 Isso também não é verdade. Poucos sabem, mas é muito mais difícil ser infectado pelo HIV com um soropositivo do que com uma pessoa que desconhece sua sorologia. Isso porque, graças ao tratamento, a carga viral de muitas pessoas que vivem com o vírus está indetectável, ou seja, com menos de 40 cópias de vírus por mililitro de sangue. Isso é insuficiente para que não haja a transmissão. Para se ter uma ideia, se um soropositivo com carga viral indetectável há pelo menos um ano fizer o teste de HIV, o resultado tem muitas chances de ser negativo.
@@ -402,8 +207,6 @@ Para Ricardo Vasconcelos, infectologista do Hospital das Clínicas da Universidad
 Soropositivos não podem ter filhos
 Quando a infecção acontece de mãe para filho, é o que os médicos chamam de "transmissão vertical". Ela pode ocorrer de três maneiras distintas: durante a gestação, na hora do parto ou, ainda, na amamentação. Sem tratamento, mulheres com HIV têm de 15 a 45% de chance de transmitir o vírus para a criança. Com o auxílio dos medicamentos antirretrovirais, porém, esse risco pode ser reduzido a apenas 1%.
 
-
-O pré-natal antecipado e o aumento no número de cesáreas necessárias são duas medidas que passaram a ser adotadas em todo o mundo com o objetivo de frear a transmissão vertical de HIV. Além disso, o Ministério da Saúde passou a recomendar a suspensão total do aleitamento materno por mães soropositivas. As ações têm mostrado bons resultados. De 2009 a 2013, o número de novas infecções por HIV em crianças - cuja maioria se dá pela transmissão vertical - caiu drasticamente 43% em todo o mundo, ainda que o índice tenha se mantido alto em alguns países da África, onde o tratamento é mais difícil. Ainda segundo o Ministério, todos os anos ocorrem cerca de 12 mil novos casos de transmissão vertical no Brasil. Mas os médicos estão otimistas: recentemente, Cuba tornou-se o primeiro país do mundo a zerar a transmissão de mãe para filho, tanto de HIV quanto de sífilis.
 
 HIV se transmite também pelo beijo ou suor
 Mito antigo, porém que ainda resiste no imaginário popular. O HIV é transmitido por meio da troca de fluidos corporais, porém saliva e suor não são uns deles. Apenas sangue, sêmen, secreções genitais e leite materno possuem concentração de vírus suficiente para infectar outra pessoa. Portanto, nunca é demais lembrar que as únicas formas de transmissão do HIV são: relações sexuais desprotegidas - anal, oral ou vaginal -, transfusão de sangue, compartilhamento de seringas ou de mãe para filho (transmissão vertical). Não se pode contrair HIV por nenhum outro meio que não sejam esses
@@ -426,55 +229,6 @@ Além disso, a carga emocional de uma pessoa que vive com HIV é frequentemente ab
 Soropositivos são culpados por terem contraído o vírus
 Não podemos generalizar o contexto que levou uma pessoa a contrair o vírus HIV, pois existem diversas formas de infecção e mais diversas ainda situações que podem levar ao contágio. Contudo, se culpar por algo que já aconteceu não resolve o problema. Pelo contrário, dificulta o acesso ao tratamento e afeta a qualidade de vida. O importante após o diagnóstico é entender que a partir deste momento o paciente terá a responsabilidade em seguir o tratamento para manter sua saúde em dia.
 
-
-
-Quem tem HIV, faz tratamento antirretroviral e tem carga viral indetectável não transmite o vírus
-Novo estudo feito exclusivamente com casais homossexuais e sorodiscordantes não detectou transmissão do HIV.
-Jovem Soropositivo Pseudônimo de um jovem paulistano nascido em 1984, heterossexual, que descobriu ser portador do HIV em outubro de 2010.
-Uma pessoa vivendo com HIV com uma carga viral consistente de 200 cópias/ml ou menos não trasmite o HIV.
-Nenhuma transmissão do HIV foi observada entre os 343 casais de homens gays sorodiscordantes, em que o parceiro soropositivo fazia tratamento antirretroviral e tinha carga viral indetectável. O dado foi obtido pelo estudo Opposites Attract, divulgado em julho de 2017 na 9ª Conferência Internacional da Sociedade de Aids sobre Ciência do HIV, a IAS 2017, em Paris.
-
-O Opposites Attract recrutou e acompanhou casais homossexuais em clínicas na Austrália, em Bangkok e no Rio de Janeiro. Os casais praticaram 16.889 atos de sexo anal sem camisinha enquanto acompanhados pelo estudo.
-
-O estudo também não encontrou relação entre a transmissão do HIV e a presença de outra doença sexualmente transmissível (DST): 6% dos atos sexuais anais relatados foram feitos enquanto um dos parceiros tinha alguma outra DST.
-
-Um estudo anterior semelhante, o Partner, teve o mesmo resultado com uma taxa de 17,5% dos participantes com uma DST em algum momento do estudo. A preocupação de que a presença de outra DST pudesse aumentar o risco de transmissão do HIV a partir de parceiros com carga viral indetectável vem, pelo menos, desde a Declaração Suíça, de 2008.
-
-Outra preocupação que rondava o assunto dizia respeito ao tipo de relação sexual. Por muito tempo, o único grande estudo sobre transmissão do HIV a partir de parceiros soropositivos em tratamento antirretroviral e com carga viral indetectável foi o HPTN 052, que incluiu casais heterossexuais.
-
-O HPTN 052 não encontrou qualquer transmissão do HIV a partir desses parceiros. Mas não era certo se seus participantes teriam praticado sexo anal desprotegido em frequência estatisticamente relevante, tal como um casal de homens gays faria.
-
-O estudo Partner, que também não observou qualquer transmissão do HIV entre seus participantes, ajudou parcialmente a responder esta pergunta, uma vez que incluiu alguns casais gays. O Opposites Attract, por sua vez, inscreveu apenas casais de homens homossexuais e, novamente, não observou uma única transmissão do HIV.
-
-A única pergunta que resta diz respeito à posição sexual, uma vez que o risco de transmissão do HIV é mais alto quando o parceiro soropositivo é ativo. Entretanto, o fato é que neste último estudo, isso não fez diferença: a maioria dos parceiros soropositivos foi ativa em um terço das relações sexuais relatadas.
-
-Assim como nos estudos anteriores, o Opposites Attract também documentou transmissões do HIV. Mas a análise genética mostrou que essas infecções vinham de um parceiro fora do relacionamento principal com o parceiro inscrito no estudo e que tinha carga viral suprimida.
-
-Segundo o mapa da aids, este resultado reforça ainda mais o slogan "Indetectável = Intransmissível", da campanha Prevention Access. Sua declaração de consenso foi assinada pelo Aidsmap e também pela International Aids Society, durante o congresso em Paris. E vem ao encontro dos mesmos resultados obtidos no estudo Partner, no HPTN 052 e do que é afirmado na Declaração Suíça, de 2008.
-
-A campanha explica que a ciência é clara: "pessoas que vivem com o HIV podem sentir-se confiantes de que, se tomarem seus medicamentos adequadamente e tiverem carga viral indetectável, não transmitirão o vírus para seus parceiros sexuais. Indetectável = intransmissível".
-
-A campanha acredita que esta mensagem encoraja as pessoas com HIV a começar e a permanecer em tratamento antirretroviral, a cuidar da própria saúde e evitar a transmissão do vírus. "Quanto mais as pessoas vivendo com HIV que conhecem seu status estiverem em tratamento bem-sucedido, mais saudáveis serão e mais próximo chegaremos ao fim da epidemia", afirma o texto.
-
-A campanha define uma carga viral indetectável como inferior a 40 cópias/ml de sangue. Enquanto uma carga viral abaixo de 200 cópias/ml é considerada "viralmente reprimida" e, tal como a indetectável, não pode transmitir sexualmente o HIV. Em outras palavras, segundo a campanha, uma pessoa vivendo com HIV com uma carga viral consistente de 200 cópias/ml ou menos não pode transmitir o HIV.
-
-Indetectável = Intransmissível é a mensagem da nova Nota Explicativa do UNAIDS (UNAIDS Explainer). Com 20 anos de evidências demonstrando que o tratamento antirretroviral é altamente eficaz na redução da transmissão do HIV, a evidência agora é clara de que as pessoas vivendo com uma carga viral indetectável não transmitem o HIV em relações sexuais.
-
-Três grandes estudos sobre a transmissão sexual do HIV entre milhares de casais, dos quais um parceiro vive com o HIV e o outro não, foram realizados entre 2007 e 2016. Nesses estudos, não houve um único caso de transmissão sexual do HIV de um pessoa vivendo com carga viral suprimida ao seu parceiro soronegativo. A Nota Explicativa adverte, no entanto, que uma pessoa só pode saber se tem sua carga viral  suprimida fazendo um teste de carga viral.
-
-Para muitas pessoas vivendo com o HIV, a notícia de que não podem mais transmitir o HIV sexualmente é uma mudança de vida. Além de poderem optar por terem relações sexuais sem preservativo, muitas pessoas vivendo com o HIV com carga viral suprimida sentem-se livres do estigma associado à convivência com o vírus. A consciência de que eles não transmitem mais o HIV sexualmente pode dar às pessoas que vivem com o vírus um forte senso de que elas são agentes de prevenção em sua abordagem perante relacionamentos novos ou já existentes.
-
-A nova série de Notas Explicativas do UNAIDS visa informar os leitores sobre questões chave ou emergentes na resposta à AIDS. Com recomendações para gestores de programas e conselhos para respostas nacionais, são documentos breves, mas com um retrato informativo do conhecimento atual sobre uma área da resposta à AIDS.
-
-
-
-O vírus da imunodeficiência humana (HIV) infecta células do sistema imunológico, destruindo ou prejudicando seu funcionamento. A infecção com esse vírus resulta em uma progressiva deterioração das
-defesas do paciente, facilitando o surgimento de outras infecções e outros problemas de saúde. O relatório de 2014 da Organização das Nações Unidas (ONU) sugere que a epidemia de Aids pode estar 
-diminuindo: o número de novas infecções pelo HIV em todo o mundo está em um recorde de baixa, as mortes relacionadas com a Aids estão abaixo de 35% e mais pessoas com HIV estão recebendo os 
-medicamentos que necessitam.
-
-Fazer os exames para detecção precoce do vírus com regularidade. Mulheres já diagnosticadas com HIV podem se sentir desconfortáveis em discutir essa questão em um relacionamento, e a falta de 
-informação pode facilitar a transmissão da doença. Pensando nisso, conversamos com especialistas para tirar as principais dúvidas de mulheres soropositivas:
 
 Meu marido me passou HIV. Será que ele me traiu?
 "Depende primeiro de há quanto tempo essas pessoas estão casadas", afirma o clínico geral, doutor em imunologia Eduardo Finger, chefe do departamento de pesquisa e desenvolvimento do SalomãoZoppi 
@@ -507,7 +261,7 @@ sexuais com preservativos", diz a infectologista Rosana.
 
 Descobri que sou portadora de HIV. Aconselharam-me a encontrar todas as pessoas com quem me relacionei para contar. É realmente necessário?
 
-O HIV é apenas um vírus. Entretanto, algum dos seus parceiros transmitiu-o a você e pode ser que ele não saiba da sua condição de portador. Alertá-lo para que faça o teste pode ajudá-lo a iniciar o tratamento mais precocemente e com menos chance de estar com o sistema imunológico prejudicado. "Caso seja desconfortável para você contatar essas pessoas, tente fazê-lo de forma anônima, mas é importante encontrar meios de contar", afirma Eduardo Finger. Como você não sabe desde quando está com o vírus, também pode tê-lo transmitido para algum dos seus parceiros. "Não contar é impedir a pessoa de se tratar precocemente."
+Algum dos seus parceiros transmitiu-o a você e pode ser que ele não saiba da sua condição de portador. Alertá-lo para que faça o teste pode ajudá-lo a iniciar o tratamento mais precocemente e com menos chance de estar com o sistema imunológico prejudicado. "Caso seja desconfortável para você contatar essas pessoas, tente fazê-lo de forma anônima, mas é importante encontrar meios de contar", afirma Eduardo Finger. Como você não sabe desde quando está com o vírus, também pode tê-lo transmitido para algum dos seus parceiros. "Não contar é impedir a pessoa de se tratar precocemente."
 
 Posso fazer sexo casual mesmo sendo HIV positivo? Quais os riscos?
 Sim, desde que com o uso do preservativo. "No caso de rompimento da camisinha, oriente seu parceiro a buscar, em até 72 horas, o uso de medicamento antirretroviral para diminuir a chance de infecção pelo HIV", alerta a infectologista Rosana. Manter o tratamento do HIV e certificar-se que de sua carga viral está controlada também é essencial nesses casos, pois diminui ainda mais as chances de transmissão.
@@ -517,3 +271,34 @@ Porque os vírus podem ser diferentes: as mutações e resistências são diferentes 
 
 Se minha carga viral do HIV está indetectável, preciso transar com camisinha?
 Sim. A carga viral "zerada" reflete o sucesso do tratamento em uso, mas não significa que o vírus tenha sido eliminado - ele ainda está presente em algumas células esperando a oportunidade de passar para outro corpo que não tenha os remédios em ação. Além disso, existem locais do corpo em que os medicamentos não agem tão bem. "As chances de transmissão são muito pequenas, mas nunca nulas", afirma Eduardo Finger. Além disso, os exames indicando as cargas próximas de zero pode ser um falso negativo ou o tratamento pode se tornar menos eficaz em algum momento por diversos fatores. Dessa forma, não é possível saber com certeza como está a sua carga viral no momento da relação sexual. "Transar uma vez sem camisinha já é um risco."
+
+A prática da masturbação com parceiro eventual implica risco de contágio pelo HIV/Aids?
+Não havendo troca de sangue, sêmen ou secreção, a prática da masturbação a dois não implica qualquer risco de infecção pelo HIV/Aids.
+
+Qual o risco de contágio por HIV/Aids com objetos cortantes como aparelhos de barbear, brincos, alicates e piercings?
+Atualmente, a maioria dos aparelhos pérfuro-cortantes fabricados, como seringas, máquinas de tatuar, aparelhos para colocar brincos ou piercings, são feitos com materiais descartáveis, que não podem ser usados mais de uma vez. Em caso de dúvida, sugerimos perguntar no local sobre os materiais utilizados. O risco de contaminação da HIV/Aids no contato do sangue com a pele e mucosa oral é menor do que a exposição percutânea (injeção), porque há maior quantidade de células-alvo suscetíveis à infecção pelo HIV/Aids na corrente sanguínea. Além disso, na pele e na mucosa oral existem barreiras imunológicas e não-imunológicas que conferem um determinado grau de proteção, uma vez que estes lugares estão em permanente contato com o meio externo e com microorganismos.
+
+Mesmo com a ausência de ejaculação durante o ato sexual é possível ser infectado pelo vírus da Aids?
+Apesar de o vírus da Aids estar mais presente no esperma, essa não é a única forma do vírus ser transmitido em uma relação sexual. Há, também, a possibilidade de infecção pela secreção expelida 
+antes da ejaculação ou pela secreção da vagina, por exemplo. Os fatores que aumentam o risco de transmissão do HIV/Aids, nesses casos, são: imunodeficiência avançada, relação anal receptiva,
+relação sexual durante a menstruação e presença de outras doenças sexualmente transmissíveis como cancro mole, sífilis e herpes genital.
+
+O beijo, no caso de um dos parceiros ter feridas ou fissuras na boca, é uma via de contágio da Aids?
+Segundo estudos, não há evidências de transmissão do vírus da Aids pelo beijo. Para que houvesse possibilidade de transmissão, seria necessário que houvesse uma lesão grave de gengiva e sangramento na boca. O HIV pode ser encontrado na saliva, porém as substâncias encontradas nela são capazes de neutralizá-lo. Práticas como beijar na boca, fumar o mesmo cigarro, tomar água no mesmo copo, não oferecem riscos.
+
+A prática do sexo oral sem proteção implica risco de infecção pelo HIV?
+Se comparado a outras formas de contágio (sexo vaginal, sexo anal e compartilhamento de seringas, por exemplo), o risco relacionado ao sexo oral é baixo. Contudo, oferece riscos maiores para 
+quem pratica (ou seja, o parceiro ativo), dependendo fundamentalmente da carga viral (quantidade do vírus no sangue) do indivíduo infectado e se há presença de ferimentos na boca de quem pratica 
+(gengivites, aftas, machucados causados pela escova de dente). Caso não haja nenhum ferimento na boca, o risco de contágio é menor. Isto se explica, talvez, pela acidez do estômago, que pode tornar
+o vírus da Aids inativo, quando deglutido. No entanto, na prática de sexo oral desprotegido, há o risco de se contrair herpes, uretrite, hepatite B, ou HPV, independente da sorologia do parceiro.
+
+O que é janela imunológica?
+Janela imunológica é o tempo que o corpo demora para reconhecer a presença do HIV (ou qualquer outro vírus) na corrente sanguínea e, assim, começar a produzir anticorpos contra ele. E como os 
+testes de diagnóstico buscam esses anticorpos na amostra de sangue colhida, se o exame for feito dentro deste período o resultado pode dar negativo mesmo que a pessoa já esteja infectada.
+
+Qual a chance de me infectar se eu fizer sexo com alguém soropositivo?
+Isso também não é verdade. Poucos sabem, mas é muito mais difícil ser infectado pelo HIV com um soropositivo do que com uma pessoa que desconhece sua sorologia. Isso porque, graças ao tratamento, a carga viral de muitas pessoas que vivem com o vírus está indetectável, ou seja, com menos de 40 cópias de vírus por mililitro de sangue. Isso é insuficiente para que não haja a transmissão. Para se ter uma ideia, se um soropositivo com carga viral indetectável há pelo menos um ano fizer o teste de HIV, o resultado tem muitas chances de ser negativo.
+
+
+
+Como vimos acima, a infecção pelo HIV tem tratamento mas ainda impacta negativamente na saúde dos infectados. Deste modo, prevenir é sempre melhor. 
