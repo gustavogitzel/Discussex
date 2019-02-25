@@ -1,45 +1,49 @@
 
 HIV 
 
-*o HIV é o *Vírus* causador da Aids(Síndrome da Imunodeficiência Adquirida), doença classificada como uma DST(doença sexualmente transmissível) e que também pode ser contraída pelo contato com o
-sangue ou de forma vertical, ou seja, a mulher que é portadora do vírus do HIV o transmite para o seu filho durante a gravidez. 
+*O HIV é um retrovírus causador da Aids(Síndrome da Imunodeficiência Adquirida), classificada como uma IST(infecção sexualmente transmissível). Atualmente existem dois tipos de vírus conhecidos:
+o HIV-1 e o HIV-2. 
 
-*Não há cura para a infecção pelo vírus, mas existem remédios que reduzem a progressão da doença e com diversos cuidados em todas as áreas de sua saúde é possível que pessoas portadoras do vírus, 
-chamadas de soropositivas tenha uma vida saudável.
+-- imagem do vírus --
 
-* Todos nós, não importa a sexualidade, genêro, idade, cor ou comportameto sexual podemos ser infectados
+* Todos os dias nosso sistema imunológico nos protege do ataque de bactérias, vírus e micróbios. Entre as células de defesa estão os linfócitos T CD4+, principal alvo do HIV. Estas são responsáveis 
+por organizar e comandar respostas para possíveis invasões de microorganismos. O HIV passa a se ligar com o CD4, componente da membrana da célula, penetrando no seu interior para fazer cópias de si
+mesmo. O sistema imunológico vai ficando cada vez mais fraco, deixando o corpo vulnerável.
 
-* HIV X Aids -  Muitas pessoas acabam fazendo confusão em relação a Aids e o HIV. A aids é uma doença e ela acontece quando a pessoa infectada pelo vírus tem seu sistema imunológico danificado, 
-deixando a pessoas suscetível a infecções oportunistas. Porém nem todas as pessoas infectadas pelo vírus desenvolvem a doença, caso façam o tratamento correto. Há muitos soropositivos que não 
-chegam a desenvolver a doença, mas podem ser transmissoras. Aids é a doena. HIV é o vírus.
+* Ainda não existe cura para a infecção pelo vírus, mas existem tratamentos que tem como objetivo reduzir a transmissão e melhorar a evolução clínica do paciente, evitando a formação de novos vírus
+e destruição das células de defesa, com cuidado é possível que pessoas portadoras do vírus chamadas de soropositivas ou HIV+ tenham uma vida saudável. O tratamento não pode ser interrompido sem 
+motivo e a medicação precisa ser tomada todos os dias nos intervalos corretos. Desde 1996, o Brasil fornece gratuitamente os medicamentos à todas as pessoas que necessitam.
 
-
-*Transsmissão ocorre principalmente por meio de relações sexuais desprotegidas (sem o uso do preservativo) vaginal, anal ou oral, além do compartilhamento de seringas e agulhas contaminadas com 
-sangue, frenquente entre usários de drogas ilícitas, ocorre também por meio da transfusão de sangue e de maneira vertical, que é a transmissão de mão para o filho na gestação, amamentação e no 
-momento do parto, mas pode ser prevenido com o tratamento adequado da gestante e do recém-nascido.
-
-* A infecção evolui para Aids quando não ocorre o tratamento adequado e a imunidade da pessoas vai diminuindo ao longo do tempo. O tratamento antirretroviral visa impedir a progressão da doença
-para Aids.
-
-
-* Uma pessoa pode ser soropositiva e não apresentar comprometimento do sistema imune durante anos sem manifestar sintomas ou desenvolver a Aids. Existe também o período chamado de "janela 
-imunológica", período entre o contágio e o início da produção de anticorpos em que não há detecção de positividade nos testes, embira ela já seja transmissora.
-
-* Assim transmite: Relação sexual com pessoas infectadas sem o uso de preservativos, Compartilhamento de seringas e agulhas, Reutilização de objetos perfurocortantes com presença de sangue ou 
-fluidos contaminados pelo HIV, Durante a amamentação, por isso mulheres HIV + não podem amamentar e seus filhos devem nascer de cesariana programada para que não sejam contaminados; Durante a 
-gravidez, quando a mulher não sabe que tem o vírus, porque os medicamentos antirretrovirais na gravidez e durante o parto diminuem muito as chances do bebê ser contaminado. Contato direto com 
-sangue da pessoa HIV +, em acidente de trânsito, cortes ou outros acidentes com objetos perfurantes como facas, seringas, tesoura ou bisturi, por exemplo.Receber uma transfusão sanguínea era uma 
-das formas de ser contaminado, mas nos últimos anos todos os sangues dos doadores de sangue são testados para HIV 1 e HIV 2, e caso seja verificada a presença do vírus contaminados são descartados
-a pessoa afetada recebe o tratamento adequado.   Assim não transmite: Sexo, desde que se use corretamente a camisinha, Masturbação a dois, Beijo no rosto ou na boca, Suor e lágrima, Picada de 
-inseto, Aperto de mão ou abraço, Sabonete/toalha/lençóis, Talheres/copos, Assento de ônibus, Piscina, Banheiro, Pelo ar.
+-- imagem para representar o tratamento --
  
+HIV X AIDS
+
+* Muitas pessoas acabam fazendo confusão em relação a Aids e o HIV. A Aids é uma doença que se desenvolve apenas caso a pessoas infectada pelo vírus (HIV) não faça o tratamento adequado, deixando 
+seu sistema imunológico danificado. Nem todas as pessoas que são infectadas pelo HIV desenvolvem a doença, caso façam o tratamento correto, apesar disso elas são transmissoras da doença. A Aids é
+caracterizada pelo enfraquecimento do sistema imunológico, tornando o organismo vulnerável a doenças como pneumonias, tuberculose, meningite, salmonella, candidíase...
+
+--imagem representativa.
+
+* De onde veio? Acredita-se que o vírus surgiu em 1920 no Congo, provavelmente em primatas que possuem vírus semelhantes ao do HIV, como eram utilizados para a alimentação o contato com o sangue 
+do animal durante a caça e no processo de cozinhá-lo pode ter feito com que o ser-humano entrasse em contato com o vírus. Cientistas e pesquisadores acreditam que um vírus similar ao HIV surgiu 
+pela primeira vez entre populações de chimpanzés na África, que serviam de alimentos. O contato com o sangue do animal durante a caça ou no processo de cozinhá-lo pode ter feito com que o 
+ser-humano entrasse em contato com o vírus e ele evoluisse para se tornar o HIV. Em 1981 a doença se tornou conhecida quando começaram a surgir pessoas que morriam de doenças consideradas simples e 
+apresentavam sarcoma de Kaposi, um tipo raro de câncer que acomete os vasos sanguíneos e linfáticos. Como a maioria das vítimas eram homens sexuais a doença ficou conhecida como "peste gay", 
+quando perceberam que a doença não acometia apenas gays, passaram a culpa haitianos, hemofílicos e usuários de drogas.
+
+
+
+
+
+ 
+
+* Existe também o período chamado de "janela imunológica", período entre o contágio e o início da produção de anticorpos em que não há detecção de positividade nos testes, embora ela já 
+seja transmissora.
+
+
 * O diagnóstico é realizado por meio de testes de saliva ou sangue. Eles podem ser realizados a partir de 30 dias após a exposição
 
-* O tratamento dos pacientes com Hiv tem como objetico reduzir a transmição e melhorar a evolução clínica das pessoas portadoras. Existem muitas medicações e o tratmento é sempre com três remédios.
-Após iniciado, o tratamento não pode ser interrompido sem motivo e a medicação precisa ser tomada todos os dias e nos intervalos corretos. Quando o tratamento é feito de maneira inadequad pode 
-ocorrer o surgimentos de vírius resistentes. O medicamento evita a formação de novos vírus e a destruição das células de defesas. Os medicamento antirretrovirais surigiram na década de 80 e 
-impedem a multiplicação do HIV no organismo. Esses medicamentos evitam o enfraquecimento do sistema imunológico. Desde 1996, o Brasil fornece gratuitamente os medicamentos à todas as pessoas que 
-necessitam.
+* Todos nós, não importa a sexualidade, genêro, idade, cor ou comportameto sexual podemos ser infectados
 
 
 *Convivendo: atualmente os medicamentos antirretrovirais aumentam a sobrevida dos soropositivos, a Aids continua sendo um desafio muito grande 
@@ -49,12 +53,13 @@ contar para a família. --- espaço para depoimento ---.
 * Aids na gestação - uma mulher soropositiva não vai necessariamente transmitir o vírus para o bebê, existem tratamentos com medicamentos que reduzem o risco para cerca de 1%.
 A mulher deve ser medicada mesmo que a cara viral não exija o tratamento. O maior risco é durante o parto. O recém-nascido deve receber o medicamento antirretroviral e ser acompanhado
 pelo sistema de saúde. Recomenda-se a não amamentação para evitar a transmissão do HIV para a criança. Mulheres com diagnóstico negativo para HIV durante o pré-natal ou parto devem utilizar 
-camisinha (masculina ou feminina) nas relações sexuais, inclusive durante o período de amamentação, prevenindo a infecção e possibilitando o crescimento saudável do bebê.
+camisinha (masculina ou feminina) nas relações sexuais, inclusive durante o período de amamentação, prevenindo a infecção e possibilitando o crescimento saudável do bebê. De maneira vertical, que é
+a transmissão de mão para o filho na gestação, amamentação e no momento do parto, mas pode ser prevenido com o tratamento adequado da gestante e do recém-nascido. Durante a amamentação, por isso 
+mulheres HIV + não podem amamentar e seus filhos devem nascer de cesariana programada para que não sejam contaminados; Durante a gravidez, quando a mulher não sabe que tem o vírus, porque os 
+medicamentos antirretrovirais na gravidez e durante o parto diminuem muito as chances do bebê ser contaminado.
 
 * Graças ao tratamento a carga viral de muitas pessoas é indectável, apesar de as chances de transmissão por via sexual serem quase nulas
 ainda é possível que ela ocorra. 
-
-* HIV não se transmite por beijo ou suor. Apenas sangue, smen, secreções genitais e leite materno tem carga viral suficiente para infectar outra pessoa.
 
 * Para evitar ser infectados, algumas coisas importantes que devemos fazer incluem sexo sempre com proteção, não compartilhar agulhas ou seringas, não utilizar reutilizar objetos perfurocortantes.
 
@@ -73,23 +78,9 @@ risco de infecção pelo HIV. A PEP consiste em medicamentos que reduzem o risco d
 preferência. A duração da PEP é de 28 dias e a pessoa deve ser acompanhada pela equipe de saúde. A PEP é oferecida gratuitamente pelo SUS. Antes a pessoa é avaliada e testada para o HIV, caso 
 seja identificado que ela já havia sido infectada anteriormente, o tratamento para a infecção começa o mais rápido possível.
 
-* A AIDS é caracterizada pelo enfraquecimento do sistema imunológico, tornando o organismo mais vulnerável a doenas oportunistas que podem ser de um resfriado a doenas mais graves como pneumonia, 
-tuberculose, meningite, salmonella, candidíase. Pessoas infectadas também tem o risco aumentado para alguns tipos de câncer como os linfomas.
-
-* De onde veio? Acredita-se que o vírus surgiu em 1920 no Congo, provavelmente em primatas que possuem vírus semelhantes ao do HIV, como eram utilizados para a alimentação o contato com o sangue 
-do animal durante a caça e no processo de cozinhá-lo pode ter feito com que o ser-humano entrasse em contato com o vírus. Cientistas e pesquisadores acreditam que um vírus similar ao HIV surgiu 
-pela primeira vez entre populações de chimpanzés na África, que serviam de alimentos. O contato com o sangue do animal durante a caça ou no processo de cozinhá-lo pode ter feito com que o 
-ser-humano entrasse em contato com o vírus e ele evoluisse para se tornar o HIV. Em 1981 a doença se tornou conhecida quando começaram a surgir pessoas que morriam de doenças consideradas simples e 
-apresentavam sarcoma de Kaposi, um tipo raro de câncer que acomete os vasos sanguíneos e linfáticos. Como a maioria das vítimas eram homens sexuais a doença ficou conhecida como "peste gay", 
-quando perceberam que a doença não acometia apenas gays, passaram a culpa haitianos, hemofílicos e usuários de drogas.
 
 
-* O vírus HIV é um retrovirus de estrutura complexa e é uma Infecção Sexualmente Transmissível. Possui um período de incubação longo, infecta as células do sangue e o sistema nervoso. Diariamente
-nosso sistema imunológico nos defende de ataques de bactéria, vírus e micróbios.Entre as células de defesas do organismo estão os linfócitos T CD4+, principal alvo do HIV. Essas céluas organizam
-e comandam a resposta diante de possíveis microrganismo estranhos no corpo humano. No nosso corpo o HIV passa a ligar-se com o CD4, componente da membrana da célula penetrando no seu interior para 
-se multiplicar(fazer cópias de si mesmo). Depois de se multiplicar ele rompe os linfócitos para continuar a infecção. Com isso o sistema imunológico vai ficando cada vez mais debilitado, deixando o
-corpo vulnerável a doenças. A infecção evolui para Aids quando a pessoa não é tratada adequadamente e sua imunidade vai diminundo ao longo do tempo. Existem dois tipo conhecidos do vírus HIV, o 
-HIV 1 e o HIV 2, quando a pessoa descobre que foi infectada o médico precisa saber qual tipo de vírus ela possui para fazer o tratamento adequado. 
+
 
 * Fazer testes para HIV regularmente é uma prática recomendada para todas as pessoas. Esse exame de sangue está disponível em todas as clínicas, hospitais e laboratórios, e podem ser realizados
 gratuitamente pelo SUS bem como para Hepatite B, C e Sifílis. O teste pode ser feito de maneira anônima. Existe um processo de acolhimento que auxilia o paciente para lidar com o resultado.
@@ -113,64 +104,10 @@ medicina que permitem aos soropositovs viver bem existem muitos preconceitos que
 afastarem.
 
 
-*O HIV é transmitido por meio da troca de fluidos corporais, porém saliva e suor não são uns deles.Caiu a noção de "grupo de risco" e adotou-se o chamado "comportamento de risco", que é manter 
-relações sexuais desprotegidas e compartilhar seringas sem esterilização, por exemplo. A carga emocional de uima pessoa que vive com HIV é frequentemente abalada, por conta da discrimanação que 
-sofrem, muitas pessoas evitam qualquer tipo de contato ou relação de afeto com pessoas soropositivas. Em alguns países, como o Canadá não permitem que soropositivos estrangeiros viajem a trabalho
-ou a estudo para lá, pois teriam que fazer uso dos medicamentos oferecidos pelo governo local. A transmissão de homens para mulheres é mais fácil do que o contrário.
-
-
-Posso fazer sexo casual mesmo sendo HIV positivo? Quais os riscos?
-Sim, desde que com o uso do preservativo. "No caso de rompimento da camisinha, oriente seu parceiro a buscar, em até 72 horas, o uso de medicamento antirretroviral para diminuir a chance de 
-infecção pelo HIV", alerta a infectologista Rosana. Manter o tratamento do HIV e certificar-se que de sua carga viral está controlada também é essencial nesses casos, pois diminui ainda mais as 
-chances de transmissão.
-
-Por que usar preservativos se eu e meu parceiro somos portadores do HIV?s
-Porque os vírus podem ser diferentes: as mutações e resistências são diferentes em cada organismo. Neste caso, fazer sexo sem preservativo, coloca em risco você e seu parceiro para a transmissão de
- um vírus mais resistente. "Quando você é infectado, é infectado por um número pequeno de vírus", explica Eduardo Finger. Esse vírus sofre mutações e seu organismo mata algumas delas, ficando 
-apenas a mutação que mais se adaptou ao seu organismo. Ao fazer sexo com outra pessoa soropositiva sem preservativo, os vírus podem sofrer novas mutações e se tornar mais agressivo ou mais
-resistente aos medicamentos. "Além disso, o preservativo evita a aquisição de outras doenças sexualmente transmissíveis, como hepatite B, sífilis, gonorreia, entre outras, que podem ser difíceis de
-tratar e curar."
-
-Se minha carga viral do HIV está indetectável, preciso transar com camisinha?
-Sim. A carga viral "zerada" reflete o sucesso do tratamento em uso, mas não significa que o vírus tenha sido eliminado - ele ainda está presente em algumas células esperando a oportunidade de passa
-r para outro corpo que não tenha os remédios em ação. Além disso, existem locais do corpo em que os medicamentos não agem tão bem. "As chances de transmissão são muito pequenas, mas nunca nulas", 
-afirma Eduardo Finger. Além disso, os exames indicando as cargas próximas de zero pode ser um falso negativo ou o tratamento pode se tornar menos eficaz em algum momento por diversos fatores. 
-Dessa forma, não é possível saber com certeza como está a sua carga viral no momento da relação sexual. "Transar uma vez sem camisinha já é um risco."
-
-A prática da masturbação com parceiro eventual implica risco de contágio pelo HIV/Aids?
-Não havendo troca de sangue, sêmen ou secreção, a prática da masturbação a dois não implica qualquer risco de infecção pelo HIV/Aids.
-
-Qual o risco de contágio por HIV/Aids com objetos cortantes como aparelhos de barbear, brincos, alicates e piercings?
-Atualmente, a maioria dos aparelhos pérfuro-cortantes fabricados, como seringas, máquinas de tatuar, aparelhos para colocar brincos ou piercings, são feitos com materiais descartáveis, que não 
-podem ser usados mais de uma vez. Em caso de dúvida, sugerimos perguntar no local sobre os materiais utilizados. O risco de contaminação da HIV/Aids no contato do sangue com a pele e mucosa oral é
- menor do que a exposição percutânea (injeção), porque há maior quantidade de células-alvo suscetíveis à infecção pelo HIV/Aids na corrente sanguínea. Além disso, na pele e na mucosa oral existem 
-barreiras imunológicas e não-imunológicas que conferem um determinado grau de proteção, uma vez que estes lugares estão em permanente contato com o meio externo e com microorganismos.
-
-Mesmo com a ausência de ejaculação durante o ato sexual é possível ser infectado pelo vírus da Aids?
-Apesar de o vírus da Aids estar mais presente no esperma, essa não é a única forma do vírus ser transmitido em uma relação sexual. Há, também, a possibilidade de infecção pela secreção expelida 
-antes da ejaculação ou pela secreção da vagina, por exemplo. Os fatores que aumentam o risco de transmissão do HIV/Aids, nesses casos, são: imunodeficiência avançada, relação anal receptiva,
-relação sexual durante a menstruação e presença de outras doenças sexualmente transmissíveis como cancro mole, sífilis e herpes genital.
-
-O beijo, no caso de um dos parceiros ter feridas ou fissuras na boca, é uma via de contágio da Aids?
-Segundo estudos, não há evidências de transmissão do vírus da Aids pelo beijo. Para que houvesse possibilidade de transmissão, seria necessário que houvesse uma lesão grave de gengiva e sangramento
-na boca. O HIV pode ser encontrado na saliva, porém as substâncias encontradas nela são capazes de neutralizá-lo. Práticas como beijar na boca, fumar o mesmo cigarro, tomar água no mesmo copo, não 
-oferecem riscos.
-
-A prática do sexo oral sem proteção implica risco de infecção pelo HIV?
-Se comparado a outras formas de contágio (sexo vaginal, sexo anal e compartilhamento de seringas, por exemplo), o risco relacionado ao sexo oral é baixo. Contudo, oferece riscos maiores para 
-quem pratica (ou seja, o parceiro ativo), dependendo fundamentalmente da carga viral (quantidade do vírus no sangue) do indivíduo infectado e se há presença de ferimentos na boca de quem pratica 
-(gengivites, aftas, machucados causados pela escova de dente). Caso não haja nenhum ferimento na boca, o risco de contágio é menor. Isto se explica, talvez, pela acidez do estômago, que pode tornar
-
-o vírus da Aids inativo, quando deglutido. No entanto, na prática de sexo oral desprotegido, há o risco de se contrair herpes, uretrite, hepatite B, ou HPV, independente da sorologia do parceiro.
-
-O que é janela imunológica?
-Janela imunológica é o tempo que o corpo demora para reconhecer a presença do HIV (ou qualquer outro vírus) na corrente sanguínea e, assim, começar a produzir anticorpos contra ele. E como os 
-testes de diagnóstico buscam esses anticorpos na amostra de sangue colhida, se o exame for feito dentro deste período o resultado pode dar negativo mesmo que a pessoa já esteja infectada.
-
-Qual a chance de me infectar se eu fizer sexo com alguém soropositivo?
-Isso também não é verdade. Poucos sabem, mas é muito mais difícil ser infectado pelo HIV com um soropositivo do que com uma pessoa que desconhece sua sorologia. Isso porque, graças ao tratamento,
-a carga viral de muitas pessoas que vivem com o vírus está indetectável, ou seja, com menos de 40 cópias de vírus por mililitro de sangue. Isso é insuficiente para que não haja a transmissão. 
-Para se ter uma ideia, se um soropositivo com carga viral indetectável há pelo menos um ano fizer o teste de HIV, o resultado tem muitas chances de ser negativo.
-
-
-Como vimos acima, a infecção pelo HIV tem tratamento mas ainda impacta negativamente na saúde dos infectados. Deste modo, prevenir é sempre melhor. 
+* Caiu a noção de "grupo de risco" e adotou-se o chamado "comportamento de risco", que é manter  relações sexuais desprotegidas e compartilhar seringas sem esterilização, por exemplo. A carga 
+emocional de uima pessoa que vive com HIV é frequentemente abalada, por conta da discrimanação que  sofrem, muitas pessoas evitam qualquer tipo de contato ou relação de afeto com pessoas 
+soropositivas. A transmissão de homens para mulheres é mais fácil do que o contrário. Apesar de o vírus estar mais presente no esperma, esta não é a única forma que o vírus pode ser transmitido. Pode 
+ocorrer a infecção pela secreção expelida antes da ejaculação. Há fatores que aumentam o risco da transmissão
+como imunodeficiência avançada, relação anal receptiva, relação sexual durante a menstruação e presença de outras DSTs. O risco de transmissão relacionado ao sexo oral é baixo se em comparação 
+com outras formas de transmissão, os riscos de transmissão são maiores para o parceiro que pratica, se há presença de ferimentos na boca. Isso se explica talvez pela acidez do estômago, que pode
+tornar o vírus inativo.
