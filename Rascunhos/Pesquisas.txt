@@ -22,8 +22,6 @@ HIV X AIDS
 seu sistema imunológico danificado. Nem todas as pessoas que são infectadas pelo HIV desenvolvem a doença, caso façam o tratamento correto, apesar disso elas são transmissoras da doença. A Aids é
 caracterizada pelo enfraquecimento do sistema imunológico, tornando o organismo vulnerável a doenças como pneumonias, tuberculose, meningite, salmonella, candidíase...
 
---imagem representativa.
-
 * De onde veio? Pesquisas indicam que um vírus semalhante surgiu em primatas no Congo, aproximadamente nos anos de 1920. Como esses animais eram utilizados para a alimentação local,
 o contato com o sangue do animal pode ter feito com que o ser-humano tenha entrado em contato com ele e evoluido a partir daí para o vírus do HIV atual. Em 1981 a doença se tornou 
 conhecida nos EUA por conta do aumento de casos de sarcoma de Kaposi, um tipo raro de câncer de raro que acomete os vasos sanguíneos e linfáticos. Como a maioria dos pacientes eram
@@ -53,18 +51,28 @@ no organismo para bloquear o vírus. Ambos são oferecidos gratuitamente pelo SUS.
 do assunto causa muitos preconceito e um problema que pode acarretar com o diagnóstico da doença é a depressão. Atualmente os medicamentos antirretrovirais aumentam a sobrevida dos soropositivos.
 Caso descubra que possui o vírus comunique seus parceiros, pois um diagnóstico precoce auxilia muito no tratamento.
 
- --- espaço para depoimento e imagem ---.
+* "Eu nasci de uma mãe soropositiva, mas ela tinha a doença, ela tinha Aids e eu contrai a doença no parto, minha mãe morreu... Aí eu fui parar num orfanato e eu por sorte fui adotado. Cresci  numa
+família com condições, com dinheiro e sempre estudei  em escola boa e nunca tive problema com isso. Eu sempre fui muito consciente do meu problema, sempre tive muito apoio, fui em bons hospitais  e
+hoje eu tenho carga viral indetectável. Só que eu passei por alguns problemas com relacionamento, algumas namoradas, elas depois que eu comecei o relacionamento, passava tipo um mês e eu falava sou
+soropositivo e tal e várias garotas deixaram de falar comigo, deixaram de conversar comigo. Eu tive uma namorada e eu decidi contar bem mais pra frente, não deu tempo de eu contar, ela descobriu 
+sozinha e aí ela espalhou para todo mundo que eu tinha Aids de um jeito muito preconceituoso, sem estudo nenhum e as pessoas caíram batendo em cima de mim, mas sempre tem aquelas pessoas que 
+entendem e sabem que essa condição já é completamente tratada hoje em dia, que não tem problema nenhum . Uma pessoa que nem eu, que tem carga viral indetectável hoje em dia tem chance quase nula 
+de transmitir o vírus, então sempre tem essas pessoas que estão do nosso lado, que tem consciência. Mas a gente tem que enfrentar e não pode se deixar abater pelas pessoas que não tem estudo." 
+revelou adolescente HIV+ que preferiu não se identificar.
+
+ --- depoimento ---.
 
 *O HIV pode ser transmitido de maneira vertical, quando a mãe é HIV+, porém existem tratamentos com medicamentos que reduzem o risco de transmissão. O maior risco é durante o parto e o recém-nascido
 deve receber o medicamento antirretroviral e ser acompanhado pelo sistema de saúde. Recomenda-se também a não-amamentação.
 
-* A transmissão de homens para mulheres é mais fácil do que o contrário. Pode ocorrer a infecção pela secreção expelida antes da ejaculação. Há fatores como imunodeficiência avançada,  relação anal receptiva,
-relação sexual durante a menstruação e presença de outras DSTs que aumentam o risco de transmissão. O risco de transmissão por sexo oral é menor do que em comparação com outras formas de transmissão. É maior
-para o parceiro que pratica e se há ferimentos na boca.
+* A transmissão de homens para mulheres é mais fácil do que o contrário. Pode ocorrer a infecção pela secreção expelida antes da ejaculação. Há fatores como imunodeficiência avançada,  relação anal
+receptiva, relação sexual durante a menstruação e presença de outras DSTs que aumentam o risco de transmissão. O risco de transmissão por sexo oral é menor do que em comparação com outras formas de
+transmissão. É maiorpara o parceiro que pratica e se há ferimentos na boca.
 
-* Quando uma pessoas HIV+ tem carga viral igual ou inferior a 40 cópias/ml de sangue, a carga é indetectável. O estudo Opposites Attract, divulgado em julho de 2017 na 9ª Conferência Internacional da Sociedade de 
-Aids sobre Ciência do HIV feito com 343 casais homossexuais em que um tinha carga indetectável não observou nenhuma transmissão. Esse estudo reforça o slogan "indetectável = intramissível". Uma carga viral abaixo de
-"viralmente reprimida" também é indetectável. Resumindo uma pessoas que tenha carga viral igual ou abaixo de 200 cópias/ml ou menos não pode transmitir o HIV.
+* Quando uma pessoas HIV+ tem carga viral igual ou inferior a 40 cópias/ml de sangue, a carga é indetectável. O estudo Opposites Attract, divulgado em julho de 2017 na 9ª Conferência Internacional 
+da Sociedade de Aids sobre Ciência do HIV feito com 343 casais homossexuais em que um tinha carga indetectável não observou nenhuma transmissão. Esse estudo reforça o slogan "indetectável = 
+intramissível". Uma carga viral abaixo de "viralmente reprimida" também é indetectável. Resumindo uma pessoas que tenha carga viral igual ou abaixo de 200 cópias/ml ou menos não pode transmitir o 
+HIV.
 
 
 -- tabela --
