@@ -6,13 +6,12 @@ o HIV-1 e o HIV-2.
 
 -- imagem do vírus --
 
-* Todos os dias nosso sistema imunológico nos protege do ataque de bactérias, vírus e micróbios. Entre as células de defesa estão os linfócitos T CD4+, principal alvo do HIV. Estas são responsáveis 
-por organizar e comandar respostas para possíveis invasões de microorganismos. O HIV passa a se ligar com o CD4, componente da membrana da célula, penetrando no seu interior para fazer cópias de si
-mesmo. O sistema imunológico vai ficando cada vez mais fraco, deixando o corpo vulnerável.
+* Todos os dias nosso sistema imunológico nos protege do ataque de bactérias, vírus e micróbios. Entre as células de defesa estão os linfócitos T CD4+, responsáveis por organizar e comandar 
+respostas para possíveis invasões. O HIV passa a se ligar com o CD4, componente da membrana da célula, penetrando no seu interior para fazer cópias de si mesmo. O sistema imunológico vai ficando 
+cada vez mais fraco, deixando o corpo vulnerável.
 
-* Ainda não existe cura para a infecção pelo vírus, mas existem tratamentos que tem como objetivo reduzir a transmissão e melhorar a evolução clínica do paciente, evitando a formação de novos vírus
-e destruição das células de defesa, com cuidado é possível que pessoas portadoras do vírus chamadas de soropositivas ou HIV+ tenham uma vida saudável. O tratamento não pode ser interrompido sem 
-motivo e a medicação precisa ser tomada todos os dias nos intervalos corretos. Desde 1996, o Brasil fornece gratuitamente os medicamentos à todas as pessoas que necessitam.
+* Ainda não existe cura para a infecção pelo vírus, mas existem tratamentos que tem como objetivo evitar a formação de novos vírus e a destruição das células de defesa, com cuidado é possível que 
+pessoas portadoras do vírus chamadas de soropositivas ou HIV+ tenham uma vida saudável.Desde 1996, o Brasil fornece gratuitamente os medicamentos à todas as pessoas que necessitam.
 
 -- imagem para representar o tratamento --
  
