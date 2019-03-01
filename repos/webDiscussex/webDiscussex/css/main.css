@@ -1,0 +1,115 @@
+﻿@import url("https://fonts.googleapis.com/css?family=Poiret+One");
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+
+* {
+    box-sizing: border-box;
+    transition: all ease-in-out 250ms;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Righteous', sans-serif;
+    text-align: center;
+    background-color: #e1bee7;
+}
+
+.container {
+    width: 95%;
+    max-width: 70em;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (min-width: 1170px)
+{
+    .container
+    {
+        max-width: 1170px;
+        padding: 0;
+    }
+}
+
+.row
+{
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.row:before, .row:after
+{
+    content: "";
+    display:table;
+}
+
+.row:after
+{
+    clear: both;
+}
+
+.col
+{
+    display: inline-block;
+    vertical-align: top;
+    min-height: 1px;
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 100%;
+    margin-right: -4px;
+    *zoom: 1;
+    *display: inline;
+}
+
+@media (min-width: 60rem) {
+    .col-2 {
+        width: 50%;
+    }
+
+    .col-3 {
+        width: 33.33%;
+    }
+}
+
+/* HEADER*/
+#menu nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+#menu
+{
+    background-color: rgb(38,38,38);
+    color: white;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 20pt;
+}
+
+#menu:hover
+{
+    background-color: white;
+}
+
+#menu:hover nav ul li a {
+    color: rgb(38,38,38);
+}
+
+#menu nav ul li:hover{
+    background-color: #eeeeee;
+    border-radius: 5pt;
+}
+
+
+#menu nav ul 
+{
+    list-style: none;
+}
+
+#menu nav ul li
+{
+    display: inline;
+    padding: 1em;
+}
+
+

@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="webDiscussex.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <title>Discussex</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="container" id="menu">
+            <nav>
+                <ul>
+                    <li>imagem aqui</li>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">DADOS</a></li>
+                    <li><a href="#">DOENÇAS</a></li>
+                    <li><a href="#">MITOS E VERDADES</a></li>
+                    <li><a href="#">FÓRUM</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
