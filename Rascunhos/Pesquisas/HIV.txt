@@ -10,7 +10,7 @@ o HIV-1 e o HIV-2.
 respostas para possíveis invasões. O HIV passa a se ligar com o CD4, componente da membrana da célula, penetrando no seu interior para fazer cópias de si mesmo. O sistema imunológico vai ficando 
 cada vez mais fraco, deixando o corpo vulnerável a infecções oportunistas.
 
-* Ainda não existe cura para a infecção pelo vírus, mas existem tratamentos que tem como objetivo evitar a formação de novos vírus e a destruição das células de defesa, com cuidado é possível que 
+* Ainda não existe cura para a infecção pelo vírus, mas existem tratamentos que tem como objetivo melhorar a qualidade de vida e interromper a cadeia de transmissão, com cuidado é possível que 
 pessoas portadoras do vírus chamadas de soropositivas ou HIV+ tenham uma vida saudável.Desde 1996, o Brasil fornece gratuitamente os medicamentos à todas as pessoas que necessitam.
 
 -- imagem para representar o tratamento --
@@ -21,7 +21,7 @@ HIV X AIDS
 seu sistema imunológico danificado. Nem todas as pessoas que são infectadas pelo HIV desenvolvem a doença, caso façam o tratamento correto, apesar disso elas são transmissoras da doença. A Aids é
 caracterizada pelo enfraquecimento do sistema imunológico, tornando o organismo vulnerável a doenças como pneumonias, tuberculose, meningite, salmonella, candidíase...
 
-*O período entre o contágio e início da produção de anticorpos é chamada de "janela imunológica", em que não há detecção de positividade nos testes, embora a pessoa já seja transmissora.
+*O período entre o contágio e início da produção de anticorpos é chamada de "janela imunológica", em que pode não haver detecção de positividade nos testes, embora a pessoa já seja transmissora.
 Esse período pode durar em média 30 dias. O diagnóstico é realizado por meio de testes de saliva ou sangue, que devem ser realizados após a janela imunológica. 
 
 -- imagem ilustrativa --
