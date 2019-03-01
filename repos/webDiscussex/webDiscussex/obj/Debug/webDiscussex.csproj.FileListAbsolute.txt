@@ -16,3 +16,12 @@ C:\Users\u18194\Desktop\Discussex\repos\webDiscussex\webDiscussex\obj\Debug\webD
 C:\Users\u18194\Desktop\Discussex\repos\webDiscussex\webDiscussex\obj\Debug\webDiscussex.csproj.CoreCompileInputs.cache
 C:\Users\u18194\Desktop\Discussex\repos\webDiscussex\webDiscussex\obj\Debug\webDiscussex.dll
 C:\Users\u18194\Desktop\Discussex\repos\webDiscussex\webDiscussex\obj\Debug\webDiscussex.pdb
+C:\Users\u18194\Documents\GitHub\Discussex\repos\webDiscussex\webDiscussex\bin\webDiscussex.dll.config
+C:\Users\u18194\Documents\GitHub\Discussex\repos\webDiscussex\webDiscussex\bin\webDiscussex.dll
+C:\Users\u18194\Documents\GitHub\Discussex\repos\webDiscussex\webDiscussex\bin\webDiscussex.pdb
+C:\Users\u18194\Documents\GitHub\Discussex\repos\webDiscussex\webDiscussex\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\u18194\Documents\GitHub\Discussex\repos\webDiscussex\webDiscussex\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\u18194\Documents\GitHub\Discussex\repos\webDiscussex\webDiscussex\obj\Debug\webDiscussex.csprojResolveAssemblyReference.cache
+C:\Users\u18194\Documents\GitHub\Discussex\repos\webDiscussex\webDiscussex\obj\Debug\webDiscussex.csproj.CoreCompileInputs.cache
+C:\Users\u18194\Documents\GitHub\Discussex\repos\webDiscussex\webDiscussex\obj\Debug\webDiscussex.dll
+C:\Users\u18194\Documents\GitHub\Discussex\repos\webDiscussex\webDiscussex\obj\Debug\webDiscussex.pdb

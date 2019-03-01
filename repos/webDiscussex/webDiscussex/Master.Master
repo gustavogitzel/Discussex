@@ -6,6 +6,8 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="js/main.js"></script>
     <title>Discussex</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -13,16 +15,22 @@
 <body>
     <form id="form1" runat="server">
         <header class="container" id="menu">
+            <div id="logo">LOGO</div>
             <nav>
                 <ul>
-                    <li>imagem aqui</li>
-                    <li><a href="#">HOME</a></li>
+                    
+                    <li><a href="#" class="active">HOME</a></li>
                     <li><a href="#">DADOS</a></li>
                     <li><a href="#">DOENÇAS</a></li>
                     <li><a href="#">MITOS E VERDADES</a></li>
                     <li><a href="#">FÓRUM</a></li>
                 </ul>
             </nav>
+            <div class="menu-toggle" >
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+            </div>
 
             
         </header>
