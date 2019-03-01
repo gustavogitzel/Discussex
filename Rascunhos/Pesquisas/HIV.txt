@@ -8,7 +8,7 @@ o HIV-1 e o HIV-2.
 
 * Todos os dias nosso sistema imunológico nos protege do ataque de bactérias, vírus e micróbios. Entre as células de defesa estão os linfócitos T CD4+, responsáveis por organizar e comandar 
 respostas para possíveis invasões. O HIV passa a se ligar com o CD4, componente da membrana da célula, penetrando no seu interior para fazer cópias de si mesmo. O sistema imunológico vai ficando 
-cada vez mais fraco, deixando o corpo vulnerável.
+cada vez mais fraco, deixando o corpo vulnerável a infecções oportunistas.
 
 * Ainda não existe cura para a infecção pelo vírus, mas existem tratamentos que tem como objetivo evitar a formação de novos vírus e a destruição das células de defesa, com cuidado é possível que 
 pessoas portadoras do vírus chamadas de soropositivas ou HIV+ tenham uma vida saudável.Desde 1996, o Brasil fornece gratuitamente os medicamentos à todas as pessoas que necessitam.
@@ -21,16 +21,10 @@ HIV X AIDS
 seu sistema imunológico danificado. Nem todas as pessoas que são infectadas pelo HIV desenvolvem a doença, caso façam o tratamento correto, apesar disso elas são transmissoras da doença. A Aids é
 caracterizada pelo enfraquecimento do sistema imunológico, tornando o organismo vulnerável a doenças como pneumonias, tuberculose, meningite, salmonella, candidíase...
 
-* De onde veio? Pesquisas indicam que um vírus semalhante surgiu em primatas na África existem várias teorias de como o vírus entrou em contato com o homem e sofreu mutações, uma delas é que os 
-caçadores que caçavam esse animal para alimentação tenham entrado em contato com seu sangue. Em 1981 a doença se tornou conhecida nos EUA por conta do aumento de casos de sarcoma de Kaposi, um 
-tipo raro de câncer de raro que acomete os vasos sanguíneos e linfáticos. Como a maioria dos pacientes eram homens homossexuais, a doença ficou conhecida como "peste gay". Atualmente não se usa 
-mais o termo "grupo de risco", é utilizado o termo "comportamento de risco", que incluem manter relações sexuais desprotegidas e compartilhar seringas sem esterilização.
+*O período entre o contágio e início da produção de anticorpos é chamada de "janela imunológica", em que não há detecção de positividade nos testes, embora a pessoa já seja transmissora.
+Esse período pode durar em média 30 dias. O diagnóstico é realizado por meio de testes de saliva ou sangue, que devem ser realizados após a janela imunológica. 
 
 -- imagem ilustrativa --
-
-
-*O período entre o contágio e início da produção de anticorpos é chamada de "janela imunológica", em que não há detecção de positividade nos testes, embora a pessoa já seja transmissora.
-Esse período pode durar até 30. O diagnóstico é realizado por meio de testes de saliva ou sangue, que devem ser realizados após a janela imunológica. 
 
 * O vírus não escolhe cor, orientação sexual, genêro, idade, classe ou comportamento sexual, dessa forma todos nós podemos contrair o vírus independentemente de qualquer um desses fatores. Por 
 esse motivo é sempre bom ter boas práticas com realizar testes regularmente, disponibilizados gratuitamente pelo SUS, não compartilhar seringas e objetos perfurocortantes, além de sempre ter 
@@ -67,10 +61,8 @@ deve receber o medicamento antirretroviral e ser acompanhado pelo sistema de saú
 receptiva, relação sexual durante a menstruação e presença de outras DSTs que aumentam o risco de transmissão. O risco de transmissão por sexo oral é menor do que em comparação com outras formas de
 transmissão. É maiorpara o parceiro que pratica e se há ferimentos na boca.
 
-* Quando uma pessoas HIV+ tem carga viral igual ou inferior a 40 cópias/ml de sangue, a carga é indetectável. O estudo Opposites Attract, divulgado em julho de 2017 na 9ª Conferência Internacional 
-da Sociedade de Aids sobre Ciência do HIV feito com 343 casais homossexuais em que um tinha carga indetectável não observou nenhuma transmissão. Esse estudo reforça o slogan "indetectável = 
-intramissível". Uma carga viral abaixo de "viralmente reprimida" também é indetectável. Resumindo uma pessoas que tenha carga viral igual ou abaixo de 200 cópias/ml ou menos não pode transmitir o 
-HIV.
-
+* Quando uma pessoas HIV+ tem carga viral igual ou inferior a 40 cópias/ml de sangue, essa carga é dita indetectável. Três grandes estudos sobre a transmissão sexual do HIV entre casais em que um 
+parceiro vive com HIV e o outro não, revelou  que em nehum caso houve transmissão. Esse estudo reforça o slogan "indetectável = intramissível". Isso é um grande avanço, pois melhora muito a qualidade 
+de vida de pessoa HIV+.
 
 -- tabela --
