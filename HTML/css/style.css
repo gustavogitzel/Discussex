@@ -1,71 +1,91 @@
 @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
 
-.menu-icon
-{
+.menu-icon {
   cursor: pointer;
   float: right;
-  margin: 0 auto;
+  margin-top: 1em;
 }
+
 .bar1,
 .bar2,
 .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: white;
-    margin: 6px 0;
-    transition: 0.4s;
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
 }
 
 .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px);
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
 }
 
 .change .bar2 {
-    opacity: 0;
+  opacity: 0;
 }
 
 .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px);
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
 }
 
-*
-{
+* {
   padding: 0;
   margin: 0;
-  transition:all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-body
-{
+body {
   background: #b86ebe;
   font-family: "Yanone Kaffeesatz", Arial;
-  
 }
-img
-{
-  max-height: 4.5em;
+
+#logo {
+  max-height: 3.8em;
   width: auto;
 }
+
+/* HEADER */
 header#menu {
   background: rgb(32, 32, 32);
   padding: 2em;
+  border-radius: 20pt;
+  border-bottom: solid 2em rgb(49, 49, 49);
+  margin: 1em;
 }
-header#menu nav
-{
+
+header#menu nav {
   display: none;
   text-align: center;
+  font-size: 2em;
+  transition: 3ms ease;
 }
-header#menu nav.active
-{
-  background: black;
+header#menu nav.active {
+  background: rgb(36, 36, 36);
+  margin-top: 1em;
   display: block;
   width: 100%;
+  transition: 3ms ease;
   height: 100%;
+  border-radius: 20pt;
+
 }
-header#menu nav.active ul li
-{
+
+header#menu:has(> nav.active) { 
+    margin: 0;
+    border-radius: 0;
+}
+
+header#menu:hover nav.active {
+  background: rgb(226, 226, 226);
+}
+
+header#menu:hover nav.active ul li a {
+  color: rgb(36, 36, 30);
+}
+
+header#menu nav.active ul li {
   border-bottom: gray solid 1px;
 }
 
@@ -73,50 +93,137 @@ header#menu li a {
   color: white;
   text-decoration: none;
 }
+
 header#menu ul li {
   list-style: none;
   display: block;
   padding: 1em;
-  margin-top: 1e,; 
+}
+
+header#menu:hover {
+  background: white;
+  border-bottom: rgb(238, 235, 235) solid 2em;
+}
+
+header#menu:hover .menu-icon .bar1,
+header#menu:hover .menu-icon .bar2,
+header#menu:hover .menu-icon .bar3 {
+  background: rgb(32, 32, 32);
 }
 
 header#menu ul li:hover {
-        background: rgb(206, 205, 205);
-    }
+  background: rgb(206, 205, 205);
+  border-radius: 20pt;
+}
 
-@media screen and (min-width: 64em) {
-  .menu-icon
-  {
+@media screen and (min-width: 71.25em) {
+  .menu-icon {
     display: none;
   }
-  img
-  {
+
+  #logo {
     max-height: 6em;
     width: auto;
   }
 
-  header#menu nav
-  {
+  header#menu nav {
     float: right;
     display: block;
     text-align: center;
   }
+
+  header#menu nav.active {
+    margin-top: initial;
+    display: initial;
+    width: initial;
+    height: initial;
+  }
+
+  header#menu:hover nav.active {
+    background: initial;
+  }
+
+  header#menu nav.active ul li {
+    border-bottom: initial;
+  }
+
 
 
   header#menu ul li {
     list-style: none;
     display: inline-block;
     padding: 1em;
-    margin-top: 1em;
   }
 
-    header#menu:hover {
-        background: white;
+
+
+  header#menu:hover li a {
+    color: rgb(32, 32, 32);
+  }
+
+
+}
+
+.container {
+  width: 95%;
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.row
+{
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.row:before, .row:after
+{
+    content: "";
+    display:table;
+}
+
+.row:after
+{
+    clear: both;
+}
+
+.col
+{
+    display: inline-block;
+    vertical-align: top;
+    min-height: 1px;
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 100%;
+    margin-right: -4px;
+    *zoom: 1;
+    *display: inline;
+}
+
+@media (min-width: 60rem) {
+    .col-2 {
+        width: 50%;
     }
 
-    header#menu:hover li a {
-        color: rgb(32, 32, 32);
+    .col-3 {
+        width: 33.33%;
     }
+}
 
-    
+
+/* FOOTER */
+
+#rodape
+{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(32, 32, 32);
+  color: white;
+  font-weight: lighter;
+  padding: 1em;
+  z-index: -1;
 }
