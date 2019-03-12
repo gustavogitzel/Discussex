@@ -33,7 +33,7 @@
 * {
   padding: 0;
   margin: 0;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 
 body {
@@ -50,34 +50,31 @@ body {
 header#menu {
   background: rgb(32, 32, 32);
   padding: 2em;
-  border-radius: 20pt;
-  border-bottom: solid 2em rgb(49, 49, 49);
-  margin: 1em;
+  /* border-bottom: solid 2em rgb(49, 49, 49); */
+  /* margin: 1em; */
 }
 
 header#menu nav {
-  display: none;
+  position: fixed;
+  display: block;
+  left: -30em;
   text-align: center;
   font-size: 2em;
   transition: 3ms ease;
+  background: yellowgreen; 
+  border-radius: 0 0 20pt 0; 
+  margin-top: 1em;
+  /* width: 100%; */
+  transition: 3ms ease;
+  /* height: 100%; */
+  /* border-radius: 20pt; */
 }
 header#menu nav.active {
-  background: rgb(36, 36, 36);
-  margin-top: 1em;
-  display: block;
-  width: 100%;
-  transition: 3ms ease;
-  height: 100%;
-  border-radius: 20pt;
+  
 
 }
 
-header#menu:has(> nav.active) { 
-    margin: 0;
-    border-radius: 0;
-}
-
-header#menu:hover nav.active {
+/* header#menu:hover nav.active {
   background: rgb(226, 226, 226);
 }
 
@@ -88,7 +85,7 @@ header#menu:hover nav.active ul li a {
 header#menu nav.active ul li {
   border-bottom: gray solid 1px;
 }
-
+*/
 header#menu li a {
   color: white;
   text-decoration: none;
@@ -99,7 +96,7 @@ header#menu ul li {
   display: block;
   padding: 1em;
 }
-
+/*
 header#menu:hover {
   background: white;
   border-bottom: rgb(238, 235, 235) solid 2em;
@@ -114,7 +111,7 @@ header#menu:hover .menu-icon .bar3 {
 header#menu ul li:hover {
   background: rgb(206, 205, 205);
   border-radius: 20pt;
-}
+} */
 
 @media screen and (min-width: 71.25em) {
   .menu-icon {
