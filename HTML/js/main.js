@@ -4,22 +4,15 @@ $(document).ready(function()
     $(".menu-icon").click(function(){
         $(".menu-icon").toggleClass("change");
 
+        
         if(menuClose)
+        {
             $("#menu nav").animate({
                 left:"0"
-            },300, function(){
-                var fundo = $("div");
-                fundo.id = "fundoPretoMenu";
-                $("body").after(fundo).css({
-                    "width": "100%",
-                    "height": "100%",
-                    "position": "absolute",
-                    "top": "0",
-                    "margin-top":"2em",
-                    "transition":"none",
-                    "background": "rgba(26,26,26)"
-                });
-            });
+            },300, function(){});
+            var fundoPreto = "<div id='fundoMenuPreto'></div>";
+            document.getElementById("pagina").innerHTML += fundoPreto;
+        }
         else
         $("#menu nav").animate({
             left: "-30em"
@@ -30,7 +23,7 @@ $(document).ready(function()
         menuClose = !menuClose;
     })
     $("#menu").mouseover(function(){
-        // $("#logo").attr("src","img/logoDark.png");
+        $("#logo").attr("src","img/logoDark.png");
     })
     $("#menu").mouseout(function(){
         $("#logo").attr("src","img/logo.png");
