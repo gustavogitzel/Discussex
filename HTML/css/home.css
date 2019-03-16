@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+
+#homeHero
+{
+    position: relative;
+}
+#homeHero {
+    max-height: 98%;
+    width: auto;
+  }
+
+@media screen and (min-width: 36em)
+{
+    #homeHero img {
+        
+            max-height: 6em;
+            width: auto;
+          
+    }
+}

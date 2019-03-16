@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+
+* {
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+body {
+  background: #e1b1e6;
+  font-family: "Yanone Kaffeesatz", Arial;
+}
 .menu-icon {
   cursor: pointer;
   float: right;
@@ -29,16 +40,6 @@
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  transition: all 0.3s ease;
-}
-
-body {
-  background: #e1b1e6;
-  font-family: "Yanone Kaffeesatz", Arial;
-}
 
 #logo {
   max-height: 3.8em;
@@ -113,38 +114,30 @@ header#menu ul li:hover {
   .menu-icon {
     display: none;
   }
+
   #logo {
     max-height: 6em;
     width: auto;
   }
+
   header#menu nav {
     position: initial;
-    display: block;
+    display: initial !important;
     float: right;
     text-align: center;
     font-size: 2em;
     background: initial;
-    margin-top: initial;
+    margin-top: 1em;
     z-index: initial;
   }
+
   header#menu nav ul li {
     list-style: none;
-    display: inline-block;
+    display: inline;
   }
+
   header#menu:hover nav ul li a {
     color: rgb(32, 32, 32);
-  }
-  #footerContent
-  {
-    padding: 2em;
-    background: rgb(36, 36, 36);
-    text-align: center;
-  }
-  #footerContent ul li
-  {
-    list-style: none;
-    display: inline-flex;
-    padding: 2em;
   }
 }
 
@@ -186,6 +179,7 @@ header#menu ul li:hover {
   .col-2 {
     width: 50%;
   }
+
   .col-3 {
     width: 33.33%;
   }
@@ -193,33 +187,49 @@ header#menu ul li:hover {
 
 /* FOOTER */
 
-#rodape
-{
+#rodape {
   font-size: 1.3rem;
 }
+
 #footerCopyright {
   bottom: 0;
   left: 0;
-  width: 100%;
   background: rgb(32, 32, 32);
   color: white;
   font-weight: lighter;
   padding: 1em;
 }
-#footerContent
-{
+
+#footerContent {
   padding: 2em;
   background: rgb(36, 36, 36);
   text-align: center;
 }
-#footerContent ul li
-{
+
+#footerContent ul li {
   list-style: none;
-  display: block;
-  padding: 2em;
+  display: inline-block;
+  margin-top: 1em;
+  padding: 1em;
 }
-#rodape ul li a
-{
+
+#rodape ul li a {
   color: white;
   text-decoration: none;
+}
+
+#rodape ul li:hover a{
+  color: #e1b1e6;
+}
+
+
+.iconSocialMedia 
+{
+  font-size: 1.3em;
+}
+
+.iconSocialMedia:hover i
+{
+    transform: rotate(20deg);
+  
 }
