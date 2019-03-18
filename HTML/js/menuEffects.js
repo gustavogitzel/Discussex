@@ -25,17 +25,18 @@ function alterarMenu(situacao) {
     if (!situacao)
     {
         $("#menu nav").slideUp();
-        // document.getElementById("navMenu").style.display = 'block';
+    }
+    else
+    {
+        $("#menu nav").slideDown();
     }
         
-    else
-        $("#menu nav").slideDown();
 }
 
 function alterarLogo() {
-    // $("#menu").mouseover(() => {
-    //     $("#logo").attr("src", "img/logoDark.png");
-    // });
+    $("#menu").mouseover(() => {
+        $("#logo").attr("src", "img/logoDark.png");
+    });
     $("#menu").mouseout(() => {
         $("#logo").attr("src", "img/logo.png");
     });
