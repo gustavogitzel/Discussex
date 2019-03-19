@@ -14,8 +14,9 @@ body {
 }
 
 img{
+  width: auto;
   max-width: 100%;
-  height: auto;
+  max-height: 100%;
 }
 
 .container{
@@ -60,7 +61,7 @@ img{
 header#menu {
   background: rgb(32, 32, 32);
   padding: 2em;
-  border-bottom: solid 2em rgb(36, 36, 36);
+  border-bottom: solid 2em rgb(53, 52, 52);
 }
 
 #logo {
