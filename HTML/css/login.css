@@ -1,0 +1,23 @@
+#frmLogin ul li
+{
+    list-style: none;
+    margin: 1em;
+}
+
+#frmLogin input
+{
+    padding: .5em 1em 0.5em 1em;
+}
+
+.campoForm
+{
+    background: transparent;
+    border: 0;
+    border-bottom: .15em solid black;
+    outline: none;
+}
+
+.campoForm:focus
+{
+    border-bottom: .2em solid  rgb(45, 163, 231);
+}
