@@ -98,7 +98,7 @@ header#menu li a {
 }
 
  header#menu:hover {
-  background: rgb(206, 205, 205);
+  background: white;
   border-bottom: rgb(238, 235, 235) solid 2em;
 }
 
@@ -167,13 +167,11 @@ footer#rodape {
 .iconSocialMedia a 
 {
   font-size: 1.3em;
-  /* text-shadow: initial !important; */
 }
 
-.iconSocialMedia:hover i
+.iconSocialMedia:hover 
 {
     transform: rotate(20deg);
-  
 }
 
 
@@ -248,7 +246,4 @@ footer#rodape {
     display: inline;
   }
 
-  /* header#menu:hover nav ul li a {
-    color: rgb(32, 32, 32);
-  } */
 }
