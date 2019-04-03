@@ -1,12 +1,13 @@
 home
 sobre nós
 forum
-doenças
+*doenças
 pesquisa
-mitos e verdades
+*mitos e verdades
 cadastro / LOGIN
 configurações
-quiz
-
+*quiz
+*prevenção e contracepção
+*gravidez
 
 ---- FONTE - POIRET ONE
