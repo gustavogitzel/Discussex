@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  background: #e1b1e6;
+  background: #a55eea;
   font-family: "Yanone Kaffeesatz", Arial;
 }
 
@@ -119,19 +119,24 @@ header#menu:hover li a {
 /* ----- FOOTER ----- */
 
 footer#rodape {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   background: url("../img/footer2.png") no-repeat;
   background-size: cover;
   height: auto;
+  text-shadow: 1px 0px 0px black, 
+  -1px 0px 0px black, 
+  0px 1px 0px black, 
+  0px -1px 0px black;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
 }
 
 #footerCopyright {
   bottom: 0;
   left: 0;
-  color: black;
-  font-weight: lighter;
+  
   padding: 1em;
-  background: white;
 }
 
 #footerContent {
@@ -147,23 +152,26 @@ footer#rodape {
 }
 
 #rodape ul li a {
-  color: black;
+  color: white; 
   text-decoration: none;
 }
 
 #rodape ul li:hover a{
-  color: #e1b1e6;
+  color: rgb(32, 32, 32);
+  text-shadow: 1px 0px 0px white, 
+  -1px 0px 0px white, 
+  0px 1px 0px white, 
+  0px -1px 0px white;
 }
 
-.iconSocialMedia 
+.iconSocialMedia a 
 {
   font-size: 1.3em;
 }
 
-.iconSocialMedia:hover i
+.iconSocialMedia:hover 
 {
     transform: rotate(20deg);
-  
 }
 
 
@@ -186,6 +194,7 @@ footer#rodape {
 }
 
 .col {
+  margin-top: 1em;
   text-align: center;
   display: inline-block;
   vertical-align: top;
@@ -237,7 +246,4 @@ footer#rodape {
     display: inline;
   }
 
-  /* header#menu:hover nav ul li a {
-    color: rgb(32, 32, 32);
-  } */
 }

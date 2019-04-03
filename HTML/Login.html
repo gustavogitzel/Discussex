@@ -5,12 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="css/style.css" rel="stylesheet">
+        <link rel="shortcut icon" href="img/Favicon.ico">
         <link href="css/home.css" rel="stylesheet">
+        <link href="css/login.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
             crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script src="js/menuEffects.js"></script>
-        <title>DISCUSSEX | HOME</title>
+        <title>DISCUSSEX | LOGIN</title>
     </head>
     
     <body id="pagina">
@@ -36,8 +38,27 @@
             </nav>
         </header>
 
-    <div id="corpo" style="width:100%; height:100%;">
-
+    <div id="corpo" style="width:100%; height: 100%;" class="row">
+        <div class="col col-2">
+                <form id="frmLogin">
+                    <h1>
+                        ACESSE
+                    </h1>
+                        <ul>
+                            <li>
+                                <input type="text" name="txtLoginEmail" id="txtLoginEmail" class="campoForm" value="Nome de usuário | Email">
+                            </li>
+                            <li>
+                                <input type="password" name="txtSenha" id="txtSenha" class="campoForm">
+                            </li>
+                            <li>
+                                <input class='btn' type="submit" name="btnSubmitLogin" id="btnSubmitLogin" value="Entrar">
+                            </li>
+                        </ul>
+                    </form>
+                    <hr id="divisoria">
+        </div>
+        
     </div>
 
     <footer id="rodape">
