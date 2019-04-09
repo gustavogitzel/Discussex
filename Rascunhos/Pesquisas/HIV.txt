@@ -4,7 +4,7 @@ HIV
 *O HIV é um retrovírus causador da Aids(Síndrome da Imunodeficiência Adquirida), classificada como uma IST(infecção sexualmente transmissível). Atualmente existem dois tipos de vírus conhecidos:
 o HIV-1 e o HIV-2. 
 
--- imagem do vírus --
+-- imagem 1 --
 
 * Todos os dias nosso sistema imunológico nos protege do ataque de bactérias, vírus e micróbios. Entre as células de defesa estão os linfócitos T CD4+, responsáveis por organizar e comandar 
 respostas para possíveis invasões. O HIV passa a se ligar com o CD4, componente da membrana da célula, penetrando no seu interior para fazer cópias de si mesmo. O sistema imunológico vai ficando 
@@ -13,7 +13,7 @@ cada vez mais fraco, deixando o corpo vulnerável a infecções oportunistas.
 * Ainda não existe cura para a infecção pelo vírus, mas existem tratamentos que tem como objetivo melhorar a qualidade de vida e interromper a cadeia de transmissão, com cuidado é possível que 
 pessoas portadoras do vírus chamadas de soropositivas ou HIV+ tenham uma vida saudável.Desde 1996, o Brasil fornece gratuitamente os medicamentos à todas as pessoas que necessitam.
 
--- imagem para representar o tratamento --
+-- imagem 2 --
  
 HIV X AIDS
 
