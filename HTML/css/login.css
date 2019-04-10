@@ -95,7 +95,7 @@
   
   .Input-text:focus {
     outline: none;
-    box-shadow: 0.2rem 0.8rem 1.6rem #5e35b1;
+    box-shadow: 0.1rem 0.4rem .8rem #5e35b1;
   }
   
   .Input-label {
