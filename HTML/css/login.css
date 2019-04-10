@@ -1,29 +1,40 @@
-@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+@import url('https://fonts.googleapis.com/css?family="Yanone+Kaffeesatz"');
 
-#frmLogin ul li
+#frmLogin h1
 {
-    list-style: none;
     margin: 1em;
+    color: white;
+    border-bottom: .1em solid white;
+    border-top: .1em solid white;
+    padding-top: .5em;
+    padding-bottom: .5em;
 }
 
-#frmLogin input
+#frmLogin button i
 {
-    padding: .5em 1em 0.5em 1em;
+    border-right: 1px white solid;
+    padding-right: .5em;
+}
+#frmLogin button span
+{
+    padding-left: .5em;
 }
 
-.campoForm
+.camposTexto
 {
     border-radius: 10pt;
     border: 0;
-    /* border-bottom: .15em solid black; */
     outline: none;
+    display: block;
+    margin: 2em auto;
+    padding: .7em 1.2em .7em 1.2em;
+    font-family: "Yanone Kaffeesatz";
+    font-size: 1em;
 }
 
 .btn
 {
-    /* background: transparent; */
-    /* border: solid .2em #2d98da; */
-    color: #2d98da;
+    padding: .5em 1em;
     outline: none;
     text-transform: uppercase;
     font-weight: bold;
@@ -32,37 +43,97 @@
     letter-spacing: 1px;
     border-radius: 5pt;
     border: 0;
-    border-bottom: solid rgb(204, 199, 199) .2em;
+    margin: 1em;
 }
 
-.btn:hover
+.google
 {
-    background: #2d98da;
-    border-bottom: solid #147db9 .2em;
+    background: #EA2027;
     color: white;
-    cursor: pointer;
-    
+    border-bottom: solid rgb(211, 44, 44) .2em;
 }
-.btn:active
+.google:hover
+{
+    background: white;
+    color:#EA2027;
+}
+
+.google:active
 {
     transform: translateY(.2em);
     transition-duration: .3s;
     border-bottom: none;
 }
-#divisoria
+/*.btn:hover
 {
-    margin-left: 3em;
-    width: calc(100% - 6em);
-    border: .5em solid #006266;
-    border-radius: 20pt;
+    background: rgb(137,59,195);
+    border-bottom: solid rgb(152, 82, 206) .2em;
+    color: white;
+    cursor: pointer;
 }
 
-@media screen and (min-width: 60rem)
+.btn:active
 {
-    #divisoria
-    {
-        border:  0;
-    }
-
-
+    
 }
+*/
+
+.Input-text {
+    padding: .7em 1.2em;
+    color: inherit;
+    font-family: "Yanone Kaffeesatz";
+    font-size: 1em;
+    border: none;
+    border-radius: 0.4rem;
+    transition: box-shadow .3s;
+    margin: 1em 1em 1.3em 1em;
+  }
+  
+  .Input-text::placeholder {
+    color: #B0BEC5;
+  }
+  
+  .Input-text:focus {
+    outline: none;
+    box-shadow: 0.2rem 0.8rem 1.6rem #5e35b1;
+  }
+  
+  .Input-label {
+    position: absolute;
+    color: #fff;
+    font-family: "Yanone Kaffeesatz";
+    font-size: 1.5em;
+    margin-left: -8.5em ;
+    margin-top: 1.5em;
+    opacity: 0;
+    transform-origin: 0 0;
+    transition:
+      opacity .3s cubic-bezier(0.645, 0.045, 0.355, 1),
+      transform .3s cubic-bezier(0.645, 0.045, 0.355, .5),
+      visibility 0ms .3s cubic-bezier(0.645, 0.045, 0.355, 1),
+      z-index 0ms .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  
+  .Input-text:placeholder-shown + .Input-label {
+    visibility: hidden;
+    z-index: -1;
+  }
+  
+  .Input-text:not(:placeholder-shown) + .Input-label,
+  .Input-text:focus:not(:placeholder-shown) + .Input-label {
+    visibility: visible;
+    z-index: 1;
+    opacity: 1;
+    transform:
+      translate3d(0, calc(
+        (50%) - 
+        (.7em * .8) - 
+        (1.7em * 1)
+      ), 0)
+      scale(.8);
+    transition:
+      transform .3s,
+      visibility 0ms,
+      z-index 0ms;
+  }
