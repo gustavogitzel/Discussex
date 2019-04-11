@@ -19,7 +19,10 @@
 {
     padding-left: .5em;
 }
-
+#frmLogin
+{
+    position: relative;
+}
 .camposTexto
 {
     border-radius: 10pt;
@@ -136,4 +139,10 @@
       transform .3s,
       visibility 0ms,
       z-index 0ms;
+  }
+
+  #imgLogin img
+  {
+    max-width: 70%;
+    margin: 5em auto;
   }
