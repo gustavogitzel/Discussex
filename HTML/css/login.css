@@ -19,10 +19,6 @@
 {
     padding-left: .5em;
 }
-#frmLogin
-{
-    position: relative;
-}
 .camposTexto
 {
     border-radius: 10pt;
@@ -57,29 +53,25 @@
 }
 .google:hover
 {
-    background: white;
-    color:#EA2027;
+    background: white !important;
+    color:#EA2027 !important;
 }
 
-.google:active
+.btn:active
 {
     transform: translateY(.2em);
     transition-duration: .3s;
     border-bottom: none;
 }
-/*.btn:hover
+
+.btn:hover
 {
     background: rgb(137,59,195);
-    border-bottom: solid rgb(152, 82, 206) .2em;
+    /* border-bottom: solid rgb(152, 82, 206) .2em; */
     color: white;
     cursor: pointer;
 }
 
-.btn:active
-{
-    
-}
-*/
 
 .Input-text {
     padding: .7em 1.2em;

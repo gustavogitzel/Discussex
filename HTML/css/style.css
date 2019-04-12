@@ -95,7 +95,7 @@ header#menu li {
   padding: 1em;
 }
 
-header#menu li a {
+header#menu ul a {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
@@ -114,10 +114,10 @@ header#menu:hover .menu-icon .bar3 {
   background: rgb(32, 32, 32);
 }
 
-header#menu:hover li a {
+header#menu:hover ul li {
   color: rgb(36, 36, 30);
 } 
- header#menu li:hover {
+ header#menu ul li:hover {
   background: rgb(206, 205, 205);
   border-radius: 20pt;
 } 
