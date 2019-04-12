@@ -78,3 +78,14 @@
     height: 15em;
     width: 100vw;
 }
+
+.texto h1
+{
+
+}
+
+.texto p
+{
+    text-align: right;
+    text-align: left;
+}
