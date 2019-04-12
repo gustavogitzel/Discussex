@@ -1,6 +1,6 @@
 create table PP2_Usuario
 (
-	codUsuario int identity(1,1) primary key not null,
+	id int identity(1,1) primary key not null,
 	nomeUsuario varchar(30) not null,
 	email varchar(50) not null,
 	senha varchar(10) not null,
@@ -101,9 +101,10 @@ create table PP2_Mito
 
 create table PP2_Imagem
 (
-	codImagem int primary key not null,
+	id int primary key not null,
 	link varchar(max) not null
 )
+drop table PP2_Imagem
 
 select * from PP2_Imagem
 
