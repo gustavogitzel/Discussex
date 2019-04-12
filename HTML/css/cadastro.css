@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family="Yanone+Kaffeesatz"');
 
-#frmLogin h1
+#frmCadastro h1
 {
     margin: 1em;
     color: white;
@@ -10,16 +10,16 @@
     padding-bottom: .5em;
 }
 
-#frmLogin button i
+#frmCadastro button i
 {
     border-right: 1px white solid;
     padding-right: .5em;
 }
-#frmLogin button span
+#frmCadastro button span
 {
     padding-left: .5em;
 }
-#frmLogin
+#frmCadastro
 {
     margin-top: 5em;
     margin-bottom: 5em;
@@ -158,3 +158,5 @@
   #linkCadastro a:hover 
   {
   }
+
+  

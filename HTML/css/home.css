@@ -81,11 +81,13 @@
 
 .texto h1
 {
-
+    color: white;
+    font-size: 2em; 
 }
 
 .texto p
 {
-    text-align: right;
-    text-align: left;
+    text-align: justify;
+    color: white;
+    font-size: 1em;
 }
