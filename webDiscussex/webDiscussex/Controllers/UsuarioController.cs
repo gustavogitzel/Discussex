@@ -16,12 +16,17 @@ namespace webDiscussex.Controllers
             return View();
         }
 
+        public ActionResult Cadastro()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Adiciona(Usuario user)
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.Adiciona(user);
-            return RedirectToAction("HomeLogado");
+            return RedirectToAction("Cadastro", "Aluno");
         }
     }
 }
