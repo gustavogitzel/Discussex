@@ -60,7 +60,7 @@
                         <a href="SobreNos.aspx">SOBRE NÓS</a>
                     </li>
                     <li>
-                        <a href="Cadastro.aspx">CADASTRO</a>
+                        <a href="Usuario/Cadastro">CADASTRO</a>
                     </li>
                     <li>
                         <a href="BackEnd.aspx">BACKEND</a>

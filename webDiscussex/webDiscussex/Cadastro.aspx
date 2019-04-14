@@ -7,7 +7,7 @@
                 <img src="img/LoginImg.png">
             </div>
             <div class="col col-2">
-                <form id="frmCadastro" action="/Usuario/Adiciona" method="post">
+                <form id="frmCadastro" action="~/Usuario/Adiciona" method="post">
                     <h1 id="tituloLogin">CADASTRO</h1>
                     <button class="btn google" type="button" name="btnLoginGoogle" id="btnLoginGoogle" value="Entrar">
                         <i class="fab fa-google"></i>

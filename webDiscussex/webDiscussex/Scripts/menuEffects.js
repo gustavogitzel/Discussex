@@ -35,9 +35,9 @@ function alterarMenu(situacao) {
 
 function alterarLogo() {
     $("#menu").mouseover(() => {
-        $("#logo").attr("src", "img/logoDark.png");
+        $("#logo").attr("src", "/img/LogoDark.png");
     });
     $("#menu").mouseout(() => {
-        $("#logo").attr("src", "img/logo.png");
+        $("#logo").attr("src", "/img/Logo.png");
     });
 }
