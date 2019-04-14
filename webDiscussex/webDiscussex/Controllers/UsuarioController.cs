@@ -21,11 +21,30 @@ namespace webDiscussex.Controllers
             return View();
         }
 
+        public ActionResult Configuracoes()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Adiciona(Usuario user)
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.Adiciona(user);
+            return RedirectToAction("Cadastro", "Aluno");
+        }
+
+        public ActionResult Excluir(string nomeUser, string senha)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.Excluir(nomeUser, senha);
+            return RedirectToAction("Cadastro", "Aluno");
+        }
+
+        public ActionResult AtualizarSenha(Usuario user)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.Alterar(user);
             return RedirectToAction("Cadastro", "Aluno");
         }
     }

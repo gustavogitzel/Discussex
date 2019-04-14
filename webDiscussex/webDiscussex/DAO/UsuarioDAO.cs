@@ -17,7 +17,20 @@ namespace webDiscussex.DAO
                 contexto.SaveChanges();
             }
         }
-        /*
+
+        public void Excluir(string n, string senha)
+        {
+            using (var contexto = new EducacaoSexualContext())
+            {
+                Usuario user;
+                if((user = BuscaPorNomeSenha(n, senha)) != null)
+                {
+                    contexto.PP2_Usuario.Remove(user);
+                    contexto.SaveChanges();
+                }
+
+            }
+        }
 
         public void Alterar(Usuario us)
         {
@@ -28,21 +41,17 @@ namespace webDiscussex.DAO
             }
         }
 
-        public void Excluir(string n)
+       
+        public  Usuario BuscaPorNomeSenha(string nome, string senha)
         {
             using (var contexto = new EducacaoSexualContext())
             {
-                contexto.PP2_Usuario.Remove(BuscaPorNome(n));
-                contexto.SaveChanges();
+
+                if (contexto.PP2_Usuario.Where(p => p.NomeUsuario == nome).FirstOrDefault().Senha == senha)
+                    return contexto.PP2_Usuario.Where(p => p.NomeUsuario == nome).FirstOrDefault();
+                else
+                    return null;
             }
         }
-
-        public  Usuario BuscaPorNome(string nome)
-        {
-            using (var contexto = new EducacaoSexualContext())
-            {
-                return contexto.PP2_Usuario.Where(p => p.NomeUsuario == nome).FirstOrDefault();
-            }
-        }*/
     }
 }
