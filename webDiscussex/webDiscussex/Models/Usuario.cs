@@ -12,6 +12,6 @@ namespace webDiscussex.Models
         public string Email { get; set; }
         public string Senha { get; set; }
         public int Pontuacao { get; set; }
-        public int ImgPerfil { get; set; }
+        public string ImgPerfil { get; set; }
     }
 }

@@ -46,11 +46,11 @@ namespace webDiscussex.DAO
         {
             using (var contexto = new EducacaoSexualContext())
             {
+                var user = contexto.PP2_Usuario.Where(p => p.NomeUsuario == nome).FirstOrDefault();
+                if (user != null && user.Senha == senha)
+                    return user;
 
-                if (contexto.PP2_Usuario.Where(p => p.NomeUsuario == nome).FirstOrDefault().Senha == senha)
-                    return contexto.PP2_Usuario.Where(p => p.NomeUsuario == nome).FirstOrDefault();
-                else
-                    return null;
+                return null;
             }
         }
     }

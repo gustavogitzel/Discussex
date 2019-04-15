@@ -165,14 +165,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cadastro.aspx" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\cadastro.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="img\aa.png" />
@@ -193,24 +189,13 @@
     <Content Include="img\mitosEVerdades.png" />
     <Content Include="img\quizIntro.png" />
     <Content Include="img\remediosHIV.png" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\configuracoes.js" />
+    <Content Include="Scripts\jquery-3.4.0.min.js" />
     <Content Include="Scripts\menuEffects.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Cadastro.aspx.cs">
-      <DependentUpon>Cadastro.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Cadastro.aspx.designer.cs">
-      <DependentUpon>Cadastro.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAO\EducacaoSexualContext.cs" />
     <Compile Include="DAO\ImagemDAO.cs" />
@@ -239,15 +224,11 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="Index.Master" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Usuario\Cadastro.cshtml" />
     <Content Include="Views\Usuario\Configuracoes.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogado.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

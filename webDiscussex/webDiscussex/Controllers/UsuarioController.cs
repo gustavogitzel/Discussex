@@ -31,14 +31,14 @@ namespace webDiscussex.Controllers
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.Adiciona(user);
-            return RedirectToAction("Cadastro", "Aluno");
+            return RedirectToAction("Cadastro", "Usuario");
         }
 
         public ActionResult Excluir(string nomeUser, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.Excluir(nomeUser, senha);
-            return RedirectToAction("Cadastro", "Aluno");
+            return RedirectToAction("Cadastro", "Usuario");
         }
 
         public ActionResult AtualizarSenha(Usuario user)
