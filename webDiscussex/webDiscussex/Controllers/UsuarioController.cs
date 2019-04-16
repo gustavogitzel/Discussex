@@ -18,11 +18,13 @@ namespace webDiscussex.Controllers
 
         public ActionResult Cadastro()
         {
+            ViewBag.EstaLogado = false;
             return View();
         }
 
         public ActionResult Configuracoes()
         {
+            ViewBag.EstaLogado = true;
             return View();
         }
 

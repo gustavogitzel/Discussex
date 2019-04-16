@@ -1,16 +1,15 @@
-﻿$(document).ready(() => {
-    
+﻿
+$(document).ready(() => {
     $("#btnAlteraNome").click(() => {
         var txt = "<div id='fundoPreto'></div> </div > <div id='areaConfiguracoes' class='row container'> <div class='col'>" +
         "<form id='frmConfig' method='post' action='/ Usuario / Excluir'> <div class='campoTexto'> <input type='text' name='nomeUser' id='txtNomeUsuario' class='Input-text' placeholder='Novo nome de usuário'>" +
         "<label for='input' class='Input-label'>Novo nome de usuário</label></div><div class='campoTexto'> <input type='password' name='senha' id='txtSenha' class='Input-text' placeholder='Senha'>" +
-        "<label for='input' class='Input-label'>Senha</label ></div><input class='btn' type= 'submit' name= 'btnSubmitAlteraNome' id= 'btnSubmitAlteraNome' value= 'Alterar Nome'></form ></div></div>";
+        "<label for='input' class='Input-label'>Senha</label ></div><input class='btn' type= 'submit' name= 'btnSubmitAlteraNome' id= 'btnSubmitAlteraNome' value= 'Alterar Nome'><input class='btn' type= 'button' id= 'btnCancelar' value= 'Cancelar'></form ></div></div>";
         document.getElementById("pagina").innerHTML += txt;
-
-        //$("#pagina").click(() => {
-        //        document.getElementById("pagina").removeChild(document.getElementById("fundoPreto"));
-        //        document.getElementById("pagina").removeChild(document.getElementById("areaConfiguracoes"));
-        //});
+        $("#btnCancelar").click(() => {
+            document.getElementById("pagina").removeChild(document.getElementById("fundoPreto"));
+            document.getElementById("pagina").removeChild(document.getElementById("areaConfiguracoes"));
+        });
     });
 
     $("#btnAlteraEmail").click(() => {

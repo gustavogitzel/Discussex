@@ -6,6 +6,7 @@
     height: 100%;
     opacity: .5;
     background-color: black;
+    z-index:3;
 }
 
 #areaConfiguracoes {
@@ -18,6 +19,7 @@
     width: 20em;
     left: calc(50% - 10em);
     top: 20em;
+    z-index:4;
 }
 
 @media screen and (min-width: 40em) {
@@ -43,4 +45,8 @@
         width: 60em !important;
         left: calc(50% - 30em) !important;
     }
+}
+
+.btn{
+    display: block;
 }

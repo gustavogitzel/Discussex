@@ -32,11 +32,16 @@
                         Fórum
                     </li>
                 </a>
-                <a href="Login.html">
-                    <li id="linkLogin">
-                        Login
-                    </li>
-                </a>
+
+                @if (!ViewBag.EstaLogado)
+    {
+            <a href="Login.html">
+                <li id="linkLogin">
+                    Login
+                </li>
+            </a>
+}
+
             </ul>
         </nav>
     </header>
