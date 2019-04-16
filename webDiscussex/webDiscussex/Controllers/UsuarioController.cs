@@ -36,18 +36,37 @@ namespace webDiscussex.Controllers
             return RedirectToAction("Cadastro", "Usuario");
         }
 
-        public ActionResult Excluir(string nomeUser, string senha)
+        public ActionResult Excluir(string email, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            dao.Excluir(nomeUser, senha);
+            dao.Excluir(email, senha);
             return RedirectToAction("Cadastro", "Usuario");
         }
 
-        public ActionResult AtualizarSenha(Usuario user)
+        public ActionResult AtualizarNome (string nomeUser, string email, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            dao.Alterar(user);
-            return RedirectToAction("Cadastro", "Aluno");
+            dao.AlterarNome(nomeUser, "isapsz@gmail.com", senha);
+            return RedirectToAction("Cadastro", "Usuario");
+        }
+
+        public ActionResult AtualizarSenha(string novaSenha, string email, string senha)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.AlterarSenha(novaSenha, "isapsz@gmail.com", senha);
+            return RedirectToAction("Cadastro", "Usuario");
+        }
+        public ActionResult AtualizarEmail(string novoEmail, string email, string senha)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.AlterarEmail(novoEmail, "isapsz@gmail.com", senha);
+            return RedirectToAction("Cadastro", "Usuario");
+        }
+        public ActionResult AtualizarImagem(string novaFoto, string email, string senha)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.AlterarImagem(novaFoto, "isapsz@gmail.com", senha);
+            return RedirectToAction("Cadastro", "Usuario");
         }
     }
 }

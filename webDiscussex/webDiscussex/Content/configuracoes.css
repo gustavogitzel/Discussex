@@ -83,6 +83,10 @@
     color: white;
 }
 
-    .campoTexto input:focus {
-        box-shadow: 0.025rem 0.1rem .4rem #e0e0e0;
-    }
+.campoTexto input:focus {
+    box-shadow: 0.025rem 0.1rem .4rem #e0e0e0;
+}
+
+.Input-label {
+    color: black;
+}
