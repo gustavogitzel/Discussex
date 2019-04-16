@@ -4,66 +4,21 @@
     Layout = "~/Views/Shared/_LayoutLogado.cshtml";
 }
     <link href="~/Content/cadastro.css" rel="stylesheet">
-  
+    <link href="~/Content/configuracoes.css" rel="stylesheet">
+    <script src="~/Scripts/configuracoes.js"></script>
     <article id="corpo" class="container row">
-        <style>
-            #fundoPreto{
-                position: fixed;
-                top:0;
-                left:0;
-                width:100%;
-                height: 100%;
-                opacity: .5;
-                background-color: black;
-            }
-            #areaConfiguracoes {
-                border-radius: 10pt;
-                position: absolute;
-                background-color: white;
-                padding: 2em 0 2em 0;
-                box-shadow: 0 10px 6px -6px #777;
-                margin-left: 0em;
-            }
-
-           
-
-            
-        </style>
-        <div id="fundoPreto"></div>
-        <div id="areaConfiguracoes" class="row container">
-            <div class="col col-2"></div>
-            <div class="col col-2">
-            <div class="campoTexto">
-                <input type="text" name="nomeUser" id="txtNomeUsuario" class="Input-text" placeholder="Nome de usuário">
-                <label for="input" class="Input-label">Nome de usuário</label>
-            </div>
-
-            <div class="campoTexto">
-                <input type="text" name="senha" id="txtSenha" class="Input-text" placeholder="Senha">
-                <label for="input" class="Input-label">Senha</label>
-            </div>
-                </div>
-            <input class="btn" type="submit" name="btnSubmitExcluir" id="btnSubmitExcluir" value="Excluir">
-
-        </div>
+       
         <div class="col col-2" id="imgLogin">
             <img src="~/img/LoginImg.png">
         </div>
         <div class="col col-2">
-            <form id="frmConfig" method="post" action="/Usuario/Excluir">
                 <h1 id="tituloConfig">Configurações</h1>
-                <div class="campoTexto">
-                    <input type="text" name="nomeUser" id="txtNomeUsuario" class="Input-text" placeholder="Nome de usuário">
-                    <label for="input" class="Input-label">Nome de usuário</label>
-                </div>
-
-                <div class="campoTexto">
-                    <input type="text" name="senha" id="txtSenha" class="Input-text" placeholder="Senha">
-                    <label for="input" class="Input-label">Senha</label>
-                </div>
-
-                <input class="btn" type="submit" name="btnSubmitExcluir" id="btnSubmitExcluir" value="Excluir">
-
-            </form>
+                    <button class="btn" name="btnAlteraNome" id="btnAlteraNome">Alterar Nome</button>
+                    <button class="btn" name="btnAlteraEmail" id="btnAlteraEmail">Alterar Email</button>
+                    <button class="btn" name="btnAlteraSenha" id="btnAlteraSenha">Alterar Senha</button>
+                    <button class="btn" name="btnAlteraImagem" id="btnAlteraImagem">Alterar Imagem Perfil</button>
+                    <button class="btn" name="btnExcluir" id="btnExcluir">Excluir Perfil</button>
         </div>
+
+
     </article>
