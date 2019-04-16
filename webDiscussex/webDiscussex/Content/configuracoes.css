@@ -47,6 +47,42 @@
     }
 }
 
-.btn{
-    display: block;
+#btns{
+    margin-top: 8em;
 }
+
+#tituloConfig {
+    text-transform: uppercase;
+    margin-top: 2em;
+    font-size:3em;
+}
+
+#btnCancelar:hover {
+    background-color: #ef5350;
+}
+
+.concluir:hover {
+    background-color: #66bb6a !important;
+}
+
+#imgExcluir img{
+    max-width: 40%;
+}
+
+.campoTexto label
+{
+    color: black !important;
+}
+
+.campoTexto input {
+    background: #bdbdbd;
+    color: white;
+}
+
+.campoTexto input::placeholder {
+    color: white;
+}
+
+    .campoTexto input:focus {
+        box-shadow: 0.025rem 0.1rem .4rem #e0e0e0;
+    }
