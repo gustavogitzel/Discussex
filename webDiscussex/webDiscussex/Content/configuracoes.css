@@ -90,3 +90,26 @@
 .Input-label {
     color: black;
 }
+
+    [type="file"] + label {
+        background: #bdbdbd;
+        border-radius: 5pt;
+        color: black;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 100em;
+        padding: 1rem 50px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+[type="file"] + label:hover {
+    background: #5e35b1;
+    color: white;
+}
+
+#fileDiv
+{
+    margin-bottom: 1em;
+}

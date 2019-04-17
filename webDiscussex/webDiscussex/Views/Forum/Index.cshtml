@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Fórum";
+    ViewBag.EstaLogado = true;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<article id="corpo" class="container">
+    <div class="row">
+        <div class="col col-3">
+            <img />
+            <h2>Nome</h2>
+            <button class="btn">Deslogar</button>
+        </div>
+        <div class="col col-3">
+            <form action="Forum/BuscarTemas">
+                <div class="campoTexto">
+                    <input type="text" name="txtBusca" id="txtBusca" class="Input-text" placeholder="Senha">
+                    <label for="input" class="Input-label">Senha</label>
+                </div>
+                
+            </form>
+        </div>
+        <div class="col col-3"></div>
+    </div>
+</article>

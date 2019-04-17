@@ -39,7 +39,6 @@ namespace webDiscussex.Controllers
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.Adiciona(user);
-            ViewBag.Email = user.Email;
             return RedirectToAction("Cadastro", "Usuario");
         }
 

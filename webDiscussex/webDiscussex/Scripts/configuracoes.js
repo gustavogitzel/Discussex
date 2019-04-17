@@ -8,7 +8,7 @@
             "<input class='btn concluir' type='submit' name='btnSubmitAlteraNome' id= 'btnSubmitAlteraNome' value= 'Alterar Nome'><button class='btn' " +
             "id='btnCancelar'>Cancelar</button></form></div></div> ";
 
-        $("#pagina").append(txt);
+        $(txt).hide().fadeIn("fast").appendTo("#pagina");
 
         fundoPreto();
 
@@ -21,13 +21,13 @@
             "action='/Usuario/AtualizarEmail'><div class='campoTexto'><input type='text' name='novoEmail' id='txtNovoEmail' class='Input-text' placeholder" +
             "='Novo email'><label for='input' class='Input-label'>Novo email</label></div><div class='campoTexto'><input type='password' name='senha' " +
             "id='txtSenha' class='Input-text' placeholder= 'Senha'><label for='input' class='Input-label'>Senha</label></div><input class='btn concluir' " +
-            "type='submit' name= 'btnSubmitAlteraEmail' id= 'btnSubmitAlteraEmail' value= 'Altera Email'><button class='btn' id='btnCancelar'>Cancelar" +
-
-            $("#pagina").append(txt);
+            "type='submit' name= 'btnSubmitAlteraEmail' id= 'btnSubmitAlteraEmail' value= 'Altera Email'><button class=" +
+            "'btn' id='btnCancelar'>Cancelar</button></form></div></div>";
+        $(txt).hide().fadeIn("fast").appendTo("#pagina");
 
         fundoPreto();
 
-        botao()
+        botao();
     });
 
 
@@ -39,7 +39,7 @@
             "</div><input class='btn concluir' type='submit' name='btnSubmitAlteraSenha' id='btnSubmitAlteraSenha'value='Alterar Senha'><button class=" +
             "'btn' id='btnCancelar'>Cancelar</button></form></div></div>";
 
-        $("#pagina").append(txt);
+        $(txt).hide().fadeIn("fast").appendTo("#pagina");
 
         fundoPreto();
 
@@ -47,13 +47,13 @@
     });
 
     $("#btnAlteraImagem").click(() => {
-        var txt ="<div id='fundoPreto'></div><div id='areaConfiguracoes' class='row container'> <div class='col'><form id='frmConfig' method='post' " +
-            "action='/Usuario/AtualizarImagem'><div><label for='txtImg' class='fileContainer'><input type='file' name='novaFoto' id='txtImg'></label>" +
-            "</div><div class='campoTexto'><input type='password' name='senha' id='txtSenha' class='Input-text' placeholder='Senha'><label for='input' " +
+        var txt ="<div id='fundoPreto'></div><div id='areaConfiguracoes' class='row container'><div class='col'><form id='frmConfig' method='post' " +
+            "action='/Usuario/AtualizarImagem'><div id='fileDiv'><input type='file' id='file'/><label for='file'>Foto de perfil</label></div>" +
+            "<div class='campoTexto'><input type='password' name='senha' id='txtSenha' class='Input-text' placeholder='Senha'><label for='input' " +
             "class='Input-label'>Senha</label></div><input class='btn concluir' type='submit' name='btnSubmitAlteraImagem' id='btnSubmitAlteraImagem' " +
             "value='Alterar Imagem'><button class='btn' id='btnCancelar'>Cancelar</button></form></div></div>";
 
-        $("#pagina").append(txt);
+        $(txt).hide().fadeIn("fast").appendTo("#pagina");
 
         fundoPreto();
 
@@ -68,7 +68,7 @@
             "class='Input-label'>Senha</label></div><input class='btn concluir' type='submit' name='btnSubmitExcluir' id='btnSubmitExcluir' value=" +
             "'Excluir'><button class='btn' id='btnCancelar'>Cancelar</button></form></div></div>";
 
-        $("#pagina").append(txt);
+        $(txt).hide().fadeIn("fast").appendTo("#pagina");
 
         fundoPreto();
 
@@ -87,5 +87,6 @@ function botao() {
     $("#btnCancelar").click(() => {
         $("#fundoPreto").remove();
         $("#areaConfiguracoes").remove();
+        
     });
 }
