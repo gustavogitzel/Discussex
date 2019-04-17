@@ -22,6 +22,12 @@ namespace webDiscussex.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            ViewBag.EstaLogado = false;
+            return View();
+        }
+
         public ActionResult Configuracoes()
         {
             ViewBag.EstaLogado = true;
@@ -33,6 +39,7 @@ namespace webDiscussex.Controllers
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.Adiciona(user);
+            ViewBag.Email = user.Email;
             return RedirectToAction("Cadastro", "Usuario");
         }
 
@@ -43,29 +50,30 @@ namespace webDiscussex.Controllers
             return RedirectToAction("Cadastro", "Usuario");
         }
 
-        public ActionResult AtualizarNome (string nomeUser, string email, string senha)
+        public ActionResult AtualizarNome (string nomeUser, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            dao.AlterarNome(nomeUser, "isapsz@gmail.com", senha);
+            dao.AlterarNome(nomeUser, ViewBag.Email, senha);
             return RedirectToAction("Cadastro", "Usuario");
         }
 
-        public ActionResult AtualizarSenha(string novaSenha, string email, string senha)
+        public ActionResult AtualizarSenha(string novaSenha, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            dao.AlterarSenha(novaSenha, "isapsz@gmail.com", senha);
+            dao.AlterarSenha(novaSenha, ViewBag.Email, senha);
             return RedirectToAction("Cadastro", "Usuario");
         }
-        public ActionResult AtualizarEmail(string novoEmail, string email, string senha)
+        public ActionResult AtualizarEmail(string novoEmail, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            dao.AlterarEmail(novoEmail, "isapsz@gmail.com", senha);
+            dao.AlterarEmail(novoEmail, ViewBag.Email, senha);
+            ViewBag.Email = novoEmail;
             return RedirectToAction("Cadastro", "Usuario");
         }
-        public ActionResult AtualizarImagem(string novaFoto, string email, string senha)
+        public ActionResult AtualizarImagem(string novaFoto, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            dao.AlterarImagem(novaFoto, "isapsz@gmail.com", senha);
+            dao.AlterarImagem(novaFoto, ViewBag.Email, senha);
             return RedirectToAction("Cadastro", "Usuario");
         }
     }
