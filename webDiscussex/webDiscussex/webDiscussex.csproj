@@ -168,6 +168,7 @@
     <Content Include="Content\cadastro.css" />
     <Content Include="Content\configuracoes.css" />
     <Content Include="Content\home.css" />
+    <Content Include="Content\login.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
     <Content Include="Global.asax" />

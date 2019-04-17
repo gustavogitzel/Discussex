@@ -76,5 +76,13 @@ namespace webDiscussex.Controllers
             dao.AlterarImagem(novaFoto, ViewBag.Email, senha);
             return RedirectToAction("Cadastro", "Usuario");
         }
+
+        public ActionResult Logar(string logar, string senha)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            Usuario user = dao.Login(logar, senha);
+            ViewBag.Email = user.Email;
+            return RedirectToAction("Cadastro", "Usuario");
+        }
     }
 }

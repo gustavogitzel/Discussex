@@ -15,7 +15,7 @@ namespace webDiscussex.DAO
             {
                 if (BuscaPorNome(us.NomeUsuario) == null)
                 {
-                    contexto.PP2_Usuario.Add(us);
+                    contexto.Database.ExecuteSqlCommand("cadastrarDiscussex_sp", parameters: new[] {us.NomeUsuario, us.Email, us.Senha, us.ImgPerfil});
                     contexto.SaveChanges();
                 }
                 else
@@ -118,6 +118,36 @@ namespace webDiscussex.DAO
             {
                 return contexto.PP2_Usuario.Where(p => p.NomeUsuario == nome).FirstOrDefault();
             }
+        }
+
+        public Usuario BuscaPorNomeSenha(string nome, string senha)
+        {
+            using (var contexto = new EducacaoSexualContext())
+            {
+                var user = contexto.PP2_Usuario.Where(p => p.NomeUsuario == nome).FirstOrDefault();
+                if (user != null && user.Senha == senha)
+                    return user;
+
+                return null;
+            }
+        }
+
+        public Usuario Login(string log, string senha)
+        {
+            using (var contexto = new EducacaoSexualContext())
+            {
+                List<Usuario> ret;
+
+                if (BuscaPorEmailSenha(log, senha) != null)
+                    ret = contexto.PP2_Usuario.FromSql("loginDiscussex_sp @p0, @p1, @p2", parameters: new[] { log, senha, null }).ToList();
+                else if (BuscaPorNomeSenha(log, senha) != null)
+                    ret = contexto.PP2_Usuario.FromSql("loginDiscussex_sp @p0, @p1, @p2", parameters: new[] {null, senha,log}).ToList();
+                else
+                    throw new Exception("Nome de Usuário, email ou senha inválidas");
+
+                return ret.ElementAt(0);
+            }
+                
         }
     }
 }

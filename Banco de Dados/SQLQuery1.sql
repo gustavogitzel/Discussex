@@ -10,10 +10,10 @@ create table PP2_Usuario
 
 create table PP2_Acesso
 (
-	idAcesso int identity(1,1) primary key not null,
+	id int identity(1,1) primary key not null,
 	data datetime not null,
 	codUsuario int not null 
-	constraint fkPP2_Usuario foreign key (codUsuario) references PP2_Usuario(codUsuario) 
+	constraint fkPP2_Usuario foreign key (codUsuario) references PP2_Usuario(id) 
 )
 
 create table PP2_Quiz
