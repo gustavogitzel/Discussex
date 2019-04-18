@@ -8,13 +8,12 @@
             <h1>Vamos falar de sexo?
                 <hr>
             </h1>
-
         </section>
 
         <div id='intros' class="container">
             <section class='a row'>
                 <div class="col col-2">
-                    <a href="#">
+                    <a href="EducacaoSexual/Gravidez">
                         <img src="img/introPesquisa.png">
                     </a>
                 </div>
