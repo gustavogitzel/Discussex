@@ -167,6 +167,7 @@
   <ItemGroup>
     <Content Include="Content\cadastro.css" />
     <Content Include="Content\configuracoes.css" />
+    <Content Include="Content\ForumIndex.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\login.css" />
     <Content Include="Content\Site.css" />
@@ -198,6 +199,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ForumDiscussexController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAO\EducacaoSexualContext.cs" />
     <Compile Include="DAO\ImagemDAO.cs" />
@@ -231,6 +233,7 @@
     <Content Include="Views\Usuario\Cadastro.cshtml" />
     <Content Include="Views\Usuario\Configuracoes.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
+    <Content Include="Views\ForumDiscussex\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

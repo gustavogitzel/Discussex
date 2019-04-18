@@ -27,20 +27,28 @@
                         Home
                     </li>
                 </a>
-                <a href="#">
+                <a href="~/ForumDiscussex">
                     <li>
                         Fórum
                     </li>
                 </a>
 
                 @if (!ViewBag.EstaLogado)
-                 {
-                    <a href="Login.html">
+                {
+                    <a href="~/Usuario/Login">
                         <li id="linkLogin">
                             Login
                         </li>
                     </a>
-                 }
+                }
+                else
+                {
+                    <a href="~/Usuario/Login">
+                        <li id="btnDeslogar">
+                            Sair
+                        </li>
+                    </a>
+                }
 
             </ul>
         </nav>
@@ -57,7 +65,7 @@
                         <a href="">SOBRE NÓS</a>
                     </li>
                     <li>
-                        <a href="Cadastro.html">CADASTRO</a>
+                        <a href="~/Usuario/Cadastro">CADASTRO</a>
                     </li>
                     <li>
                         <a href="">BACKEND</a>
