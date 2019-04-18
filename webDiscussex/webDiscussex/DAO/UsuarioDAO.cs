@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +15,7 @@ namespace webDiscussex.DAO
             {
                 if (BuscaPorNome(us.NomeUsuario) == null)
                 {
-                    contexto.Database.ExecuteSqlCommand("cadastrarDiscussex_sp", parameters: new[] {us.NomeUsuario, us.Email, us.Senha, us.ImgPerfil});
+                    contexto.Database.ExecuteSqlCommand("cadastrarDiscussex_sp @p0, @p1, @p2, @p3“, parameters: new[] {us.NomeUsuario, us.Email, us.Senha, us.ImgPerfil});
                     contexto.SaveChanges();
                 }
                 else
