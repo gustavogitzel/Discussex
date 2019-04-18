@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Perguntar";
+    ViewBag.EstaLogado = true;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<article id="corpo" class="container">
+    <div class="row">
+           <div class="col col-2">
+               <img /> @* img faça uma pergunta*@
+           </div>
+        <div class="col col-2">
+            <form action="" method="post">
+                <div class="campoTexto">
+                    <input type="text" name="pergunta.Titulo" id="txtTitulo" class="Input-text" placeholder="Titulo">
+                    <label for="input" class="Input-label">Título</label>
+                </div>
+                <div class="campo   Texto">
+                    <textarea cols="60" rows="10" name="pergunta.Pergunta" id="txtPergunta" class="Input-text" placeholder="Pergunta"></textarea>
+                    <label for="input" class="Input-label">Pergunta</label>
+                </div>
+                <input type="submit" class="btn" value="Efetuar Pergunta">
+            </form>
+        </div>
+        <div
+    </div>
+</article>
+
+<script>
+    $(document).ready(() => {
+        $("textarea").autoResize();
+    });
+</script>

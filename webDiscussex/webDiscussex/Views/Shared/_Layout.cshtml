@@ -35,7 +35,7 @@
 
                 @if (!ViewBag.EstaLogado)
                 {
-                    <a href="Login">
+                    <a href="~/Usuario/Login">
                         <li id="linkLogin">
                             Login
                         </li>
@@ -46,15 +46,6 @@
                     <a href="~/Usuario/Login">
                         <li id="btnDeslogar">
                             Sair
-                        </li>
-                    </a>
-                }
-
-                @if (!ViewBag.EhCadastro)
-                {
-                    <a href="Cadastro">
-                        <li>
-                            CADASTRO
                         </li>
                     </a>
                 }
@@ -72,6 +63,9 @@
                     </li>
                     <li>
                         <a href="">SOBRE NÓS</a>
+                    </li>
+                    <li>
+                        <a href="~/Usuario/Cadastro">CADASTRO</a>
                     </li>
                     <li>
                         <a href="">BACKEND</a>

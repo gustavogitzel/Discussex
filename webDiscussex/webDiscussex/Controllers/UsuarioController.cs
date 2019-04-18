@@ -19,20 +19,17 @@ namespace webDiscussex.Controllers
         public ActionResult Cadastro()
         {
             ViewBag.EstaLogado = false;
-            ViewBag.EhCadastro = true;
             return View();
         }
 
         public ActionResult Login()
         {
-            ViewBag.EhCadastro = false;
             ViewBag.EstaLogado = false;
             return View();
         }
 
         public ActionResult Configuracoes()
         {
-            ViewBag.EhCadastro = true;
             ViewBag.EstaLogado = true;
             return View();
         }

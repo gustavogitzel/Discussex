@@ -27,19 +27,19 @@
         <nav>
             <ul>
 
-               <a href="Forum.aspx">
+                <a href="Home.aspx">
+                    <li>
+                        Home
+                    </li>
+                </a>
+                <a href="Forum.aspx">
                     <li>
                         Fórum
                     </li>
                 </a>
-                <a href="Usuario/Login">
+                <a href="Login.aspx">
                     <li id="linkLogin">
                         Login
-                    </li>
-                </a>
-                <a href="Usuario/Cadastro">
-                    <li id="linkCadastro">
-                        CADASTRO
                     </li>
                 </a>
             </ul>
@@ -58,6 +58,9 @@
                     </li>
                     <li>
                         <a href="SobreNos.aspx">SOBRE NÓS</a>
+                    </li>
+                    <li>
+                        <a href="Usuario/Cadastro">CADASTRO</a>
                     </li>
                     <li>
                         <a href="BackEnd.aspx">BACKEND</a>

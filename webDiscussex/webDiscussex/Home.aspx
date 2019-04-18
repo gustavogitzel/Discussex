@@ -8,12 +8,13 @@
             <h1>Vamos falar de sexo?
                 <hr>
             </h1>
+
         </section>
 
         <div id='intros' class="container">
             <section class='a row'>
                 <div class="col col-2">
-                    <a href="EducacaoSexual/Infeccoes">
+                    <a href="#">
                         <img src="img/introPesquisa.png">
                     </a>
                 </div>
@@ -31,50 +32,23 @@
                     Sunt iusto dolore unde. Aliquid sed natus dicta laudantium ducimus dolores aspernatur ad enim. Architecto deleniti recusandae enim similique impedit ad dignissimos dolorem mollitia, accusamus dolore vero debitis fugit ipsam.</p>
                 </div>
             </section>
-
             <section class='b row'>
 
                 <div class="col col-2">
-                    
+
                 </div>
                 <div class="col col-2">
-                     <a href="EducacaoSexual/HIV">
-                        <img src="img/introPesquisa.png">
-                    </a>
+                    <img src="img/introPesquisa.png">
                 </div>
             </section>
-
             <section class='a row'>
                 <div class="col col-2">
-                    <a href="EducacaoSexual/Corpo">
+                    <a href="#">
                         <img src="img/introPesquisa.png">
                     </a>
                 </div>
                 <div class="col col-2">
                 </div>
             </section>
-
-             <section class='b row'>
-
-                <div class="col col-2">
-                   
-                </div>
-                <div class="col col-2">
-                    <a href="EducacaoSexual/Prevencao">
-                        <img src="img/introPesquisa.png">
-                    </a>
-                </div>
-            </section>
-
-            <section class='a row'>
-                <div class="col col-2">
-                    <a href="EducacaoSexual/Gravidez">
-                        <img src="img/introPesquisa.png">
-                    </a>
-                </div>
-                <div class="col col-2">
-                </div>
-            </section>
-
         </div>
 </asp:Content>
