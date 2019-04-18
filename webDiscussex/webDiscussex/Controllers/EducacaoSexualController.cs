@@ -19,7 +19,7 @@ namespace webDiscussex.Controllers
             return View();
         }
 
-        public ActionResult Prev()
+        public ActionResult Prevencao()
         {
             return View();
         }
@@ -35,7 +35,7 @@ namespace webDiscussex.Controllers
             return View();
         }
 
-        public ActionResult Infec()
+        public ActionResult Infeccoes()
         {
             return View();
         }

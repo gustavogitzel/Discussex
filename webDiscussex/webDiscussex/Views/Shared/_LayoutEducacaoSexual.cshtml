@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="~/Content/style.css" rel="stylesheet">
+    <link href="~/Content/tema.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
           crossorigin="anonymous">
@@ -12,7 +13,7 @@
     <script src="~/Scripts/menuEffects.js"></script>
     <title>DISCUSSEX | @ViewBag.Title</title>
 </head>
-<body id="pagina">
+<body id="@ViewBag.Corpo">
     <header id="menu">
         <div class="menu-icon">
             <div class="bar1"></div>
@@ -33,36 +34,73 @@
                     </li>
                 </a>
 
-                @if (!ViewBag.EstaLogado)
-                {
-                    <a href="Login">
-                        <li id="linkLogin">
-                            Login
-                        </li>
-                    </a>
-                }
-                else
-                {
-                    <a href="~/Usuario/Login">
-                        <li id="btnDeslogar">
-                            Sair
-                        </li>
-                    </a>
-                }
+                @*@if (!ViewBag.EstaLogado)
+                    {
+                        <a href="Login">
+                            <li id="linkLogin">
+                                Login
+                            </li>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="~/Usuario/Login">
+                            <li id="btnDeslogar">
+                                Sair
+                            </li>
+                        </a>
+                    }
 
-                @if (!ViewBag.EhCadastro)
-                {
-                    <a href="Cadastro">
-                        <li>
-                            CADASTRO
-                        </li>
-                    </a>
-                }
+                    @if (!ViewBag.EhCadastro)
+                    {
+                        <a href="Cadastro">
+                            <li>
+                                CADASTRO
+                            </li>
+                        </a>
+                    }*@
 
             </ul>
         </nav>
     </header>
-    @RenderBody()
+
+
+    <section id='@ViewBag.Intro' class="container intros">
+        <h1>Vamos falar de @ViewBag.Title?<hr></h1>
+    </section>
+
+    <div id='@ViewBag.Exibir' class="container textosTema">
+        <section class='a row'>
+            <div class="col col-2">
+                <a href="#">
+                    <img src="~/img/introPesquisa.png">
+                </a>
+            </div>
+            <div class="col col-2">
+
+            </div>
+        </section>
+        <section class='b row'>
+
+            <div class="col col-2">
+
+            </div>
+            <div class="col col-2">
+                <img src="~/img/introPesquisa.png">
+            </div>
+        </section>
+        <section class='a row'>
+            <div class="col col-2">
+                <a href="#">
+                    <img src="~/img/introPesquisa.png">
+                </a>
+            </div>
+            <div class="col col-2">
+            </div>
+        </section>
+    </div>
+
+    @RenderBody();
     <footer id="rodape">
         <div id="footerContent">
             <div class="container">

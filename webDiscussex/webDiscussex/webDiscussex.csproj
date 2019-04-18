@@ -172,6 +172,7 @@
     <Content Include="Content\login.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\tema.css" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="img\aa.png" />
