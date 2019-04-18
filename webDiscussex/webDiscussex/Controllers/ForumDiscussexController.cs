@@ -6,12 +6,11 @@ using System.Web.Mvc;
 
 namespace webDiscussex.Controllers
 {
-    public class ForumController : Controller
+    public class ForumDiscussexController : Controller
     {
-        // GET: Forum
+        // GET: ForumDiscussex
         public ActionResult Index()
         {
-            ViewBag.EstaLogado = true;
             return View();
         }
     }

@@ -1,0 +1,42 @@
+﻿#imagemUsuario
+{
+    max-width: 50%;
+    height:auto;
+    margin-bottom: 1em;
+}
+
+#btnDeslogar:hover {
+    background-color: #ef5350 !important;
+}
+
+
+@media screen and (min-width: 60em)
+{
+    #imagemUsuario {
+        max-width: 80%;
+    }
+
+    #divUsuario {
+        border-right: .1em solid white;
+        border-bottom: none !important ;
+    }
+
+    #listaTemas {
+        border-right: .1em solid white;
+        border-bottom: none !important;
+    }
+}
+
+#divUsuario {
+    border-bottom: .1em solid white;
+}
+
+#listaTemas
+{
+    border-bottom: .1em solid white;
+}
+
+html
+{
+    overflow-x: hidden !important;
+}

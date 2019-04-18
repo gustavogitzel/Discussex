@@ -12,6 +12,7 @@ body {
   background: #a55eea;
   font-family: "Yanone Kaffeesatz", Arial;
   display: table;
+  overflow-x: hidden !important;
 }
 
 img{
@@ -210,10 +211,11 @@ footer#rodape {
 }
 
 @media (min-width: 60rem) {
- 
-  body{
-	display: block;
-  }
+
+    body {
+        display: block;
+        overflow-x: hidden !important;
+    }
   .col-2 {
     width: 50%;
   }
