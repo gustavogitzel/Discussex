@@ -50,6 +50,15 @@
                     </a>
                 }
 
+                @if (!ViewBag.EhCadastro)
+                {
+                    <a href="Cadastro">
+                        <li>
+                            CADASTRO
+                        </li>
+                    </a>
+                }
+
             </ul>
         </nav>
     </header>
@@ -63,9 +72,6 @@
                     </li>
                     <li>
                         <a href="">SOBRE NÓS</a>
-                    </li>
-                    <li>
-                        <a href="~/Usuario/Cadastro">CADASTRO</a>
                     </li>
                     <li>
                         <a href="">BACKEND</a>
