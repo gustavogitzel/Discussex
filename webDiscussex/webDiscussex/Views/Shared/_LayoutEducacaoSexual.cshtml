@@ -23,7 +23,7 @@
         <img id="logo" src="~/img/Logo.png" alt="vine">
         <nav>
             <ul>
-                <a href="Home.html">
+                <a href="~/HomePagina/Home">
                     <li>
                         Home
                     </li>
@@ -34,31 +34,27 @@
                     </li>
                 </a>
 
-                @*@if (!ViewBag.EstaLogado)
-                    {
-                        <a href="Login">
-                            <li id="linkLogin">
-                                Login
-                            </li>
-                        </a>
-                    }
-                    else
-                    {
-                        <a href="~/Usuario/Login">
-                            <li id="btnDeslogar">
-                                Sair
-                            </li>
-                        </a>
-                    }
-
-                    @if (!ViewBag.EhCadastro)
-                    {
-                        <a href="Cadastro">
-                            <li>
-                                CADASTRO
-                            </li>
-                        </a>
-                    }*@
+                @if (Session["emailUsuario"] == null)
+                {
+                    <a href="Login">
+                        <li id="linkLogin">
+                            Login
+                        </li>
+                    </a>
+                    <a href="Cadastro">
+                        <li>
+                            CADASTRO
+                        </li>
+                    </a>
+                }
+                else
+                {
+                    <a href="~/Usuario/Login">
+                        <li id="btnDeslogar">
+                            Sair
+                        </li>
+                    </a>
+                }
 
             </ul>
         </nav>

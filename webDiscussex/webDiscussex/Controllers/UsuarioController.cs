@@ -27,6 +27,9 @@ namespace webDiscussex.Controllers
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.Adiciona(user);
+            Session["emailUsuario"] = user.Email;
+            Session["nomeUsuario"] = user.NomeUsuario;
+            Session["imgPerfil"] = user.ImgPerfil;
             return RedirectToAction("Home", "HomePagina");
         }
 
@@ -48,33 +51,45 @@ namespace webDiscussex.Controllers
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.Excluir(email, senha);
+            Session["emailUsuario"] = null;
+            Session["nomeUsuario"] = null;
+            Session["imgPerfil"] = null;
+            Session["pontos"] = null;
             return RedirectToAction("Configuracoes", "Usuario");
         }
 
         public ActionResult AtualizarNome(string nomeUser, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            dao.AlterarNome(nomeUser, ViewBag.Email, senha);
+            dao.AlterarNome(nomeUser, Session["emailUsuario"].ToString(), senha);
+
+            Session["nomeUsuario"] = nomeUser;
+
             return RedirectToAction("Configuracoes", "Usuario");
         }
 
         public ActionResult AtualizarSenha(string novaSenha, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            dao.AlterarSenha(novaSenha, ViewBag.Email, senha);
+            dao.AlterarSenha(novaSenha, Session["emailUsuario"].ToString(), senha);
             return RedirectToAction("Configuracoes", "Usuario");
         }
         public ActionResult AtualizarEmail(string novoEmail, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            dao.AlterarEmail(novoEmail, ViewBag.Email, senha);
-            ViewBag.Email = novoEmail;
+            dao.AlterarEmail(novoEmail, Session["emailUsuario"].ToString(), senha);
+
+            Session["emailUsuario"] = novoEmail;
+
             return RedirectToAction("Configuracoes", "Usuario");
         }
         public ActionResult AtualizarImagem(string novaFoto, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            dao.AlterarImagem(novaFoto, ViewBag.Email, senha);
+            dao.AlterarImagem(novaFoto, Session["emailUsuario"].ToString(), senha);
+
+            Session["imgPerfil"] = novaFoto;
+
             return RedirectToAction("Configuracoes", "Usuario");
         }
 
@@ -82,7 +97,10 @@ namespace webDiscussex.Controllers
         {
             UsuarioDAO dao = new UsuarioDAO();
             Usuario user = dao.Login(logar, senha);
-            ViewBag.Email = user.Email;
+            Session["emailUsuario"] = user.Email;
+            Session["nomeUsuario"] = user.NomeUsuario;
+            Session["imgPerfil"] = user.ImgPerfil;
+            Session["pontos"] = user.Pontuacao;
             return RedirectToAction("Home", "HomePagina");
         }
     }

@@ -13,7 +13,7 @@ namespace webDiscussex.DAO
         {
             using (var contexto = new EducacaoSexualContext())
             {
-                if (BuscaPorNome(us.NomeUsuario) == null)
+                if (BuscaPorEmail(us.Email) == null)
                 {
                     contexto.Database.ExecuteSqlCommand("cadastrarDiscussex_sp @p0, @p1, @p2, @p3", 
                     parameters: new[] {us.NomeUsuario, us.Email, us.Senha, us.ImgPerfil});
@@ -114,11 +114,11 @@ namespace webDiscussex.DAO
             }
         }
 
-        public Usuario BuscaPorNome(string nome)
+        public Usuario BuscaPorEmail(string email)
         {
             using (var contexto = new EducacaoSexualContext())
             {
-                return contexto.PP2_Usuario.Where(p => p.NomeUsuario == nome).FirstOrDefault();
+                return contexto.PP2_Usuario.Where(p => p.Email == email).FirstOrDefault();
             }
         }
 
