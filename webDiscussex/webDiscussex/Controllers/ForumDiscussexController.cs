@@ -13,5 +13,15 @@ namespace webDiscussex.Controllers
         {
             return View();
         }
+
+        public ActionResult Perguntar()
+        {
+            return View();
+        }
+
+        public ActionResult Responder()
+        {
+            return View();
+        }
     }
 }

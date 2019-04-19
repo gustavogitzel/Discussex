@@ -66,36 +66,40 @@
     border-radius: 2pt;
 }
 
-    #linkCadastro a:hover {
-    }
-
-
 [type="file"] {
     height: 0;
     overflow: hidden;
     width: 0;
 }
 
-[type="file"] + label {
-    background: white;
-    border-radius: 5pt;
-    color: black;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-top: 100em;
-    padding: 1rem 50px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    [type="file"] + label {
+        background: #f15d22;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: inherit;
+        font-weight: 600;
+        outline: none;
+        padding: 1rem 50px;
+        transition: all 0.3s;
+        vertical-align: middle;
+    }
+        [type="file"] + label:hover{
+    background-color: darken(#f15d22, 10%);
 }
 
-[type="file"] + label:hover
+        [type="file"] + label.btn-1 {
+            background-color: #f79159;
+            box-shadow: 0 6px darken(#f79159, 10%);
+        }
+[type="file"] + label.btn-1 :hover
 {
-    background: #5e35b1;
-    color: white;
+    box-shadow: 0 4px darken(#f79159, 10%);
 }
 
-#fileInput
-{
-    margin: 1.5em 0;
+#fileInput {
+    margin-top: 1em;
 }
