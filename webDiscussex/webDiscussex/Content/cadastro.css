@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family="Yanone+Kaffeesatz"');
 
+
 #frmCadastro h1 {
     margin: 1em;
     color: white;
@@ -49,9 +50,6 @@
     cursor: pointer;
 }
 
-
-
-
 #imgLogin img {
     max-width: 70%;
     margin: 5em auto;
@@ -87,14 +85,16 @@
         transition: all 0.3s;
         vertical-align: middle;
     }
-        [type="file"] + label:hover{
+
+[type="file"] + label:hover{
     background-color: darken(#f15d22, 10%);
 }
 
-        [type="file"] + label.btn-1 {
-            background-color: #f79159;
-            box-shadow: 0 6px darken(#f79159, 10%);
-        }
+[type="file"] + label.btn-1 {
+    background-color: #f79159;
+    box-shadow: 0 6px darken(#f79159, 10%);
+}
+
 [type="file"] + label.btn-1 :hover
 {
     box-shadow: 0 4px darken(#f79159, 10%);
