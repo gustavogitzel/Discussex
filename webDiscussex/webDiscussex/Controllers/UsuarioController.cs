@@ -22,6 +22,13 @@ namespace webDiscussex.Controllers
             ViewBag.EhCadastro = true;
             return View();
         }
+        [HttpPost]
+        public ActionResult Adiciona(Usuario user)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.Adiciona(user);
+            return RedirectToAction("Cadastro", "Usuario");
+        }
 
         public ActionResult Login()
         {
@@ -37,13 +44,7 @@ namespace webDiscussex.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Adiciona(Usuario user)
-        {
-            UsuarioDAO dao = new UsuarioDAO();
-            dao.Adiciona(user);
-            return RedirectToAction("Cadastro", "Usuario");
-        }
+        
 
         public ActionResult Excluir(string email, string senha)
         {

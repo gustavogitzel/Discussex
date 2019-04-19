@@ -8,10 +8,11 @@
 }
 
 body {
-  margin: 0;
-  font-family: "Yanone Kaffeesatz", Arial;
-  display: table;
-  overflow-x: hidden !important;
+    margin: 0;
+    background: #a55eea;
+    font-family: "Yanone Kaffeesatz", Arial;
+    display: table;
+    overflow-x: hidden !important;
 }
 
 img{
