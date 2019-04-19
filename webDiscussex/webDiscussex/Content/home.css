@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
 
+#par {
+    background: #8854d0;
+}
+
+#impar {
+    background: #a55eea;
+}
+
 #home-hero
 {
     border-bottom: 1em solid rgb(240, 172, 25);

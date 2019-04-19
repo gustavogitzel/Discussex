@@ -180,6 +180,14 @@
     <Content Include="img\footer.png" />
     <Content Include="img\footer2.png" />
     <Content Include="img\homeHeroOrange.png" />
+    <Content Include="img\iconeCorpo.png" />
+    <Content Include="img\iconeGrafico.png" />
+    <Content Include="img\iconeGravidez.png" />
+    <Content Include="img\iconeHIV.png" />
+    <Content Include="img\iconeIST.png" />
+    <Content Include="img\iconeMitosVerdades.png" />
+    <Content Include="img\iconePrevencao.png" />
+    <Content Include="img\iconeQuiz.png" />
     <Content Include="img\imgCorpo.png" />
     <Content Include="img\imgGravidez.png" />
     <Content Include="img\imgHIV.png" />
@@ -202,7 +210,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EducacaoSexualController.cs" />
     <Compile Include="Controllers\ForumDiscussexController.cs" />
+    <Compile Include="Controllers\HomePaginaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="DAO\EducacaoSexuaDAO.cs" />
     <Compile Include="DAO\EducacaoSexualContext.cs" />
     <Compile Include="DAO\ImagemDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
@@ -223,6 +233,7 @@
     <Compile Include="Index.Master.designer.cs">
       <DependentUpon>Index.Master</DependentUpon>
     </Compile>
+    <Compile Include="Models\EducacaoSexual.cs" />
     <Compile Include="Models\Imagem.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -242,6 +253,8 @@
     <Content Include="Views\EducacaoSexual\Corpo.cshtml" />
     <Content Include="Views\EducacaoSexual\HIV.cshtml" />
     <Content Include="Views\EducacaoSexual\Infeccoes.cshtml" />
+    <Content Include="Views\HomePagina\Home.cshtml" />
+    <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

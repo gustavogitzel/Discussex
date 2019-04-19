@@ -9,9 +9,11 @@ namespace webDiscussex.DAO
 
         public DbSet<Usuario> PP2_Usuario { get; set; }
 
+        public DbSet<EducacaoSexual> PP2_EducacaoSexual { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=regulus;Initial Catalog=PR118194;User ID=PR118194;Password=guisa2019");
+            optionsBuilder.UseSqlServer("Data Source=regulus.cotuca.unicamp.br;Initial Catalog=PR118194;User ID=PR118194;Password=guisa2019");
         }
     }
 }
