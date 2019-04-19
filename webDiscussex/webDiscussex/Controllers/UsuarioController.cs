@@ -27,7 +27,7 @@ namespace webDiscussex.Controllers
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.Adiciona(user);
-            return RedirectToAction("Cadastro", "Usuario");
+            return RedirectToAction("Home", "HomePagina");
         }
 
         public ActionResult Login()
@@ -44,40 +44,38 @@ namespace webDiscussex.Controllers
             return View();
         }
 
-        
-
         public ActionResult Excluir(string email, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.Excluir(email, senha);
-            return RedirectToAction("Cadastro", "Usuario");
+            return RedirectToAction("Configuracoes", "Usuario");
         }
 
-        public ActionResult AtualizarNome (string nomeUser, string senha)
+        public ActionResult AtualizarNome(string nomeUser, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.AlterarNome(nomeUser, ViewBag.Email, senha);
-            return RedirectToAction("Cadastro", "Usuario");
+            return RedirectToAction("Configuracoes", "Usuario");
         }
 
         public ActionResult AtualizarSenha(string novaSenha, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.AlterarSenha(novaSenha, ViewBag.Email, senha);
-            return RedirectToAction("Cadastro", "Usuario");
+            return RedirectToAction("Configuracoes", "Usuario");
         }
         public ActionResult AtualizarEmail(string novoEmail, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.AlterarEmail(novoEmail, ViewBag.Email, senha);
             ViewBag.Email = novoEmail;
-            return RedirectToAction("Cadastro", "Usuario");
+            return RedirectToAction("Configuracoes", "Usuario");
         }
         public ActionResult AtualizarImagem(string novaFoto, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.AlterarImagem(novaFoto, ViewBag.Email, senha);
-            return RedirectToAction("Cadastro", "Usuario");
+            return RedirectToAction("Configuracoes", "Usuario");
         }
 
         public ActionResult Logar(string logar, string senha)
@@ -85,7 +83,7 @@ namespace webDiscussex.Controllers
             UsuarioDAO dao = new UsuarioDAO();
             Usuario user = dao.Login(logar, senha);
             ViewBag.Email = user.Email;
-            return RedirectToAction("Cadastro", "Usuario");
+            return RedirectToAction("Home", "HomePagina");
         }
     }
 }

@@ -143,10 +143,9 @@ namespace webDiscussex.DAO
                 if (BuscaPorEmailSenha(log, senha) != null)
                     ret = contexto.PP2_Usuario.FromSql("loginDiscussex_sp @p0, @p1, @p2", parameters: new[] { log, senha, null }).ToList();
                 else if (BuscaPorNomeSenha(log, senha) != null)
-                    ret = contexto.PP2_Usuario.FromSql("loginDiscussex_sp @p0, @p1, @p2", parameters: new[] {null, senha,log}).ToList();
-                else
-                    throw new Exception("Nome de Usuário, email ou senha inválidas");
-
+                    ret = contexto.PP2_Usuario.FromSql("loginDiscussex_sp @p0, @p1, @p2", parameters: new[] { null, senha, log }).ToList();
+                else return null;
+          
                 return ret.ElementAt(0);
             }
                 
