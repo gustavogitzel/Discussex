@@ -33,7 +33,7 @@
                     </li>
                 </a>
 
-                @if (!ViewBag.EstaLogado)
+                @if (Session["emailUsuario"] == null)
                 {
                     <a href="Login">
                         <li id="linkLogin">
@@ -51,13 +51,13 @@
                 }
 
                 @if (!ViewBag.EhCadastro)
-                {
+                 {
                     <a href="Cadastro">
                         <li>
-                            CADASTRO
+                            Cadastro
                         </li>
                     </a>
-                }
+                 }
 
             </ul>
         </nav>

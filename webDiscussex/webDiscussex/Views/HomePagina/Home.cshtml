@@ -1,45 +1,42 @@
 ﻿
 @{
     ViewBag.Title = "| HOME";
-    ViewBag.EstaLogado = false;
-    ViewBag.EhCadastro = false;
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 <div id='intros' class="container">
     @foreach (var tema in ViewBag.Temas)
      {
-        if (tema.Id % 2 != 0)
-        {
-            <section class='a row'>
-                <div class="col col-2">
-                    <a href="~/EducacaoSexual/@tema.Titulo">
-                        <img src="~/@tema.ImgTema">
-                    </a>
-                </div>
-                <div class="col col-2 texto">
-                    <h1>@tema.NomTema</h1>
-                    <p>
-                        @tema.Descricao
-                    </p>
-                </div>
-            </section>
-        }
-        else
-        {
-            <section class='b row'>
-
-                <div class="col col-2">
-                    <h1>@tema.NomTema</h1>
-                    <p>
-                        @tema.Descricao
-                    </p>
-                </div>
-                <div class="col col-2">
-                    <a href="~/EducacaoSexual/@tema.Titulo">
-                        <img src="~/@tema.ImgTema">
-                    </a>
-                </div>
-            </section>
-        }
+            if (tema.Id % 2 != 0)
+            {
+                <section class='a row'>
+                    <div class="col col-2">
+                        <a href="~/EducacaoSexual/@tema.Titulo">
+                            <img src="~/@tema.ImgTema">
+                        </a>
+                    </div>
+                    <div class="col col-2 texto">
+                        <h1>@tema.NomTema</h1>
+                        <p>
+                            @tema.Descricao
+                        </p>
+                    </div>
+                </section>
+            }
+            else
+            {
+                <section class='b row'>
+                    <div class="col col-2">
+                        <h1>@tema.NomTema</h1>
+                        <p>
+                            @tema.Descricao
+                        </p>
+                    </div>
+                    <div class="col col-2">
+                        <a href="~/EducacaoSexual/@tema.Titulo">
+                            <img src="~/@tema.ImgTema">
+                        </a>
+                    </div>
+                </section>
+            }
      }
 </div>

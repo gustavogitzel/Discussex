@@ -1033,21 +1033,3 @@ C:\Users\Passaro Fantasma\Documents\GitHub\Discussex\webDiscussex\webDiscussex\o
 C:\Users\Passaro Fantasma\Documents\GitHub\Discussex\webDiscussex\webDiscussex\obj\Debug\webDiscussex.csproj.CopyComplete
 C:\Users\Passaro Fantasma\Documents\GitHub\Discussex\webDiscussex\webDiscussex\obj\Debug\webDiscussex.dll
 C:\Users\Passaro Fantasma\Documents\GitHub\Discussex\webDiscussex\webDiscussex\obj\Debug\webDiscussex.pdb
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\Microsoft.Owin.dll
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\Microsoft.Owin.Security.dll
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\Newtonsoft.Json.dll
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\Owin.dll
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Net.Http.Formatting.dll
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Web.Http.dll
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Web.Http.WebHost.dll
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\Microsoft.Owin.xml
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\Microsoft.Owin.Security.xml
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\Newtonsoft.Json.xml
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Net.Http.Formatting.xml
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Web.Http.xml
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Web.Http.WebHost.xml
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\pt-br\System.Net.Http.Formatting.resources.dll
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\pt-br\System.Web.Http.resources.dll
-C:\Users\Gusta\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\pt-br\System.Web.Http.WebHost.resources.dll
