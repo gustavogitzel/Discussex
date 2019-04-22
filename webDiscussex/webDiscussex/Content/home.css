@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
 
-#par {
+.par {
     background: #8854d0;
 }
 
-#impar {
+.impar {
     background: #a55eea;
 }
 
