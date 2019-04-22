@@ -65,9 +65,11 @@ create table PP2_EducacaoSexual
 
 create table PP2_Doenca
 (
-   codDoenca int primary key not null,
-   nomTema varchar(30) not null,
-   descricao nText not null
+   id int primary key not null,
+   titulo varchar(30),
+   descricao nText not null,
+   codImagem int not null
+	constraint fkPP2_Imagem foreign key (id) references PP2_Imagem(id),
 )
 
 create table PP2_MetodoPrevencao
