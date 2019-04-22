@@ -95,11 +95,17 @@
     box-shadow: 0 6px darken(#f79159, 10%);
 }
 
-[type="file"] + label.btn-1 :hover
+[type="file"] + label.btn-1:hover
 {
     box-shadow: 0 4px darken(#f79159, 10%);
 }
 
-#fileInput {
+label.disponivel {
+    color: #66bb6a !important;
+}
+
+#fileInput{
     margin-top: 1em;
 }
+
+

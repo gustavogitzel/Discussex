@@ -22,10 +22,26 @@ namespace webDiscussex.Controllers
             ViewBag.EhCadastro = true;
             return View();
         }
+
+        public JsonResult ChecarEmailDisponibilidade(string emailDigitado)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            var data = dao.BuscaPorEmail(emailDigitado);
+            if(data != null)
+            {
+                return Json(1);
+            }
+
+            return Json(0);
+        }
+
         [HttpPost]
         public ActionResult Adiciona(Usuario user)
         {
             UsuarioDAO dao = new UsuarioDAO();
+            if (dao.BuscaPorEmail(user.Email) == null)
+                return RedirectToAction("Home", "HomePagina");
+
             dao.Adiciona(user);
             Session["emailUsuario"] = user.Email;
             Session["nomeUsuario"] = user.NomeUsuario;
