@@ -16,7 +16,7 @@ namespace webDiscussex.DAO
                 if (BuscaPorEmail(us.Email) == null)
                 {
                     contexto.Database.ExecuteSqlCommand("cadastrarDiscussex_sp @p0, @p1, @p2, @p3", 
-                    parameters: new[] {us.NomeUsuario, us.Email, us.Senha, us.ImgPerfil});
+                    parameters: new[] {us.NomeUsuario, us.Senha, us.Email, us.ImgPerfil});
 
                     contexto.SaveChanges();
                 }
