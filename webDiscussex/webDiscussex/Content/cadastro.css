@@ -78,12 +78,12 @@
         cursor: pointer;
         display: inline-block;
         font-family: 'Yanone Kaffeesatz', sans-serif;
-        font-size: inherit;
-        font-weight: 600;
+        font-size: 1em;
+        font-weight: bold;
         outline: none;
         padding: 1rem 50px;
         transition: all 0.3s;
-        vertical-align: middle;
+        vertical-align: middle
     }
 
 [type="file"] + label:hover{
@@ -101,7 +101,11 @@
 }
 
 label.disponivel {
-    color: #66bb6a !important;
+    color: #1de9b6 !important;
+}
+
+label.indisponivel {
+    color: #1de9b6 !important;
 }
 
 #fileInput{
