@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/cadastro.css" rel="stylesheet">
+<script src="~/Scripts/cadastro.js"></script>
+
+<article id="corpo" class="container row">
+    <div class="col col-2" id="imgLogin">
+        <img src="~/img/LoginImg.png">
+    </div>
+    <div class="col col-2">
+        <form id="frmCadastro" method="post" action="/Usuario/Adiciona">
+            <h1 id="tituloLogin">CADASTRO</h1>
+            <button class="btn google" type="button" name="btnLoginGoogle" id="btnLoginGoogle" value="Entrar">
+                <i class="fab fa-google"></i>
+                <span>Cadastrar com o Google</span>
+            </button>
+            <div class="campoTexto">
+                <input type="email" name="user.Email" id="txtLoginEmail" class="Input-text" placeholder="Email"  data-request-url="@Url.Action("ChecarEmailDisponibilidade", "Usuario")">
+                <label for="input" class="Input-label" id="lbCadastroEmail">Email</label>
+            </div>
+            <div class="campoTexto">
+                <input type="text" name="user.NomeUsuario" id="txtSenha" class="Input-text" placeholder="Nome de usuário">
+                <label for="input" class="Input-label">Nome de usuário</label>
+            </div>
+            <div class="campoTexto">
+                <input type="password" name="user.Senha" id="txtSenhaCadastro" class="Input-text" placeholder="Senha">
+                <label for="input" class="Input-label">Senha</label>
+            </div>
+            <div id="fileInput">
+                <input type="file" id="file" />
+                <label for="file" class="btn-1">Imagem de perfil</label>
+            </div>
+            <input class="btn" type="submit" name="btnSubmitCadastro" id="btnSubmitCadastro" value="Cadastrar">
+
+        </form>
+    </div>
+</article>

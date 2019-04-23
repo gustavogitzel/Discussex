@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+    background: #a55eea;
+    font-family: "Yanone Kaffeesatz", Arial;
+    display: table;
+    overflow-x: hidden !important;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.container{
+  width: 100%;
+  margin: 0 auto;
+}
+
+#corpo
+{
+	height: auto;
+}
+
+/* ----- MENU ----- */
+
+.menu-icon {
+  cursor: pointer;
+  float: right;
+  margin-top: 1em;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* ----- HEADER ----- */
+
+header#menu {
+  background: rgb(32, 32, 32);
+  padding: 2em;
+  border-bottom: solid 2em rgb(53, 52, 52);
+}
+
+#logo {
+  max-height: 3.8em;
+  width: auto;
+}
+
+header#menu nav {
+  display: none;
+  text-align: center;
+  font-size: 2em;
+  transition: 3ms ease;
+  margin-top: 2em;
+  transition: 3ms ease;
+}
+
+nav ul
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header#menu li {
+  display: block;
+  padding: 1em;
+}
+
+header#menu ul a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+ header#menu:hover {
+  background: white;
+  border-bottom: rgb(238, 235, 235) solid 2em;
+}
+
+header#menu:hover .menu-icon .bar1,
+header#menu:hover .menu-icon .bar2,
+header#menu:hover .menu-icon .bar3 {
+  background: rgb(32, 32, 32);
+}
+
+header#menu:hover ul li {
+  color: rgb(36, 36, 30);
+} 
+ header#menu ul li:hover {
+  background: rgb(206, 205, 205);
+  border-radius: 20pt;
+} 
+
+/* ----- FOOTER ----- */
+
+footer#rodape {
+  font-size: 1.5rem;
+  background: url("../img/footer2.png") no-repeat;
+  background-size: cover;
+  height: auto;
+  text-shadow: 1px 0px 0px black, 
+  -1px 0px 0px black, 
+  0px 1px 0px black, 
+  0px -1px 0px black;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+}
+
+#footerCopyright {
+  bottom: 0;
+  left: 0;
+  
+  padding: 1em;
+}
+
+#footerContent {
+  padding: 2em;
+  text-align: center;
+}
+
+#footerContent ul li {
+  list-style: none;
+  display: inline-block;
+  margin-top: 1em;
+  padding: 1em;
+}
+
+#rodape ul li a {
+  color: white; 
+  text-decoration: none;
+}
+
+#rodape ul li:hover a{
+  color: rgb(32, 32, 32);
+  text-shadow: 1px 0px 0px white, 
+  -1px 0px 0px white, 
+  0px 1px 0px white, 
+  0px -1px 0px white;
+}
+
+.iconSocialMedia a 
+{
+  font-size: 1.3em;
+}
+
+.iconSocialMedia:hover 
+{
+    transform: rotate(20deg);
+}
+
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+.col {
+  margin-top: 1em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  min-height: 1px;
+  padding-right: 5px;
+  padding-left: 5px;
+  width: 100%;
+  margin-right: -4px;
+  *zoom: 1;
+  *display: inline;
+}
+
+@media (min-width: 60rem) {
+
+    body {
+        display: block;
+        overflow-x: hidden !important;
+    }
+  .col-2 {
+    width: 50%;
+  }
+
+  .col-3 {
+    width: 33.33%;
+  }
+} 
+
+
+/* ----- RESPONSIVE CSS ----- */
+
+@media screen and (min-width: 71.25em) {
+  .menu-icon {
+    display: none;
+  }
+
+  #logo {
+    max-height: 6em;
+    width: auto;
+  }
+
+  header#menu nav {
+    position: initial;
+    display: initial !important;
+    float: right;
+    text-align: center;
+    font-size: 2em;
+    background: initial;
+    margin-top: 1em;
+    z-index: initial;
+  }
+
+  header#menu nav ul li {
+    list-style: none;
+    display: inline;
+  }
+
+}
+.btn {
+    padding: .5em 1em;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Yanone Kaffeesatz";
+    font-size: 1.7rem;
+    letter-spacing: 1pxs;
+    border-radius: 5pt;
+    border: 0;
+    margin: 1em;
+    background: white;
+}
+.btn:active {
+    transform: translateY(.2em);
+    transition-duration: .3s;
+    border-bottom: none;
+}
+
+.btn:hover {
+    background: rgb(137,59,195);
+    /* border-bottom: solid rgb(152, 82, 206) .2em; */
+    color: white;
+    cursor: pointer;
+}
+
+.Input-text {
+    padding: .7em 1.2em;
+    color: inherit;
+    font-family: "Yanone Kaffeesatz";
+    font-size: 1em;
+    border: none;
+    border-radius: 0.4rem;
+    transition: box-shadow .3s;
+    margin: 1em 1em 1.3em 1em;
+}
+
+    .Input-text::placeholder {
+        color: #B0BEC5;
+    }
+
+    .Input-text:focus {
+        outline: none;
+        box-shadow: 0.1rem 0.4rem .8rem #5e35b1;
+    }
+
+.Input-label {
+    position: absolute;
+    color: #fff;
+    font-family: "Yanone Kaffeesatz";
+    font-size: 1.5em;
+    margin-left: -8.5em;
+    margin-top: 1.5em;
+    opacity: 0;
+    transform-origin: 0 0;
+    transition: opacity .3s cubic-bezier(0.645, 0.045, 0.355, 1), transform .3s cubic-bezier(0.645, 0.045, 0.355, .5), visibility 0ms .3s cubic-bezier(0.645, 0.045, 0.355, 1), z-index 0ms .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+
+.Input-text:placeholder-shown + .Input-label {
+    visibility: hidden;
+    z-index: -1;
+}
+
+.Input-text:not(:placeholder-shown) + .Input-label,
+.Input-text:focus:not(:placeholder-shown) + .Input-label {
+    visibility: visible;
+    z-index: 1;
+    opacity: 1;
+    transform: translate3d(0, calc( (50%) - (.7em * .8) - (1.7em * 1) ), 0) scale(.8);
+    transition: transform .3s, visibility 0ms, z-index 0ms;
+}

@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.EstaLogado = false;
+}
+<link href="~/Content/login.css" type="text/css" rel="stylesheet">
+
+    <article id="corpo" class="container row">
+        <div class="col col-2" id="imgLogin">
+            <img src="~/img/LoginImg.png">
+        </div>
+        <div class="col col-2">
+            <form id="frmLogin" method="post" action="/Usuario/Logar">
+                <h1 id="tituloLogin">INSIRA SEUS DADOS</h1>
+                <button class="btn google" type="button" name="btnLoginGoogle" id="btnLoginGoogle" value="Entrar">
+                    <i class="fab fa-google"></i>
+                    <span>Entrar com o Google</span>
+                </button>
+                <div class="campoTexto">
+                    <input type="text" name="logar" id="txtLoginEmail" class="Input-text" placeholder="Usuário ou email">
+                    <label for="input" class="Input-label">Usuário ou email</label>
+                </div>
+                <div class="campoTexto">
+                    <input type="password" name="senha" id="txtSenha" class="Input-text" placeholder="Senha">
+                    <label for="input" class="Input-label">Senha</label>
+                </div>
+
+                <input class="btn" type="submit" name="btnSubmitLogin" id="btnSubmitLogin" value="Entrar">
+                <h2 id="linkCadastro"><a href="~/Usuario/Cadastro">Ainda não tem conta? Cadastre-se já!</a></h2>
+            </form>
+           
+        </div>
+    </article>

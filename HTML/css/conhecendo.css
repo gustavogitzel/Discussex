@@ -1,0 +1,88 @@
+body {
+    background: #d81b60;
+  }
+  
+#corpo-intro
+{
+    border-bottom: 1em solid #c2185b;
+    background: url("../img/imgCorpo.png") no-repeat;
+    background-size: cover ;
+    height: 20em;
+    text-align: center;
+    text-transform: uppercase;
+    display: table;
+}
+
+#corpo-intro h1
+{
+    color: #880e4f ;
+    font-size: 2.5em;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#corpo-intro hr
+{
+    border-radius: 10pt;
+    background-color: #880e4f ;
+    height: 5px;
+    border: none;
+    margin: 0 5em 0 5em;
+}
+
+@media screen and (min-width: 45em) 
+{
+    #corpo-intro
+    {
+        height: 20em;
+    }
+    #corpo-intro h1
+    {
+        font-size: 3.5em;
+    }
+
+}
+@media screen and (min-width: 71.25em) 
+{
+    #corpo-intro
+    {
+        background-size:100% 24em;
+        height: 25em;
+    }
+    #corpo-intro h1
+    {
+        font-size: 5em;
+    }
+}
+
+#textos section
+{
+    padding: 1em;
+    margin: 0;
+}
+#textos .a
+{
+    background: #d81b60;
+}
+
+#textos .b
+{
+    background: #ec407a;
+}
+#textos img
+{
+    max-width: 30%;
+    height: auto;
+}
+
+#corpo-intro img
+{
+    height: 15em;
+    width: 100vw;
+}
+
+.texto p
+{
+    text-align: right;
+    text-align: left;
+}

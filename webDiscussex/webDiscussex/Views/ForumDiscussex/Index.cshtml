@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Fórum";
+    ViewBag.EstaLogado = true;
+    ViewBag.EhCadastro = false;
+    ViewBag.Nome = "Aqui vem da viewBag";
+    ViewBag.ImagemUsuario = "img/UsuarioPadrao.png";
+    ViewBag.EhCadastro = false;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/ForumIndex.css"/>
+<article id="corpo" class="container">
+    <div class="row">
+        @if (ViewBag.EstaLogado)
+        {
+            <div class="col col-3" id="divUsuario">
+                <img id="imagemUsuario" src="@ViewBag.ImagemUsuario" />
+                <h2>@ViewBag.Nome</h2>
+                <button class="btn" id="btnConfiguracoes">Configurações</button>
+                <button class="btn" id="criarPergunta">Perguntar</button>
+            </div>
+            <div class="col col-3" id="listaTemas">
+                <form action="Forum/BuscarTemas">
+                    <div class="campoTexto">
+                        <input type="text" name="txtBusca" id="txtBusca" class="Input-text" placeholder="Buscar temas">
+                        <label for="input" class="Input-label">Buscar temas</label>
+                    </div>
+                    <input type="submit" class="btn" value="Buscar">
+
+                </form>
+            </div>
+            <div class="col col-3" id="maisAcessados">
+                <h2>Mais acessados</h2>
+            </div>
+        }
+        else
+        {
+            <div class="col col-3" id="listaTemas">
+                <form action="Forum/BuscarTemas">
+                    <div class="campoTexto">
+                        <input type="text" name="txtBusca" id="txtBusca" class="Input-text" placeholder="Buscar temas">
+                        <label for="input" class="Input-label">Buscar temas</label>
+                    </div>
+                    <input type="submit" class="btn" value="Buscar">
+
+                </form>
+            </div>
+            <div class="col col-3" id="maisAcessados">
+                <h2>Mais acessados</h2>
+            </div>
+        }
+    </div>
+</article>
+
+<script>
+    $(document).ready(()=>{
+        $("#btnConfiguracoes").click(() => {
+            window.location.href = "Usuario/Configuracoes";
+        });
+        $("#criarPergunta").click(() => {
+            window.location.href = "ForumDiscussex/Perguntar";
+        });
+    });
+</script>

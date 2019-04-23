@@ -1,0 +1,55 @@
+﻿.imagemUsuario {
+    max-width: 30%;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+body
+{
+    background: #64ffda;
+}
+
+
+@media screen and (min-width: 60em) {
+    .imagemUsuario {
+        max-width: 30%;
+    }
+
+}
+
+#pergunta {
+    background: #00b8d4;
+}
+
+.a {
+
+    background: #64ffda;
+}
+
+.b{
+    background: #1de9b6;
+}
+
+.c   {
+    background: #00bfa5;
+}
+
+h1
+{
+    margin-bottom:1em;
+}
+
+#botoesPaginas .btn
+{
+    display:inline !important;
+}
+
+.resposta p
+{
+    margin: 0 1em 1em 1em;
+}
+
+html
+{
+    overflow-x:hidden;
+}

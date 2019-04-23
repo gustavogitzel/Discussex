@@ -1,8 +1,8 @@
-home
+-home
 sobre nós
 forum
 *doenças
-pesquisa
+*pesquisa
 *mitos e verdades
 cadastro / LOGIN
 configurações

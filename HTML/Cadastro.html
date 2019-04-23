@@ -1,0 +1,124 @@
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="shortcut icon" href="img/Favicon.ico">
+        <link href="css/cadastro.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+            crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="js/menuEffects.js"></script>
+        <title>DISCUSSEX | CADASTRO</title>
+    </head>
+    
+    <body id="pagina">
+        <header id="menu">
+            <div class="menu-icon">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <img id="logo" src="img/Logo.png" alt="vine">
+            <nav>
+                <ul>
+    
+                    <a href="Home.html">
+                        <li>
+                            Home
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li>
+                            Fórum
+                        </li>
+                    </a>
+                    <a href="Login.html">
+                        <li id="linkLogin">
+                            Login
+                        </li>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+    
+        <article id="corpo" class="container row">
+            <div class="col col-2" id="imgLogin">
+                <img src="img/LoginImg.png">
+            </div>
+            <div class="col col-2">
+                <form id="frmCadastro">
+                    <h1 id="tituloLogin">CADASTRO</h1>
+                    <button class="btn google" type="button" name="btnLoginGoogle" id="btnLoginGoogle" value="Entrar">
+                        <i class="fab fa-google"></i>
+                        <span>Cadastrar com o Google</span>
+                    </button>
+                    <div class="campoTexto">
+                        <input type="email" name="txtCadastroEmail" id="txtLoginEmail" class="Input-text" placeholder="Email">
+                        <label for="input" class="Input-label">Email</label>
+                    </div>
+                    <div class="campoTexto">
+                        <input type="text" name="txtSenha" id="txtSenha" class="Input-text" placeholder="Nome de usuário">
+                        <label for="input" class="Input-label">Nome de usuário</label>
+                    </div>
+                    <div class="campoTexto">
+                        <input type="password" name="txtSenhaCadastro" id="txtSenhaCadastro" class="Input-text" placeholder="Senha">
+                        <label for="input" class="Input-label">Senha</label>
+                    </div>
+                    <div>
+                            <label for="txtImg" class="fileContainer ">
+                        <input type="file" name="txtImg" id="txtImg" aria-label="asa">
+                       </label>
+                    </div>
+                    <input class="btn" type="submit" name="btnSubmitCadastro" id="btnSubmitCadastro" value="Cadastrar">
+                   
+                </form>
+            </div>
+        </article>
+    
+        <footer id="rodape">
+            <div id="footerContent">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="Home.html">HOME</a>
+                        </li>
+                        <li>
+                            <a href="">SOBRE NÓS</a>
+                        </li>
+                        <li>
+                            <a href="Cadastro.html">CADASTRO</a>
+                        </li>
+                        <li>
+                            <a href="">BACKEND</a>
+                        </li>
+                        <li class="iconSocialMedia">
+                            <a href="">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="iconSocialMedia">
+                            <a href="">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="iconSocialMedia">
+                            <a href="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="footerCopyright">
+                <div class="container">
+                    © 2019 COPYRIGHT. TODOS OS DIREITOS RESERVADOS.
+                </div>
+            </div>
+        </footer>
+    
+    </body>
+    
+    </html>

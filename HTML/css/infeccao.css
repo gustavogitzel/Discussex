@@ -1,0 +1,88 @@
+body {
+    background: #388e3c ;
+  }
+  
+#ist-intro
+{
+    border-bottom: 1em solid #2e7d32;
+    background: url("../img/imgInfec.png") no-repeat;
+    background-size: cover ;
+    height: 20em;
+    text-align: center;
+    text-transform: uppercase;
+    display: table;
+}
+
+#ist-intro h1
+{
+    color: #388e3c ;
+    font-size: 2.5em;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#ist-intro hr
+{
+    border-radius: 10pt;
+    background-color: #388e3c ;
+    height: 5px;
+    border: none;
+    margin: 0 5em 0 5em;
+}
+
+@media screen and (min-width: 45em) 
+{
+    #ist-intro
+    {
+        height: 20em;
+    }
+    #ist-intro h1
+    {
+        font-size: 3.5em;
+    }
+
+}
+@media screen and (min-width: 71.25em) 
+{
+    #ist-intro
+    {
+        background-size:100% 24em;
+        height: 25em;
+    }
+    #ist-intro h1
+    {
+        font-size: 5em;
+    }
+}
+
+#textoIST section
+{
+    padding: 1em;
+    margin: 0;
+}
+#textoIST .a
+{
+    background: #388e3c ;
+}
+
+#textoIST .b
+{
+    background: #66bb6a ;
+}
+#textoIST img
+{
+    max-width: 30%;
+    height: auto;
+}
+
+#ist-intro img
+{
+    height: 15em;
+    width: 100vw;
+}
+
+.texto p
+{
+    text-align: right;
+    text-align: left;
+}

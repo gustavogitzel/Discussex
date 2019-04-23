@@ -78,3 +78,16 @@
     height: 15em;
     width: 100vw;
 }
+
+.texto h1
+{
+    color: white;
+    font-size: 2em; 
+}
+
+.texto p
+{
+    text-align: justify;
+    color: white;
+    font-size: 1em;
+}

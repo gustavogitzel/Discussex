@@ -1,0 +1,88 @@
+body {
+    background: #d32f2f;
+  }
+  
+#hiv-intro
+{
+    border-bottom: 1em solid #e53935;
+    background: url("../img/imgHIV.png") no-repeat;
+    background-size: cover ;
+    height: 20em;
+    text-align: center;
+    text-transform: uppercase;
+    display: table;
+}
+
+#hiv-intro h1
+{
+    color: #c62828;
+    font-size: 2.5em;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#hiv-intro hr
+{
+    border-radius: 10pt;
+    background-color: #c62828;
+    height: 5px;
+    border: none;
+    margin: 0 5em 0 5em;
+}
+
+@media screen and (min-width: 45em) 
+{
+    #hiv-intro
+    {
+        height: 20em;
+    }
+    #hiv-intro h1
+    {
+        font-size: 3.5em;
+    }
+
+}
+@media screen and (min-width: 71.25em) 
+{
+    #hiv-intro
+    {
+        background-size:100% 24em;
+        height: 25em;
+    }
+    #hiv-intro h1
+    {
+        font-size: 5em;
+    }
+}
+
+#textos section
+{
+    padding: 1em;
+    margin: 0;
+}
+#textos .a
+{
+    background: #d32f2f;
+}
+
+#textos .b
+{
+    background: #ef9a9a;
+}
+#textos img
+{
+    max-width: 30%;
+    height: auto;
+}
+
+#hiv-intro img
+{
+    height: 15em;
+    width: 100vw;
+}
+
+.texto p
+{
+    text-align: right;
+    text-align: left;
+}

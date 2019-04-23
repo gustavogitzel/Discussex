@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Configuracoes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.EstaLogado = true;
+}
+    <link href="~/Content/cadastro.css" rel="stylesheet">
+    <link href="~/Content/configuracoes.css" rel="stylesheet">
+    <script src="~/Scripts/configuracoes.js"></script>
+    <article id="corpo" class="container row">
+        <div class="col col-2" id="imgLogin">
+            <img src="~/img/LoginImg.png">
+        </div>
+        <div class="col col-2">
+                <h1 id="tituloConfig">Configurações</h1>
+
+            <div id="btns">
+                    <button class="btn" name="btnAlteraNome" id="btnAlteraNome">Alterar Nome</button>
+                    <button class="btn" name="btnAlteraEmail" id="btnAlteraEmail">Alterar Email</button>
+                    <button class="btn" name="btnAlteraSenha" id="btnAlteraSenha">Alterar Senha</button>
+                    <button class="btn" name="btnAlteraImagem" id="btnAlteraImagem">Alterar Imagem Perfil</button>
+                    <button class="btn" name="btnExcluir" id="btnExcluir">Excluir Perfil</button>
+                </div>
+        </div>
+    </article>

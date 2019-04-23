@@ -1,0 +1,88 @@
+body {
+    background: #29b6f6;
+  }
+  
+#gravidez-intro
+{
+    border-bottom: 1em solid #039be5;
+    background: url("../img/imgGravidez.png") no-repeat;
+    background-size: cover ;
+    height: 20em;
+    text-align: center;
+    text-transform: uppercase;
+    display: table;
+}
+
+#gravidez-intro h1
+{
+    color: #29b6f6;
+    font-size: 2.5em;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#gravidez-intro hr
+{
+    border-radius: 10pt;
+    background-color: #29b6f6 ;
+    height: 5px;
+    border: none;
+    margin: 0 5em 0 5em;
+}
+
+@media screen and (min-width: 45em) 
+{
+    #gravidez-intro
+    {
+        height: 20em;
+    }
+    #gravidez-intro h1
+    {
+        font-size: 3.5em;
+    }
+
+}
+@media screen and (min-width: 71.25em) 
+{
+    #gravidez-intro
+    {
+        background-size:100% 24em;
+        height: 25em;
+    }
+    #gravidez-intro h1
+    {
+        font-size: 5em;
+    }
+}
+
+#gravidez section
+{
+    padding: 1em;
+    margin: 0;
+}
+#gravidez .a
+{
+    background: #29b6f6;
+}
+
+#gravidez .b
+{
+    background: #81d4fa;
+}
+#gravidez img
+{
+    max-width: 30%;
+    height: auto;
+}
+
+#gravidez-intro img
+{
+    height: 15em;
+    width: 100vw;
+}
+
+.texto p
+{
+    text-align: right;
+    text-align: left;
+}

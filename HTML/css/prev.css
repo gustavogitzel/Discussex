@@ -1,0 +1,88 @@
+body {
+    background: #f4511e ;
+  }
+  
+#prev-intro
+{
+    border-bottom: 1em solid #e64a19;
+    background: url("../img/imgPrev.png") no-repeat;
+    background-size: cover ;
+    height: 20em;
+    text-align: center;
+    text-transform: uppercase;
+    display: table;
+}
+
+#prev-intro h1
+{
+    color: #d84315 ;
+    font-size: 2.5em;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#prev-intro hr
+{
+    border-radius: 10pt;
+    background-color: #d84315 ;
+    height: 5px;
+    border: none;
+    margin: 0 5em 0 5em;
+}
+
+@media screen and (min-width: 45em) 
+{
+    #prev-intro
+    {
+        height: 20em;
+    }
+    #prev-intro h1
+    {
+        font-size: 3.5em;
+    }
+
+}
+@media screen and (min-width: 71.25em) 
+{
+    #prev-intro
+    {
+        background-size:100% 24em;
+        height: 25em;
+    }
+    #prev-intro h1
+    {
+        font-size: 5em;
+    }
+}
+
+#prev section
+{
+    padding: 1em;
+    margin: 0;
+}
+#prev .a
+{
+    background: #f4511e  ;
+}
+
+#prev .b
+{
+    background: #ff7043 ;
+}
+#prev img
+{
+    max-width: 30%;
+    height: auto;
+}
+
+#prev-intro img
+{
+    height: 15em;
+    width: 100vw;
+}
+
+.texto p
+{
+    text-align: right;
+    text-align: left;
+}

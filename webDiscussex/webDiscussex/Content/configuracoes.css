@@ -1,0 +1,114 @@
+﻿#fundoPreto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    background-color: black;
+    z-index:3;
+}
+
+#areaConfiguracoes {
+    border-radius: 10pt;
+    position: absolute;
+    background-color: white;
+    padding: 2em 0 2em 0;
+    box-shadow: 0 10px 6px -6px #777;
+    margin-left: 0em;
+    width: 20em;
+    left: calc(50% - 10em);
+    top: 20em;
+    z-index:4;
+}
+
+@media screen and (min-width: 40em) {
+    #areaConfiguracoes {
+        width: 30em;
+        left: calc(50% - 15em);
+    }
+
+    .excluir {
+        width: 40em !important;
+        left: calc(50% - 20em) !important;
+    }
+}
+
+@media screen and (min-width: 71.25em)
+{
+    #areaConfiguracoes {
+        width: 40em;
+        left: calc(50% - 20em);
+    }
+
+    .excluir {
+        width: 60em !important;
+        left: calc(50% - 30em) !important;
+    }
+}
+
+#btns{
+    margin-top: 8em;
+}
+
+#tituloConfig {
+    text-transform: uppercase;
+    margin-top: 2em;
+    font-size:3em;
+}
+
+#btnCancelar:hover {
+    background-color: #ef5350;
+}
+
+.concluir:hover {
+    background-color: #66bb6a !important;
+}
+
+#imgExcluir img{
+    max-width: 40%;
+}
+
+.campoTexto label
+{
+    color: black !important;
+}
+
+.campoTexto input {
+    background: #bdbdbd;
+    color: white;
+}
+
+.campoTexto input::placeholder {
+    color: white;
+}
+
+.campoTexto input:focus {
+    box-shadow: 0.025rem 0.1rem .4rem #e0e0e0;
+}
+
+.Input-label {
+    color: black;
+}
+
+    [type="file"] + label {
+        background: #bdbdbd;
+        border-radius: 5pt;
+        color: black;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding: 1rem 50px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+[type="file"] + label:hover {
+    background: #5e35b1;
+    color: white;
+}
+
+#fileDiv
+{
+    margin-bottom: 1em;
+}

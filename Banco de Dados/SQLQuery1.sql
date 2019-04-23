@@ -1,6 +1,6 @@
 create table PP2_Usuario
 (
-	codUsuario int identity(1,1) primary key not null,
+	id int identity(1,1) primary key not null,
 	nomeUsuario varchar(30) not null,
 	email varchar(50) not null,
 	senha varchar(10) not null,
@@ -10,10 +10,10 @@ create table PP2_Usuario
 
 create table PP2_Acesso
 (
-	idAcesso int identity(1,1) primary key not null,
+	id int identity(1,1) primary key not null,
 	data datetime not null,
 	codUsuario int not null 
-	constraint fkPP2_Usuario foreign key (codUsuario) references PP2_Usuario(codUsuario) 
+	constraint fkPP2_Usuario foreign key (codUsuario) references PP2_Usuario(id) 
 )
 
 create table PP2_Quiz
@@ -65,9 +65,11 @@ create table PP2_EducacaoSexual
 
 create table PP2_Doenca
 (
-   codDoenca int primary key not null,
-   nomTema varchar(30) not null,
-   descricao nText not null
+   id int primary key not null,
+   titulo varchar(30),
+   descricao nText not null,
+   codImagem int not null
+   constraint fkPP2_Imagem foreign key (codImagem) references PP2_Imagem(id)
 )
 
 create table PP2_MetodoPrevencao
@@ -79,17 +81,23 @@ create table PP2_MetodoPrevencao
 
 create table PP2_Corpo
 (
-   codCorpo int primary key not null,
-   titulo varchar(30) not null,
-   texto nText not null
+   id int primary key not null,
+   titulo varchar(30),
+   texto nText not null,
+   codImagem int not null
+   constraint fkPP2_Imagem2 foreign key (codImagem) references PP2_Imagem(id)
 )
+
 
 create table PP2_Gravidez
 (
-   codGravidez int primary key not null,
-   titulo varchar(30) not null,
-   texo nText not null
+   id int primary key not null,
+   titulo varchar(30),
+   texo nText not null,
+   codImagem int not null
+   constraint fkPP2_Imagem3 foreign key (codImagem) references PP2_Imagem(id)
 )
+
 
 create table PP2_Mito
 (
@@ -101,6 +109,15 @@ create table PP2_Mito
 
 create table PP2_Imagem
 (
-	codImagem int primary key not null,
+	id int primary key not null,
 	link varchar(max) not null
 )
+drop table PP2_Imagem
+
+select * from PP2_Imagem
+
+insert into PP2_Imagem values (1, '../img/imgHIV.png')
+insert into PP2_Imagem values (2, '../img/imgIST.png')
+insert into PP2_Imagem values (3, '../img/imgPrev.png')
+insert into PP2_Imagem values (4, '../img/imgGravidez.png')
+insert into PP2_Imagem values (5, '../img/imgCorpo.png')
