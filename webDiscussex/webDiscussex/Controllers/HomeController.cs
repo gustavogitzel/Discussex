@@ -8,10 +8,10 @@ using System.Web.Mvc;
 
 namespace webDiscussex.Controllers
 {
-    public class HomePaginaController : Controller
+    public class HomeController : Controller
     {
         // GET: HomePagina
-        public ActionResult Home()
+        public ActionResult Index()
         {
             var dao = new EducacaoSexuaDAO();
 

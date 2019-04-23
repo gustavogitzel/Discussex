@@ -178,9 +178,26 @@
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="img\aa.png" />
+    <Content Include="img\corpo\imgCorpo.png" />
+    <Content Include="img\corpo\imgHomemExterno.png" />
+    <Content Include="img\corpo\imgHomemInterno.png" />
+    <Content Include="img\corpo\imgMulherExterno.png" />
+    <Content Include="img\corpo\imgMulherInterno.png" />
     <Content Include="img\Favicon.ico" />
     <Content Include="img\footer.png" />
     <Content Include="img\footer2.png" />
+    <Content Include="img\gravidez\imgAdolescente.png" />
+    <Content Include="img\gravidez\imgAlimentacao.png" />
+    <Content Include="img\gravidez\imgAmamentacao.png" />
+    <Content Include="img\gravidez\imgDente.png" />
+    <Content Include="img\gravidez\imgDireitos.png" />
+    <Content Include="img\gravidez\imgExames.png" />
+    <Content Include="img\gravidez\imgFamilia.png" />
+    <Content Include="img\gravidez\imgGravidez.png" />
+    <Content Include="img\gravidez\imgParto.png" />
+    <Content Include="img\gravidez\imgTrabalho.png" />
+    <Content Include="img\gravidez\imgVacina.png" />
+    <Content Include="img\gravidez\imgVomito.png" />
     <Content Include="img\homeHeroOrange.png" />
     <Content Include="img\iconeCorpo.png" />
     <Content Include="img\iconeGrafico.png" />
@@ -190,12 +207,17 @@
     <Content Include="img\iconeMitosVerdades.png" />
     <Content Include="img\iconePrevencao.png" />
     <Content Include="img\iconeQuiz.png" />
-    <Content Include="img\imgCorpo.png" />
-    <Content Include="img\imgGravidez.png" />
     <Content Include="img\imgHIV.png" />
-    <Content Include="img\imgIST.png" />
     <Content Include="img\imgPrev.png" />
     <Content Include="img\introPesquisa.png" />
+    <Content Include="img\ist\imgBebeGonorreia.png" />
+    <Content Include="img\ist\imgCamisinhas.png" />
+    <Content Include="img\ist\imgHerpes.png" />
+    <Content Include="img\ist\imgIST-Intro.png" />
+    <Content Include="img\ist\imgIST.png" />
+    <Content Include="img\ist\imgMorte.png" />
+    <Content Include="img\ist\imgMulherSifilis.png" />
+    <Content Include="img\ist\imgTestagem.png" />
     <Content Include="img\lacoHIV.png" />
     <Content Include="img\LoginImg.png" />
     <Content Include="img\Logo.png" />
@@ -225,7 +247,6 @@
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -237,6 +258,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="img\corpo\Thumbs.db" />
+    <Content Include="img\ist\Thumbs.db" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Usuario\Cadastro.cshtml" />
