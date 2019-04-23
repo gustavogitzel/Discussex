@@ -14,10 +14,8 @@ namespace webDiscussex.Models
         public int Id { get; set; }
         public string Titulo { get; set; }
         public string Texto { get; set; }
-        [Key]
-        [ForeignKey("Imagem")]
         public int CodImagem { get; set; }
 
-        public virtual Imagem Link { get; set; }
+        public Imagem Link { get; set; }
     }
 }
