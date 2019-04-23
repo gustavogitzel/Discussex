@@ -16,5 +16,6 @@ namespace webDiscussex.DAO
                 return contexto.PP2_Imagem.ToList();
             }
         }
+        
     }
 }

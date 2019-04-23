@@ -176,7 +176,6 @@
     <Content Include="Content\style.css" />
     <Content Include="Content\tema.css" />
     <Content Include="Global.asax" />
-    <Content Include="Home.aspx" />
     <Content Include="img\aa.png" />
     <Content Include="img\corpo\imgCorpo.png" />
     <Content Include="img\corpo\imgHomemExterno.png" />
@@ -236,22 +235,22 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EducacaoSexualController.cs" />
     <Compile Include="Controllers\ForumDiscussexController.cs" />
-    <Compile Include="Controllers\HomePaginaController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAO\EducacaoSexuaDAO.cs" />
     <Compile Include="DAO\EducacaoSexualContext.cs" />
+    <Compile Include="DAO\CorpoDAO.cs" />
+    <Compile Include="DAO\DoencaDAO.cs" />
+    <Compile Include="DAO\GravidezDAO.cs" />
     <Compile Include="DAO\ImagemDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Models\EducacaoSexual.cs" />
+    <Compile Include="Models\Doenca.cs" />
+    <Compile Include="Models\Corpo.cs" />
+    <Compile Include="Models\Gravidez.cs" />
     <Compile Include="Models\Imagem.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -272,8 +271,8 @@
     <Content Include="Views\EducacaoSexual\Corpo.cshtml" />
     <Content Include="Views\EducacaoSexual\HIV.cshtml" />
     <Content Include="Views\EducacaoSexual\Infeccoes.cshtml" />
-    <Content Include="Views\HomePagina\Home.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
