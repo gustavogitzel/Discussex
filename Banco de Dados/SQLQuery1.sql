@@ -69,7 +69,7 @@ create table PP2_Doenca
    titulo varchar(30),
    descricao nText not null,
    codImagem int not null
-	constraint fkPP2_Imagem foreign key (id) references PP2_Imagem(id),
+   constraint fkPP2_Imagem foreign key (codImagem) references PP2_Imagem(id),
 )
 
 create table PP2_MetodoPrevencao
@@ -82,8 +82,10 @@ create table PP2_MetodoPrevencao
 create table PP2_Corpo
 (
    codCorpo int primary key not null,
-   titulo varchar(30) not null,
-   texto nText not null
+   titulo varchar(30),
+   texto nText not null,
+   codImagem int not null
+   constraint fkPP2_Imagem2 foreign key (codImagem) references PP2_Imagem(id),
 )
 
 create table PP2_Gravidez
