@@ -112,10 +112,10 @@ create table PP2_Gravidez
 
 create table PP2_Mito
 (
-   codMito int primary key not null,
+   id int primary key not null,
    titulo nText not null,
-   verdade nText not null,
-   mentira nText not null
+   verdade nText,
+   mentira nText 
 )
 
 create table PP2_Imagem

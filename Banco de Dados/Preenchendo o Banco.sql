@@ -418,3 +418,46 @@ insert into PP2_Imagem values(55,'img/aids/imgDepoimento.png')
 insert into PP2_Imagem values(56,'img/aids/imgPEPxPREP.png')
 insert into PP2_Imagem values(57,'img/aids/imgTransmissao.png')
 insert into PP2_Imagem values(58,'img/aids/imgIgual.png')
+
+
+insert into PP2_Mito values(1,'É correto dizer que uma carga viral indetectável é também intransmissível.', 
+'VERDADE: Quando uma pessoa HIV+ tem carga viral igual ou inferior a 40 cópias/ml de sangue, é dita como indetectável. Três grandes estudos sobre a transmissão 
+sexual do HIV, que usaram casais em que um parceiro possuía carga indetectável e o outro que não possui o vírus, trouxeram resultados animadores, pois em nenhum 
+dos casos houve transmissão.', null)
+
+insert into PP2_Mito values(2,'Só transmitimos IST quando apresentamos sintomas, fora isso não é possível transmitir.', null,
+'MITO: A transmissão das infecções sexualmente transmissíveis pode ocorrer mesmo sem a presença de sintomas. O próprio termo IST ao substituir DST é usado
+para enfatizar essa ideia, já que DST vem de doença o que implica sintomas e IST vem de infecção que não necessariamente precisa de sintomas.')
+
+insert into PP2_Mito values(3,'A mulher não pode manter relações sexuais durante a gestação.', null,
+'MITO: A mulher pode manter relações sexuais durante a gravidez desde que se sinta confortável, não sinta dor na barriga ou na vagina, não tenha sangramento ou 
+que a bolsa d’água não esteja rompida.  ')
+
+insert into PP2_Mito values(4,'Usar duas camisinhas ao mesmo tempo é uma ótima ideia para quem quer se proteger duas vezes mais.', null,
+'MITO: Lembre-se que usar duas camisinhas ao mesmo tempo não oferece mais proteção, muito pelo contrário, isso aumenta o risco de rompimento. Não devemos usar nem
+duas masculinas, nem duas femininas, nem masculina com feminina ao mesmo tempo.')
+
+insert into PP2_Mito values(5,'O hímen costuma romper na primeira relação sexual, porém, algumas mulheres possuem hímen mais resistente e flexível que não se
+rompe nessa situação.', 
+'VERDADE: O hímen é uma pele fina e elástica que cobre parte da entrada da vagina e geralmente se rompe na primeira relação sexual. Algumas mulheres possuem hímen
+mais resistente e flexível e não se rompe na primeira relação sexual.',null)
+
+insert into PP2_Mito values(6,'O pênis possui função urinária e reprodutiva, por conta disso quando durante a ejaculação o homem expele ao mesmo tempo urina e 
+esperma.', null,
+'MITO: A uretra, canal que sai da bexiga e passa por dentro do pênis, elimina urina e esperma, mas nunca os dois ao mesmo tempo.')
+
+insert into PP2_Mito values(7,'Não se morre de AIDS são as doenças oportunistas que acabam matando a pessoa.', 
+'VERDADE: Todos os dias o famoso sistema imunológico nos protege do ataque de microrganismos. O HIV passa a se ligar com nossas células defensoras, penetrando no
+seu interior e fazendo cópias de si mesmo. O sistema imunológico vai ficando cada vez mais fraco o que facilita para infecções oportunistas.', null)
+
+insert into PP2_Mito values(8,'A gravidez na adolescência é uma situação complicada e é necessário muito apoio da família.', 
+'VERDADE: Os maiores riscos quando falamos de gravidez na adolescência são aqueles psicossociais, podem surgir problemas familiares e também relacionados à vida 
+escolar. É uma situação delicada e precisa de cuidados específicos, por isso é necessário muito apoio familiar.',null)
+
+insert into PP2_Mito values(9,'O diafragma pode ser retirado assim que o homem ejacula. Não sendo necessário período de espera.', null,
+'MITO: O diafragma só deve ser retirado de seis a oito horas após a última relação sexual. Após retirar o diafragma lave com água e sabão, seque e guarde em lugar
+fresco e seco, não deve ser deixado exposto à luz do sol.')
+
+insert into PP2_Mito values(10,'O autoexame não é recomendado como uma boa prática na prevenção de IST, porque as pessoas não possuem formação acadêmica para 
+isso.', null,'MITO: O autoexame é importante, conhecer e saber analisar o próprio corpo é essencial para uma vida sexual mais feliz e segura, por isso não devemos
+nos esquecer de observar os próprios órgãos genitais e vendo se a cor, aparência, cheiro e a pele estão saudáveis. ')
