@@ -15,7 +15,5 @@ namespace webDiscussex.Models
         public string Titulo { get; set; }
         public string Texto { get; set; }
         public int CodImagem { get; set; }
-
-        public Imagem Link { get; set; }
     }
 }

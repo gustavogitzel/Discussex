@@ -61,11 +61,45 @@
     </header>
 
 
-    <section id='@ViewBag.Intro' class="container intros">
-        <h1>Vamos falar de @ViewBag.Title?<hr></h1>
+    <section id='@ViewBag.Intro' class="container intros" style="background-image: url(/@ViewBag.ListaImagens[0].Link)">
+        <h1>@ViewBag.Tabela[0].Titulo<hr></h1>
     </section>
 
-    @RenderBody();
+    <div id='@ViewBag.Exibir' class="container">
+        @for (int i = 1; i < ViewBag.Tabela.Count; i++)
+        {
+            if (ViewBag.Tabela[i].Id % 2 != 0)
+            {
+                <section class='a row'>
+                    <div class="col col-2">
+                        <img  src="~/@ViewBag.ListaImagens[i].Link">
+                    </div>
+                    <div class="col col-2 texto">
+                        <h1>@ViewBag.Tabela[i].Titulo</h1>
+                        <p>
+                            @ViewBag.Tabela[i].Texto
+                        </p>
+                    </div>
+                </section>
+            }
+            else
+            {
+                <section class='b row'>
+                    <div class="col col-2">
+                        <h1>@ViewBag.Tabela[i].Titulo</h1>
+                        <p>
+                            @ViewBag.Tabela[i].Texto
+                        </p>
+                    </div>
+                    <div class="col col-2">
+                        <img  src="~/@ViewBag.ListaImagens[i].Link">
+                    </div>
+                </section>
+            }
+        }
+    </div>
+    @RenderBody()
+
     <footer id="rodape">
         <div id="footerContent">
             <div class="container">

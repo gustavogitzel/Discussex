@@ -19,10 +19,14 @@ namespace webDiscussex.Controllers
         public ActionResult Gravidez()
         {
             var dao = new GravidezDAO();
+        
+            IList<Imagem> listaImagens = new List<Imagem>();
 
-            IList<Gravidez> lista = dao.Lista();
+            IList<Gravidez> lista = dao.Lista(ref listaImagens);
 
-            ViewBag.TabelaGravidez = lista;
+            ViewBag.ListaImagens = listaImagens;
+
+            ViewBag.Tabela = lista;
 
             return View();
         }
@@ -36,9 +40,13 @@ namespace webDiscussex.Controllers
         {
             var dao = new CorpoDAO();
 
-            IList<Corpo> lista = dao.Lista();
+            IList<Imagem> listaImagens = new List<Imagem>();
 
-            ViewBag.TabelaCorpo = lista;
+            IList<Corpo> lista = dao.Lista(ref listaImagens);
+       
+            ViewBag.ListaImagens = listaImagens;
+
+            ViewBag.Tabela = lista;
 
             return View();
         }
@@ -53,9 +61,13 @@ namespace webDiscussex.Controllers
         {
             var dao = new DoencaDAO();
 
-            IList<Doenca> lista = dao.Lista();
+            IList<Imagem> listaImagens = new List<Imagem>();
 
-            ViewBag.TabelaInfeccoes = lista;
+            IList<Doenca> lista = dao.Lista(ref listaImagens);
+
+            ViewBag.ListaImagens = listaImagens;
+
+            ViewBag.Tabela = lista;
 
             return View();
         }
