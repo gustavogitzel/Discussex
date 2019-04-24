@@ -75,9 +75,10 @@
 {
     background: #8854d0;
 }
+
 #intros img
 {
-    max-width: 30%;
+    max-width: 40%;
     height: auto;
 }
 
@@ -90,7 +91,8 @@
 .texto h1
 {
     color: white;
-    font-size: 2em; 
+    font-size: 3.5em; 
+    text-transform: uppercase;
 }
 
 .texto p

@@ -23,7 +23,7 @@
         <img id="logo" src="~/img/Logo.png" alt="vine">
         <nav>
             <ul>
-                <a href="~/HomePagina/Home">
+                <a href="~/Home">
                     <li>
                         Home
                     </li>
@@ -36,12 +36,12 @@
 
                 @if (Session["emailUsuario"] == null)
                 {
-                    <a href="Login">
+                    <a href="~/Usuario/Login">
                         <li id="linkLogin">
                             Login
                         </li>
                     </a>
-                    <a href="Cadastro">
+                    <a href="~/Usuario/Cadastro">
                         <li>
                             CADASTRO
                         </li>
@@ -65,7 +65,7 @@
         <h1>@ViewBag.Tabela[0].Titulo<hr></h1>
     </section>
 
-    <div id='@ViewBag.Exibir' class="container">
+    <div id='@ViewBag.Exibir' class="container linhaTema">
         @for (int i = 1; i < ViewBag.Tabela.Count; i++)
         {
             if (ViewBag.Tabela[i].Id % 2 != 0)
@@ -105,7 +105,7 @@
             <div class="container">
                 <ul>
                     <li>
-                        <a href="Home.html">HOME</a>
+                        <a href="~/Home">HOME</a>
                     </li>
                     <li>
                         <a href="">SOBRE NÓS</a>

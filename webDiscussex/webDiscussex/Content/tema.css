@@ -186,3 +186,27 @@
 #infeccoes-div .b {
     background: #66bb6a;
 }
+
+.linhaTema img
+{
+    /*max-width: 70%;*/
+    max-height: 20em;
+    padding:1em;
+}
+
+.linhaTema p
+{
+    padding: 1em;
+}
+
+html
+{
+    overflow-x:hidden;
+}
+
+
+@media screen and (min-width: 45em) {
+    .linhaTema img {
+        max-width: 70%;
+    }
+}
