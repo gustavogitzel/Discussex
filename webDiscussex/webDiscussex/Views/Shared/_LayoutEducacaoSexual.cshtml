@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="~/Content/style.css" rel="stylesheet">
     <link href="~/Content/tema.css" rel="stylesheet">
+    <link href="~/Content/home.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
           crossorigin="anonymous">
@@ -75,21 +76,39 @@
                         <img  src="~/@ViewBag.ListaImagens[i].Link">
                     </div>
                     <div class="col col-2 texto">
-                        <h1>@ViewBag.Tabela[i].Titulo</h1>
-                        <p>
-                            @ViewBag.Tabela[i].Texto
-                        </p>
+                        <h1 class="tituloTema">@ViewBag.Tabela[i].Titulo</h1>
+                        @{
+        string source = ViewBag.Tabela[i].Texto;
+        string[] stringSeparators = new string[] { "<p>", "</p>" };
+        string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+        foreach (string paragrafo in result)
+        {
+                    <p>
+                        @paragrafo
+                    </p>
+}
+
+                        }
                     </div>
                 </section>
             }
             else
             {
                 <section class='b row'>
-                    <div class="col col-2">
-                        <h1>@ViewBag.Tabela[i].Titulo</h1>
-                        <p>
-                            @ViewBag.Tabela[i].Texto
-                        </p>
+                    <div class="col col-2 texto">
+                        <h1 class="tituloTema">@ViewBag.Tabela[i].Titulo</h1>
+                        @{
+        string source = ViewBag.Tabela[i].Texto;
+        string[] stringSeparators = new string[] { "<p>", "</p>" };
+        string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+        foreach (string paragrafo in result)
+        {
+                    <p>
+                        @paragrafo
+                    </p>
+}
+
+                        }
                     </div>
                     <div class="col col-2">
                         <img  src="~/@ViewBag.ListaImagens[i].Link">

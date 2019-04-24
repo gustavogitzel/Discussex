@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
-
+﻿@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+@import url('https://fonts.googleapis.com/css?family=Nunito:300');
 .par {
     background: #8854d0;
 }
@@ -8,96 +8,87 @@
     background: #a55eea;
 }
 
-#home-hero
-{
+#home-hero {
     border-bottom: 1em solid rgb(240, 172, 25);
     background: url("../img/homeHeroOrange.png") no-repeat;
-    background-size: cover ;
+    background-size: cover;
     height: 20em;
     text-align: center;
     text-transform: uppercase;
     display: table;
 }
 
-#home-hero h1
-{
-    color: rgb(204, 135, 17);
-    font-size: 2.5em;
-    display: table-cell;
-    vertical-align: middle;
-}
+    #home-hero h1 {
+        color: rgb(204, 135, 17);
+        font-size: 2.5em;
+        display: table-cell;
+        vertical-align: middle;
+    }
 
-#home-hero hr
-{
-    border-radius: 10pt;
-    background-color: rgb(204, 135, 17);
-    height: 5px;
-    border: none;
-    margin: 0 1em 0 1em;
-}
+    #home-hero hr {
+        border-radius: 10pt;
+        background-color: rgb(204, 135, 17);
+        height: 5px;
+        border: none;
+        margin: 0 1em 0 1em;
+    }
 
-@media screen and (min-width: 45em) 
-{
-    #home-hero
-    {
+@media screen and (min-width: 45em) {
+    #home-hero {
         height: 20em;
     }
-    #home-hero h1
-    {
-        font-size: 3.5em;
-    }
 
+        #home-hero h1 {
+            font-size: 3.5em;
+        }
 }
-@media screen and (min-width: 71.25em) 
-{
-    #home-hero
-    {
-        background-size:100% 24em;
+
+@media screen and (min-width: 71.25em) {
+    #home-hero {
+        background-size: 100% 24em;
         height: 25em;
     }
-    #home-hero h1
-    {
-        font-size: 5em;
-    }
+
+        #home-hero h1 {
+            font-size: 5em;
+        }
 }
 
-#intros section
-{
+#intros section {
     padding: 1em;
     margin: 0;
 }
-.a
-{
+
+.a {
     background: #a55eea;
 }
 
-.b
-{
+.b {
     background: #8854d0;
 }
 
-#intros img
-{
-    max-width: 40%;
+#intros img {
+    max-width: 50%;
     height: auto;
 }
 
-#home-hero img
-{
+#home-hero img {
     height: 15em;
     width: 100vw;
 }
 
-.texto h1
-{
+.tituloTema {
     color: white;
-    font-size: 3.5em; 
+    font-size: 3.5em;
     text-transform: uppercase;
 }
 
-.texto p
-{
+.texto p {
     text-align: justify;
     color: white;
-    font-size: 1em;
+    font-size: 1.3em;
+    font-family: 'Nunito';
+    font-weight: 300;
+    padding: .5em;
 }
+
