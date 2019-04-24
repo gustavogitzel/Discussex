@@ -17,6 +17,10 @@ namespace webDiscussex.DAO
 
         public DbSet<Doenca> PP2_Doenca { get; set; }
 
+        public DbSet<Hiv> PP2_HIV { get; set; }
+
+        public DbSet<Prevencao> PP2_MetodoPrevencao { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=regulus.cotuca.unicamp.br;Initial Catalog=PR118194;User ID=PR118194;Password=guisa2019");

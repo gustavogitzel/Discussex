@@ -17,7 +17,7 @@ namespace webDiscussex.DAO
                 foreach (Gravidez g in lista)
                     imgs.Add(contexto.PP2_Imagem.Where(p => p.Id == g.CodImagem).FirstOrDefault());
 
-                return contexto.PP2_Gravidez.ToList();
+                return lista;
             }
         }
     }

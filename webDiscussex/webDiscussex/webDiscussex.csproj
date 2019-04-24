@@ -237,6 +237,8 @@
     <Compile Include="Controllers\ForumDiscussexController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="DAO\PrevencaoDAO.cs" />
+    <Compile Include="DAO\HivDAO.cs" />
     <Compile Include="DAO\EducacaoSexuaDAO.cs" />
     <Compile Include="DAO\EducacaoSexualContext.cs" />
     <Compile Include="DAO\CorpoDAO.cs" />
@@ -251,7 +253,9 @@
     <Compile Include="Models\Doenca.cs" />
     <Compile Include="Models\Corpo.cs" />
     <Compile Include="Models\Gravidez.cs" />
+    <Compile Include="Models\Hiv.cs" />
     <Compile Include="Models\Imagem.cs" />
+    <Compile Include="Models\Prevencao.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

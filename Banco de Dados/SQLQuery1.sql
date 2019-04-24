@@ -74,9 +74,20 @@ create table PP2_Doenca
 
 create table PP2_MetodoPrevencao
 (
-   codMetodo int primary key not null,
-   titulo varchar(30) not null,
-   texo nText not null
+   id int primary key not null,
+   titulo varchar(30),
+   texto nText not null,
+   codImagem int not null
+   constraint fkPP2_Imagem4 foreign key (codImagem) references PP2_Imagem(id)
+)
+
+create table PP2_HIV
+(
+   id int primary key not null,
+   titulo varchar(30),
+   texto nText not null,
+   codImagem int not null
+   constraint fkPP2_Imagem5 foreign key (codImagem) references PP2_Imagem(id)
 )
 
 create table PP2_Corpo

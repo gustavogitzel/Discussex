@@ -17,7 +17,7 @@ namespace webDiscussex.DAO
                 foreach (Corpo c in lista)
                     imgs.Add(contexto.PP2_Imagem.Where(p => p.Id == c.CodImagem).FirstOrDefault());
 
-                return contexto.PP2_Corpo.ToList();
+                return lista;
             }
         }
     }

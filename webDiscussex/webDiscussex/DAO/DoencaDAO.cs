@@ -17,7 +17,7 @@ namespace webDiscussex.DAO
                 foreach (Doenca d in lista)
                     imgs.Add(contexto.PP2_Imagem.Where(p => p.Id == d.CodImagem).FirstOrDefault());
 
-                return contexto.PP2_Doenca.ToList();
+                return lista;
             }
         }
     }

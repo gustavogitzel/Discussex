@@ -32,7 +32,17 @@ namespace webDiscussex.Controllers
         }
 
         public ActionResult Prevencao()
-        {            
+        {
+            var dao = new PrevencaoDAO();
+
+            IList<Imagem> listaImagens = new List<Imagem>();
+
+            IList<Prevencao> lista = dao.Lista(ref listaImagens);
+
+            ViewBag.ListaImagens = listaImagens;
+
+            ViewBag.Tabela = lista;
+
             return View();
         }
 
@@ -54,6 +64,16 @@ namespace webDiscussex.Controllers
 
         public ActionResult HIV()
         {
+            var dao = new HivDAO();
+
+            IList<Imagem> listaImagens = new List<Imagem>();
+
+            IList<Hiv> lista = dao.Lista(ref listaImagens);
+
+            ViewBag.ListaImagens = listaImagens;
+
+            ViewBag.Tabela = lista;
+
             return View();
         }
 
