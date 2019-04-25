@@ -237,6 +237,8 @@
     <Compile Include="Controllers\ForumDiscussexController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="DAO\MitosEVerdades.cs" />
+    <Compile Include="DAO\QuizDAO.cs" />
     <Compile Include="DAO\PrevencaoDAO.cs" />
     <Compile Include="DAO\HivDAO.cs" />
     <Compile Include="DAO\EducacaoSexuaDAO.cs" />
@@ -249,6 +251,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Quiz.cs" />
+    <Compile Include="Models\MitosEVerdades.cs" />
     <Compile Include="Models\EducacaoSexual.cs" />
     <Compile Include="Models\Doenca.cs" />
     <Compile Include="Models\Corpo.cs" />
@@ -277,6 +281,8 @@
     <Content Include="Views\EducacaoSexual\Infeccoes.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\EducacaoSexual\Quiz.cshtml" />
+    <Content Include="Views\EducacaoSexual\Mitos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
