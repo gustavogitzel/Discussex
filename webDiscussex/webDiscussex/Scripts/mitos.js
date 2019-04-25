@@ -1,13 +1,21 @@
 ﻿$(document).ready(() => {
-    $(".verdade").click(() => {
-        exibirResposta();
+    $('.verdade').click(function () {
+        var $elementoPai = $(this).parent();
+
+        var $elementoAvo = $elementoPai.parent();
+
+        var $elemento = $elementoAvo.find('[name = "aparecer"]');
+
+        $elemento.slideDown();
     });
 
-    $(".mito").click(() => {
-        exibirResposta();
+    $(".mito").click(function() {
+        var $elementoPai = $(this).parent();
+
+        var $elementoAvo = $elementoPai.parent();
+
+        var $elemento = $elementoAvo.find('[name = "aparecer"]');
+
+        $elemento.slideDown();
     });
 });
-
-function exibirResposta() {
-    $(this).parentsUntil("section").siblings().slideDown();
-}

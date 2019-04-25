@@ -13,5 +13,19 @@
 }
 
 .btn.mito:hover {
-    background: #b71c1c ;
+    background: #b71c1c;
+}
+
+p.verdade {
+    color: #66bb6a;
+    font-weight: bold;
+    background-color: #f3e5f5;
+    border-radius: 0.4em;
+}
+
+p.mentira {
+    color: #f44336;
+    background-color: #f3e5f5;
+    font-weight: bold;
+    border-radius: 0.4em;
 }
