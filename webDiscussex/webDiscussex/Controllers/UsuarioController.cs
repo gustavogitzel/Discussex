@@ -116,7 +116,6 @@ namespace webDiscussex.Controllers
             Session["emailUsuario"] = user.Email;
             Session["nomeUsuario"] = user.NomeUsuario;
             Session["imgPerfil"] = user.ImgPerfil;
-            Session["pontos"] = user.Pontuacao;
             return RedirectToAction("Home", "HomePagina");
         }
     }

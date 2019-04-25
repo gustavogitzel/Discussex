@@ -4,7 +4,6 @@ create table PP2_Usuario
 	nomeUsuario varchar(30) not null,
 	email varchar(50) not null,
 	senha varchar(10) not null,
-	pontuacao int,
 	imgPerfil varchar(max)
 )
 
@@ -18,7 +17,7 @@ create table PP2_Acesso
 
 create table PP2_Quiz
 (
-	codQuiz int primary key not null,
+	id int primary key not null,
 	pergunta nText not null,
 	resposta nText not null,
 	opcaoA nText,

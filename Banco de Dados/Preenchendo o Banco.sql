@@ -461,3 +461,118 @@ fresco e seco, não deve ser deixado exposto à luz do sol.')
 insert into PP2_Mito values(10,'O autoexame não é recomendado como uma boa prática na prevenção de IST, porque as pessoas não possuem formação acadêmica para 
 isso.', null,'MITO: O autoexame é importante, conhecer e saber analisar o próprio corpo é essencial para uma vida sexual mais feliz e segura, por isso não devemos
 nos esquecer de observar os próprios órgãos genitais e vendo se a cor, aparência, cheiro e a pele estão saudáveis. ')
+
+
+
+insert into PP2_Quiz values(1, 'Quais, dos métodos a seguir, não são recomendados para adolescentes?', 
+'opcaoB',
+'Camisinha e Diafragma.', 
+'Tabela, Muco Cervical, Sintotermico e Temperatura Basal.', 
+'Camisinha Feminina e Tabela.', 
+'Muco Cervical, Temperatura Basal e Espermicida.',
+ null)
+
+insert into PP2_Quiz values(2, 'Em qual situação pode ocorrer a transmissão do HIV?', 
+'opcaoC', 
+'Abraçar um soropositivo para o HIV.', 
+'Fazer sexo com camisinha.', 
+'Acidente com objeto perfuro-cortante com uma pessoa soropositiva.', 
+'Beijar uma pessoa infectada.', 
+'Compartilhar sabonete e toalha com um HIV+.')
+
+insert into PP2_Quiz values(3, 'Qual IST abaixo mais tem crescido nos últimos anos no Brasil? ',
+'opcaoB', 
+'Gonorreia', 
+'Sífilis', 
+'Herpes', 
+'Clamídia', 
+'AIDS')
+
+insert into PP2_Quiz values(4, 'Qual das alternativas apresenta uma boa prática para se prevenir de ISTs?', 
+'opcaoD', 
+'Fazer sexo sem camisinha.', 
+'Compartilhar seringas.', 
+'Ignorar coceiras, bolhas ou feridas que apareçam nas regiões genitais.', 
+'Fazer testagem para infeções regularmente.', 
+null)
+
+insert into PP2_Quiz values(5, 'Qual grupo a seguir podem fazer o uso da PrEP?', 
+'opcaoC', 
+'Adolescentes.', 
+'Qualquer um que deseje.', 
+'Trabalhadores (as) do sexo.', 
+'Adultos.', 
+null)
+
+insert into PP2_Quiz values(6, 'A fecundação, que ocorre nas tubas uterinas, envolve dois principais agentes, quem são eles?', 
+'opcaoE', 
+'Espermatozoides e clitóris.', 
+'Pênis e zigoto.', 
+'Menstruação e óvulos.', 
+'Saco escrotal e útero.', 
+'Espermatozoides e óvulos.')
+
+insert into PP2_Quiz values(7, 'Você sabe o que é a janela imunológica?', 
+'opcaoD', 
+'Período em que a imunidade aumenta e a pessoa ficando imune a doença.', 
+'Período em que a imunidade fica muito baixa e a pessoa pega qualquer doença facilmente.', 
+'Período em que os anticorpos se tornam mais suscetíveis ao vírus do HIV.', 
+'Período em que a pessoa infectada pelo vírus do HIV apresenta resultados negativos nos testes.', 
+'Período em que a pessoa passa a apresentar sintomas da AIDS.')
+
+insert into PP2_Quiz values(8, 'Quais podem ser as consequências de uma gravidez precoce sem os cuidados necessários?', 
+'opcaoA', 
+'Depressão pós-parto e evasão escolar.', 
+'Manchas na pele e dor de cabeça.', 
+'Insônia e tremedeira.', 
+'Depressão e náuseas.', 
+null)
+
+insert into PP2_Quiz values(9, 'Em que situação pode tomar a pílula do dia seguinte?', 
+'opcaoB', 
+'Depois de qualquer relação sexual.',
+'Em casos de extrema urgência quando o método de contracepção usado falha.', 
+'Todos os dias.', 
+'Um dia antes de ter uma relação sexual.', 
+'Uma vez a cada dois dias.')
+
+insert into PP2_Quiz values(10,'Se a mulher produzir mais leite do que o bebê mama, qual a melhor opção para ela?', 'opcaoB', 
+'Tirar o leite e jogar fora.', 
+'Doar para um banco de leite.', 
+'Forçar o bebê a tomar tudo.', 
+'Dar o leite para o animal de estimação.', 
+'Tomar o leite em excesso.')
+
+insert into PP2_Quiz values(11,'O pênis é formado pelo ___, pela cabeça do pênis, chamada___, que é recoberta pelo____.', 'opcaoD', 
+'Útero, glande e testículo.', 
+'Próstata, tubas uterinas e espermatozoides.', 
+'Testículo, uretra e epidídimo.', 
+'Corpo, glande e prepúcio.', 
+'Ovário, vesícula seminal e prepúcio.')
+
+insert into PP2_Quiz values(12,'Uma IST pode ser transmitida por meio de relações sexuais desprotegidas e também por meio de:', 'opcaoA', 
+'Gravidez ou parto caso a mãe esteja infectada.', 
+'Secreções corporais como suor e saliva.', 
+'Pelo ar.', 
+'Por alimentos e água contaminada.',
+null)
+
+insert into PP2_Quiz values(13,'Qual a melhor opção na hora do parto? ', 'opcaoD', 
+'Ficar desesperada e gritar com os enfermeiros.', 
+'Ficar nervosa e chorar muito.', 
+'Dormir e fingir que nada está acontecendo.', 
+'Manter a calma e a tranquilidade.', 
+null)
+
+insert into PP2_Quiz values(14,'Qual é a função do clitóris? ', 'opcaoA', 
+'Proporcionar prazer sexual.', 
+'Nenhuma.', 
+'Produzir hormônios.', 
+'Eliminar urina.', null)
+
+insert into PP2_Quiz values(15,'Como podemos tornar o tratamento de uma IST mais rápido? ', 'opcaoC', 
+'Tomar todos os remédios de uma vez.', 
+'Não fazer o tratamento e deixar que a infecção se cure sozinha.', 
+'Fazer o diagnóstico precocemente.',
+'Transmitir para outra pessoa e se livrar dela.', 
+null)

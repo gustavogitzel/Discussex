@@ -91,5 +91,27 @@ namespace webDiscussex.Controllers
 
             return View();
         }
+
+        public ActionResult Mitos()
+        {
+            var dao = new MitosEVerdadesDAO();
+
+            IList<MitosEVerdades> lista = dao.Lista();
+
+            ViewBag.Tabela = lista;
+
+            return View();
+        }
+
+        public ActionResult Quiz()
+        {
+            var dao = new QuizDAO();
+
+            IList<Quiz> lista = dao.Lista();
+
+            ViewBag.Tabela = lista;
+
+            return View();
+        }
     }
 }
