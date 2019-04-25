@@ -29,8 +29,7 @@ function alterarMenu(situacao) {
     else
     {
         $("#menu nav").slideDown();
-    }
-        
+    } 
 }
 
 function alterarLogo() {

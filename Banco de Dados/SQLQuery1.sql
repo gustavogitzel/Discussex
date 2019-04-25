@@ -122,12 +122,3 @@ create table PP2_Imagem
 	id int primary key not null,
 	link varchar(max) not null
 )
-drop table PP2_Imagem
-
-select * from PP2_Imagem
-
-insert into PP2_Imagem values (1, '../img/imgHIV.png')
-insert into PP2_Imagem values (2, '../img/imgIST.png')
-insert into PP2_Imagem values (3, '../img/imgPrev.png')
-insert into PP2_Imagem values (4, '../img/imgGravidez.png')
-insert into PP2_Imagem values (5, '../img/imgCorpo.png')

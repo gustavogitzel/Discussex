@@ -1,0 +1,17 @@
+﻿#afirmacao {
+    text-align: justify;
+    color: white;
+    font-size: 1.3em;
+    font-family: 'Nunito';
+    font-weight: 300;
+    padding: .5em;
+}
+
+
+.btn.verdade:hover {
+    background: #00695c;
+}
+
+.btn.mito:hover {
+    background: #b71c1c ;
+}

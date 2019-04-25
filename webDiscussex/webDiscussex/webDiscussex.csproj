@@ -172,6 +172,7 @@
     <Content Include="Content\ForumIndex.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\mitos.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\tema.css" />
@@ -229,6 +230,7 @@
     <Content Include="Scripts\configuracoes.js" />
     <Content Include="Scripts\jquery-3.4.0.min.js" />
     <Content Include="Scripts\menuEffects.js" />
+    <Content Include="Scripts\mitos.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -283,6 +285,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\EducacaoSexual\Quiz.cshtml" />
     <Content Include="Views\EducacaoSexual\Mitos.cshtml" />
+    <Content Include="Views\Shared\_LayoutMitos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

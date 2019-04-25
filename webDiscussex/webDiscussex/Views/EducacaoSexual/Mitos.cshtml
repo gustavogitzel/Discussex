@@ -1,7 +1,53 @@
 ﻿
 @{
-    ViewBag.Title = "Mitos";
+    ViewBag.Title = "MITOS E VERDADES";
+    Layout = "~/Views/Shared/_LayoutMitos.cshtml";
 }
 
-<h2>Mitos</h2>
 
+
+<div id='intros' class="container">
+    @foreach (var mito in ViewBag.Tabela)
+    {
+        if (mito.Id % 2 != 0)
+        {
+            <section class='a row'>
+                <div class="col col-2">
+                    <p id="afirmacao">@mito.Titulo</p>
+                    <button class="btn verdade" value="Verdade">Verdade</button>
+                    <button class="btn mito" value="Mito">Mito</button>
+                </div>
+                <div class="col col-2 texto" style="display:none;">
+                    @if (mito.Mentira == null)
+                    {
+                        <p id="verdade">@mito.Verdade</p>
+                    }
+                    else
+                    {
+                        <p id="mentira">@mito.Mentira</p>
+                    }
+                </div>
+            </section>
+        }
+        else
+        {
+            <section class='b row'>
+                <div class="col col-2 texto" style="display:none;">
+                    @if (mito.Mentira == null)
+                    {
+                        <p id="verdade">@mito.Verdade</p>
+                    }
+                    else
+                    {
+                        <p id="mentira">@mito.Mentira</p>
+                    }
+                </div>
+                <div class="col col-2">
+                    <p id="afirmacao">@mito.Titulo</p>
+                    <button class="btn verdade" value="Verdade">Verdade</button>
+                    <button class="btn mito" value="Mito">Mito</button>
+                </div>
+            </section>
+        }
+    }
+</div>

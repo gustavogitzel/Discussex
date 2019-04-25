@@ -4,8 +4,6 @@ insert into PP2_Imagem values (3, 'img/prevencao/imgPrev.png')
 insert into PP2_Imagem values (4, 'img/gravidez/imgGravidez.png')
 insert into PP2_Imagem values (5, 'img/corpo/imgCorpo.png')
 
-
-
 insert into PP2_Doenca values(1, 'Vamos falar sobre IST?', '', 2)
 
 insert into PP2_Doenca values(2, 'IST', 

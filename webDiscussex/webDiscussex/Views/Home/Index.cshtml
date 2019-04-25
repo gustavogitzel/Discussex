@@ -3,59 +3,59 @@
     ViewBag.Title = "HOME";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
-<link href="~/Content/home.css" type="text/css" rel="stylesheet"/>
+<link href="~/Content/home.css" type="text/css" rel="stylesheet" />
 <div id='intros' class="container">
     @foreach (var tema in ViewBag.Temas)
     {
         if (tema.Id % 2 != 0)
         {
-                <section class='a row'>
-                    <div class="col col-2">
-                        <a href="~/EducacaoSexual/@tema.Titulo">
-                            <img src="~/@tema.ImgTema">
-                        </a>
-                    </div>
-                    <div class="col col-2 texto">
-                        <h1 class="tituloTema">@tema.NomTema</h1>
-                        @{
-        string source = tema.Descricao;
-        string[] stringSeparators = new string[] { "<p>", "</p>" };
-        string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
-        foreach (string paragrafo in result)
-        {
-                    <p>
-                        @paragrafo
-                    </p>
-}
-
+            <section class='a row'>
+                <div class="col col-2">
+                    <a href="~/EducacaoSexual/@tema.Titulo">
+                        <img src="~/@tema.ImgTema">
+                    </a>
+                </div>
+                <div class="col col-2 texto">
+                    <h1 class="tituloTema">@tema.NomTema</h1>
+                    @{
+                        string source = tema.Descricao;
+                        string[] stringSeparators = new string[] { "<p>", "</p>" };
+                        string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+                        foreach (string paragrafo in result)
+                        {
+                            <p>
+                                @paragrafo
+                            </p>
                         }
-                    </div>
-                        </section>
+
                     }
-            else
-            {
-                <section class='b row'>
-                    <div class="col col-2 texto">
-                        <h1 class="tituloTema">@tema.NomTema</h1>
-                        @{
-        string source = tema.Descricao;
-        string[] stringSeparators = new string[] { "<p>", "</p>" };
-        string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
-        foreach (string paragrafo in result)
+                </div>
+            </section>
+        }
+        else
         {
-                    <p>
-                        @paragrafo
-                    </p>
-}
-
+            <section class='b row'>
+                <div class="col col-2 texto">
+                    <h1 class="tituloTema">@tema.NomTema</h1>
+                    @{
+                        string source = tema.Descricao;
+                        string[] stringSeparators = new string[] { "<p>", "</p>" };
+                        string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+                        foreach (string paragrafo in result)
+                        {
+                            <p>
+                                @paragrafo
+                            </p>
                         }
-                    </div>
-                    <div class="col col-2">
-                        <a href="~/EducacaoSexual/@tema.Titulo">
-                            <img src="~/@tema.ImgTema">
-                        </a>
-                    </div>
-                </section>
-            }
-     }
+
+                    }
+                </div>
+                <div class="col col-2">
+                    <a href="~/EducacaoSexual/@tema.Titulo">
+                        <img src="~/@tema.ImgTema">
+                    </a>
+                </div>
+            </section>
+        }
+    }
 </div>
