@@ -112,8 +112,9 @@ namespace webDiscussex.Controllers
             IList<Quiz> lista = dao.Lista(ref respostas);
 
             ViewBag.Tabela = lista;
-            
-            ViewBag.Respostas = respostas;
+
+            foreach (string resp in respostas)
+                ViewBag.Respostas += resp + " ";
 
             return View();
         }

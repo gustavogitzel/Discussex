@@ -1,12 +1,50 @@
-﻿$(document).ready(() => {
+﻿var data;
+var array;
+
+$(document).ready(() => {
     $("#conferirRespostas").click(() => {
+        data = $("#conferirRespostas").data("respostas");
+        array = data.split(" ");
+        exibirPontuacao();
         conferirRespostas();
     });
 });
 
+function exibirPontuacao() {
+
+    var pontos = 0;
+
+    for (var i = 0; i < array.length; i++)
+        if ($("[name = #" + array[i] + "_" + i+ "]").checked)
+            pontos++;
+
+    var txt = "<div id='fundoPreto'></div><div id='areaPontuacao' class='row container pontuacao'><div class='col col-2' id='imgPontos'>"+
+        "<img src='/img/guaxinimFeliz.png'></div> <div class='col col-2' > <button class='btn concluir' name= 'btnPontuacao' id= 'btnPontuacao' " +
+        "value='Pontuação'>OK</button></div>";
+
+    $("#pagina").append(txt);
+
+    fundoPreto();
+
+    botao();
+
+}
+
 function conferirRespostas() {
-    var data = $("#conferirRespostas").data("respostas");
-    for (var i = 0; i < data.Count; i++) {
-        $("#" + data[i] + "_" + i).css("color", "green");
-    }
+    for (var i = 0; i < array.length; i++)
+        $("#" + array[i] + "_" + i).css("color", "green");
+}
+
+function fundoPreto() {
+    $("#fundoPreto").click(() => {
+        $("#fundoPreto").remove();
+        $("#areaConfiguracoes").remove();
+    });
+}
+
+function botao() {
+    $("#btnCancelar").click(() => {
+        $("#fundoPreto").remove();
+        $("#areaConfiguracoes").remove();
+    });
 }
