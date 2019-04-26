@@ -107,9 +107,13 @@ namespace webDiscussex.Controllers
         {
             var dao = new QuizDAO();
 
-            IList<Quiz> lista = dao.Lista();
+            IList<string> respostas = new List<string>();
+
+            IList<Quiz> lista = dao.Lista(ref respostas);
 
             ViewBag.Tabela = lista;
+            
+            ViewBag.Respostas = respostas;
 
             return View();
         }

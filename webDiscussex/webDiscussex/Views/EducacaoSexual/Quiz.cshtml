@@ -5,3 +5,44 @@
 }
 
 
+<div id='intros' class="container">
+    @for (int i = 0; i < ViewBag.Tabela.Count; i++)
+    {
+        if (ViewBag.Tabela[i].Id % 2 != 0)
+        {
+            <section class='a row'>
+                <div class="col quiz">
+                    <p class="pergunta">@ViewBag.Tabela[i].Pergunta</p>
+                    <input type="radio" name="opcao_@i" id="opcaoA_@i">@ViewBag.Tabela[i].OpcaoA
+                    <input type="radio" name="opcao_@i" id="opcaoB_@i">@ViewBag.Tabela[i].OpcaoB
+                    <input type="radio" name="opcao_@i" id="opcaoC_@i">@ViewBag.Tabela[i].OpcaoC
+                    <input type="radio" name="opcao_@i" id="opcaoD_@i">@ViewBag.Tabela[i].OpcaoD
+                    @if (ViewBag.Tabela[i].OpcaoE != null)
+                    {
+                        <input type="radio" name="opcao_@i" id="opcaoE_@i">@ViewBag.Tabela[i].OpcaoE
+                    }
+                </div>
+            </section>
+        }
+        else
+        {
+            <section class='b row'>
+                <div class="col quiz">
+                    <p class="pergunta">@ViewBag.Tabela[i].Pergunta</p>
+                    <input type="radio" name="opcao_@i" id="opcaoA_@i">@ViewBag.Tabela[i].OpcaoA
+                    <input type="radio" name="opcao_@i" id="opcaoB_@i">@ViewBag.Tabela[i].OpcaoB
+                    <input type="radio" name="opcao_@i" id="opcaoC_@i">@ViewBag.Tabela[i].OpcaoC
+                    <input type="radio" name="opcao_@i" id="opcaoD_@i">@ViewBag.Tabela[i].OpcaoD
+                    @if (ViewBag.Tabela[i].OpcaoE != null)
+                    {
+                        <input type="radio" name="opcao_@i" id="opcaoE_@i">@ViewBag.Tabela[i].OpcaoE
+                    }
+                </div>
+            </section>
+        }
+    }
+
+    <input type="button" value="Enviar Respostas" id="conferirRespostas" data-respostas="@ViewBag.Respostas"> 
+
+</div>
+
