@@ -1,4 +1,4 @@
-﻿#afirmacao {
+﻿.afirmacao {
     text-align: justify;
     color: white;
     font-size: 1.3em;
@@ -7,25 +7,45 @@
     padding: .5em;
 }
 
+.afirmacao:hover
+{
+    background:white;
+    color: gray;
+    border-radius: 10pt;
+}
 
-.btn.verdade:hover {
+
+/*.btn.verdade:hover {
     background: #00695c;
 }
 
 .btn.mito:hover {
     background: #b71c1c;
-}
+}*/
 
 p.verdade {
-    color: #66bb6a;
+    color: white;
     font-weight: bold;
-    background-color: #f3e5f5;
+    /*background-color: #f3e5f5;*/
     border-radius: 0.4em;
 }
 
 p.mentira {
-    color: #f44336;
-    background-color: #f3e5f5;
+    color: white;
     font-weight: bold;
     border-radius: 0.4em;
+}
+
+.texto h1
+{
+    text-transform: uppercase;
+    color: white;
+    font-size: 2.5em;
+}
+
+.desligado:hover
+{
+    background: white !important;
+    color: gray !important;
+    cursor: default !important;     
 }

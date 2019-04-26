@@ -13,19 +13,24 @@
         {
             <section class='a row'>
                 <div class="col col-2">
-                    <p id="afirmacao">@mito.Titulo</p>
+                    <p class="afirmacao">@mito.Titulo</p>
                     <button class="btn verdade" value="Verdade">Verdade</button>
                     <button class="btn mito" value="Mito">Mito</button>
                 </div>
                 <div class="col col-2 texto" style="display:none;" name="aparecer">
+                    <div class="escondida">
+                        
                     @if (mito.Mentira == null)
                     {
+                        <h1>Verdade</h1>
                         <p class="verdade">@mito.Verdade</p>
                     }
                     else
                     {
+                        <h1>Mentira</h1>
                         <p class="mentira">@mito.Mentira</p>
                     }
+                        </div>
                 </div>
             </section>
         }
@@ -34,18 +39,21 @@
             <section class='b row'>
                 <div class="col col-2 texto"  name="texto">
                     <div class="escondida" name="aparecer" style="display:none;">
+                        
                     @if (mito.Mentira == null)
                     {
+                        <h1>Verdade</h1>
                         <p  class="verdade">@mito.Verdade</p>
                     }
                     else
                     {
+                        <h1>Mentira</h1>
                         <p  class="mentira">@mito.Mentira</p>
                     }
                     </div>
                 </div>
                 <div class="col col-2">
-                    <p id="afirmacao">@mito.Titulo</p>
+                    <p class="afirmacao">@mito.Titulo</p>
                     <button class="btn verdade" value="Verdade">Verdade</button>
                     <button class="btn mito" value="Mito">Mito</button>
                 </div>
