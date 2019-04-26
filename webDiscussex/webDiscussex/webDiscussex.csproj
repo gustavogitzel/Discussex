@@ -173,6 +173,7 @@
     <Content Include="Content\home.css" />
     <Content Include="Content\login.css" />
     <Content Include="Content\mitos.css" />
+    <Content Include="Content\quiz.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\tema.css" />
@@ -226,6 +227,7 @@
     <Content Include="img\quizIntro.png" />
     <Content Include="img\remediosHIV.png" />
     <Content Include="img\UsuarioPadrao.png" />
+    <Content Include="Scripts\quiz.js" />
     <Content Include="Scripts\cadastro.js" />
     <Content Include="Scripts\configuracoes.js" />
     <Content Include="Scripts\jquery-3.4.0.min.js" />
@@ -286,6 +288,7 @@
     <Content Include="Views\EducacaoSexual\Quiz.cshtml" />
     <Content Include="Views\EducacaoSexual\Mitos.cshtml" />
     <Content Include="Views\Shared\_LayoutMitos.cshtml" />
+    <Content Include="Views\Shared\_LayoutQuiz.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

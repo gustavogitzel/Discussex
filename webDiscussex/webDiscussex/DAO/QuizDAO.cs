@@ -8,11 +8,16 @@ namespace webDiscussex.DAO
 {
     public class QuizDAO
     {
-        public IList<Quiz> Lista()
+        public IList<Quiz> Lista(ref IList<string> respostas)
         {
             using (var contexto = new EducacaoSexualContext())
             {
-                return contexto.PP2_Quiz.ToList(); ;
+                var listaQuiz = contexto.PP2_Quiz.ToList();
+
+                for (int i = 0; i < listaQuiz.Count; i++)
+                    respostas.Add(listaQuiz[i].Resposta);
+
+                return listaQuiz;
             }
         }
     }
