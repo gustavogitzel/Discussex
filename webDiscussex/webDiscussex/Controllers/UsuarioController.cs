@@ -39,14 +39,21 @@ namespace webDiscussex.Controllers
         public ActionResult Adiciona(Usuario user)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            if (dao.BuscaPorEmail(user.Email) == null)
-                return RedirectToAction("Home", "HomePagina");
+            //if (dao.BuscaPorEmail(user.Email) == null)
+            //  return RedirectToAction("Home", "HomePagina");
 
-            dao.Adiciona(user);
-            Session["emailUsuario"] = user.Email;
-            Session["nomeUsuario"] = user.NomeUsuario;
-            Session["imgPerfil"] = user.ImgPerfil;
-            return RedirectToAction("Home", "HomePagina");
+            if (ModelState.IsValid)
+            {
+                dao.Adiciona(user);
+                Session["emailUsuario"] = user.Email;
+                Session["nomeUsuario"] = user.NomeUsuario;
+                Session["imgPerfil"] = user.ImgPerfil;
+
+                return RedirectToAction("Home", "HomePagina");
+            }
+
+            return RedirectToAction("Cadastro", "Usuario");
+            
         }
 
         public ActionResult Login()

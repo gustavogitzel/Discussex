@@ -21,7 +21,7 @@ namespace webDiscussex.DAO
                     contexto.SaveChanges();
                 }
                 else
-                    throw  new Exception("Nome inválido");
+                    throw new Exception("Email já existente inválido");
             }
         }
 
