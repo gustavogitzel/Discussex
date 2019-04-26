@@ -14,10 +14,14 @@ namespace webDiscussex.Models
         public string NomeUsuario { get; set; }
 
         [Required(ErrorMessage = "Digite o seu email")]
+        [RegularExpression(".+\\@.+\\..+", ErrorMessage ="Informe um email válido")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Digite uma senha")]
+        [Required(ErrorMessage = "Digite a senha")]
+        [DataType(DataType.Password)]
+        [StringLength(30,MinimumLength = 8, ErrorMessage ="Digite, no mínimo, 8 caracteres")]
         public string Senha { get; set; }
+
         public string ImgPerfil { get; set; }
     }
 }

@@ -19,8 +19,8 @@
                 <span>Cadastrar com o Google</span>
             </button>
             <div class="campoTexto">
-                <input type="email" name="user.Email" id="txtLoginEmail" class="Input-text" placeholder="Email"  data-request-url="@Url.Action("ChecarEmailDisponibilidade", "Usuario")">
-                <label for="input" class="Input-label" id="lbCadastroEmail">Email</label>
+                <input type="text" name="user.Email" id="txtLoginEmail" class="Input-text" placeholder="Email"  data-request-url="@Url.Action("ChecarEmailDisponibilidade", "Usuario")">
+                <label for="input" class="Input-label" id="lbCadastroEmail">Email @Html.ValidationMessage("user.Email")</label>
             </div>
             <div class="campoTexto">
                 <input type="text" name="user.NomeUsuario" id="txtSenha" class="Input-text" placeholder="Nome de usuário">
