@@ -20,20 +20,15 @@
     padding: 2em 0 2em 0;
     box-shadow: 0 10px 6px -6px #777;
     margin-left: 0em;
-    width: 40em;
-    left: calc(50% - 20em);
-    top: 100em;
+    width: 20em;
+    left: calc(50% - 10em);
+    top: 10em;
     z-index: 4;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 60em) {
     #areaPontuacao {
-        width: 30em;
-        left: calc(50% - 15em);
-    }
-
-    .areaPontuacao {
-        width: 40em !important;
-        left: calc(50% - 20em) !important;
+        width: 60em;
+        left: calc(50% - 30em);
     }
 }

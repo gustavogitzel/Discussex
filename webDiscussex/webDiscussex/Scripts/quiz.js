@@ -22,10 +22,12 @@ function exibirPontuacao() {
 
     var txt =
         "<div id='fundoPreto'></div><div id='areaPontuacao' class='row container pontuacao'><div class='col col-2' id='imgPontos'>" +
-        "<img src='/img/guaxinimFeliz.png'></div> <div class='col col-2' > <button class='btn concluir' name= 'btnPontuacao' id= 'btnPontuacao' " +
+        "<img src='/img/guaxinimFeliz.png'></div> <div class='col col-2' ><div id='divPontuacao'> Sua pontuação foi de " + pontos + "</div> <button class='btn concluir' name= 'btnPontuacao' id= 'btnPontuacao' " +
         "value='Pontuação'>OK</button></div>";
 
     $("#pagina").append(txt);
+
+    $(window).scrollTop(0);
 
     fundoPreto();
 
@@ -41,13 +43,13 @@ function conferirRespostas() {
 function fundoPreto() {
     $("#fundoPreto").click(() => {
         $("#fundoPreto").remove();
-        $("#areaConfiguracoes").remove();
+        $("#areaPontuacao").remove();
     });
 }
 
 function botao() {
-    $("#btnCancelar").click(() => {
+    $("#btnPontuacao").click(() => {
         $("#fundoPreto").remove();
-        $("#areaConfiguracoes").remove();
+        $("#areaPontuacao").remove();
     });
-}
+ }
