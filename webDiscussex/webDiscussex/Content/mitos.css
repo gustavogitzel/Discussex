@@ -15,13 +15,13 @@
 }
 
 
-/*.btn.verdade:hover {
+.btn.verdade:hover {
     background: #00695c;
 }
 
 .btn.mito:hover {
-    background: #b71c1c;
-}*/
+    background: #b71c1c ;
+}
 
 p.verdade {
     color: white;

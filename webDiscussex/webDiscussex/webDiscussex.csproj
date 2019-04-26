@@ -229,6 +229,7 @@
     <Content Include="Scripts\cadastro.js" />
     <Content Include="Scripts\configuracoes.js" />
     <Content Include="Scripts\jquery-3.4.0.min.js" />
+    <Content Include="Scripts\login.js" />
     <Content Include="Scripts\menuEffects.js" />
     <Content Include="Scripts\mitos.js" />
     <Content Include="Web.config" />
