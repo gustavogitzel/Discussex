@@ -493,3 +493,23 @@ healthchecksdb
 MigrationBackup/
 
 # End of https://www.gitignore.io/api/aspnetcore,visualstudio,microsoftoffice
+webDiscussex/.vs/config/applicationhost.config
+webDiscussex/.vs/webDiscussex/v15/Server/sqlite3/storage.ide
+webDiscussex/.vs/webDiscussex/v15/.suo
+webDiscussex/webDiscussex/bin/webDiscussex.dll
+webDiscussex/webDiscussex/bin/webDiscussex.pdb
+webDiscussex/webDiscussex/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+webDiscussex/webDiscussex/obj/Debug/webDiscussex.csproj.CoreCompileInputs.cache
+webDiscussex/webDiscussex/obj/Debug/webDiscussex.csprojResolveAssemblyReference.cache
+webDiscussex/webDiscussex/obj/Debug/webDiscussex.dll
+webDiscussex/webDiscussex/obj/Debug/webDiscussex.pdb
+webDiscussex/.vs/config/applicationhost.config
+webDiscussex/.vs/webDiscussex/v15/Server/sqlite3/storage.ide
+webDiscussex/.vs/webDiscussex/v15/.suo
+webDiscussex/webDiscussex/bin/webDiscussex.dll
+webDiscussex/webDiscussex/bin/webDiscussex.pdb
+webDiscussex/webDiscussex/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+webDiscussex/webDiscussex/obj/Debug/webDiscussex.csproj.CoreCompileInputs.cache
+webDiscussex/webDiscussex/obj/Debug/webDiscussex.csprojResolveAssemblyReference.cache
+webDiscussex/webDiscussex/obj/Debug/webDiscussex.dll
+webDiscussex/webDiscussex/obj/Debug/webDiscussex.pdb
