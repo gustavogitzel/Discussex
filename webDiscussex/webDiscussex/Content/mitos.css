@@ -49,3 +49,8 @@ p.mentira {
     color: gray !important;
     cursor: default !important;     
 }
+
+.quizSection
+{
+    border-bottom: solid white 1em !important;
+}
