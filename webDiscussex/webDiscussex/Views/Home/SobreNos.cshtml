@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "SobreNos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["emailUsuario"] == null)
+    {
+        ViewBag.EhCadastro = false;
+    }
+    else
+    {
+        ViewBag.EhCadastro = true;
+    }
+}
+<link type="text/css" rel="stylesheet" href="~/Content/sobreNos.css">
+<div class="container textoSobreNos">
+    <div class="row">
+        <div class="col">
+            <h3><ul><li class="azul">Estudar</li><li class="vermelho">Compartilhar</li><li class="verde">Promover</li><li class="amarelo">Pesquisar</li></ul></h3>
+            <p>A Discussex tem como objetivo ajudar você, isso mesmo, você que está lendo nosso site. Nossa proposta, é compartilhar nosso conhecimento sobre
+            a educação sexual pelo mundo. Aprender todos os cuidados do universo da sexualidade é essencial para uma vida melhor e mais feliz. Assim, sei que você
+            aproveitou do nosso site e a partir de agora sabe o que é certo e errado e pode compartilhar o conhecimento para que a socieade acabe com o tabu sexual.
+            Gostaria de agradecer por ter chegado até aqui e muito sucesso!<br/><br /> Até mais, Discussex
+            </p>
+        </div>
+    </div>
+    <div class="row">
+
+    </div>
+
+</div>
+

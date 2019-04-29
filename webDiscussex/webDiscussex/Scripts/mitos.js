@@ -6,6 +6,8 @@
 
         var $elemento = $elementoAvo.find('[name = "aparecer"]');
         var str = $elemento.find("p").text();
+        $elementoAvo.addClass("umMito");
+
         if ($elemento.find("h1").html() == "Mito") {
             $elemento.find("p").text(str.replace("MITO:", ""));
             $elementoAvo.css("background", "#e53935");
@@ -28,6 +30,7 @@
         var $elemento = $elementoAvo.find('[name = "aparecer"]');
 
         var str = $elemento.find("p").text();
+        $elementoAvo.addClass("umMito");
         if ($elemento.find("h1").html() == "Mito") {
             $elemento.find("p").text(str.replace("MITO:", ""));
             $elementoAvo.css("background", "#e53935");
