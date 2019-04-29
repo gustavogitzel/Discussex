@@ -29,20 +29,21 @@ create table PP2_Quiz
 
 create table PP2_Forum
 (
-	codPergunta int identity primary key not null,
+	id int identity primary key not null,
 	titulo nText not null,
 	descricao nText not null,
-	codUsuario int not null
-	constraint fkPP2_Usuario_2 foreign key (codUsuario) references PP2_Usuario(codUsuario)
+	palavraChave varchar(30) not null,
+	codUsuario int 
+	constraint fkPP2_Usuario_2 foreign key (codUsuario) references PP2_Usuario(id)
 )
 
 create table PP2_Respostas
 (
-	codResposta int identity primary  key not null,
+	id int identity primary  key not null,
 	codPergunta int not null
-	constraint fkPP2_Forum foreign key (codPergunta) references PP2_Forum(codPergunta),
-	codUsuario int not null
-	constraint fkPP2_Usuario_3 foreign key (codUsuario) references PP2_Usuario(codUsuario),
+	constraint fkPP2_Forum foreign key (codPergunta) references PP2_Forum(id),
+	codUsuario int
+	constraint fkPP2_Usuario_3 foreign key (codUsuario) references PP2_Usuario(id),
 	reposta nText not null
 )
 
