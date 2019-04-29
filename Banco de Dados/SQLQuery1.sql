@@ -55,6 +55,10 @@ create table PP2_Grafico
    img varchar(max) not null
 )
 
+create table PP2_Acesso_Pergunta
+{
+}
+
 create table PP2_EducacaoSexual
 (
    codTema int primary key not null,
