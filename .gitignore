@@ -517,3 +517,6 @@ webDiscussex/webDiscussex/obj/Debug/webDiscussex.pdb
 *.cache
 *.ide
 *.cache
+*.ide
+webDiscussex/.vs/webDiscussex/v15/.suo
+webDiscussex/.vs/webDiscussex/v15/Server/sqlite3/storage.ide
