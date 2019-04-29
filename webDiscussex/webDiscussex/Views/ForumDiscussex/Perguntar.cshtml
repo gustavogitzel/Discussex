@@ -1,7 +1,6 @@
 ﻿
 @{
     ViewBag.Title = "Perguntar";
-    ViewBag.EhCadastro = true;
     Layout = "~/Views/Shared/_LayoutForum.cshtml";
 }
 
@@ -9,7 +8,7 @@
 <article id="corpo" class="container">
     <div class="row">
            <div class="col col-2">
-               <img /> @* img faça uma pergunta*@
+               <img id="imgPerguntar" src="~/img/perguntar.png"/> @* img faça uma pergunta*@
            </div>
         <div class="col col-2">
             <form action="" method="post">
@@ -17,14 +16,21 @@
                     <input type="text" name="pergunta.Titulo" id="txtTitulo" class="Input-text" placeholder="Titulo">
                     <label for="input" class="Input-label">Título</label>
                 </div>
-                <div class="campo   Texto">
+                <div class="campoTexto">
+                    <input type="text" name="pergunta.PalavraChave" id="palavraChave" class="Input-text" placeholder="Palavra Chave">
+                    <label for="input" class="Input-label">Palavra chave</label>
+                </div>
+                <div class="campoTexto">
                     <textarea cols="60" rows="10" name="pergunta.Pergunta" id="txtPergunta" class="Input-text" placeholder="Pergunta"></textarea>
                     <label for="input" class="Input-label">Pergunta</label>
                 </div>
+                <div class="isAnonimo">
+                    <input class="btn" type="checkbox" value="Anonimo">
+                    <label for="input" class="check"> Anônimo </label>
+                 </div>
                 <input type="submit" class="btn" value="Perguntar">
             </form>
         </div>
-        <div
     </div>
 </article>
 

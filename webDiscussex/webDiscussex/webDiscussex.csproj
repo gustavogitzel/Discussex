@@ -208,8 +208,8 @@
     <Content Include="img\iconeMitosVerdades.png" />
     <Content Include="img\iconePrevencao.png" />
     <Content Include="img\iconeQuiz.png" />
-    <Content Include="img\imgGuaxinimFeliz.png" />
     <Content Include="img\introPesquisa.png" />
+    <Content Include="img\anonimo.png" />
     <Content Include="img\ist\imgBebeGonorreia.png" />
     <Content Include="img\ist\imgCamisinhas.png" />
     <Content Include="img\ist\imgHerpes.png" />
@@ -223,6 +223,7 @@
     <Content Include="img\Logo.png" />
     <Content Include="img\LogoDark.png" />
     <Content Include="img\mitosEVerdades.png" />
+    <Content Include="img\perguntar.png" />
     <Content Include="img\quizIntro.png" />
     <Content Include="img\remediosHIV.png" />
     <Content Include="img\UsuarioPadrao.png" />
@@ -255,6 +256,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Forum.cs" />
+    <Compile Include="Models\Resposta.cs" />
     <Compile Include="Models\Quiz.cs" />
     <Compile Include="Models\MitosEVerdades.cs" />
     <Compile Include="Models\EducacaoSexual.cs" />
