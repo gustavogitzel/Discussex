@@ -26,5 +26,10 @@ namespace webDiscussex.Controllers
 
             return View();
         }
+
+        public ActionResult SobreNos()
+        {
+            return View();
+        }
     }
 }

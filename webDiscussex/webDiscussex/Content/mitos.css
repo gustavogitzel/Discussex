@@ -50,7 +50,6 @@ p.mentira {
     cursor: default !important;     
 }
 
-.quizSection
-{
-    border-bottom: solid white 1em !important;
+.umMito {
+    border-bottom: solid white .5em !important;
 }
