@@ -291,6 +291,7 @@
     <Content Include="Views\Shared\_LayoutQuiz.cshtml" />
     <Content Include="Views\ForumDiscussex\Perguntar.cshtml" />
     <Content Include="Views\ForumDiscussex\Responder.cshtml" />
+    <Content Include="Views\Shared\_LayoutForum.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
