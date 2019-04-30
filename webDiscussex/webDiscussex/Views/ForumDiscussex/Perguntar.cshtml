@@ -3,7 +3,7 @@
     ViewBag.Title = "Perguntar";
     Layout = "~/Views/Shared/_LayoutForum.cshtml";
 }
-
+<link type="text/css" rel="stylesheet" href="~/Content/pergunta.css" />
 
 <article id="corpo" class="container">
     <div class="row">
@@ -24,19 +24,14 @@
                     <textarea cols="60" rows="10" name="p.Descricao" id="txtPergunta" class="Input-text" placeholder="Pergunta"></textarea>
                     <label for="input" class="Input-label">Pergunta</label>
                 </div>
-                <div class="isAnonimo">
-                    @Html.CheckBox("anonimo")
-                    @*<input class="btn" type="checkbox" value="Anonimo" name="anonimo">*@
-                    <label for="input" class="check"> Anônimo </label>
+                <div class="check">
+                    @Html.CheckBox("anonimo", false, new { @class = "chk" })
+                    <label for="anonimo">
+                        <div><i class="fa fa-check"></i></div>Anônimo
+                    </label>
                 </div>
                 <input type="submit" class="btn" value="Perguntar">
             </form>
         </div>
     </div>
 </article>
-
-<script>
-    $(document).ready(() => {
-        $("textarea").autoResize();
-    });
-</script>

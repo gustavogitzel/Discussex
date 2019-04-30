@@ -28,7 +28,7 @@ namespace webDiscussex.DAO
             }
         }
 
-        public void Adicionar(Pergunta per, bool anonimo)
+        public void Adicionar(Pergunta per)
         {
             using (var contexto = new EducacaoSexualContext())
             {
