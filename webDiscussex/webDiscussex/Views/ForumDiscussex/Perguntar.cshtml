@@ -3,7 +3,7 @@
     ViewBag.Title = "Perguntar";
     Layout = "~/Views/Shared/_LayoutForum.cshtml";
 }
-
+<link type="text/css" rel="stylesheet" href="~/Content/pergunta.css"/>
 
 <article id="corpo" class="container">
     <div class="row">
@@ -11,31 +11,33 @@
                <img id="imgPerguntar" src="~/img/perguntar.png"/> @* img faça uma pergunta*@
            </div>
         <div class="col col-2">
-            <form action="/ForumDiscussex/FazerPergunta" method="post">
+            <form action="/ForumDiscussex/Adicionar" method="post">
                 <div class="campoTexto">
-                    <input type="text" name="pergunta.Titulo" id="txtTitulo" class="Input-text" placeholder="Titulo">
+                    <input type="text"  name="p.Titulo" id="txtTitulo" class="Input-text" placeholder="Titulo">
                     <label for="input" class="Input-label">Título</label>
                 </div>
                 <div class="campoTexto">
-                    <input type="text" name="pergunta.PalavraChave" id="palavraChave" class="Input-text" placeholder="Palavra Chave">
+                    <input type="text" name="p.PalavraChave" id="palavraChave" class="Input-text" placeholder="Palavra Chave">
                     <label for="input" class="Input-label">Palavra chave</label>
                 </div>
                 <div class="campoTexto">
-                    <textarea cols="60" rows="10" name="pergunta.Pergunta" id="txtPergunta" class="Input-text" placeholder="Pergunta"></textarea>
+                    <textarea cols="60" rows="10" name="p.Pergunta" id="txtPergunta" class="Input-text" placeholder="Pergunta"></textarea>
                     <label for="input" class="Input-label">Pergunta</label>
                 </div>
-                <div class="isAnonimo">
-                    <input class="btn" type="checkbox" value="Anonimo" name="">
-                    <label for="input" class="check"> Anônimo </label>
-                 </div>
+                <div>
+                    <div class="check">
+                        @Html.CheckBox("anonimo", false, new { @class="chk"})
+                        <label for="anonimo">
+                            <div><i class="fa fa-check"></i></div>Anônimo
+                        </label>
+                    </div>
+                    @*<input type="checkbox" id="c2" name="bb" value="true" />
+        <label for="c2">Default Checked</label>
+       
+        <label for="input" class="check">Anônimo</label>*@
+                </div>
                 <input type="submit" class="btn" value="Perguntar">
             </form>
         </div>
     </div>
 </article>
-
-<script>
-    $(document).ready(() => {
-        $("textarea").autoResize();
-    });
-</script>

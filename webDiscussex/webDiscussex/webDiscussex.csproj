@@ -173,6 +173,7 @@
     <Content Include="Content\home.css" />
     <Content Include="Content\login.css" />
     <Content Include="Content\mitos.css" />
+    <Content Include="Content\pergunta.css" />
     <Content Include="Content\quiz.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\sobreNos.css" />
