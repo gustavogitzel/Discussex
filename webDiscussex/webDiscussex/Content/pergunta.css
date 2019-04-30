@@ -1,0 +1,66 @@
+﻿html
+{
+    overflow-x: hidden;
+}
+
+#areaImagemPergunta img
+{
+    max-width: 45%;
+}
+
+#txtTitulo, #palavraChave, #txtPergunta {
+    width: 300px;
+    max-width: 475.375px;
+}
+
+
+@media screen and (min-width: 35em)
+{
+    #txtTitulo, #palavraChave, #txtPergunta {
+        width: 475.375px;
+        max-width: 475.375px;
+    }
+}
+
+#corpo {
+    margin-top: 1em;
+}
+
+.chk {
+    display: none;
+}
+
+.check label
+{
+    color: white;
+    font-size: 1.3em;
+}
+label div {
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    border: 2px solid #fff;
+    text-align: center;
+    line-height: 20px;
+    margin-right: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+label i {
+    font-size: 12px;
+    opacity: 0;
+    color: white;
+}
+
+label:hover div {
+    background: #4dd0e1;
+}
+
+.chk:checked + input[type=hidden] + label i {
+    opacity: 1;
+}
+
+.chk:checked + input[type=hidden] + label div {
+    background: #4dd0e1;
+}
