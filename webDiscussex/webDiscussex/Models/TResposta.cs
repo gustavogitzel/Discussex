@@ -5,12 +5,11 @@ using System.Web;
 
 namespace webDiscussex.Models
 {
-    public class Resposta
+    public class TResposta
     {
         public int Id { get; set; }
         public int CodPergunta { get; set; }
         public int CodUsuario { get; set; }
-
         public string Resposta { get; set; }
     }
 }

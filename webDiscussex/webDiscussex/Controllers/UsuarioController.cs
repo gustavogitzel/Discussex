@@ -53,7 +53,6 @@ namespace webDiscussex.Controllers
             }
 
             return RedirectToAction("Cadastro", "Usuario");
-            
         }
 
         public ActionResult Login()

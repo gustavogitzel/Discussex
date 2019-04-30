@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using webDiscussex.DAO;
+using webDiscussex.Models;
 
 namespace webDiscussex.Controllers
 {
@@ -11,6 +13,12 @@ namespace webDiscussex.Controllers
         // GET: ForumDiscussex
         public ActionResult Index()
         {
+            var dao = new PerguntaDAO();
+
+            IList<Pergunta> lista = dao.Lista();
+
+            ViewBag.ListaPerguntas = lista;
+
             return View();
         }
 
@@ -21,7 +29,29 @@ namespace webDiscussex.Controllers
 
         public ActionResult Responder()
         {
+            var dao = new PerguntaDAO();
+
+            IList<Pergunta> lista = dao.Lista();
+
+            ViewBag.ListaPerguntas = lista;
+
             return View();
+        }
+
+        public ActionResult BuscarTemas(string busca)
+        {
+            var dao = new PerguntaDAO();
+
+            IList<Pergunta> lista = dao.BuscaPorPalavraChave(busca);
+
+            Session["palavraChave"] = lista;
+
+            return RedirectToAction("Index", "ForumDiscussex");
+        }
+
+        public ActionResult FazerPergunta()
+        {
+            return RedirectToAction("Responder", "ForumDiscussex");
         }
     }
 }

@@ -11,7 +11,7 @@
                <img id="imgPerguntar" src="~/img/perguntar.png"/> @* img faça uma pergunta*@
            </div>
         <div class="col col-2">
-            <form action="" method="post">
+            <form action="/ForumDiscussex/FazerPergunta" method="post">
                 <div class="campoTexto">
                     <input type="text" name="pergunta.Titulo" id="txtTitulo" class="Input-text" placeholder="Titulo">
                     <label for="input" class="Input-label">Título</label>
@@ -25,7 +25,7 @@
                     <label for="input" class="Input-label">Pergunta</label>
                 </div>
                 <div class="isAnonimo">
-                    <input class="btn" type="checkbox" value="Anonimo">
+                    <input class="btn" type="checkbox" value="Anonimo" name="">
                     <label for="input" class="check"> Anônimo </label>
                  </div>
                 <input type="submit" class="btn" value="Perguntar">

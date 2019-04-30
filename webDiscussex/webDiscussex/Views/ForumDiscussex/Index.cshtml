@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Fórum";
     Layout = "~/Views/Shared/_LayoutForum.cshtml";
+    ViewBag.PalavraChave = Session["palavraChave"];
 }
 <link rel="stylesheet" type="text/css" href="~/Content/ForumIndex.css" />
 <article id="corpo" class="container">
@@ -10,7 +11,7 @@
         <div class="col col-3" id="divUsuario">
             @if (Session["emailUsuario"] != null)
             {
-                <img id="imagemUsuario" src="@Session["imgPerfil"]"/>
+                <img id="imagemUsuario" src="@Session["imgPerfil"]" />
                 <h2>@Session["nomeUsuario"]</h2>
             }
             else
@@ -20,21 +21,47 @@
             <button class="btn" id="criarPergunta">Perguntar</button>
         </div>
         <div class="col col-3" id="listaTemas">
-            <form action="Forum/BuscarTemas">
+            <form action="/ForumDiscussex/BuscarTemas">
                 <div class="campoTexto">
                     <select name="busca">
-                        @*@foreach()
-                        {
-
-                        }*@
+                        @{string[] vetor = new string[ViewBag.Listaperguntas.Count];
+                          int a = 0;
+                            foreach (var pergunta in ViewBag.ListaPerguntas)
+                            {
+                                if (Array.IndexOf(vetor, pergunta.PalavraChave) < 0)
+                                {
+                                    <option>@pergunta.PalavraChave</option>
+                                }
+                                vetor[a] = pergunta.PalavraChave;
+                                a++;
+                            }
+                        }
                     </select>
                     <label for="input">Buscar temas</label>
                 </div>
                 <input type="submit" class="btn" value="Buscar">
+
+                @if (ViewBag.PalavraChave != null)
+                 {
+                    foreach (var pergunta in ViewBag.PalavraChave)
+                    {
+                        <h1><a>@pergunta.Titulo</a></h1>
+                        <h2>@pergunta.Descricao</h2>
+                    }
+                 }
+
             </form>
         </div>
         <div class="col col-3" id="maisAcessados">
             <h2>Mais acessados</h2>
+            <ul>
+                @for (int i = 0; i < ViewBag.ListaPerguntas.Count && i < 5; i++)
+                {
+                    <li>
+                        <a>@ViewBag.ListaPerguntas[i].Titulo</a>
+                    </li>
+                }
+            </ul>
         </div>
     </div>
 </article>

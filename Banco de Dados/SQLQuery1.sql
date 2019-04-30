@@ -27,21 +27,23 @@ create table PP2_Quiz
 	opcaoE nText
 )
 
-create table PP2_Forum
+create table PP2_Pergunta
 (
 	id int identity primary key not null,
 	titulo nText not null,
+	quantidadeAcesso int not null,
 	descricao nText not null,
 	palavraChave varchar(30) not null,
 	codUsuario int 
 	constraint fkPP2_Usuario_2 foreign key (codUsuario) references PP2_Usuario(id)
+	
 )
 
-create table PP2_Respostas
+create table PP2_Resposta
 (
 	id int identity primary  key not null,
 	codPergunta int not null
-	constraint fkPP2_Forum foreign key (codPergunta) references PP2_Forum(id),
+	constraint fkPP2_Pergunta foreign key (codPergunta) references PP2_Pergunta(id),
 	codUsuario int
 	constraint fkPP2_Usuario_3 foreign key (codUsuario) references PP2_Usuario(id),
 	reposta nText not null
@@ -54,10 +56,6 @@ create table PP2_Grafico
    descricao nText not null,
    img varchar(max) not null
 )
-
-create table PP2_Acesso_Pergunta
-{
-}
 
 create table PP2_EducacaoSexual
 (

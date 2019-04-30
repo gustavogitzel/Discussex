@@ -22,7 +22,12 @@ namespace webDiscussex.DAO
         public DbSet<Prevencao> PP2_MetodoPrevencao { get; set; }
 
         public DbSet<Quiz> PP2_Quiz { get; set; }
+
         public DbSet<MitosEVerdades> PP2_Mito { get; set; }
+
+        public DbSet<Pergunta> PP2_Pergunta { get; set; }
+
+        public DbSet<TResposta> PP2_Resposta { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

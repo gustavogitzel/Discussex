@@ -243,6 +243,8 @@
     <Compile Include="Controllers\ForumDiscussexController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="DAO\RespostaDAO.cs" />
+    <Compile Include="DAO\PerguntaDAO.cs" />
     <Compile Include="DAO\MitosEVerdades.cs" />
     <Compile Include="DAO\QuizDAO.cs" />
     <Compile Include="DAO\PrevencaoDAO.cs" />
@@ -257,8 +259,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Forum.cs" />
-    <Compile Include="Models\Resposta.cs" />
+    <Compile Include="Models\Pergunta.cs" />
+    <Compile Include="Models\TResposta.cs" />
     <Compile Include="Models\Quiz.cs" />
     <Compile Include="Models\MitosEVerdades.cs" />
     <Compile Include="Models\EducacaoSexual.cs" />
