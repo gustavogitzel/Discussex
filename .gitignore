@@ -523,3 +523,4 @@ webDiscussex/.vs/webDiscussex/v15/Server/sqlite3/storage.ide
 *.pdb
 *.dll
 *.cache
+webDiscussex/webDiscussex/Views/ForumDiscussex/Index.cshtml

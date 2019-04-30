@@ -23,9 +23,10 @@
         <div class="col col-3" id="listaTemas">
             <form action="/ForumDiscussex/BuscarTemas">
                 <div class="campoTexto">
+                    <label for="input">Buscar Palavra-Chave</label>
                     <select name="busca">
                         @{string[] vetor = new string[ViewBag.Listaperguntas.Count];
-                          int a = 0;
+                            int a = 0;
                             foreach (var pergunta in ViewBag.ListaPerguntas)
                             {
                                 if (Array.IndexOf(vetor, pergunta.PalavraChave) < 0)
@@ -37,25 +38,24 @@
                             }
                         }
                     </select>
-                    <label for="input">Buscar temas</label>
                 </div>
                 <input type="submit" class="btn" value="Buscar">
 
                 @if (ViewBag.PalavraChave != null)
-                 {
+                {
                     foreach (var pergunta in ViewBag.PalavraChave)
                     {
                         <h1><a>@pergunta.Titulo</a></h1>
                         <h2>@pergunta.Descricao</h2>
                     }
-                 }
+                }
 
             </form>
         </div>
         <div class="col col-3" id="maisAcessados">
             <h2>Mais acessados</h2>
             <ul>
-                @for (int i = 0; i < ViewBag.ListaPerguntas.Count && i < 5; i++)
+                @for (int i = 0; i < ViewBag.ListaPerguntas.Count && i < 10; i++)
                 {
                     <li>
                         <a>@ViewBag.ListaPerguntas[i].Titulo</a>

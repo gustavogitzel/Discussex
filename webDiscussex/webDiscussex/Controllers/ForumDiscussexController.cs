@@ -49,8 +49,15 @@ namespace webDiscussex.Controllers
             return RedirectToAction("Index", "ForumDiscussex");
         }
 
-        public ActionResult FazerPergunta()
+        public ActionResult FazerPergunta(Pergunta p, bool anonimo)
         {
+            if(Session["emailUsuario"] == null || anonimo)
+                p.CodUsuario = null;
+
+            var dao = new PerguntaDAO();
+
+            dao.Adicionar(p);
+
             return RedirectToAction("Responder", "ForumDiscussex");
         }
     }
