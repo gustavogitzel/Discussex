@@ -49,7 +49,7 @@ namespace webDiscussex.Controllers
                 Session["nomeUsuario"] = user.NomeUsuario;
                 Session["imgPerfil"] = user.ImgPerfil;
 
-                return RedirectToAction("Home", "HomePagina");
+                return RedirectToAction("Index", "Home");
             }
 
             return RedirectToAction("Cadastro", "Usuario");
@@ -122,7 +122,7 @@ namespace webDiscussex.Controllers
             Session["emailUsuario"] = user.Email;
             Session["nomeUsuario"] = user.NomeUsuario;
             Session["imgPerfil"] = user.ImgPerfil;
-            return RedirectToAction("Home", "HomePagina");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

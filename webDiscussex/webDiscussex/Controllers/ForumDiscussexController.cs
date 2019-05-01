@@ -51,8 +51,14 @@ namespace webDiscussex.Controllers
 
         public ActionResult FazerPergunta(Pergunta p, bool anonimo)
         {
-            if(Session["emailUsuario"] == null || anonimo)
+            if (Session["emailUsuario"] == null || anonimo)
                 p.CodUsuario = null;
+            else
+            {
+                var user = new UsuarioDAO();
+                Usuario usuario = user.BuscaPorEmail(Session["emailUsuario"].ToString());
+                p.CodUsuario = usuario.Id;
+            }
 
             var dao = new PerguntaDAO();
 
