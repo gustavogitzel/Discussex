@@ -8,16 +8,18 @@
 <article id="corpo" class="container">
     <div class="row">
 
-        <div class="col col-3" id="divUsuario">
+        <div class="col col-3 row" id="divUsuario">
+            <div class="col">
             @if (Session["emailUsuario"] != null)
             {
-                <img id="imagemUsuario" src="@Session["imgPerfil"]" />
+                <img class="imgPerfil" src="@Session["imgPerfil"]" />
                 <h2>@Session["nomeUsuario"]</h2>
             }
             else
             {
-                <img id="imagemAnonimo" src="~/img/anonimo.png">
+                <img class="imgPerfil" src="~/img/anonimo.png">
             }
+                </div>
             <button class="btn" id="criarPergunta">Perguntar</button>
         </div>
         <div class="col col-3" id="listaTemas">

@@ -1,42 +1,26 @@
-﻿#imagemUsuario
-{
-    max-width: 50%;
-    height:auto;
-    margin-bottom: 1em;
+﻿html {
+    overflow-x: hidden;
 }
 
-#btnDeslogar:hover {
-    background-color: #ef5350 !important;
+.imgPerfil
+{
+    max-width: 80%;
 }
 
-
-@media screen and (min-width: 60em)
+ul
 {
-    #imagemUsuario {
+    list-style: none;
+}
+
+@media screen and (min-width: 40em)
+{
+    .imgPerfil {
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .imgPerfil {
         max-width: 80%;
     }
-
-    #divUsuario {
-        border-right: .1em solid white;
-        border-bottom: none !important ;
-    }
-
-    #listaTemas {
-        border-right: .1em solid white;
-        border-bottom: none !important;
-    }
-}
-
-#divUsuario {
-    border-bottom: .1em solid white;
-}
-
-#listaTemas
-{
-    border-bottom: .1em solid white;
-}
-
-html
-{
-    overflow-x: hidden !important;
 }

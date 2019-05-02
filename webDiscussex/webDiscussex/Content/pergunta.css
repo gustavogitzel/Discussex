@@ -57,10 +57,10 @@ label:hover div {
     background: #4dd0e1;
 }
 
-.chk:checked + input[type=hidden] + label i {
+.chk:checked  ~ label i {
     opacity: 1;
 }
 
-.chk:checked + input[type=hidden] + label div {
+.chk:checked ~ label div {
     background: #4dd0e1;
 }
