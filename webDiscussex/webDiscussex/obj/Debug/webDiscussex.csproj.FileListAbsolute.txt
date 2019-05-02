@@ -1205,3 +1205,6 @@ C:\Users\u18189\Desktop\Discussex\webDiscussex\webDiscussex\bin\pt-br\System.Web
 C:\Users\u18189\Desktop\Discussex\webDiscussex\webDiscussex\bin\pt-br\System.Web.Webpages.Razor.resources.dll
 C:\Users\u18189\Desktop\Discussex\webDiscussex\webDiscussex\bin\pt-br\System.Web.Helpers.resources.dll
 C:\Users\u18189\Desktop\Discussex\webDiscussex\webDiscussex\bin\pt-br\System.Web.Mvc.resources.dll
+C:\Users\u18189\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\nunit.framework.dll
+C:\Users\u18189\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\nunit.framework.pdb
+C:\Users\u18189\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\nunit.framework.xml

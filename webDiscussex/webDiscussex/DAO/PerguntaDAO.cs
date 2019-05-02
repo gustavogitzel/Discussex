@@ -18,6 +18,7 @@ namespace webDiscussex.DAO
             }
         }
 
+
         public IList<Pergunta> BuscaPorPalavraChave(string palavraChave)
         {
             using (var contexto = new EducacaoSexualContext())
