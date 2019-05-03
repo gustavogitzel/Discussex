@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Pareto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.EhCadastro = true;
+}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="~/Scripts/Pareto.js"></script>
+<link href="~/Content/pareto.css" type="text/css" rel="stylesheet">
+<div class="row">
+    <div class="col"><h1>GRÁFICO DE PARETO</h1></div>
+</div>
+<div class="row">
+    <div class="col">
+        <canvas id="pareto"></canvas>
+    </div>
+</div>
+

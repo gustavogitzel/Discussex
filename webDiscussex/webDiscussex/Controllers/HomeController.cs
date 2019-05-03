@@ -31,5 +31,10 @@ namespace webDiscussex.Controllers
         {
             return View();
         }
+
+        public ActionResult Pareto()
+        {
+            return View();
+        }
     }
 }
