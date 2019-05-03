@@ -1,69 +1,66 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Nunito:300');
 
-html
-{
+html {
     overflow-x: hidden;
 }
 
-.textoSobreNos{
-    text-align:center;
+#bordao {
+    width: 100%;
+    background: white;
+    padding: 1em;
 }
 
-.textoSobreNos h1
-{
-    color: white;
-    font-size: 4em;
-    margin: .5em;
+
+.textoSobreNos h1 {
+color: white;
+font-size: 4em;
+margin: .5em;
 }
 
-.textoSobreNos p
-{
-    color: white;
-    font-family: "Nunito";
-    font-size: 1.5em;
-    margin: 1em;
-    text-align: justify;
-}
-
-.textoSobreNos h3{
-    color: white;
-    font-size: 2.4em;
-    width: 10em;
-    margin: 0 0 0 calc(50% - 5em);
-}
-    .textoSobreNos ul {
-        background: white;
-        border-radius: 10pt;
-    }
-.textoSobreNos li
-{
-    list-style: none;
-    display: inline-block;
-    width: 5em;
-    padding: .5em;
-}
-
-    .textoSobreNos li.azul:hover {
+    .textoSobreNos p {
         color: white;
-        background: #42a5f5;
-        border-radius: 10pt;
+        font-family: "Nunito";
+        font-size: 1.5em;
+        margin: 1em;
+        text-align: justify;
     }
 
-    .textoSobreNos li.amarelo:hover {
+    .textoSobreNos h3 {
         color: white;
-        background: #fdd835;
-        border-radius: 10pt;
+        font-size: 2.4em;
+        width: 10em;
     }
-    .textoSobreNos li.verde:hover {
-        color: white;
-        background: #66bb6a;
+
+    .textoSobreNos span {
         border-radius: 10pt;
+        padding: .45em 1em .45em 1em;
+        margin-right: calc(100vw/6.05);
     }
-    .textoSobreNos li.vermelho:hover {
-        color: white;
-        background: #ef5350;
-        border-radius: 10pt;
-    }
+
+
+        .textoSobreNos span.azul:hover {
+            color: white;
+            background: #42a5f5;
+            border-radius: 10pt;
+        }
+
+        .textoSobreNos span.amarelo:hover {
+            color: white;
+            background: #fdd835;
+            border-radius: 10pt;
+        }
+
+        .textoSobreNos span.verde:hover {
+            color: white;
+            background: #66bb6a;
+            border-radius: 10pt;
+        }
+
+        .textoSobreNos span.vermelho:hover {
+            color: white;
+            background: #ef5350;
+            border-radius: 10pt;
+        }
 
 
 .azul {
