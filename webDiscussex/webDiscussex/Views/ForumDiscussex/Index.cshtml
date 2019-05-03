@@ -10,22 +10,22 @@
 
         <div class="col col-3 row" id="divUsuario">
             <div class="col">
-            @if (Session["emailUsuario"] != null)
-            {
-                <img class="imgPerfil" src="@Session["imgPerfil"]" />
-                <h2>@Session["nomeUsuario"]</h2>
-            }
-            else
-            {
-                <img class="imgPerfil" src="~/img/anonimo.png">
-            }
-                </div>
+                @if (Session["emailUsuario"] != null)
+                {
+                    <img class="imgPerfil" src="@Session["imgPerfil"]" />
+                    <h2>@Session["nomeUsuario"]</h2>
+                }
+                else
+                {
+                    <img class="imgPerfil" src="~/img/anonimo.png">
+                }
+            </div>
             <button class="btn" id="criarPergunta">Perguntar</button>
         </div>
         <div class="col col-3" id="listaTemas">
             <form action="/ForumDiscussex/BuscarTemas">
                 <div class="campoTexto">
-                    <label for="input">Buscar Palavra-Chave</label>
+                    <label>Buscar Palavra-Chave</label>
                     <select name="busca">
                         @{string[] vetor = new string[ViewBag.Listaperguntas.Count];
                             int a = 0;
@@ -42,17 +42,18 @@
                     </select>
                 </div>
                 <input type="submit" class="btn" value="Buscar">
-
-                @if (ViewBag.PalavraChave != null)
-                {
-                    foreach (var pergunta in ViewBag.PalavraChave)
-                    {
-                        <h1><a>@pergunta.Titulo</a></h1>
-                        <h2>@pergunta.Descricao</h2>
-                    }
-                }
-
             </form>
+
+            @if (ViewBag.PalavraChave != null)
+            {
+                foreach (var pergunta in ViewBag.PalavraChave)
+                {
+                    <h1><a href="ForumDiscussex/Respostas/@pergunta.Id">@pergunta.Titulo</a></h1>
+                    <h2>@pergunta.Descricao</h2>
+                }
+            }
+
+
         </div>
         <div class="col col-3" id="maisAcessados">
             <h2>Mais acessados</h2>
@@ -60,7 +61,7 @@
                 @for (int i = 0; i < ViewBag.ListaPerguntas.Count && i < 10; i++)
                 {
                     <li>
-                        <a>@ViewBag.ListaPerguntas[i].Titulo</a>
+                        <a href="ForumDiscussex/Respostas/@ViewBag.ListaPerguntas[i].Id">@ViewBag.ListaPerguntas[i].Titulo</a>
                     </li>
                 }
             </ul>
@@ -74,4 +75,5 @@
             window.location.href = "/ForumDiscussex/Perguntar";
         });
     });
+
 </script>

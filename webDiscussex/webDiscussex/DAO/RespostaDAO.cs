@@ -17,7 +17,6 @@ namespace webDiscussex.DAO
                 return ret;
             }
         }
-
         public void Adiciona(TResposta res)
         {
             using (var contexto = new EducacaoSexualContext())

@@ -1,84 +1,26 @@
 ﻿
 @{
     ViewBag.Title = "Responder";
-    ViewBag.EstaLogado = true;
     Layout = "~/Views/Shared/_LayoutForum.cshtml";
 }
 
-<link type="text/css" rel="stylesheet" href="~/Content/ForumResponder.css"/>
 <article id="corpo" class="container">
-    <div class="row a" id="pergunta">
+    <div class="row">
         <div class="col col-2">
-            <img class="imagemUsuario" src="~/img/UsuarioPadrao.png" />
-            <h1>Nome da pessoa</h1>
+            <img id="imgPerguntar" src="~/img/responder.png"/> @*Img de Responder*@
         </div>
         <div class="col col-2">
-            <h1>Pergunta aquiiii</h1>
-            <h3>Lorem</h3>
-        </div>
-        @if (Session["emailUsuario"] != null)
-         {
-            <div id="responder" class="col col-2">
-                <button>Responder Pergunta</button>
-            </div>
-         }
-    </div>
-    <div class="row a resposta">
-        <div class="col col-2">
-            <img class="imagemUsuario" src="~/img/UsuarioPadrao.png" />
-            <h1>nome da pessoa</h1>
-        </div>
-        <div class="col col-2">
-            <p>
-                jfjisajfklsdajfkdafjk rewil rneioruewik rnuewivrueiln ru nuroeiniwe unriown uriw nuriow ruwio r3oi nor w riw irnw irnu
-                fsji i uewi tuewrn etwio uneri tuwnituiowun tiwu tnti wqiot uwq uwiot nu ioqw nuioqwu ni
-            </p>
-        </div>
-    </div>
-    <div class="row b resposta">
-        <div class="col col-2">
-            <img class="imagemUsuario" src="~/img/UsuarioPadrao.png" />
-            <h1>nome da pessoa</h1>
-        </div>
-        <div class="col col-2">
-            <p>
-                jfjisajfklsdajfkdafjk rewil rneioruewik rnuewivrueiln ru nuroeiniwe unriown uriw nuriow ruwio r3oi nor w riw irnw irnu
-                fsji i uewi tuewrn etwio uneri tuwnituiowun tiwu tnti wqiot uwq uwiot nu ioqw nuioqwu ni
-            </p>
-        </div>
-    </div>
-    <div class="row c resposta">
-        <div class="col col-2">
-            <img class="imagemUsuario" src="~/img/UsuarioPadrao.png" />
-            <h1>nome da pessoa</h1>
-        </div>
-        <div class="col col-2">
-            <p>
-                jfjisajfklsdajfkdafjk rewil rneioruewik rnuewivrueiln ru nuroeiniwe unriown uriw nuriow ruwio r3oi nor w riw irnw irnu
-                fsji i uewi tuewrn etwio uneri tuwnituiowun tiwu tnti wqiot uwq uwiot nu ioqw nuioqwu ni
-            </p>
-        </div>
-    </div>
-    <div class="row a resposta">
-        <div class="col col-2">
-            <img class="imagemUsuario" src="~/img/UsuarioPadrao.png" />
-            <h1>nome da pessoa</h1>
-        </div>
-        <div class="col col-2">
-            <p>
-                jfjisajfklsdajfkdafjk rewil rneioruewik rnuewivrueiln ru nuroeiniwe unriown uriw nuriow ruwio r3oi nor w riw irnw irnu
-                fsji i uewi tuewrn etwio uneri tuwnituiowun tiwu tnti wqiot uwq uwiot nu ioqw nuioqwu ni
-            </p>
-        </div>
-    </div>
-    <div class="row" id="botoesPaginas">
-        <div class="col">
-                <div>
-                    <button class="btn"><i class="fa fa-arrow-alt-circle-left"></i></button>
-                    <button class="btn"><i class="fa fa-arrow-alt-circle-right"></i></button>
+            <form action="/ForumDiscussex/AdicionarResposta" method="post">
+                <div class="col col-2">
+                    <h1>@ViewBag.Pergunta.Titulo</h1>
+                    <h2>@ViewBag.Pergunta.Descricao</h2>
                 </div>
+                <div class="campoTexto">
+                    <textarea cols="60" rows="10" name="resp" id="txtPergunta" class="Input-text" placeholder="Resposta"></textarea>
+                    <label for="input" class="Input-label">Resposta</label>
+                </div>
+                <input type="submit" class="btn" value="Responder">
+            </form>
         </div>
     </div>
-
-
 </article>

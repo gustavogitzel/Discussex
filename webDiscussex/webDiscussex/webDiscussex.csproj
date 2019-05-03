@@ -301,9 +301,10 @@
     <Content Include="Views\Shared\_LayoutMitos.cshtml" />
     <Content Include="Views\Shared\_LayoutQuiz.cshtml" />
     <Content Include="Views\ForumDiscussex\Perguntar.cshtml" />
-    <Content Include="Views\ForumDiscussex\Responder.cshtml" />
+    <Content Include="Views\ForumDiscussex\Respostas.cshtml" />
     <Content Include="Views\Shared\_LayoutForum.cshtml" />
     <Content Include="Views\Home\SobreNos.cshtml" />
+    <Content Include="Views\ForumDiscussex\Responder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

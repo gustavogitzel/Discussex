@@ -18,7 +18,6 @@ namespace webDiscussex.DAO
             }
         }
 
-
         public IList<Pergunta> BuscaPorPalavraChave(string palavraChave)
         {
             using (var contexto = new EducacaoSexualContext())
@@ -26,6 +25,14 @@ namespace webDiscussex.DAO
                 IList<Pergunta> ret = contexto.PP2_Pergunta.Where(p => p.PalavraChave == palavraChave).ToList();
 
                 return ret;
+            }
+        }
+
+        public Pergunta BuscaPorId(int id)
+        {
+            using (var contexto = new EducacaoSexualContext())
+            {
+                return contexto.PP2_Pergunta.Where(p => p.Id == id).FirstOrDefault();
             }
         }
 

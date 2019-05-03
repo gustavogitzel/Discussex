@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Respostas";
+    ViewBag.EstaLogado = true;
+    Layout = "~/Views/Shared/_LayoutForum.cshtml";
+}
+
+<link type="text/css" rel="stylesheet" href="~/Content/ForumResponder.css" />
+<article id="corpo" class="container">
+    <div class="row a" id="pergunta">
+        <div class="col col-2">
+            @if (ViewBag.UsuarioPerguntador != null)
+            {
+                <img class="imagemUsuario" src="/@ViewBag.UsuarioPerguntador.ImgPerfil" />
+                <h1>@ViewBag.UsuarioPerguntador.NomeUsuario</h1>
+            }
+            else
+            {
+                <img class="imagemUsuario" src="~/img/anonimo.png" />
+                <h1>Anônimo</h1>
+            }
+
+        </div>
+        <div class="col col-2">
+            <h1>@ViewBag.Pergunta.Titulo</h1>
+            <h3>@ViewBag.Pergunta.Descricao</h3>
+        </div>
+        @if (Session["emailUsuario"] != null)
+        {
+            <a class="btn" href="/ForumDiscussex/responder/@ViewBag.Pergunta.Id">
+             Responder Pergunta
+            </a>
+        }
+    </div>
+    @if (ViewBag.ListaRespostas != null)
+    {
+        int i = 0;
+        foreach (var resposta in ViewBag.ListaRespostas)
+        {
+            if (i % 2 == 0)
+            {
+                <div class="row a resposta">
+                    <div class="col col-2">
+                        <p>
+                            @resposta.Resposta;
+                        </p>
+                    </div>
+                    <div class="col col-2">
+                        <img class="imagemUsuario" src="/@ViewBag.ListaRespondedor[i].ImgPerfil" />
+                        <h1>@ViewBag.ListaRespondedor[i].NomeUsuario</h1>
+                    </div>
+                </div>
+                i++;
+            }
+            else
+            {
+                <div class="row a resposta">
+                    <div class="col col-2">
+                        <img class="imagemUsuario" src="/@ViewBag.ListaRespondedor[i].ImgPerfil" />
+                        <h1>@ViewBag.ListaRespondedor[i].NomeUsuario</h1>
+                    </div>
+                    <div class="col col-2">
+                        <p>
+                            @resposta.Resposta;
+                        </p>
+                    </div>
+                </div>
+                i++;
+            }
+        }
+    }
+    else
+    {
+        @*<img> bixinho triste</img>*@
+        <h1> Não existem respostas para essa pergunta ainda</h1>
+    }
+    <div class="row" id="botoesPaginas">
+        <div class="col">
+            <div>
+                <button class="btn"><i class="fa fa-arrow-alt-circle-left"></i></button>
+                <button class="btn"><i class="fa fa-arrow-alt-circle-right"></i></button>
+            </div>
+        </div>
+    </div>
+</article>
