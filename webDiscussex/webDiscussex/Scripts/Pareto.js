@@ -33,7 +33,7 @@ var data = {
             });
         }
     },
-    labels: ["8", "7", "9", "11", "10"],
+    labels: ["SQL Exception", "Erro de Servidor no Aplicativo '/'", "Validaçaõ de Formulário", "Rotas inválidas"],
     datasets: [{
         type: "line",
         label: "ACUMULADO",
@@ -48,7 +48,7 @@ var data = {
         label: "ASSISTENCIA",
         borderColor: "#4a148c",
         backgroundColor: "#4a148c",
-        data: [16, 11, 9, 6, 5],
+        data: [15, 23, 6, 8],
         yAxisID: 'y-axis-1'
     }]
 };
@@ -57,9 +57,7 @@ var options = {
     scales: {
         xAxes: [{
             stacked: true,
-            scaleLabel: {
-                display: true,
-                labelString: "Estaciones",
+            ticks: {
                 fontColor: "white",
                 fontSize: 20
             }
@@ -71,7 +69,9 @@ var options = {
             id: "y-axis-1",
             stacked: true,
             ticks: {
-                suggestedMin: 0
+                suggestedMin: 0,
+                fontColor: "white",
+                fontSize: 20
             },
             scaleLabel: {
                 display: true,
@@ -86,8 +86,10 @@ var options = {
             ticks: {
                 suggestedMin: 0,
                 callback: function (value) {
-                    return value + "%";
-                }
+                    return (value * 52 / 100) + "%";
+                },
+                fontColor: "white",
+                fontSize: 20
             },
             scaleLabel: {
                 display: true,
@@ -101,9 +103,7 @@ var options = {
         labels: {
             // This more specific font property overrides the global property
             fontColor: 'white',
-            fontSize: 20,
-            fontFamily: "Forte"
- 
+            fontSize: 20
         }
     }
 };
