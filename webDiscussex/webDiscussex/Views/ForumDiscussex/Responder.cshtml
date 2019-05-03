@@ -10,10 +10,9 @@
             <img id="imgPerguntar" src="~/img/responder.png"/> @*Img de Responder*@
         </div>
         <div class="col col-2">
-            <form action="/ForumDiscussex/AdicionarResposta" method="post">
+            <form action="/ForumDiscussex/AdicionarResposta/@ViewBag.Pergunta.Id" method="post">
                 <div class="col col-2">
                     <h1>@ViewBag.Pergunta.Titulo</h1>
-                    <h2>@ViewBag.Pergunta.Descricao</h2>
                 </div>
                 <div class="campoTexto">
                     <textarea cols="60" rows="10" name="resp" id="txtPergunta" class="Input-text" placeholder="Resposta"></textarea>

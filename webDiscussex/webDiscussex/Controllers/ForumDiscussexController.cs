@@ -61,6 +61,8 @@ namespace webDiscussex.Controllers
         {
             var dao = new PerguntaDAO();
 
+            dao.SomarAcesso(int.Parse(id));
+
             ViewBag.Pergunta = dao.BuscaPorId(int.Parse(id));
 
             if (ViewBag.Pergunta.CodUsuario != null)
@@ -84,7 +86,7 @@ namespace webDiscussex.Controllers
 
             return View();
         }
-        [Route("ForumDiscussex/responder/ {id}")]
+        [Route("ForumDiscussex/Responder/{id}")]
         public ActionResult Responder(string id)
         {
             var dao = new PerguntaDAO();
@@ -94,6 +96,7 @@ namespace webDiscussex.Controllers
             return View();
         }
 
+        [Route("ForumDiscussex/AdicionarResposta/{id}")]
         public ActionResult AdicionarResposta(string resp, string id)
         {
             var resposta = new TResposta();
@@ -101,7 +104,15 @@ namespace webDiscussex.Controllers
             var user = new UsuarioDAO();
             resposta.CodUsuario = user.BuscaPorEmail(Session["emailUsuario"].ToString()).Id;
 
-            return RedirectToAction("Responder", "ForumDiscussex");
+            resposta.CodPergunta = int.Parse(id);
+
+            resposta.Resposta = resp;
+
+            var dao = new RespostaDAO();
+
+            dao.Adiciona(resposta);
+
+            return RedirectToAction("Respostas", "ForumDiscussex", new {id});
         }
     }
 }

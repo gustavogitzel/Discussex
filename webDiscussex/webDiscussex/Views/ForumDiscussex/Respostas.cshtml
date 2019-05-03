@@ -27,7 +27,7 @@
         </div>
         @if (Session["emailUsuario"] != null)
         {
-            <a class="btn" href="/ForumDiscussex/responder/@ViewBag.Pergunta.Id">
+            <a class="btn" href="/ForumDiscussex/Responder/@ViewBag.Pergunta.Id">
              Responder Pergunta
             </a>
         }
@@ -42,7 +42,7 @@
                 <div class="row a resposta">
                     <div class="col col-2">
                         <p>
-                            @resposta.Resposta;
+                            @resposta.Resposta
                         </p>
                     </div>
                     <div class="col col-2">
@@ -61,7 +61,7 @@
                     </div>
                     <div class="col col-2">
                         <p>
-                            @resposta.Resposta;
+                            @resposta.Resposta
                         </p>
                     </div>
                 </div>

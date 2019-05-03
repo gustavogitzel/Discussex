@@ -46,5 +46,16 @@ namespace webDiscussex.DAO
                 contexto.SaveChanges();
             }
         }
+
+        public void SomarAcesso(int id)
+        {
+            using (var contexto = new EducacaoSexualContext())
+            {
+                Pergunta p = BuscaPorId(id);
+                p.QuantidadeAcesso++;
+                contexto.Update(p);
+                contexto.SaveChanges();
+            }
+        }
     }
 }
