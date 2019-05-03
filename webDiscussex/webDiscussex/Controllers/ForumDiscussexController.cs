@@ -53,7 +53,7 @@ namespace webDiscussex.Controllers
 
             dao.Adicionar(p);
 
-            return RedirectToAction("Respostas", "ForumDiscussex", new { id = p.Id });
+            return RedirectToAction("Respostas", "ForumDiscussex", new {id = p.Id });
         }
 
         [Route("ForumDiscussex/Respostas/{id}")]
