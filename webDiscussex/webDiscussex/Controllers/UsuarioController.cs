@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.IO;
 using webDiscussex.Models;
 using webDiscussex.DAO;
 using System.Web.Mvc;
+using System.Drawing;
 
 namespace webDiscussex.Controllers
 {
@@ -42,17 +44,20 @@ namespace webDiscussex.Controllers
             //if (dao.BuscaPorEmail(user.Email) == null)
             //  return RedirectToAction("Home", "HomePagina");
 
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
+                Image img = Image.FromFile(user.ImgPerfil);
+                //Image.Save(user.ImgPerfil, );
+                user.ImgPerfil = "img/imgUsers/" + user.ImgPerfil;
                 dao.Adiciona(user);
                 Session["emailUsuario"] = user.Email;
                 Session["nomeUsuario"] = user.NomeUsuario;
                 Session["imgPerfil"] = user.ImgPerfil;
 
                 return RedirectToAction("Index", "Home");
-            }
+            //}
 
-            return RedirectToAction("Cadastro", "Usuario");
+            //return RedirectToAction("Cadastro", "Usuario");
         }
 
         public ActionResult Login()
