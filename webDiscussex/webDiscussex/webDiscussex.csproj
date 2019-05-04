@@ -206,6 +206,7 @@
     <Content Include="img\gravidez\imgTrabalho.png" />
     <Content Include="img\gravidez\imgVacina.png" />
     <Content Include="img\gravidez\imgVomito.png" />
+    <Content Include="img\guaxinimPreocupado.png" />
     <Content Include="img\homeHeroOrange.png" />
     <Content Include="img\iconeCorpo.png" />
     <Content Include="img\iconeGrafico.png" />
@@ -233,6 +234,7 @@
     <Content Include="img\perguntar.png" />
     <Content Include="img\quizIntro.png" />
     <Content Include="img\remediosHIV.png" />
+    <Content Include="img\responder.png" />
     <Content Include="img\UsuarioPadrao.png" />
     <Content Include="Scripts\Pareto.js" />
     <Content Include="Scripts\quiz.js" />

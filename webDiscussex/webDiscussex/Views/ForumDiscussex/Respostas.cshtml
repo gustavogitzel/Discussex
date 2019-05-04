@@ -32,7 +32,7 @@
             </a>
         }
     </div>
-    @if (ViewBag.ListaRespostas != null)
+    @if (ViewBag.ListaRespostas.Count != 0)
     {
         int i = 0;
         foreach (var resposta in ViewBag.ListaRespostas)
@@ -71,7 +71,7 @@
     }
     else
     {
-        @*<img> bixinho triste</img>*@
+        <img src="~/img/guaxinimPreocupado.png" />
         <h1> Não existem respostas para essa pergunta ainda</h1>
     }
     <div class="row" id="botoesPaginas">
