@@ -33,7 +33,7 @@ var data = {
             });
         }
     },
-    labels: ["SQL Exception", "Erro de Servidor no Aplicativo '/'", "Validaçaõ de Formulário", "Rotas inválidas"],
+    labels: ["Erro de Servidor no Aplicativo '/'", "SQL Exception", "Rotas inválidas","Validaçaõ de Formulário"],
     datasets: [{
         type: "line",
         label: "ACUMULADO",
@@ -41,14 +41,14 @@ var data = {
         backgroundColor: "#ea80fc",
         pointBorderWidth: 5,
         fill: false,
-        data: [34.04, 57.45, 76.60, 89.36, 100.00],
+        data: [44.23, 73.07, 88.45, 100],
         yAxisID: 'y-axis-2'
     }, {
         type: "bar",
         label: "ASSISTENCIA",
         borderColor: "#4a148c",
         backgroundColor: "#4a148c",
-        data: [15, 23, 6, 8],
+        data: [23, 15, 8, 6],
         yAxisID: 'y-axis-1'
     }]
 };
@@ -86,7 +86,7 @@ var options = {
             ticks: {
                 suggestedMin: 0,
                 callback: function (value) {
-                    return (value * 52 / 100) + "%";
+                    return value + "%";
                 },
                 fontColor: "white",
                 fontSize: 20

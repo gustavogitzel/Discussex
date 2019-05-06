@@ -23,4 +23,134 @@ ul
     .imgPerfil {
         max-width: 80%;
     }
+
+
+    #divUsuario {
+        border-bottom: none !important;
+        border-right: .1em solid white;
+    }
+
 }
+
+.select-hidden {
+    display: none;
+    visibility: hidden;
+    padding-right: 10px;
+}
+
+.select {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+    width: 220px;
+    height: 40px;
+}
+
+.select-styled {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #9c27b0;
+    padding: 10px 15px;
+    font-size: 1.3em;
+    border-radius: 10pt;
+    text-align: left;
+}
+
+    .select-styled:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border: 7px solid transparent;
+        border-color: #fff transparent transparent transparent;
+        position: absolute;
+        top: 16px;
+        right: 10px;
+    }
+
+
+    .select-styled:active, .select-styled.active {
+        border-radius: 10pt 10pt 0 0;
+    }
+
+        .select-styled:active:after, .select-styled.active:after {
+            top: 9px;
+            border-color: transparent transparent #fff transparent;
+        }
+
+.select-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #ce93d8;
+    border-radius: 0 0 10pt 10pt;
+    font-size: 1.3em;
+    text-align: left;
+}
+
+    .select-options li {
+        margin: 0;
+        padding: 12px 0;
+        text-indent: 15px;
+        border-top: 1px solid white;
+    }
+
+        .select-options li:hover {
+            color: #ce93d8;
+            background: #fff;
+        }
+
+        .select-options li[rel="hide"] {
+            display: none;
+        }
+
+        .ultimoDaLista:hover
+        {
+            border-radius: 0 0 10pt 10pt;
+        }
+
+#nomeUsuarioForum
+{
+    color: white;
+    margin-top: 1em;
+    font-size: 2em;
+}
+
+#divUsuario
+{
+    border-bottom: .1em solid white;
+}
+
+
+.titulo
+{
+    font-size: 2em;
+    color: white;
+}
+
+#listaMaisAcessados li a
+{
+    text-decoration: none;
+    color: white;
+}
+
+#listaMaisAcessados li {
+    font-size: 1.5em;
+    background: #e1bee7;
+    padding: 1em;
+    max-width: 6em;
+}
+
+    #listaMaisAcessados li:hover {
+        background: #ce93d8;
+    }

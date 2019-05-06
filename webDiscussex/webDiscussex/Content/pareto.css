@@ -6,3 +6,9 @@
     height: 80vh !important;
     margin: 0 !important;
 }
+
+.titulo
+{
+    color: white;
+    font-size: 2.4em;
+}

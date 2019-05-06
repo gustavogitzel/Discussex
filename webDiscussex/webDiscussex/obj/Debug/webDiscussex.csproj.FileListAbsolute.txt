@@ -1214,3 +1214,6 @@ C:\Users\u18194\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\nunit.f
 C:\Users\Passaro Fantasma\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\nunit.framework.dll
 C:\Users\Passaro Fantasma\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\nunit.framework.pdb
 C:\Users\Passaro Fantasma\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\nunit.framework.xml
+C:\Users\u18194\Desktop\Discussex\webDiscussex\webDiscussex\bin\nunit.framework.dll
+C:\Users\u18194\Desktop\Discussex\webDiscussex\webDiscussex\bin\nunit.framework.pdb
+C:\Users\u18194\Desktop\Discussex\webDiscussex\webDiscussex\bin\nunit.framework.xml
