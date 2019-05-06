@@ -29,7 +29,7 @@ namespace webDiscussex.Controllers
         {
             UsuarioDAO dao = new UsuarioDAO();
             var data = dao.BuscaPorEmail(emailDigitado);
-            if(data != null)
+            if (data != null)
             {
                 return Json(1);
             }
@@ -38,23 +38,32 @@ namespace webDiscussex.Controllers
         }
 
         [HttpPost]
-        public ActionResult Adiciona(Usuario user)
+        public ActionResult Adiciona(Usuario user, HttpPostedFileBase upload)
         {
+            string caminhoArquivo = null;
+
+            if (upload != null)
+            {
+                var uploadPath = Server.MapPath("~/img/imgUsers");
+                caminhoArquivo = Path.Combine(@uploadPath, Path.GetFileName(upload.FileName));
+
+                upload.SaveAs(caminhoArquivo);
+            }
+
+
             UsuarioDAO dao = new UsuarioDAO();
             //if (dao.BuscaPorEmail(user.Email) == null)
             //  return RedirectToAction("Home", "HomePagina");
 
             //if (ModelState.IsValid)
             //{
-                Image img = Image.FromFile(user.ImgPerfil);
-                //Image.Save(user.ImgPerfil, );
-                user.ImgPerfil = "img/imgUsers/" + user.ImgPerfil;
-                dao.Adiciona(user);
-                Session["emailUsuario"] = user.Email;
-                Session["nomeUsuario"] = user.NomeUsuario;
-                Session["imgPerfil"] = user.ImgPerfil;
+            user.ImgPerfil = "img/imgUsers/" + upload.FileName;
+            dao.Adiciona(user);
+            Session["emailUsuario"] = user.Email;
+            Session["nomeUsuario"] = user.NomeUsuario;
+            Session["imgPerfil"] = user.ImgPerfil;
 
-                return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home");
             //}
 
             //return RedirectToAction("Cadastro", "Usuario");
