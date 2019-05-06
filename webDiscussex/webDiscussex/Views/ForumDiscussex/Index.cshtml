@@ -8,7 +8,7 @@
 <article id="corpo" class="container">
     <div class="row">
         <div class="col col-3" id="divUsuario">
-            <div class="">
+            <div class="perguntas">
                 @if (Session["emailUsuario"] != null)
                 {
                     <img class="imgPerfil" src="@Session["imgPerfil"]" />
@@ -22,7 +22,34 @@
             <button class="btn" id="criarPergunta">Perguntar</button>
         </div>
         <div class="col col-3" id="listaTemas">
-                
+            <form action="/ForumDiscussex/BuscarTemas">
+                <div class="campoTexto">
+                    <label>Buscar Palavra-Chave</label>
+                    <select name="busca">
+                        @{string[] vetor = new string[ViewBag.Listaperguntas.Count];
+                    int a = 0;
+                    foreach (var pergunta in ViewBag.ListaPerguntas)
+                    {
+                        if (Array.IndexOf(vetor, pergunta.PalavraChave) < 0)
+                        {
+                            <option>@pergunta.PalavraChave</option>
+                }
+                vetor[a] = pergunta.PalavraChave;
+                a++;
+            }
+                        }
+                    </select>
+                </div>
+                <input type="submit" class="btn" value="Buscar">
+            </form>
+            @if (ViewBag.PalavraChave != null)
+    {
+        foreach (var pergunta in ViewBag.PalavraChave)
+        {
+            <h1><a href="ForumDiscussex/Respostas/@pergunta.Id">@pergunta.Titulo</a></h1>
+            <h2>@pergunta.Descricao</h2>
+}
+}
 
 
         </div>
