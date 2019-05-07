@@ -10,11 +10,8 @@ namespace TesteForum
         [Fact]
         public void Adicionar()
         {
-            string emailUsuario = "isapsz@gmail";
-
-            var user = new UsuarioDAO();
-
-            Usuario usuario = user.BuscaPorEmail(emailUsuario);
+            //bool anonimo = true;
+            bool anonimo = false;
 
             Pergunta pergunta = new Pergunta
             {
@@ -22,14 +19,13 @@ namespace TesteForum
                 Descricao = "Olá, tenho uma dúvida, gostaria de saber como faço para colocar um camisinha",
                 PalavraChave = "Camisinha",
                 QuantidadeAcesso = 0,
-                CodUsuario = usuario.Id
             };
 
-            var dao = new PerguntaDAO();
+            //string cadastro = ForumDiscussexController.FazerPergunta(anonimo, "isapsz", pergunta);
+            //string cadastro = ForumDiscussexController.FazerPergunta(anonimo, "isapsz@gmail", pergunta);
+            string cadastro = ForumDiscussexController.FazerPergunta(anonimo, null, pergunta);
 
-            string cadastrado = dao.Adicionar(pergunta);
-
-            Assert.Equal("Como colocar uma camisinha?", cadastrado);
+            Assert.Equal("Como colocar uma camisinha?", cadastro);
         }
     }
 }

@@ -40,31 +40,37 @@ namespace webDiscussex.Controllers
         [HttpPost]
         public ActionResult Adiciona(Usuario user, HttpPostedFileBase upload)
         {
-            string caminhoArquivo = null;
-
-            if (upload != null)
-            {
-                var uploadPath = Server.MapPath("~/img/imgUsers");
-                caminhoArquivo = Path.Combine(@uploadPath, Path.GetFileName(upload.FileName));
-
-                upload.SaveAs(caminhoArquivo);
-            }
-
-
             UsuarioDAO dao = new UsuarioDAO();
             //if (dao.BuscaPorEmail(user.Email) == null)
             //  return RedirectToAction("Home", "HomePagina");
 
             //if (ModelState.IsValid)
             //{
-            user.ImgPerfil = "img/imgUsers/" + upload.FileName;
+
+            string caminhoArquivo = null;
+
+            if (upload != null)
+            {
+                var uploadPath = Server.MapPath("~/img/imgUsers");
+                caminhoArquivo = Path.Combine(@uploadPath, user.Email + Path.GetExtension(upload.FileName));
+
+                string[] extensãoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
+
+                for (int i = 0; i < extensãoPermitida.Length; i++)
+                    if (Path.GetExtension(caminhoArquivo) == extensãoPermitida[i])
+                    {
+                        upload.SaveAs(caminhoArquivo);
+                        break;
+                    }
+            }
+            user.ImgPerfil = "img/imgUsers/" + user.Email + Path.GetExtension(upload.FileName);
             dao.Adiciona(user);
             Session["emailUsuario"] = user.Email;
             Session["nomeUsuario"] = user.NomeUsuario;
             Session["imgPerfil"] = user.ImgPerfil;
 
             return RedirectToAction("Index", "Home");
-            //}
+            // }
 
             //return RedirectToAction("Cadastro", "Usuario");
         }
@@ -119,12 +125,29 @@ namespace webDiscussex.Controllers
 
             return RedirectToAction("Configuracoes", "Usuario");
         }
-        public ActionResult AtualizarImagem(string novaFoto, string senha)
+        public ActionResult AtualizarImagem(HttpPostedFileBase upload, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            dao.AlterarImagem(novaFoto, Session["emailUsuario"].ToString(), senha);
 
-            Session["imgPerfil"] = novaFoto;
+            Usuario user = new Usuario();
+
+            user = dao.BuscaPorEmail(Session["emailUsuario"].ToString());
+
+            string caminhoArquivo = null;
+
+            var uploadPath = Server.MapPath("~/img/imgUsers");
+            caminhoArquivo = Path.Combine(@uploadPath, user.Email + Path.GetExtension(upload.FileName));
+
+            string[] extensãoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
+
+            for (int i = 0; i < extensãoPermitida.Length; i++)
+                if (Path.GetExtension(caminhoArquivo) == extensãoPermitida[i])
+                {
+                    upload.SaveAs(caminhoArquivo);
+                    break;
+                }
+
+            upload.SaveAs(caminhoArquivo);
 
             return RedirectToAction("Configuracoes", "Usuario");
         }

@@ -47,8 +47,8 @@
     });
 
     $("#btnAlteraImagem").click(() => {
-        var txt ="<div id='fundoPreto'></div><div id='areaConfiguracoes' class='row container'> <div class='col'><form id='frmConfig' method='post' " +
-            "action='/Usuario/AtualizarImagem'><div><label for='txtImg' class='fileContainer'><input type='file' name='novaFoto' id='txtImg'></label>" +
+        var txt = "<div id='fundoPreto'></div><div id='areaConfiguracoes' class='row container'> <div class='col'><form enctype='multipart/form-data' id='frmConfig' method='post' " +
+            "action='/Usuario/AtualizarImagem'><div id='fileIput'><input type='file' id='file' name='upload' /><label for='file' class='btn-1'>Nova Foto de Perfil</label>" +
             "</div><div class='campoTexto'><input type='password' name='senha' id='txtSenha' class='Input-text' placeholder='Senha'><label for='input' " +
             "class='Input-label'>Senha</label></div><input class='btn concluir' type='submit' name='btnSubmitAlteraImagem' id='btnSubmitAlteraImagem' " +
             "value='Alterar Imagem'><button class='btn' id='btnCancelar'>Cancelar</button></form></div></div>";
