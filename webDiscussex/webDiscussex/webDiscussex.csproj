@@ -174,12 +174,16 @@
     <Content Include="Content\cadastro.css" />
     <Content Include="Content\configuracoes.css" />
     <Content Include="Content\ForumIndex.css" />
+    <Content Include="Content\forumRespostas.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\login.css" />
     <Content Include="Content\mitos.css" />
+    <Content Include="Content\nice-select.css" />
+    <Content Include="Content\nomeResposta.css" />
     <Content Include="Content\pareto.css" />
     <Content Include="Content\pergunta.css" />
     <Content Include="Content\quiz.css" />
+    <Content Include="Content\responderPergunta.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\sobreNos.css" />
     <Content Include="Content\style.css" />
@@ -236,6 +240,8 @@
     <Content Include="img\remediosHIV.png" />
     <Content Include="img\responder.png" />
     <Content Include="img\UsuarioPadrao.png" />
+    <Content Include="Scripts\fundoForum.js" />
+    <Content Include="Scripts\jquery.nice-select.js" />
     <Content Include="Scripts\Pareto.js" />
     <Content Include="Scripts\quiz.js" />
     <Content Include="Scripts\cadastro.js" />

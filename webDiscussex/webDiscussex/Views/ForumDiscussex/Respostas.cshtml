@@ -4,33 +4,39 @@
     ViewBag.EstaLogado = true;
     Layout = "~/Views/Shared/_LayoutForum.cshtml";
 }
-
+<script src="~/Scripts/fundoForum.js"></script>
+<link type="text/css" rel="stylesheet" href="~/Content/forumRespostas.css" />
 <link type="text/css" rel="stylesheet" href="~/Content/ForumResponder.css" />
-<article id="corpo" class="container">
+<article id="corpo" class="container" data-qtdLinhas="@ViewBag.ListaRespostas.Count">
     <div class="row a" id="pergunta">
-        <div class="col col-2">
-            @if (ViewBag.UsuarioPerguntador != null)
-            {
-                <img class="imagemUsuario" src="/@ViewBag.UsuarioPerguntador.ImgPerfil" />
-                <h1>@ViewBag.UsuarioPerguntador.NomeUsuario</h1>
-            }
-            else
-            {
-                <img class="imagemUsuario" src="~/img/anonimo.png" />
-                <h1>Anônimo</h1>
-            }
+        <div class="row">
+            <div class="col col-2">
+                @if (ViewBag.UsuarioPerguntador != null)
+                {
+                    <img class="imagemUsuario" src="/@ViewBag.UsuarioPerguntador.ImgPerfil" />
+                    <h1 class="nomeResposta">@ViewBag.UsuarioPerguntador.NomeUsuario</h1>
+                }
+                else
+                {
+                    <img class="imagemUsuario" src="~/img/anonimo.png" />
+                    <h1 class="nomeResposta">Anônimo</h1>
+                }
 
+            </div>
+            <div class="col col-2">
+                <h1 class="tituloPergunta">@ViewBag.Pergunta.Titulo</h1>
+                <h3 class="descricaoPergunta">@ViewBag.Pergunta.Descricao</h3>
+            </div>
         </div>
-        <div class="col col-2">
-            <h1>@ViewBag.Pergunta.Titulo</h1>
-            <h3>@ViewBag.Pergunta.Descricao</h3>
+        <div class="row col">
+            @if (Session["emailUsuario"] != null)
+            {
+                <form action="/ForumDiscussex/Responder/@ViewBag.Pergunta.Id">
+                    <input type="submit" class="btn" value="Responder Pergunta" />
+                </form>
+            }
         </div>
-        @if (Session["emailUsuario"] != null)
-        {
-            <a class="btn" href="/ForumDiscussex/Responder/@ViewBag.Pergunta.Id">
-             Responder Pergunta
-            </a>
-        }
+
     </div>
     @if (ViewBag.ListaRespostas.Count != 0)
     {
@@ -41,9 +47,7 @@
             {
                 <div class="row a resposta">
                     <div class="col col-2">
-                        <p>
-                            @resposta.Resposta
-                        </p>
+                        <h3 class="descricaoPergunta">@resposta.Resposta</h3>
                     </div>
                     <div class="col col-2">
                         <img class="imagemUsuario" src="/@ViewBag.ListaRespondedor[i].ImgPerfil" />
@@ -54,15 +58,13 @@
             }
             else
             {
-                <div class="row a resposta">
+                <div class="row b resposta">
                     <div class="col col-2">
                         <img class="imagemUsuario" src="/@ViewBag.ListaRespondedor[i].ImgPerfil" />
                         <h1>@ViewBag.ListaRespondedor[i].NomeUsuario</h1>
                     </div>
                     <div class="col col-2">
-                        <p>
-                            @resposta.Resposta
-                        </p>
+                        <h3 class="descricaoPergunta">@resposta.Resposta</h3>
                     </div>
                 </div>
                 i++;
@@ -71,15 +73,9 @@
     }
     else
     {
-        <img src="~/img/guaxinimPreocupado.png" />
-        <h1> Não existem respostas para essa pergunta ainda</h1>
-    }
-    <div class="row" id="botoesPaginas">
-        <div class="col">
-            <div>
-                <button class="btn"><i class="fa fa-arrow-alt-circle-left"></i></button>
-                <button class="btn"><i class="fa fa-arrow-alt-circle-right"></i></button>
-            </div>
+        <div class="row">
+            <div class="col col-2"><h1 class="semResposta"> Não existem respostas para essa pergunta ainda</h1></div>
+            <div class="col col-2"> <img src="~/img/guaxinimPreocupado.png" /></div>
         </div>
-    </div>
+    }
 </article>

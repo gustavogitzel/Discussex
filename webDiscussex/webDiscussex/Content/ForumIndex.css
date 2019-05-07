@@ -11,7 +11,16 @@ ul
 {
     list-style: none;
 }
-
+.nice-select
+{
+    margin-left: 3em;
+    width: 10em !important;
+}
+#submitBusca
+{
+    margin-top: -.2em !important;
+    margin-left: 0 !important;
+}
 @media screen and (min-width: 40em)
 {
     .imgPerfil {
@@ -24,7 +33,6 @@ ul
         max-width: 80%;
     }
 
-
     #divUsuario {
         border-bottom: none !important;
         border-right: .1em solid white;
@@ -32,92 +40,6 @@ ul
 
 }
 
-.select-hidden {
-    display: none;
-    visibility: hidden;
-    padding-right: 10px;
-}
-
-.select {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    font-size: 16px;
-    color: #fff;
-    width: 220px;
-    height: 40px;
-}
-
-.select-styled {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #9c27b0;
-    padding: 10px 15px;
-    font-size: 1.3em;
-    border-radius: 10pt;
-    text-align: left;
-}
-
-    .select-styled:after {
-        content: "";
-        width: 0;
-        height: 0;
-        border: 7px solid transparent;
-        border-color: #fff transparent transparent transparent;
-        position: absolute;
-        top: 16px;
-        right: 10px;
-    }
-
-
-    .select-styled:active, .select-styled.active {
-        border-radius: 10pt 10pt 0 0;
-    }
-
-        .select-styled:active:after, .select-styled.active:after {
-            top: 9px;
-            border-color: transparent transparent #fff transparent;
-        }
-
-.select-options {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    z-index: 999;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    background-color: #ce93d8;
-    border-radius: 0 0 10pt 10pt;
-    font-size: 1.3em;
-    text-align: left;
-}
-
-    .select-options li {
-        margin: 0;
-        padding: 12px 0;
-        text-indent: 15px;
-        border-top: 1px solid white;
-    }
-
-        .select-options li:hover {
-            color: #ce93d8;
-            background: #fff;
-        }
-
-        .select-options li[rel="hide"] {
-            display: none;
-        }
-
-        .ultimoDaLista:hover
-        {
-            border-radius: 0 0 10pt 10pt;
-        }
 
 #nomeUsuarioForum
 {
@@ -126,8 +48,7 @@ ul
     font-size: 2em;
 }
 
-#divUsuario
-{
+#divUsuario {
     border-bottom: .1em solid white;
 }
 
@@ -136,21 +57,114 @@ ul
 {
     font-size: 2em;
     color: white;
+    margin-bottom: 1em;
+    text-transform: uppercase;
 }
 
-#listaMaisAcessados li a
-{
-    text-decoration: none;
-    color: white;
+
+#listaAcessados{
+    width: 400px;
+    margin: 0 auto;
 }
 
-#listaMaisAcessados li {
-    font-size: 1.5em;
-    background: #e1bee7;
-    padding: 1em;
-    max-width: 6em;
+#listaAcessados ol {
+    counter-reset: li;
+    list-style: none;
+    *list-style: decimal;
+    font-size: 1em;
+    font-family: 'Yanone Kaffeesatz';
+    padding: 0;
+    margin-bottom: 4em;
 }
 
-    #listaMaisAcessados li:hover {
-        background: #ce93d8;
+    #listaAcessados a {
+        position: relative;
+        display: block;
+        padding: .4em .4em .4em 2em;
+        *padding: .4em;
+        margin: 1.3em 0;
+        background: #9c27b0;
+        color: white;
+        text-decoration: none;
+        border-radius: 10em;
+        transition: all .2s ease-in-out;
     }
+
+        #listaAcessados a:hover {
+            background: white;
+            text-decoration: none;
+            color: #9c27b0;
+            transform: scale(1.1);
+        }
+
+        #listaAcessados a:before {
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            left: -1.3em;
+            top: 50%;
+            margin-top: -1.3em;
+            background: #9c27b0;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+            border: .3em solid #fff;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 2em;
+            color: #FFF;
+        }
+
+#listaBusca {
+    width: 400px;
+    margin: 0 auto;
+}
+
+    #listaBusca ol {
+        counter-reset: li;
+        list-style: none;
+        *list-style: decimal;
+        font-size: 1em;
+        font-family: 'Raleway', sans-serif;
+        padding: 0;
+        margin-bottom: 4em;
+    }
+
+
+    #listaBusca a {
+        position: relative;
+        display: block;
+        padding: .4em .4em .4em 2em;
+        *padding: .4em;
+        margin: 1.3em 0;
+        background: #b388ff;
+        color: white;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+        border-radius: 5pt;
+    }
+
+        #listaBusca a:hover {
+            background: white;
+            color: #b388ff;
+            text-decoration: none;
+            transform: scale(1.1);
+        }
+
+        #listaBusca a:before {
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            left: -1.3em;
+            top: 50%;
+            margin-top: -1.3em;
+            background: #b388ff;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+            border: .3em solid #fff;
+            text-align: center;
+            font-weight: bold;
+            color: #FFF;
+            border-radius: 10pt;
+        }

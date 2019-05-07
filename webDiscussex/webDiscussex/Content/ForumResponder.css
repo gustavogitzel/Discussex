@@ -4,11 +4,6 @@
     margin-bottom: 1em;
 }
 
-body
-{
-    background: #64ffda;
-}
-
 
 @media screen and (min-width: 60em) {
     .imagemUsuario {
@@ -18,21 +13,18 @@ body
 }
 
 #pergunta {
-    background: #00b8d4;
+    background: #0d47a1;
 }
 
 .a {
 
-    background: #64ffda;
+    background: #2196f3;
 }
 
 .b{
-    background: #1de9b6;
+    background: #64b5f6;
 }
 
-.c   {
-    background: #00bfa5;
-}
 
 h1
 {

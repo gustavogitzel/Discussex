@@ -14,15 +14,15 @@
             <form action="/ForumDiscussex/FazerPergunta" method="post">
                 <div class="campoTexto">
                     <input type="text" name="p.Titulo" id="txtTitulo" class="Input-text" placeholder="Titulo">
-                    <label for="input" class="Input-label">Título</label>
+                    <label for="input" class="Input-label big">Título</label>
                 </div>
                 <div class="campoTexto">
                     <input type="text" name="p.PalavraChave" id="palavraChave" class="Input-text" placeholder="Palavra Chave">
-                    <label for="input" class="Input-label">Palavra chave</label>
+                    <label for="input" class="Input-label big">Palavra chave</label>
                 </div>
                 <div class="campoTexto">
                     <textarea cols="60" rows="10" name="p.Descricao" id="txtPergunta" class="Input-text" placeholder="Pergunta"></textarea>
-                    <label for="input" class="Input-label">Pergunta</label>
+                    <label for="input" class="Input-label big">Pergunta</label>
                 </div>
                 <div class="check">
                     @Html.CheckBox("anonimo", false, new { @class = "chk" })

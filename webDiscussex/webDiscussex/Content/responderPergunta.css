@@ -1,0 +1,20 @@
+﻿#areaTexto{
+    margin-top: 2em;
+}
+
+#lbPergunta
+{
+    margin-left: -20em !important;
+}
+
+.titulo
+{
+    color: white;
+    font-size: 2em;
+}
+
+#imgResponder
+{
+    max-width: 60% !important;
+    padding: 1em;
+}

@@ -327,3 +327,6 @@ footer#rodape {
     transform: translate3d(0, calc( (50%) - (.7em * .8) - (1.7em * 1) ), 0) scale(.8);
     transition: transform .3s, visibility 0ms, z-index 0ms;
 }
+label.big {
+    margin-left: -20.5em;
+}

@@ -4,11 +4,13 @@
     Layout = "~/Views/Shared/_LayoutForum.cshtml";
     ViewBag.PalavraChave = Session["palavraChave"];
 }
+<link rel="stylesheet" type="text/css" href="~/Content/nice-select.css" />
+<script src="~/Scripts/jquery.nice-select.js"></script>
 <link rel="stylesheet" type="text/css" href="~/Content/ForumIndex.css" />
 <article id="corpo" class="container">
     <div class="row">
         <div class="col col-3" id="divUsuario">
-            <div class="">
+            <div>
                 @if (Session["emailUsuario"] != null)
                 {
                     <img class="imgPerfil" src="@Session["imgPerfil"]" />
@@ -22,20 +24,51 @@
             <button class="btn" id="criarPergunta">Perguntar</button>
         </div>
         <div class="col col-3" id="listaTemas">
-                
-
+            <h2 class="titulo">Buscar tema</h2>
+            <form action="/ForumDiscussex/BuscarTemas">
+                <div id="selectTema">
+                    <select name="busca">
+                        @{string[] vetor = new string[ViewBag.Listaperguntas.Count];
+                            int a = 0;
+                            foreach (var pergunta in ViewBag.ListaPerguntas)
+                            {
+                                if (Array.IndexOf(vetor, pergunta.PalavraChave) < 0)
+                                {
+                                   <option> @pergunta.PalavraChave </option>
+                                }
+                                vetor[a] = pergunta.PalavraChave;
+                                a++;
+                            }
+                        }
+                    </select>
+                </div>
+                <input type="submit" id="submitBusca" class="btn" value="Buscar">
+            </form>
+            <div class="list-type2">
+                @if (ViewBag.PalavraChave != null)
+                {
+                    <ol id="listaBusca">
+                        @foreach (var pergunta in ViewBag.PalavraChave)
+                        {
+                            <a href="ForumDiscussex/Respostas/@pergunta.Id">@pergunta.Titulo</a>
+                        }
+                    </ol>
+                }
+            </div>
 
         </div>
         <div class="col col-3" id="maisAcessados">
             <h2 class="titulo">Mais acessados</h2>
-            <ul id="listaMaisAcessados">
-                @for (int i = 0; i < ViewBag.ListaPerguntas.Count && i < 10; i++)
-                {
-                    <li>
-                        <a href="ForumDiscussex/Respostas/@ViewBag.ListaPerguntas[i].Id">@ViewBag.ListaPerguntas[i].Titulo</a>
-                    </li>
-                }
-            </ul>
+            <div id="listaAcessados">
+                <ol>
+                    @for (int i = 0; i < ViewBag.ListaPerguntas.Count && i < 10; i++)
+                    {
+                        <li>
+                            <a href="ForumDiscussex/Respostas/@ViewBag.ListaPerguntas[i].Id">@ViewBag.ListaPerguntas[i].Titulo</a>
+                        </li>
+                    }
+                </ol>
+            </div>
         </div>
     </div>
 </article>
