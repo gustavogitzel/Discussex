@@ -316,6 +316,7 @@
     <Content Include="Views\Home\SobreNos.cshtml" />
     <Content Include="Views\ForumDiscussex\Responder.cshtml" />
     <Content Include="Views\Home\Pareto.cshtml" />
+    <Content Include="Views\Home\Mapa.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
