@@ -52,7 +52,7 @@ namespace webDiscussex.Controllers
             if (upload != null)
             {
                 var uploadPath = Server.MapPath("~/img/imgUsers");
-                caminhoArquivo = Path.Combine(@uploadPath, user.Email + Path.GetExtension(upload.FileName));
+                caminhoArquivo = Path.Combine(@uploadPath, user.NomeUsuario + Path.GetExtension(upload.FileName));
 
                 string[] extensãoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
 
@@ -63,7 +63,7 @@ namespace webDiscussex.Controllers
                         break;
                     }
             }
-            user.ImgPerfil = "img/imgUsers/" + user.Email + Path.GetExtension(upload.FileName);
+            user.ImgPerfil = "img/imgUsers/" + user.NomeUsuario + Path.GetExtension(upload.FileName);
             dao.Adiciona(user);
             Session["emailUsuario"] = user.Email;
             Session["nomeUsuario"] = user.NomeUsuario;
@@ -87,6 +87,14 @@ namespace webDiscussex.Controllers
             ViewBag.EhCadastro = true;
             ViewBag.EstaLogado = true;
             return View();
+        }
+
+        public ActionResult Sair()
+        {
+            Session["emailUsuario"] = null;
+            Session["nomeUsuario"] = null;
+            Session["imgPerfil"] = null;
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Excluir(string email, string senha)
@@ -136,7 +144,7 @@ namespace webDiscussex.Controllers
             string caminhoArquivo = null;
 
             var uploadPath = Server.MapPath("~/img/imgUsers");
-            caminhoArquivo = Path.Combine(@uploadPath, user.Email + Path.GetExtension(upload.FileName));
+            caminhoArquivo = Path.Combine(@uploadPath, user.NomeUsuario + Path.GetExtension(upload.FileName));
 
             string[] extensãoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
 
