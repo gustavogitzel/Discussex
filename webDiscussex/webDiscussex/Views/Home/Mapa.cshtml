@@ -1,7 +1,2234 @@
 ﻿
 @{
     ViewBag.Title = "Mapa";
+    ViewBag.EhCadastro = false;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Mapa</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <style>
+        #right-panel {
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+            #right-panel select, #right-panel input {
+                font-size: 15px;
+            }
+
+            #right-panel select {
+                width: 100%;
+            }
+
+            #right-panel i {
+                font-size: 12px;
+            }
+
+        #right-panel {
+            float: right;
+            width: 34%;
+            height: 100%;
+        }
+
+        .panel {
+            height: 100%;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="right-panel">
+        <p>Total Distance: <span id="total"></span></p>
+    </div>
+    <script>
+        var directionsService;
+        var directionsDisplay;
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 3.5,
+                center: { lat: -15.7801, lng: -47.9292 }
+            });
+
+            directionsService = new google.maps.DirectionsService;
+            directionsDisplay = new google.maps.DirectionsRenderer({
+                draggable: true,
+                map: map,
+                panel: document.getElementById('right-panel')
+            });
+        }
+
+        function Rota() {
+            directionsDisplay.addListener('directions_changed', function () {
+                computeTotalDistance(directionsDisplay.getDirections());
+            });
+
+            var localizacaoUsuario = document.getElementById("txtCep").value;
+
+            displayRoute(localizacaoUsuario, '13030420', directionsService,
+                directionsDisplay);
+        }
+
+        function displayRoute(origin, destination, service, display) {
+            service.route({
+                origin: origin,
+                destination: destination,
+                waypoints: null,
+                travelMode: 'DRIVING',
+                avoidTolls: true
+            }, function (response, status) {
+                if (status === 'OK') {
+                    display.setDirections(response);
+                } else {
+                    alert('Could not display directions due to: ' + status);
+                }
+            });
+        }
+
+        function computeTotalDistance(result) {
+            var total = 0;
+            var myroute = result.routes[0];
+            for (var i = 0; i < myroute.legs.length; i++) {
+                total += myroute.legs[i].distance.value;
+            }
+            total = total / 1000;
+            document.getElementById('total').innerHTML = total + ' km';
+        }
+    </script>
+</body>
+</html>
+
+
+
+<div class="campoEndereco">
+    <input type="text" id="txtCep" class="Input-text" placeholder="CEP">
+    <label for="input" class="Input-label">CEP</label>
+</div>
+<div class="campoEndereco">
+    <input type="text" id="txtNumero" class="Input-text" placeholder="Número">
+    <label for="input" class="Input-label">Número</label>
+</div>
+<div class="campoBotao">
+    <button class="btn" onclick="Rota()">Pesquisar Casa</button>
+</div>
+
+<div id="floating-panel">
+    <b>Como Deseja Ir: </b>
+    <select id="mode">
+        <option value="DRIVING">Carro</option>
+        <option value="WALKING">A pé</option>
+        <option value="BICYCLING">Bicicleta</option>
+        <option value="TRANSIT">Ônibus</option>
+    </select>
+</div>
+
+<div id="map">
+
+</div>
+<link href="~/Content/mapa.css" type="text/css" rel="stylesheet">
+@*<script>
+        var map;
+
+        function initMap() {
+            calculateAndDisplayRoute(directionsService, directionsDisplay);
+            document.getElementById('mode').addEventListener('change', function () {
+                calculateAndDisplayRoute(directionsService, directionsDisplay);
+            });
+        }
+
+        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+            var selectedMode = document.getElementById('mode').value;
+            directionsService.route({
+                origin: { lat: 37.77, lng: -122.447 },  // Haight.
+                destination: { lat: 37.768, lng: -122.511 },  // Ocean Beach.
+
+                travelMode: google.maps.TravelMode[selectedMode]
+            }, function (response, status) {
+                if (status == 'OK') {
+                    directionsDisplay.setDirections(response);
+                } else {
+                    window.alert('Directions request failed due to ' + status);
+                }
+            });
+        }
+    </script>*@
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4&callback=initMap">
+</script>
+
+@*
+    //Instanciando o mapa com as informações definidas e adicionando a instância do mapa no elemento 'map-canvas'
+    var map;
+
+    //Variável utilizada para traçar a rota
+    var directionsService;
+
+    //variável utilizada para renderização da rota
+    var directionsDisplay;
+
+    //variário utilizada para exibição do street view
+    var streetViewService;
+
+    //Latitude e longitude
+    var latLngUsuario;
+    var latituteCentro =  13.964496;
+    var longitudeCentro = -50.795084;
+
+    //Array de marcadores do mapa
+    var markers = [];
+    var mainMarkers = [];
+
+    //Última janela de informação aberta para um marcador
+    var lastInfoWindow;
+    var contadorMark = 0;
+    var contadorMarkMain = 0;
+    var carro = 'carro';
+    var onibus = 'onibus';
+    var a_pe = 'a_pe';
+
+    //Rota selecionada
+    var tipoRota_sel = '';
+    var latitudeDe_sel = '';
+    var longitudeDe_sel = '';
+    var latitudePara_sel = '';
+    var longitudePara_sel = '';
+    var enderecoUnidade_sel = '';
+    var geoPontoUBSReferencia;
+    var unidadeAtendimentoSelecionada = false;
+    var botaoComoChegarOrigemChamada = false;
+    var botaoBuscarOrigem = false;
+    var enderecoCompletoRota = '';
+
+
+    function LinkSaibaMais(Subtipo) {
+        var altura = 700;
+        var filtros = VerificaFiltros();
+
+        if (filtros == "" && $("#hdnTipoBusca").val() == "3" && $("#hdnAutoCompleteBuscaTipo").val() == "S") {
+            $("#hdnAutoCompleteBuscaTipo").val("");
+            filtros = "4|10|14|18|21|22|24|25|26|5|6|7|8|17|11|12|23|1|2|3|19|20|29|9|27|28|110|15|";
+        }
+        $("#hdnFiltro").val($("#hdnTipoBusca").val());
+        $("#hdnCodSubTipo").val(filtros);
+        window.open('frmSaibaMais.aspx?tipoBusca=' + $('#hdnTipoBusca').val() + '&subTipos=' + Subtipo, '', 'height=' + altura + ',width=900,location=no,menubar=no,status=no,scrollbars=yes');
+    }
+
+    function ZeraOrigem() {
+        $("#txtRotaOrigem").val("");
+    }
+
+    function RetornaAtivosMenu() {
+        var ativos = 0;
+        $("#sideBar .contentSidebar ul.unidades li a.selecionaUnidade").each(function (data) {
+            if ($(this).hasClass("active")) {
+                ativos++;
+            }
+        });
+        return ativos;
+    }
+
+    function RetornaAtivosPaiMenu() {
+        var ativos = 0;
+        $("#sideBar .contentSidebar ul.unidades li a.itemPai").each(function (data) {
+            if ($(this).hasClass("active")) {
+                ativos++;
+            }
+        });
+        return ativos;
+    }
+
+    function RetornaAtivosBuscaUBS() {
+        var ativos = 0;
+
+        ativos = RetornaAtivosMenu();
+
+        if (ativos == 0) {
+            $("#sideBar .contentSidebar ul.unidades li ul.subitens li").each(function (data) {
+                if ($(this).hasClass("active")) {
+                    ativos++;
+                }
+            });
+        }
+        return ativos;
+    }
+
+    function LocationUBS(latitude, longitude, logradouro, numero, bairro, cep, codtipo, tipo, subtipo, horario) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cep = cep;
+        this.tipo = tipo;
+        this.codtipo = codtipo;
+        this.subtipo = subtipo;
+        this.horario = horario;
+    }
+
+
+        //função criada para não exibir o link para reportar um erro no mapa
+        //é necessário criar um evento dentro do outro
+
+
+        //    google.maps.event.addListenerOnce(map, 'tilesloaded', function(){
+        //      google.maps.event.addListenerOnce(map, 'tilesloaded', function(){
+        //          OcultaInformarErro();
+        //      });
+
+        //      //para funcionar no Chrome
+        //      google.maps.event.addListenerOnce(map, 'idle', function(){
+        //          OcultaInformarErro();
+        //      });
+
+        //      google.maps.event.addListenerOnce(map, 'tilt_changed', function(){
+        //          OcultaInformarErro();
+        //      });
+        //
+        //      google.maps.event.addListenerOnce(map, 'projection_changed', function(){
+        //          OcultaInformarErro();
+        //      });
+
+        //      google.maps.event.addListenerOnce(map, 'bounds_changed', function(){
+        //   OcultaInformarErro();
+        //      });
+        //    });
+        // OcultaInformarErro();
+            AbrirInformarErro();
+        }
+
+    function AbrirInformarErro() {
+
+        setInterval(function () {
+            $(".gm-style-cc > div > a").last().attr("onclick", "window.open(this.href)");
+        }, 1000);
+    }
+
+    function OcultaInformarErro() {
+        setInterval(function () {
+            $(".gm-style-cc").remove();
+        }, 1000);
+    }
+
+     //Função de seleção de marcadores
+    function SelecionarMarcador(id) {
+        //Chamando evento click do marcador informado
+        google.maps.event.trigger(markers[id], 'click');
+        markers[id].setVisible(true);
+        map.setCenter(markers[id].position);
+    }
+
+    //Função de inicialização da animação de um marcador
+    function IniciarAnimacao(id) {
+        //Chamando evento mouseover do marcador informado
+        google.maps.event.trigger(markers[id], 'mouseover');
+    }
+
+    //Função de finalização da animação de um marcador
+    function FinalizarAnimacao(id) {
+        //Chamando evento mouseout do marcador informado
+        google.maps.event.trigger(markers[id], 'mouseout');
+    }
+
+    function VerificaMainMarker(latitude, longitude) {
+        var posicao = -1;
+        if (mainMarkers.length > 0) {
+            for (var i = 0; i < mainMarkers.length; i++) {
+                if ((mainMarkers[i].position.lat().toFixed(5) == latitude) && (mainMarkers[i].position.lng().toFixed(5) == longitude)) {
+                    posicao = i;
+                    break;
+                }
+            }
+        }
+        return posicao;
+    }
+
+    function RemoveMarcador() {
+        var posicaoReferencia = 0;
+
+        for (var i = 0; i < markers.length; i++) {
+            if ((mainMarkers.length > 0) && (mainMarkers[0].icon = 'img/icone_onde_moro.png') && (markers[i].icon == 'img/icoPinUnidade.png') && ($("#hdnTipoBusca").val() == "3")) {
+                posicaoReferencia = i;
+            }
+            else {
+                markers[i].setMap(null);
+            }
+        }
+        if (posicaoReferencia > 0) {
+            contadorMark = 1;
+            var ubs_ref = markers[posicaoReferencia];
+            markers = [];
+            markers.push(ubs_ref);
+        }
+        else {
+            markers = [];
+            contadorMark = 0;
+        }
+    }
+
+    function RemoveMainMarcador() {
+        for (var i = 0; i < mainMarkers.length; i++) {
+            mainMarkers[i].setMap(null);
+        }
+        mainMarkers = [];
+        contadorMarkMain = 0;
+    }
+
+    //Função para fechamento da janela de
+    //informações do marcador
+    function FecharInfoWindow() {
+        if (lastInfoWindow)
+            lastInfoWindow.close();
+    }
+
+    function LimparRota() {
+        $("#txtRotaOrigem").val();
+        $("#directionsPanel").html("");
+        $("#legal-warning").hide();
+        $("#txtRotaOrigem").focus();
+    }
+
+    //Função para tratamento do endereço para que ele seja encontrado pelo Google Maps
+    function TratarEndereco() {
+        if ($("#hdnTxtBuscaSemAcento").val().substring(0, 2).toUpperCase().replace(' ', '') == "R") {
+            var enderecoTratado = "Rua " + ($("#hdnTxtBuscaSemAcento").val().substring(2, $("#hdnTxtBuscaSemAcento").val().length));
+            $("#hdnTxtBuscaSemAcento").val(enderecoTratado);
+        }
+    }
+
+    function RetirarAcentosTextoBusca() {
+        var texto = $("#txtBusca").val();
+        var com_acento = "áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ";
+        var sem_acento = "aaaaaeeeeiiiiooooouuuucAAAAAEEEEIIIIOOOOOUUUUC";
+        var nova = "";
+
+        texto = texto.replace('.', '').replace('(', '').replace(')', '');
+        texto = texto.replace(',', ', ');
+
+        for (var i = 0; i < texto.length; i++) {
+            if (com_acento.search(texto.substr(i, 1)) >= 0)
+                nova += sem_acento.substr(com_acento.search(texto.substr(i, 1)), 1);
+            else
+                nova += texto.substr(i, 1);
+        }
+        nova = nova.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+
+        $("#hdnTxtBuscaSemAcento").val(nova);
+        TratarEndereco();
+    }
+
+
+    function RetirarAcentosTextoBuscaUSB(texto) {
+        var com_acento = "áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ";
+        var sem_acento = "aaaaaeeeeiiiiooooouuuucAAAAAEEEEIIIIOOOOOUUUUC";
+        var nova = "";
+
+        texto = texto.replace('.', '').replace('(', '').replace(')', '');
+        texto = texto.replace(',', ', ');
+
+        for (var i = 0; i < texto.length; i++) {
+            if (com_acento.search(texto.substr(i, 1)) >= 0)
+                nova += sem_acento.substr(com_acento.search(texto.substr(i, 1)), 1);
+            else
+                nova += texto.substr(i, 1);
+        }
+        nova = nova.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+
+        return nova;
+
+    }
+
+
+
+    function IsNumber(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    function ContemNumero(texto) {
+        var contemNumero = false;
+        texto = $("#txtBusca").val();
+
+        var partesEndereco = texto.toString().split(',');
+        for (var i = 0; i < partesEndereco.length; i++) {
+            if (IsNumber(partesEndereco[i].replace(" ", "")) == true && partesEndereco[i].length < 8) {
+                contemNumero = true;
+            }
+        }
+
+        RetirarAcentosTextoBusca();
+        texto = $("#hdnTxtBuscaSemAcento").val();
+        if (contemNumero == false) {
+            partesEndereco = texto.split(" ");
+            if (partesEndereco.length > 0) {
+                for (var j = 0; j < partesEndereco.length; j++) {
+                    if (IsNumber(partesEndereco[j].replace(" ", "")) == true && partesEndereco[j].replace(" ", "").length < 8) {
+                        contemNumero = true;
+                    }
+                }
+            }
+        }
+
+        return contemNumero;
+    }
+
+
+    function ContemNumeroGenerico(texto) {
+        var contemNumero = false;
+
+        var partesEndereco = texto.toString().split(',');
+        for (var i = 0; i < partesEndereco.length; i++) {
+            if (IsNumber(partesEndereco[i].replace(" ", "")) == true && partesEndereco[i].length < 8) {
+                contemNumero = true;
+            }
+        }
+
+        return contemNumero;
+    }
+
+
+    //Função de verificação do traçamento de rota,
+    //obtenção das coordenadas do ponto de partida, caso seja a opção "como chegar".
+    function VerificacaoCalculoRota(tipoRota, latitudeDe, longitudeDe, latitudePara, longitudePara, enderecoUnidade) {
+
+
+        if ($("#enderecoForaDeSaoPaulo").val() == "S") return;
+
+        if ((($("#hdnTipoBusca").val() == "1") || ($("#hdnTipoBusca").val() == "2")) && $("#txtBusca").val() == "Digite o endereço") {
+            $("#txtBusca").css("border", "3px solid #FF0000");
+            // Na busca de endereço remove as bordas
+            return;
+        }
+        $("#divAlert").hide();
+        $("#directionsPanel").html("");
+        $("#legal-warning").hide();
+        directionsDisplay.setMap(null);
+        //  if (($("#hdnTipoBusca").val() == "3") && (($("#txtBusca").val() == "") || ($("#txtBusca").val() == "Digite o endereço")) && (unidadeAtendimentoSelecionada == false))
+        //  {
+        //    latitudeDe = null;
+        //    longitudeDe = null;
+        //  }
+
+        if ($("#hdnTipoBusca").val() == "3") {
+            if (botaoComoChegarOrigemChamada == false) {
+                latitudeDe = null;
+                longitudeDe = null;
+                $("#txtRotaOrigem").val("");
+                $("#btnComoChegar").show();
+                $("#txtRotaOrigem").removeAttr("readonly");
+                $("#txtRotaDestino").attr("readonly", "readonly");
+            }
+        }
+        else {
+            $("#txtRotaOrigem").attr("readonly", "readonly");
+            $("#txtRotaDestino").attr("readonly", "readonly");
+            $("#btnComoChegar").hide();
+        }
+        //endereço de origem preenchido e txtBusca vazio
+
+
+        if (($("#txtRotaOrigem").val() != "") && (($("#txtBusca").val() == "") || ($("#txtBusca").val() == "Digite o endereço"))) {
+            if ((latitudeDe != null) && (latitudePara != null)) {
+                var enderecoOrigem = $("#txtRotaOrigem").val();
+                var geocoderOrigem = new google.maps.Geocoder();
+
+                geocoderOrigem.geocode({ 'address': enderecoOrigem, 'region': 'br', 'componentRestrictions': { 'country': 'BR', 'administrativeArea': 'SP'} }, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        //Obtendo longitude e latitude do endereço informado pelo usuário
+                        latitudeDe_sel = results[0].geometry.location.lat();
+                        longitudeDe_sel = results[0].geometry.location.lng();
+                        latitudeDe = latitudeDe_sel;
+                        longitudeDe = longitudeDe_sel;
+
+                        //Calculando rota a partir do ponto de origem informado na opção "Como chegar"
+                        CalcularRota(tipoRota, latitudeDe, longitudeDe, latitudePara, longitudePara, enderecoUnidade);
+                    }
+                    else {
+                        set_text_modal('Endereço de ponto de partida da rota não encontrado.');
+                        javascript: show_modal_foco(false, 'txtRotaOrigem', 'modal', '150', '');
+                    }
+                });
+            }
+            else {
+                //Calculando rota a partir do ponto de origem informado na opção "Como chegar"
+                CalcularRota(tipoRota, null, null, latitudePara, longitudePara, enderecoUnidade);
+            }
+        }
+        else {
+            if ((($("#txtRotaOrigem").val() == "") && ($("#txtBusca").val() != "") && $("#txtBusca").val() != "Digite o endereço")) {
+                //endereço "onde moro" ou "onde estou" digitado
+                if (($("#hdnTipoBusca").val() == "1") || ($("#hdnTipoBusca").val() == "2")) {
+                    $("#txtRotaOrigem").val($("#txtBusca").val().toUpperCase());
+                    $("#txtRotaDestino").css("border", "none");
+                    $("#txtRotaOrigem").css("border", "none");
+                }
+                //      if ($("#hdnTipoBusca").val() == "3")
+                //      {
+                //        if (($("#txtBusca").val() == "") || ($("#txtBusca").val() == "Digite o endereço")) {
+                //          $("#btnComoChegar").show();
+                //        }
+                //        else {
+                //          $("#txtRotaOrigem").val($("#txtBusca").val().toUpperCase());
+                //        }
+                //      }
+                //Calculando rota a partir do ponto de origem informado
+                CalcularRota(tipoRota, latitudeDe, longitudeDe, latitudePara, longitudePara, enderecoUnidade);
+            }
+            else {
+                //Calculando rota a partir do ponto de origem informado
+                CalcularRota(tipoRota, latitudeDe, longitudeDe, latitudePara, longitudePara, enderecoUnidade);
+            }
+        }
+    }
+
+    function CalcularRotaImpressao(tipoRota, latitudeDe, longitudeDe, latitudePara, longitudePara) {
+
+        var start = new google.maps.LatLng(latitudeDe, longitudeDe);
+        //Ponto de chegada do trajeto da rota
+        var end = new google.maps.LatLng(latitudePara, longitudePara);
+
+        //Montando requisição de rota com pontos de partida e chegada e
+        //tipo de trajeto selecionado
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: tipoRota,
+            provideRouteAlternatives: true
+        };
+
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                //Renderizando trajeto retornado
+                directionsDisplay.setDirections(response);
+            }
+        });
+    }
+
+    //Função de cálculo da rota
+    function CalcularRota(tipoRota, latitudeDe, longitudeDe, latitudePara, longitudePara, enderecoUnidade) {
+        tipoRota_sel = tipoRota;
+
+        $("#latitudeDe").val(latitudeDe);
+        $("#longitudeDe").val(longitudeDe);
+        $("#latitudePara").val(latitudePara);
+        $("#longitudePara").val(longitudePara);
+        $("#tipoRota").val(tipoRota);
+
+
+
+        if (latitudeDe != null) {
+            latitudeDe_sel = latitudeDe;
+        }
+        if (longitudeDe != null) {
+            longitudeDe_sel = longitudeDe;
+        }
+        if (latitudePara != null) {
+            latitudePara_sel = latitudePara;
+        }
+        if (longitudePara != null) {
+            longitudePara_sel = longitudePara;
+        }
+        enderecoUnidade_sel = enderecoUnidade;
+        botaoComoChegarOrigemChamada = false;
+        $("#divContent #sideBarLeft").show();
+        $("#divContent #sideBarLeft .contentSidebar .unidadesProximas").hide();
+        $("#divContent #sideBarLeft .contentSidebar .resultado").hide();
+        $(".exibirComoChegar").show();
+        $(".contentComoChegar").show();
+        directionsDisplay.setMap(map);
+
+        //Destacando imagem referente ao tipo de rota selecionado
+        $("#rota_carro").css("background-color", "#E3E3E3");
+        $("#rota_onibus").css("background-color", "#F4F4F4");
+        $("#rota_a_pe").css("background-color", "#F4F4F4");
+
+        //Modo de execução do trajeto: CARRO
+        //Os valores são carro, ônibus ou a pé, sendo carro o valor padrão
+        var travelMode = google.maps.DirectionsTravelMode.DRIVING;
+
+        $("#txtRotaDestino").val(enderecoUnidade);
+
+        //Modo de execução do trajeto: ONIBUS
+        if (tipoRota == "onibus") {
+            travelMode = google.maps.DirectionsTravelMode.TRANSIT;
+            //Destacando a imagem referente ao tipo de rota selecionado
+            $("#rota_carro").css("background-color", "#F4F4F4");
+            $("#rota_onibus").css("background-color", "#E3E3E3");
+            $("#rota_a_pe").css("background-color", "#F4F4F4");
+        }
+        //Modo de execução do trajeto: ONIBUS
+        else if (tipoRota == "a_pe") {
+            travelMode = google.maps.DirectionsTravelMode.WALKING;
+            //Destacando a imagem referente ao tipo de rota selecionado
+            $("#rota_carro").css("background-color", "#F4F4F4");
+            $("#rota_onibus").css("background-color", "#F4F4F4");
+            $("#rota_a_pe").css("background-color", "#E3E3E3");
+        }
+
+        if ((latitudeDe != null) && (longitudeDe != null)) {
+            //Atualizando evento click das imagens correspondentes a cada tipo de rota
+            $("#rota_carro").click(function () {
+                CalcularRota(carro, latitudeDe_sel, longitudeDe_sel, latitudePara_sel, longitudePara_sel, enderecoUnidade_sel);
+            });
+            $("#rota_onibus").click(function () {
+                CalcularRota(onibus, latitudeDe_sel, longitudeDe_sel, latitudePara_sel, longitudePara_sel, enderecoUnidade_sel);
+            });
+            $("#rota_a_pe").click(function () {
+                CalcularRota(a_pe, latitudeDe_sel, longitudeDe_sel, latitudePara_sel, longitudePara_sel, enderecoUnidade_sel);
+            });
+        }
+
+        if ((latitudeDe != null) && (longitudeDe != null) && (latitudePara != null) && (longitudePara != null)) {
+            FecharInfoWindow();
+
+            if ($("#txtRotaOrigem").val() != "" || $("#txtBusca").val() != "") {
+                //Ponto de partida do trajeto da rota
+                var start = new google.maps.LatLng(latitudeDe, longitudeDe);
+                //Ponto de chegada do trajeto da rota
+                var end = new google.maps.LatLng(latitudePara, longitudePara);
+                $("#rota_print").css("cursor", "pointer");
+                //Montando requisição de rota com pontos de partida e chegada e
+                //tipo de trajeto selecionado
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: travelMode,
+                    provideRouteAlternatives: true
+                };
+
+                //Solicitando trajeto da rota
+                if ($("#txtRotaOrigem").val() != "" && $("#txtRotaDestino").val() != "") {
+                    directionsService.route(request, function (response, status) {
+                        if (status == google.maps.DirectionsStatus.OK) {
+                            //Renderizando trajeto retornado
+                            directionsDisplay.setDirections(response);
+                            $("#legal-warning").show();
+                        }
+                    });
+                }
+            }
+        }
+
+        if (((latitudeDe == null) && (longitudeDe == null)) || ((latitudeDe == latitudeCentroSP) && (longitudeDe == longitudeCentroSP))) {
+            $("#txtRotaOrigem").val("");
+            $("#btnComoChegar").show();
+            //$("#txtRotaOrigem").removeAttr("readonly");
+            //$("#txtRotaDestino").attr("readonly", "readonly");
+            $("#rota_print").css("cursor", "not-allowed");
+            $("#directionsPanel").html("");
+            $("#legal-warning").hide();
+        }
+
+        if (((latitudePara == null) && (longitudePara == null)) || ((latitudePara == latitudeCentroSP) && (longitudePara == longitudeCentroSP))) {
+            $("#txtRotaDestino").val("");
+            $("#btnComoChegar").show();
+            //$("#txtRotaOrigem").attr("readonly", "readonly");
+            //$("#txtRotaDestino").removeAttr("readonly");
+            $("#rota_print").css("cursor", "not-allowed");
+            $("#directionsPanel").html("");
+            $("#legal-warning").hide();
+        }
+    }
+
+
+    function CarregaStreetView(position, ubs) {
+        if (ubs) {
+            if (mainMarkers[position] == undefined || mainMarkers[position] == null)
+                return;
+        }
+        else {
+            if (markers[position] == undefined || markers[position] == null)
+                return;
+        }
+
+        streetViewService = new google.maps.StreetViewService();
+        var panorama = map.getStreetView();
+
+        if ($("#sideBarLeft").is(':visible')) {
+            if ($("#sideBarLeft").width() == "345") {
+                $("#divContent #sideBarLeft .contentSidebar").hide();
+                $("#divContent #sideBarLeft .btnmostrar").addClass("active");
+                $("#divContent #sideBarLeft").css("width", "24px");
+            }
+        }
+
+        if (ubs) {
+            streetViewService.getPanoramaByLocation(mainMarkers[position].getPosition(), 50, function (result, status) {
+                if (status == google.maps.StreetViewStatus.OK) {
+                    panorama.setPosition(result.location.latLng);
+                    panorama.setVisible(true);
+                }
+                else {
+                    set_text_modal('Street view não disponível para este local.');
+                    javascript: show_modal(false, 'modal', '150', '');
+                    return;
+                }
+            });
+        }
+        else {
+            streetViewService.getPanoramaByLocation(markers[position].getPosition(), 50, function (result, status) {
+                if (status == google.maps.StreetViewStatus.OK) {
+                    panorama.setPosition(result.location.latLng);
+                    panorama.setVisible(true);
+                }
+                else {
+                    set_text_modal('Street view não disponível para este local.');
+                    javascript: show_modal(false, 'modal', '150', '');
+                    return;
+                }
+            });
+        }
+    }
+
+    function VerificaFiltros() {
+        var filtros = "";
+        var separador = "|";
+
+        //verifica se há subitens selecionados
+        if ($(".contentSidebar ul.unidades ul.subitens li.active").length > 0) {
+            $(".contentSidebar ul.unidades ul.subitens li.active").each(function () {
+                if ($(this).attr("codigo") != "0") { //não guarda o sub-item Todos
+                    filtros += $(this).attr("codigo") + separador;
+                }
+            });
+        }
+
+        //verifica se há itens (sem subtitens) selecionados
+        $("#divContent #sideBar .contentSidebar .unidades li a.selecionaUnidade.active").each(function () {
+            if ($(this).attr("codigo") != undefined) {
+                filtros += $(this).attr("codigo") + separador;
+            }
+        });
+
+        return filtros;
+    }
+
+    function removeAcento(strToReplace) {
+        str_acento = "áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ'";
+        str_sem_acento = "aaaaaeeeeiiiiooooouuuucAAAAAEEEEIIIIOOOOOUUUUC ";
+        var nova = "";
+        for (var i = 0; i < strToReplace.length; i++) {
+            if (str_acento.indexOf(strToReplace.charAt(i)) != -1) {
+                nova += str_sem_acento.substr(str_acento.search(strToReplace.substr(i, 1)), 1);
+            } else {
+                nova += strToReplace.substr(i, 1);
+            }
+        }
+        return nova;
+    }
+
+    function Pesquisar() {
+        var filtros = VerificaFiltros();
+        if (filtros == "" && $("#hdnTipoBusca").val() == "3" && $("#hdnAutoCompleteBuscaTipo").val() == "S") {
+            //$("#hdnAutoCompleteBuscaTipo").val("");
+            filtros = "4|10|14|18|21|22|24|25|26|5|6|7|8|17|11|12|23|1|2|3|19|20|29|9|27|28|110|15|";
+        }
+        //$("#hdnFiltro").val($("#hdnTipoBusca").val());
+        //$("#hdnCodSubTipo").val(filtros);
+
+        if ($("#hdnTipoBusca").val() == '3') {
+            var pesquisa = removeAcento($("#txtBuscaTipo").val());
+            $.ajax({
+                url: "Consulta.ashx",
+                data: {
+                    palavraChave: pesquisa,
+                    codigoSubTipo: filtros
+                },
+                type: "GET",
+                success: function (msg) {
+                    if (msg.length > 0) {
+                        var escolhido = new LocationUBS(msg[0].CodigoLatitudeUnidade, msg[0].CodigoLongitudeUnidade, msg[0].NomeLogradouroUnidadeSaude, msg[0].CodigoNumeroLogradouroUnidade, msg[0].NomeBairroEnderecoUnidade, msg[0].CodigoCEPLogradouroUnidade, msg[0].CodigoTipoServico, msg[0].TextoTipoServico, msg[0].TextoSubTipoServico, msg[0].HorarioFuncionamento);
+                        if (unidadeAtendimentoSelecionada) {
+                            AdicionaMarkers(msg[0].CodigoLatitudeUnidade, msg[0].CodigoLongitudeUnidade, msg[0].NomeServicoUnidadeSaude, escolhido);
+                        }
+                        else {
+                            AdicionaMarkers(null, null, msg[0].NomeServicoUnidadeSaude, escolhido);
+                        }
+                    }
+                    else {
+                        if (unidadeAtendimentoSelecionada) {
+                            set_text_modal('Não foram encontradas Unidades de Saúde para os filtros informados.');
+                            javascript: show_modal(false, 'modal', '150', '');
+                        }
+                        else {
+                            AdicionarUnidadesSaude();
+                        }
+                    }
+                }
+            });
+        }
+        else {
+            if (($("#txtBusca").val() != "Digite o endereço") && ($("#txtBusca").val() != "")) {
+                if ($("#txtBusca").val().toUpperCase().replace('CACHE ', '').replace('CACHÊ ', '') != "") {
+                    var address = $("#txtBusca").val().toUpperCase();
+                    //var tipoBusca = $("#hdnTipoBusca").val();
+                    //var address = tipoBusca == "1" ? $("#txtBusca").val().toUpperCase() : (endereco_sel !== '' ? endereco_sel : $("#txtBusca").val().toUpperCase());
+
+                    //alert(endereco_sel + " " + address);
+
+                    var geocoder = new google.maps.Geocoder();
+
+                    geocoder.geocode({ 'address': address, 'region': 'br', 'componentRestrictions': { 'country': 'BR', 'administrativeArea': 'SP'} }, function (results, status) {
+                        switch (status) {
+                            case google.maps.GeocoderStatus.OK:
+                                AdicionaMarkers(results[0].geometry.location.lat(), results[0].geometry.location.lng(), results[0].formatted_address, null);
+                                //alert(endereco_sel + " - " + address + " - " + $("#txtBusca").val().toUpperCase());
+
+                                break;
+                        }
+                    });
+                }
+            }
+        }
+    }
+
+    function PesquisaEnderecoRota(keyword, response) {
+
+        //onde moro e onde estou
+
+        var geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode({ 'address': keyword, 'region': 'br', 'componentRestrictions': { 'country': 'BR', 'administrativeArea': 'SP'} }, function (results, status) {
+            switch (status) {
+                case google.maps.GeocoderStatus.OK:
+                    response($.map(results, function (item) {
+                        var endereco = "";
+                        for (var ii = 0; ii < item.formatted_address.length; ii++) {
+                            if (item.formatted_address[ii].charCodeAt(0) <= 255)
+                                endereco += item.formatted_address[ii];
+                        }
+                        return {
+                            label: endereco,
+                            value: endereco,
+                            latitude: item.geometry.location.lat(),
+                            longitude: item.geometry.location.lng()
+                        }
+                    }));
+                    break;
+
+                case google.maps.GeocoderStatus.ZERO_RESULTS:
+                    set_text_modal('Sem resultados para o local informado.');
+                    javascript: show_modal(false, 'modal', '150', '');
+                    //Ocultando link da UBS de referência
+                    $(".unidadeProxima .wrap .dadosUnidade").html('');
+                    $(".unidadeProxima").hide();
+                    $("#map-canvas").height("100%");
+                    break;
+
+                case google.maps.GeocoderStatus.UNKNOWN_ERROR:
+                    set_text_modal('Problemas para localizar o endereço. Favor tentar novamente.');
+                    javascript: show_modal(false, 'modal', '150', '');
+                    //Ocultando link da UBS de referência
+                    $(".unidadeProxima .wrap .dadosUnidade").html('');
+                    $(".unidadeProxima").hide();
+                    $("#map-canvas").height("100%");
+                    break;
+
+                case google.maps.GeocoderStatus.ERROR:
+                    set_text_modal('Problemas com o servidor do Google Maps.');
+                    javascript: show_modal(false, 'modal', '150', '');
+                    //Ocultando link da UBS de referência
+                    $(".unidadeProxima .wrap .dadosUnidade").html('');
+                    $(".unidadeProxima").hide();
+                    $("#map-canvas").height("100%");
+                    break;
+
+                default:
+                    set_text_modal('Problemas para localizar o endereço: ' + status + '.');
+                    javascript: show_modal(false, 'modal', '150', '');
+                    //Ocultando link da UBS de referência
+                    $(".unidadeProxima .wrap .dadosUnidade").html('');
+                    $(".unidadeProxima").hide();
+                    $("#map-canvas").height("100%");
+                    break;
+            }
+        });
+
+
+    }
+    function PesquisaUnidadeSaude(keyword, response) {
+        //onde moro e onde estou
+        if (($("#hdnTipoBusca").val() == "1") || ($("#hdnTipoBusca").val() == "2")) {
+            var geocoder = new google.maps.Geocoder();
+
+            geocoder.geocode({ 'address': keyword, 'region': 'br', 'componentRestrictions': { 'country': 'BR', 'administrativeArea': 'SP'} }, function (results, status) {
+                switch (status) {
+                    case google.maps.GeocoderStatus.OK:
+                        response($.map(results, function (item) {
+                            var endereco = "";
+                            for (var ii = 0; ii < item.formatted_address.length; ii++) {
+                                if (item.formatted_address[ii].charCodeAt(0) <= 255)
+                                    endereco += item.formatted_address[ii];
+                            }
+                            return {
+                                label: endereco,
+                                value: endereco,
+                                latitude: item.geometry.location.lat(),
+                                longitude: item.geometry.location.lng()
+                            }
+                        }));
+                        break;
+
+                    case google.maps.GeocoderStatus.ZERO_RESULTS:
+                        set_text_modal('Sem resultados para o local informado.');
+                        javascript: show_modal(false, 'modal', '150', '');
+                        //Ocultando link da UBS de referência
+                        $(".unidadeProxima .wrap .dadosUnidade").html('');
+                        $(".unidadeProxima").hide();
+                        $("#map-canvas").height("100%");
+                        break;
+
+                    case google.maps.GeocoderStatus.UNKNOWN_ERROR:
+                        set_text_modal('Problemas para localizar o endereço. Favor tentar novamente.');
+                        javascript: show_modal(false, 'modal', '150', '');
+                        //Ocultando link da UBS de referência
+                        $(".unidadeProxima .wrap .dadosUnidade").html('');
+                        $(".unidadeProxima").hide();
+                        $("#map-canvas").height("100%");
+                        break;
+
+                    case google.maps.GeocoderStatus.ERROR:
+                        set_text_modal('Problemas com o servidor do Google Maps.');
+                        javascript: show_modal(false, 'modal', '150', '');
+                        //Ocultando link da UBS de referência
+                        $(".unidadeProxima .wrap .dadosUnidade").html('');
+                        $(".unidadeProxima").hide();
+                        $("#map-canvas").height("100%");
+                        break;
+
+                    default:
+                        set_text_modal('Problemas para localizar o endereço: ' + status + '.');
+                        javascript: show_modal(false, 'modal', '150', '');
+                        //Ocultando link da UBS de referência
+                        $(".unidadeProxima .wrap .dadosUnidade").html('');
+                        $(".unidadeProxima").hide();
+                        $("#map-canvas").height("100%");
+                        break;
+                }
+            });
+        }
+        else if ($("#hdnTipoBusca").val() == "3") { //tipo de atendimento
+            var filtros = VerificaFiltros();
+            if (filtros == "" && $("#hdnTipoBusca").val() == "3" && $("#hdnAutoCompleteBuscaTipo").val() == "S") {
+                //$("#hdnAutoCompleteBuscaTipo").val("");
+                filtros = "4|10|14|18|21|22|24|25|26|5|6|7|8|17|11|12|23|1|2|3|19|20|29|9|27|28|110|15|";
+            }
+            //$("#hdnFiltro").val($("#hdnTipoBusca").val());
+            //$("#hdnCodSubTipo").val(filtros);
+
+            keyword = removeAcento(keyword);
+            $.ajax({
+                url: "Consulta.ashx",
+                data: {
+                    palavraChave: keyword,
+                    codigoSubTipo: filtros
+                },
+                type: "GET",
+                success: function (msg) {
+                    response($.map(msg, function (item) {
+                        return {
+                            label: item.NomeServicoUnidadeSaude,
+                            codtipo: item.CodigoTipoServico,
+                            tipo: item.TextoTipoServico,
+                            subtipo: item.TextoSubTipoServico,
+                            desc: item.NomeLogradouroUnidadeSaude + " - " + item.CodigoCEPLogradouroUnidade + " - " + item.NomeBairroEnderecoUnidade,
+                            value: item.CodigoSequencialServico,
+                            latitude: item.CodigoLatitudeUnidade,
+                            longitude: item.CodigoLongitudeUnidade,
+                            logradouro: item.NomeLogradouroUnidadeSaude,
+                            numero: item.CodigoNumeroLogradouroUnidade,
+                            bairro: item.NomeBairroEnderecoUnidade,
+                            cep: item.CodigoCEPLogradouroUnidade,
+                            horario: item.HorarioFuncionamento
+                        }
+                    }));
+                }
+            });
+        }
+    }
+
+    function ValidaEnderecoCapitalSaoPaulo(latitude, longitude, OrigemOuDestino) {
+
+        var codigoUBS = "0";
+
+        $.ajax({
+            type: "POST",
+            url: "Default.aspx/BuscarUBSReferencia",
+            async: false,
+            data: "{latitude : '" + latitude + "'," +
+                    "longitude : '" + longitude + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            timeout: 30000,
+            success: function (msg) {
+                codigoUBS = msg.d;
+            }
+        });
+
+        if (codigoUBS != "0") {
+
+            $('#errosCaixaDeTextoOrigemDestino').html("");
+            $("#enderecoForaDeSaoPaulo").val("");
+            $("#txtRotaDestino").css("border", "ui-autocomplete-input");
+            $("#txtRotaOrigem").css("border", "ui-autocomplete-input");
+        }
+
+        if (codigoUBS == "0") {
+            map.setCenter(new google.maps.LatLng(latitudeCentroSP, longitudeCentroSP));
+            //   $('#errosCaixaDeTextoOrigemDestino').html("");
+            $('#errosCaixaDeTextoOrigemDestino').html('<p>' + "Endereço informado fora da cidade de São Paulo." + '</p>');
+            $('#enderecoForaDeSaoPaulo').val("S");
+            if (OrigemOuDestino == 'origem') {
+                //javascript: exibeModalErroCaixaDeTextOrigem('Endereço informado fora da cidade de São Paulo.');
+
+                $("#distanciaConsultaRota").html('<br/></br>');
+                $("#txtRotaOrigem").css("border", "3px solid #FF0000");
+                //$("#txtRotaOrigem").val("");
+                return false;
+            }
+
+            if (OrigemOuDestino == 'destino') {
+                //javascript: exibeModalErroCaixaDeTextDestino('Endereço informado fora da cidade de São Paulo.');
+
+                $("#distanciaConsultaRota").html('<br/></br>');
+                $("#txtRotaDestino").css("border", "3px solid #FF0000");
+                // $("#txtRotaDestino").val("");
+                return false;
+            }
+
+            return false;
+        }
+        return true;
+
+
+    }
+
+    /////////////////////////////////////////////////////////////////////////////
+    ////// ValidaEndereco() valida se o endereço é da cidade de São paulo ///////
+    /////////////////////////////////////////////////////////////////////////////
+    function ValidaEndereco(latitude, longitude, label, ubs) {
+
+
+        var contentString = '';
+
+        if ((latitude != null) && (longitude != null)) {
+            latLngUsuario = new google.maps.LatLng(latitude, longitude);
+        }
+
+        var icone = "";
+        var titulo = "";
+        var buscaPor = "";
+
+        if (($("#hdnTipoBusca").val() == "1") || ($("#hdnTipoBusca").val() == "2")) { //1 - Onde Moro | 2 - Onde Estou
+            RetirarAcentosTextoBusca();
+
+            if ($("#hdnTipoBusca").val() == "1") {
+                if (ContemNumero($("#hdnTxtBuscaSemAcento").val()) == false) {
+                    set_text_modal('&Eacute; obrigat&oacute;rio informar o n&uacute;mero do logradouro.');
+                    javascript: show_modal(false, 'modal', '150', '');
+                    return;
+                }
+            }
+        }
+
+
+        if (($("#hdnTipoBusca").val() == "1") || ($("#hdnTipoBusca").val() == "2")) { //1 - Onde Moro | 2 - Onde Estou
+            var codigoUBS = "0";
+
+            $.ajax({
+                type: "POST",
+                url: "Default.aspx/BuscarUBSReferencia",
+                async: false,
+                data: "{latitude : '" + latitude + "'," +
+                    "longitude : '" + longitude + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                timeout: 30000,
+                success: function (msg) {
+                    codigoUBS = msg.d;
+                }
+            });
+
+            if (codigoUBS == "0") {
+                map.setCenter(new google.maps.LatLng(latitudeCentroSP, longitudeCentroSP));
+                set_text_modal('Endereço informado fora da cidade de São Paulo.');
+                javascript: show_modal(false, 'modal', '150', '');
+                return false;
+            }
+            AbrirInformarErro();
+            return true;
+
+        }
+
+    }
+
+    /////////////////////////////////////////////////////////////////////////////
+    /// AdicionaMarkers() é chamado após a seleção de um item no autocomplete ///
+    /////////////////////////////////////////////////////////////////////////////
+    function AdicionaMarkers(latitude, longitude, label, ubs) {
+
+        var contentString = '';
+
+        if ((latitude != null) && (longitude != null)) {
+            latLngUsuario = new google.maps.LatLng(latitude, longitude);
+        }
+
+        var icone = "";
+        var titulo = "";
+        var buscaPor = "";
+
+        if (($("#hdnTipoBusca").val() == "1") || ($("#hdnTipoBusca").val() == "2")) { //1 - Onde Moro | 2 - Onde Estou
+            RetirarAcentosTextoBusca();
+
+            if ($("#hdnTipoBusca").val() == "1") {
+                if (ContemNumero($("#hdnTxtBuscaSemAcento").val()) == false) {
+                    set_text_modal('&Eacute; obrigat&oacute;rio informar o n&uacute;mero do logradouro.');
+                    javascript: show_modal(false, 'modal', '150', '');
+                    return;
+
+                }
+            }
+        }
+
+
+        if (($("#hdnTipoBusca").val() == "1") || ($("#hdnTipoBusca").val() == "2")) { //1 - Onde Moro | 2 - Onde Estou
+            var codigoUBS = "0";
+
+            $.ajax({
+                type: "POST",
+                url: "Default.aspx/BuscarUBSReferencia",
+                async: false,
+                data: "{latitude : '" + latitude + "'," +
+                    "longitude : '" + longitude + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                timeout: 30000,
+                success: function (msg) {
+                    codigoUBS = msg.d;
+                }
+            });
+
+            if (codigoUBS == "0") {
+                map.setCenter(new google.maps.LatLng(latitudeCentroSP, longitudeCentroSP));
+                set_text_modal('Endereço informado fora da cidade de São Paulo.');
+                javascript: show_modal(false, 'modal', '150', '');
+                return false;
+            }
+            // return true;
+        }
+
+        RemoveMainMarcador();
+
+        directionsDisplay.setMap(null);
+        $("#directionsPanel").html("");
+        $("#legal-warning").hide();
+        $(".exibirComoChegar").hide();
+        $(".contentComoChegar").hide();
+        $(".unidadeProxima").hide();
+        $("#map-canvas").height("100%");
+        $("#divContent #sideBarLeft").hide();
+        map.getStreetView().setVisible(false);
+
+        if ($("#hdnTipoBusca").val() == "1") { //Onde Moro
+            $("#txtBusca").val(label);
+            icone = "img/icone_onde_moro.png";
+            titulo = "Onde Moro";
+        }
+        else if ($("#hdnTipoBusca").val() == "2") { //Onde Estou
+            $("#txtBusca").val(label);
+            icone = "img/icone_onde_estou.png";
+            titulo = label;
+        }
+        else if ($("#hdnTipoBusca").val() == "3") { //Tipo de Atendimento
+            //$("#txtBuscaTipo").val(label);
+            if (ubs != null) {
+
+                if (ubs.codtipo.split('|').length > 1) {
+                    icone = 'img/icoPinComposto.png';
+                }
+                else {
+                    if (ubs.codtipo == "1") { //ambulatorio
+                        icone = 'img/icoPinAmbulatorio.png';
+                    }
+                    else if (ubs.codtipo == "2") { //diagnostico
+                        icone = 'img/icoPinDiagnostico.png';
+                    }
+                    else if (ubs.codtipo == "3") { //hospitais
+                        icone = 'img/icoPinHospitais.png';
+                    }
+                    else if (ubs.codtipo == "4") { //mental
+                        icone = 'img/icoPinMental.png';
+                    }
+                    else if (ubs.codtipo == "5") { //basicas
+                        icone = 'img/icoPinSaude.png';
+                    }
+                    else if (ubs.codtipo == "6") { //aids
+                        icone = 'img/icoPinAids.png';
+                    }
+                    else if (ubs.codtipo == "7") { //emergencia
+                        icone = 'img/icoPinEmergencia.png';
+                    }
+                    else if (ubs.codtipo == "8") { //vacinacao
+                        icone = 'img/icoPinVacinacao.png';
+                    }
+                    else if (ubs.codtipo == "9") { //vigilancia
+                        icone = 'img/icoPinVigilancia.png';
+                    }
+                }
+
+                titulo = label;
+            }
+        }
+
+        if ($("#hdnTipoBusca").val() == "3") {
+            buscaPor = $("#txtBuscaTipo").val().toUpperCase();
+        }
+        else {
+            buscaPor = $('#txtBusca').val().toUpperCase().replace('CACHE ', '').replace('CACHÊ ', '');
+        }
+
+        if (($("#hdnTipoBusca").val() == "3") && (ubs != null)) {
+            var enderecoUbs = ubs.logradouro + ', ' + ubs.numero + ', ' + (ubs.bairro != "" ? ubs.bairro : "") + ', SÃO PAULO';
+
+            var nomeTipo = ubs.tipo.split('|');
+            var nomeSubTipo = ubs.subtipo.split('|');
+            var tipoTotal = '';
+            var nomeTipoAux = '';
+
+            if (nomeTipo.length > 1) {
+                var quebraLinha = '';
+                for (var i = 0; i < nomeTipo.length; i++) {
+
+                    if (nomeTipoAux != nomeTipo[i]) {
+                        tipoTotal += quebraLinha + "<span style='font-weight:bold'>" + nomeTipo[i] + "</span>" + (nomeSubTipo[i] != "" ? "> " + nomeSubTipo[i] : "");
+                        quebraLinha = '<br />';
+                        nomeTipoAux = nomeTipo[i];
+                    }
+                    else {
+                        tipoTotal += /*quebraLinha +*/(nomeSubTipo[i] != "" ? "> " + nomeSubTipo[i] : "");
+                        quebraLinha = '<br />';
+
+                    }
+                }
+            }
+            else {
+                tipoTotal = "<span style='font-weight:bold'>" + "</span>" + ubs.tipo + (ubs.subtipo != "" ? "> " + ubs.subtipo : "");
+            }
+
+            contentString = '<div id="content" style="overflow-y: hidden; overflow-x: hidden;font-family:\'Roboto Condensed\',Arial,Verdana;">' +
+                            '<div id="bodyContent" style="width:350px;min-height:173px;overflow-y: hidden; overflow-x: hidden;">' +
+                                '<div id="cabecalho" style="width:330px;min-height:50px;">' +
+                                    '<a  onclick="LinkSaibaMais(' + String.fromCharCode(39) + ubs.subtipo + String.fromCharCode(39) + ');"><span style="float:right;cursor:pointer;color:#333333;font-size: 13px;font-weight: bold;">Saiba Mais</span></a><br>' +
+                                    '<p style="color:#333333;font-size: 13px;font-weight: bold;">' + titulo + '</p>' +
+                                    '<p style="font-size: 14px;color:#333333;">' +
+                                          tipoTotal +
+                                    '</p>' +
+                                '</div>' +
+                                '<div id="conteudo" style="width:350px;height:118px;font-size: 14px;overflow-y: hidden; overflow-x: hidden;">' +
+                                    '<p>' + ubs.logradouro + ', ' +
+                                        ubs.numero + (ubs.bairro != "" ? " - " + ubs.bairro : "") +
+                                        (ubs.cep != "" ? " - CEP: " + ubs.cep + "." : ".") + '<br /><br /><br />' +
+
+                                '<img jsattrs="src:i.photoUrl;" border="0" style="margin-top:-39px;float:right;width:120px;height:90px;cursor:pointer;" jstcache="130" src="https://cbks0.google.com/cbk?output=thumbnail&amp;w=90&amp;h=68&amp;ll=' + latitude + ',' + longitude + '&amp;thumb=0" onclick="CarregaStreetView(' + contadorMarkMain + ', true);"></p>' +
+                                '<p style="float: left;margin-right: 10px;margin-top: 10px;">Traçar rota</p><p style="margin-top: 8px;">' +
+            //Carro
+                                  '<img src="img/icone_carro.png" title="Rota de carro" class="botao_rota" style="border: 1px solid #D9D9D9;" ' +
+                                      'onclick="FecharInfoWindow(); ' +
+                                      'VerificacaoCalculoRota(' + carro + ', ' + null + ', ' + null + ', ' + latitude + ', ' + longitude + ', \'' + enderecoUbs + '\');" />' +
+            //Ônibus
+                                  '<img src="img/icone_onibus.png" title="Rota de transporte público" class="botao_rota" style="border: 1px solid #D9D9D9;" ' +
+                                      'onclick="FecharInfoWindow(); ' +
+                                      'VerificacaoCalculoRota(' + onibus + ', ' + null + ', ' + null + ', ' + latitude + ', ' + longitude + ', \'' + enderecoUbs + '\');" />' +
+            //A pé
+                                  '<img src="img/icone_a_pe.png" title="Rota a pé" class="botao_rota" style="border: 1px solid #D9D9D9;" ' +
+                                      'onclick="FecharInfoWindow(); ' +
+                                      'VerificacaoCalculoRota(' + a_pe + ', ' + null + ', ' + null + ', ' + latitude + ', ' + longitude + ', \'' + enderecoUbs + '\');" />' +
+                                    '</p>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>';
+        }
+        else {
+            //Definindo texto da janela de informações do marcador referente ao endereço informado pelo usuário
+            contentString = '<div id="content" style="overflow-y: hidden; overflow-x: hidden;font-family:\'Roboto Condensed\',Arial,Verdana;">' +
+                              '<div id="bodyContent" style="width:320px;height:140px;">' +
+                                  '<p><b>' + titulo + '</b></p>' +
+                                  '<p>' + buscaPor + '</p>' +
+                              '</div>' +
+                            '</div>';
+        }
+
+        if ((latitude != null) && (longitude != null)) {
+
+            //Instanciando janela de informações do marcador referente ao endereço informado pelo usuário
+            var infowindowUsuario = new google.maps.InfoWindow({
+                content: '<div style="line-height:1.35;overflow:hidden;white-space:wrap;">' + contentString + '</div>'
+            });
+
+            //Criando marcador referente ao endereço informado pelo usuário
+            var marcadorUsuario = new google.maps.Marker({
+                position: latLngUsuario,
+                map: map,
+                title: titulo,
+                icon: icone
+            });
+
+
+            //Evento mouseout do marcador do endereço informado pelo usuário
+            google.maps.event.addListener(marcadorUsuario, 'click', function () {
+                //Abrindo janela de informações do marcador
+                infowindowUsuario.open(map, marcadorUsuario);
+                lastInfoWindow = infowindowUsuario;
+                map.setCenter(marcadorUsuario.position);
+            });
+            mainMarkers.push(marcadorUsuario);
+            contadorMarkMain++;
+
+            //Busca da unidade de referência para certificação de que o endereço informado está na cidade de São Paulo.
+            GerarMapa(latitude, longitude);
+
+        }
+        else {
+            if (icone == 'img/icoPinComposto.png') {
+                GerarMapa(latLngUsuario.lat(), latLngUsuario.lng(), tipoTotal);
+            }
+            else {
+                GerarMapa(latLngUsuario.lat(), latLngUsuario.lng());
+            }
+        }
+        map.setZoom(11);
+    }
+
+
+
+    ///////////////////////////////////////////////////////////
+    /// GerarMapa() é chamado pelo método AdicionaMarkers() ///
+    /// Função de geração do mapa                           ///
+    ///////////////////////////////////////////////////////////
+    function GerarMapa(latitude, longitude, tipoIcone) {
+        var ubsreferencia = false;
+
+        var filtros = VerificaFiltros();
+
+        if (filtros == "" && $("#hdnTipoBusca").val() == "3" && $("#hdnAutoCompleteBuscaTipo").val() == "S") {
+            $("#hdnAutoCompleteBuscaTipo").val("");
+            filtros = "4|10|14|18|21|22|24|25|26|5|6|7|8|17|11|12|23|1|2|3|19|20|29|9|27|28|110|15|";
+        }
+
+        var textoBusca = "";
+        var geoPontoUBS = new google.maps.LatLng(latitude, longitude);
+        var localizacaoSP = true;
+
+        $("#").hide();
+        $(".resultado ul.lstResultado").html('');
+
+        if (($("#hdnTipoBusca").val() == "1") || ($("#hdnTipoBusca").val() == "2")) {
+            if (($("#txtBusca").val() != "Digite o endereço") && ($("#txtBusca").val() != "Digite o nome ou Bairro da unidade")) {
+                textoBusca = $("#txtBusca").val();
+            }
+        }
+        else if ($("#hdnTipoBusca").val() == "3") {
+            if ($("#txtBuscaTipo").val() != "Digite o nome ou Bairro da unidade") {
+                textoBusca = $("#txtBuscaTipo").val();
+            }
+        }
+
+        directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+        RemoveMarcador();
+
+        //    Teste para definir uma área em voltar do ponto escolhido, para adicionar pins apenas dentro do círculo
+        //    var markerCenter = new google.maps.Marker({
+        //      position: geoPontoUBS,
+        //      map: map
+        //    });
+
+        //    circle = new google.maps.Circle({
+        //      map: map,
+        //      clickable: false,
+        //      // metres
+        //      radius: 5000,
+        //      fillColor: '#000000',
+        //      fillOpacity: .6,
+        //      strokeColor: '#CCCCCC',
+        //      strokeOpacity: .4,
+        //      strokeWeight: .8
+        //    });
+        //    // Attach circle to marker
+        //    circle.bindTo('center', markerCenter, 'position');
+        //    var bounds = circle.getBounds();
+        //    // Log into the dev bar console whether the marker is inside or outside
+        //    console.log(bounds.contains(new google.maps.LatLng(-23.5258109,-46.6768803)));
+        //    //http://stackoverflow.com/questions/8766218/detect-if-marker-is-within-circle-overlay-on-google-maps-javascript-api-v3
+        //    //http://unserkaiser.com/blog/2011/12/16/google-maps-marker-check-if-in-circle/
+
+        //Buscando unidades de saúde de acordo com os filtros selecionados (subtipos)
+
+        //RetirarAcentosTextoBusca();
+        //texto = $("#hdnTxtBuscaSemAcento").val();
+        //textoBusca = RetirarAcentosTextoBuscaUSB(textoBusca);
+        textoBusca = textoBusca.replace("'", "");
+        $.ajax({
+            type: "POST",
+            url: "Default.aspx/BuscarTodasUBSs",
+            async: false,
+            data: "{tipoBusca : '" + $("#hdnTipoBusca").val() + "'," +
+                  "latitude : '" + latitude + "'," +
+                  "longitude : '" + longitude + "'," +
+                  "subTipos : '" + filtros + "'," +
+                  "textoBusca : '" + textoBusca + "' }",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            timeout: 30000,
+            beforeSend: function () {
+                set_text_modal('');
+                if ($(".unidadesProximas").is(":visible") == false) {
+                    $("#divContent #sideBarLeft").hide();
+                }
+                $(".resultado").hide();
+            },
+            success: function (msg) {
+
+                $("#divAlert").hide();
+
+                if (msg.d == '') {
+                    if (filtros != "") {
+                        set_text_modal('Não foram encontradas Unidades de Saúde para os filtros informados.');
+                        javascript: show_modal(false, 'modal', '150', '');
+                    }
+
+                    Initialize(false);
+                }
+                else {
+
+                    $.each(msg.d, function (index, item) {
+                        geoPontoUBS = new google.maps.LatLng(item.Geo.Latitude, item.Geo.Longitude);
+                        //Texto informativo do marcador da unidade de saúde
+                        var enderecoUnidadeSaude = item.Logradouro + ', ' + item.Numero + ', ' + (item.Bairro != "" ? item.Bairro : "") + ', SÃO PAULO';
+
+                        //if (tipoIcone != undefined) {
+                        //    var iconeUBS = 'img/icoPinComposto.png';
+                        //}
+                        //else {
+
+                            var iconeUBS = 'img/icoPinSaude.png';
+
+                            if (item.Tipo == "1") { //ambulatorio
+                                iconeUBS = 'img/icoPinAmbulatorio.png';
+                            }
+                            else if (item.Tipo == "2") { //diagnostico
+                                iconeUBS = 'img/icoPinDiagnostico.png';
+                            }
+                            else if (item.Tipo == "3") { //hospitais
+                                iconeUBS = 'img/icoPinHospitais.png';
+                            }
+                            else if (item.Tipo == "4") { //mental
+                                iconeUBS = 'img/icoPinMental.png';
+                            }
+                            else if (item.Tipo == "5") { //basicas
+                                iconeUBS = 'img/icoPinSaude.png';
+                            }
+                            else if (item.Tipo == "6") { //aids
+                                iconeUBS = 'img/icoPinAids.png';
+                            }
+                            else if (item.Tipo == "7") { //emergencia
+                                iconeUBS = 'img/icoPinEmergencia.png';
+                            }
+                            else if (item.Tipo == "8") { //vacinacao
+                                iconeUBS = 'img/icoPinVacinacao.png';
+                            }
+                            else if (item.Tipo == "9") { //vigilancia
+                                iconeUBS = 'img/icoPinVigilancia.png';
+                            }
+                        //}
+
+                        if ((item.UBSReferencia == true) && (latitude != latitudeCentroSP) && (longitude != longitudeCentroSP)) {
+                            ubsreferencia = true;
+                            var historicoLinkUBSReferencia = item.Nome + " - Telefone: " + item.Telefone1;
+                            iconeUBS = 'img/icoPinUnidade.png';
+
+                            geoPontoUBS = new google.maps.LatLng(item.Geo.Latitude, item.Geo.Longitude);
+
+                            if ($("#sideBarLeft").is(':visible')) {
+                                if ($("#sideBarLeft").width() == "24") {
+
+                                    $("#divContent #sideBarLeft .contentSidebar").show();
+
+                                    try {
+                                        if (!(event.keyCode === $.ui.keyCode.ENTER)) ("#divContent #sideBarLeft .btnmostrar").removeClass("active");
+                                        $("#divContent #sideBarLeft").css("width", "345px");
+                                    }
+                                    catch (err) { };
+                                }
+                            }
+                            else {
+                                $("#divContent #sideBarLeft").show();
+                            }
+
+                            if ($(".unidadeProxima").css("display") != "block") {
+                                var alturaMapa = $("#map-canvas").height();
+                                $("#map-canvas").height(alturaMapa - 35);
+                            }
+
+                            $(".unidadeProxima").slideDown();
+
+                            $(".dadosUnidade").html(historicoLinkUBSReferencia);
+                            $(".dadosUnidade").attr("onclick", "SelecionarMarcador(" + contadorMark + ")");
+
+                            $(".unidadesProximas").show();
+                            $(".unidadesProximas span#endereco").html($('#txtBusca').val());
+                            $(".unidadesProximas span#referencia").html(item.Nome);
+                            $(".unidadesProximas span#referencia").attr("onclick", "SelecionarMarcador(" + contadorMark + ")");
+                            $(".unidadesProximas img#imgReferencia").attr("onclick", "SelecionarMarcador(" + contadorMark + ")");
+                            $(".unidadeProxima .wrap a#saibaMais").attr("onclick", "SelecionarMarcador(" + contadorMark + ")");
+
+                            $(".dadosUnidade").attr("onmouseover", "IniciarAnimacao(" + contadorMark + ")");
+                            $(".dadosUnidade").attr("onmouseover", "IniciarAnimacao(" + contadorMark + ")");
+
+                            $(".unidadesProximas span#referencia").attr("onmouseover", "IniciarAnimacao(" + contadorMark + ")");
+                            $(".unidadesProximas img#imgReferencia").attr("onmouseover", "IniciarAnimacao(" + contadorMark + ")");
+
+                            $(".unidadesProximas span#referencia").attr("onmouseout", "FinalizarAnimacao(" + contadorMark + ")");
+                            $(".unidadesProximas img#imgReferencia").attr("onmouseout", "FinalizarAnimacao(" + contadorMark + ")");
+
+                            $(".unidadeProxima .wrap a#comoChegar").attr("onclick", "FecharInfoWindow();VerificacaoCalculoRota(" + carro + ", " + latitude + ", " + longitude + ", " + item.Geo.Latitude + ", " + item.Geo.Longitude + ", \"" + enderecoUnidadeSaude + "\")");
+                        }
+
+                        var nomeTipo = item.NomeTipo.split('|');
+                        var nomeSubTipo = item.NomeSubTipo.split('|');
+                        var tipoTotal = '';
+                        var nomeTipoAux = '';
+
+                        //SS 25621 - Júlio: o trecho de código a seguir foi comentado pois um tipo de serviço tem um ou mais
+                        //subtipos de serviço, sendo que estas informações chegam aqui como segue:
+                        //TipoServiço1 - SubTipoServiço1
+                        //TipoServiço1 - SubTipoServiço2
+                        //TipoServiço2 - SubTipoServiço3
+                        //TipoServiço3 - SubTipoServiço4
+                        //...
+                        //Assim, a possibilidade de processar vários tipos de serviço iguais deve ser considerada para o
+                        //usuário poder visualizar os vários subtipos de serviços para o mesmo tipo de serviço
+                        /*
+                        var uniquenomeTipo = [];
+                        $.each(nomeTipo, function (i, el) {
+                            if ($.inArray(el, uniquenomeTipo) === -1) uniquenomeTipo.push(el);
+                        });
+
+                        var uniquenomeSubTipo = [];
+                        $.each(nomeSubTipo, function (i, el) {
+                            if ($.inArray(el, uniquenomeSubTipo) === -1) uniquenomeSubTipo.push(el);
+                        });
+
+                        nomeTipo = uniquenomeTipo;
+                        nomeSubTipo = uniquenomeSubTipo;
+                        */
+
+                        if (nomeTipo.length == 1) {
+                            item.NomeTipo = nomeTipo[0];
+                        }
+
+                        if (nomeSubTipo.length == 1) {
+                            item.NomeSubTipo = nomeSubTipo[0];
+                        }
+
+                        if (nomeTipo.length > 1) {
+                            var quebraLinha = '';
+                            for (var i = 0; i < nomeTipo.length; i++) {
+
+                                if (nomeTipoAux != nomeTipo[i]) {
+
+                                    tipoTotal += quebraLinha + '<span style="font-weight: bold;">' + nomeTipo[i] + '</span>' + (nomeSubTipo[i] != "" ? ">" + nomeSubTipo[i] : "");
+                                    quebraLinha = '<br />';
+                                    nomeTipoAux = nomeTipo[i];
+                                }
+
+                                else {
+                                    tipoTotal += /*quebraLinha +*/(nomeSubTipo[i] != "" ? "> " + nomeSubTipo[i] : "");
+                                    quebraLinha = '<br />';
+
+                                }
+                            }
+
+                            //SS 25621 - Júlio: regra para exibir o pin composto somente quando há mais de um tipo de unidade
+                            var uniquenomeTipo = [];
+                            $.each(nomeTipo, function (i, el) {
+                                if ($.inArray(el, uniquenomeTipo) === -1) uniquenomeTipo.push(el);
+                            });
+                            if (uniquenomeTipo.length > 1)
+                                iconeUBS = 'img/icoPinComposto.png';
+                        }
+                        else {
+                            tipoTotal = '<span style="font-weight: bold;">' + item.NomeTipo + '</span>';
+
+                            if (nomeSubTipo.length > 1) {
+                                for (var i = 0; i < nomeSubTipo.length; i++) {
+                                    tipoTotal += /*quebraLinha +*/(nomeSubTipo[i] != "" ? "> " + nomeSubTipo[i]: "");
+                                    quebraLinha = '<br />';
+                                }
+                            }
+                            else {
+                                tipoTotal = tipoTotal + (item.NomeSubTipo != "" ? "> " + item.NomeSubTipo: "");
+                            }
+                        }
+
+                        //SS 25621 - Júlio: retirando regra para redefinir o tipoTotal
+                        /*
+                        if (tipoIcone != undefined) {
+                            if (tipoIcone.length > tipoTotal.length) {
+                                tipoTotal = tipoIcone;
+                            }
+                        }
+                        */
+
+                        var contentUBS =
+                            '<div id="content" style="overflow-y: hidden; overflow-x: hidden;font-family:\'Roboto Condensed\',Arial,Verdana;">' +
+                                '<div id="bodyContent" style="width:350px;min-height:173px;">' +
+                                    '<div id="cabecalho" style="width:330px;min-height:50px;">' +
+                                        '<a  onclick="LinkSaibaMais(' + String.fromCharCode(39) + item.Subtipo + String.fromCharCode(39) + ');"><span style="float:right;cursor:pointer;color:#333333;font-size: 13px;font-weight: bold;">Saiba Mais</span></a><br/>' +
+                                        '<p style="color:#333333;font-size: 13px;font-weight: bold;">' + item.Nome + '</p>' +
+                                        '<p style="font-size: 14px;color:#333333;">' +
+                                             tipoTotal +
+                                        '</p>' +
+                                    '</div>' +
+                                    '<div id="conteudo" style="width:350px;height:183px;font-size: 14px;overflow-y: hidden; overflow-x: hidden;">' +
+                                        '<p>' + item.Logradouro + ', ' +
+                                            item.Numero + (item.Bairro != "" ? " - " + item.Bairro : "") +
+                                            (item.Cep != "" ? " - CEP: " + item.Cep + "." : ".") + '<br />' +
+                                            'Telefone(s): ' + item.Telefone1 + (item.Telefone2 != "" ? ", " + item.Telefone2 : "") + '.<br />' +
+                                            'Funcionamento: ' + item.Horario + '.<br /><br /><br />' +
+                                        '<img jsattrs="src:i.photoUrl;" border="0" style="cursor:pointer;margin-top:-39px;float:right;width:120px;height:90px" jstcache="130" src="https://cbks0.google.com/cbk?output=thumbnail&amp;w=90&amp;h=68&amp;ll=' + item.Geo.Latitude + ',' + item.Geo.Longitude + '&amp;thumb=0" onclick="CarregaStreetView(' + contadorMark + ', false);" /></p>' +
+                                        '<p style="float: left;margin-right: 10px;margin-top: 10px;">Traçar rota</p><p style="margin-top: 8px;">' +
+                        //Carro
+                                            '<img src="img/icone_carro.png" title="Rota de carro" class="botao_rota" style="border: 1px solid #D9D9D9;" ' +
+                                                'onclick="FecharInfoWindow(); ZeraOrigem(); ' +
+                                                'VerificacaoCalculoRota(' + carro + ', ' + latitude + ', ' + longitude + ', ' + item.Geo.Latitude + ', ' +
+                                                    item.Geo.Longitude + ', \'' + enderecoUnidadeSaude + '\');" />' +
+                        //Ônibus
+                                            '<img src="img/icone_onibus.png" title="Rota de transporte público" class="botao_rota" style="border: 1px solid #D9D9D9;" ' +
+                                                'onclick="FecharInfoWindow(); ZeraOrigem(); ' +
+                                                'VerificacaoCalculoRota(' + onibus + ', ' + latitude + ', ' + longitude + ', ' + item.Geo.Latitude + ', ' +
+                                                    item.Geo.Longitude + ', \'' + enderecoUnidadeSaude + '\');" />' +
+                        //A pé
+                                            '<img src="img/icone_a_pe.png" title="Rota a pé" class="botao_rota" style="border: 1px solid #D9D9D9;" ' +
+                                                'onclick="FecharInfoWindow(); ZeraOrigem(); ' +
+                                                'VerificacaoCalculoRota(' + a_pe + ', ' + latitude + ', ' + longitude + ', ' + item.Geo.Latitude + ', ' +
+                                                    item.Geo.Longitude + ', \'' + enderecoUnidadeSaude + '\');" />' +
+                                        '</p>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>';
+
+                        if (item.UBSReferencia == false) {
+                            $("#divContent #sideBarLeft").show();
+                            $(".resultado").show();
+                            $(".resultado ul.lstResultado").append("<li><img width='18' height='22' alt='" + item.Nome + "' src='" + iconeUBS + "' onclick='SelecionarMarcador(" + contadorMark + ");' onmouseover='IniciarAnimacao(" + contadorMark + ");' onmouseout='FinalizarAnimacao(" + contadorMark + ");'><a title='" + item.Nome + "' href='#' onclick='SelecionarMarcador(" + contadorMark + ");' onmouseover='IniciarAnimacao(" + contadorMark + ");' onmouseout='FinalizarAnimacao(" + contadorMark + ");'>" + item.Nome + "</a></li>");
+                        }
+
+                        var marcadorUBS = new google.maps.Marker({
+                            position: geoPontoUBS,
+                            map: map,
+                            title: item.Nome,
+                            icon: iconeUBS,
+                            draggable: false,
+                            optimized: false
+                        });
+
+                        var infoUBS = new google.maps.InfoWindow({
+                            content: '<div style="line-height:1.35;overflow:hidden;white-space:wrap;">' + contentUBS + '</div>'
+                        });
+
+                        //Adicionando o marcador no array de marcadores contidos no mapa
+                        var existe = VerificaMainMarker(item.Geo.Latitude.toFixed(5), item.Geo.Longitude.toFixed(5));
+                        if (existe != -1) {
+                            mainMarkers[existe].setMap(null);
+                            contadorMarkMain--;
+                        }
+
+                        markers.push(marcadorUBS);
+                        contadorMark++;
+
+                        //Evento click do marcador da unidade de saúde
+                        google.maps.event.addListener(marcadorUBS, 'click', function () {
+                            if (lastInfoWindow)
+                                lastInfoWindow.close();
+
+                            map.setCenter(new google.maps.LatLng(item.Geo.Latitude, item.Geo.Longitude));
+
+                            try { /* run js code */
+                                infoUBS.open(map, marcadorUBS);
+                            }
+
+
+                            catch (error) { /* resolve the issue or bug */ }
+
+                            lastInfoWindow = infoUBS;
+                            this.setAnimation(null);
+
+                        });
+
+
+                        var bounceTimer;
+                        //Evento mouseover do marcador da unidade de saúde
+                        google.maps.event.addListener(marcadorUBS, 'mouseover', function () {
+                            clearTimeout(bounceTimer);
+                            var that = this;
+                            //Inicia a animação bounce
+                            that.setAnimation(google.maps.Animation.BOUNCE);
+                            //Finaliza a animação bounce após um segundo
+                            bounceTimer = setTimeout(function () {
+                                that.setAnimation(null);
+                            },
+                  500);
+                        });
+
+                        //Evento mouseout do marcador da unidade de saúde
+                        google.maps.event.addListener(marcadorUBS, 'mouseout', function () {
+                            if (this.getAnimation() != null) {
+                                this.setAnimation(null);
+                            }
+                            clearTimeout(bounceTimer);
+                        });
+                    });
+                }
+                if ((ubsreferencia == false) && (botaoBuscarOrigem) && ($("#hdnTipoBusca").val() == "1") && ($("#txtBusca").val() != "") && ($("#txtBusca").val() != "Digite o endereço")) {
+                    RemoveMainMarcador();
+                    set_text_modal('Endereço informado fora da cidade de São Paulo.');
+                    javascript: show_modal(false, 'modal', '150', '');
+                    localizacaoSP = false;
+                }
+            },
+            error: function (xhr, status, error) {
+                //Fechando mensagem de espera de processamento
+                javascript: close_modal();
+
+                if (error.indexOf("timeout") > -1) {
+                    set_text_modal('Desculpe, não foi possível buscar as Unidades de Saúde. Tempo excedido.');
+                    javascript: show_modal(false, 'modal', '150', '');
+                } else {
+                    set_text_modal("Desculpe, não foi possível buscar as Unidades de Saúde.\nO seguinte erro ocorreu: '" + error + "'.");
+                    javascript: show_modal(false, 'modal', '150', '');
+                }
+            }
+        });
+
+        if (($(".unidadesProximas span#endereco").html() != '') && ($(".unidadesProximas span#referencia").html() != '')) {
+            //exibe a unidade de referência, caso esteja atualizando o menu esquerdo para exibir as unidades de atendimento
+            $(".unidadesProximas").show();
+
+            //oculta a rota, caso esteja atualizando o menu esquerdo para exibir as unidades de atendimento ($(".exibirComoChegar a.fecharOcultar").is(":visible")) &&
+            if (($(".exibirComoChegar a.fecharOcultar").attr("class") == "fecharOcultar")) {
+                $(".contentComoChegar").hide();
+                $(".exibirComoChegar a.fecharOcultar").toggleClass("active");
+            }
+        }
+
+        //se houver uma rota ativa, exibir
+        if ($("#hdnTipoBusca").val() == "3") {
+            if ($("#directionsPanel").html() != "") {
+                $("#divContent #sideBarLeft").show();
+            }
+        }
+
+        if (localizacaoSP) {
+            if (mainMarkers.length > 0) {
+                map.setCenter(new google.maps.LatLng(mainMarkers[0].position.lat(), mainMarkers[0].position.lng()));
+            }
+            else {
+                map.setCenter(new google.maps.LatLng(latitudeCentroSP, longitudeCentroSP));
+            }
+        }
+        else {
+            map.setCenter(new google.maps.LatLng(latitudeCentroSP, longitudeCentroSP));
+        }
+        map.setZoom(11);
+        botaoBuscarOrigem = false;
+    }
+
+    function AdicionarUnidadesSaude() {
+        if (latLngUsuario != null) {
+            GerarMapa(latLngUsuario.lat(), latLngUsuario.lng());
+        }
+        else {
+            GerarMapa(latitudeCentroSP, longitudeCentroSP);
+        }
+    }
+
+    $(document).ready(function () {
+        //$("#divHeader .divBusca a.selectPersonal").addClass("active");
+
+
+
+        $("#hdnTipoBusca").val("2"); //Onde Estou
+
+
+        $("#buscaSidebar").keyup(function (event) {
+
+            var palavra = $("#buscaSidebar").val().toUpperCase();
+            $("#divAlert").hide();
+
+            $(".lstResultado li").each(function () {
+                $(this).css("display", "none");
+            });
+            $(".lstResultado li").find(":contains('" + palavra + "')").each(function () {
+                $(this).closest("li").css("display", "block");
+            });
+        });
+
+        //  $("#txtBusca").bind("keyup", function (event) {
+        //    if (event.keyCode === $.ui.keyCode.ENTER)
+        //        {
+        //             alert($("#txtBusca").val());
+        //        }
+        //  })
+
+        $("#txtBusca").bind("keyup", function (event) {
+            $("#txtBusca").css("border", "medium none");
+            $("#divAlert").hide();
+            if ((event.keyCode === $.ui.keyCode.ENTER)) {
+                $("#btnBuscar").click();
+                $("#txtBusca").focus();
+
+
+            }
+
+        })
+      .autocomplete({
+          minLength: 0,
+          max: 10,
+          source: function (request, response) {
+              return PesquisaUnidadeSaude(request.term, response);
+          },
+          focus: function () {
+              // prevent value inserted on focus
+              return false;
+          },
+          select: function (event, ui) {
+
+              $("#txtBusca").val(ui.item.label);
+
+              ValidaEnderecoCapitalSaoPaulo(ui.item.latitude, ui.item.longitude, 'destino');
+              AbrirInformarErro();
+          }
+
+      });
+
+
+
+        //------- txtRotaOrigem --- Evento Mouse Up ------------------//
+
+        // Ao receber o foco as mensagens de erro são limpas
+
+        $("#txtRotaOrigem").bind("focus", function () {
+
+            if ($("#enderecoForaDeSaoPaulo").val() == "S" || $("#txtRotaOrigem").val() == "") {
+                if ($("#enderecoForaDeSaoPaulo").val() == "S") {
+                    $("#enderecoForaDeSaoPaulo").val("");
+                    $("#txtRotaOrigem").val("");
+                }
+
+                $('#errosCaixaDeTextoOrigemDestino').empty();
+                $("#distanciaConsultaRota").html('<br/>');
+                $("#txtRotaOrigem").css("border", "ui-autocomplete-input");
+
+            }
+        });
+
+        //------- txtRotaOrigem --- Evento Mouse Up ------------------//
+
+        // Ao clicar no X da da caixa de texto dispara o evento (somente no IE )
+
+        $("#txtRotaOrigem").bind("mouseup", function (e) {
+
+            if ($("#enderecoForaDeSaoPaulo").val() == "S" || $("#txtRotaOrigem").val() == "") {
+                if ($("#enderecoForaDeSaoPaulo").val() == "S") {
+                    $("#enderecoForaDeSaoPaulo").val("");
+                    $("#txtRotaOrigem").val("");
+                }
+                $('#errosCaixaDeTextoOrigemDestino').empty();
+                //  $("#txtRotaOrigem").val("");
+                //  $("#enderecoForaDeSaoPaulo").val("");
+                $("#distanciaConsultaRota").html('<br/>');
+                $("#txtRotaOrigem").css("border", "ui-autocomplete-input");
+
+            }
+        });
+
+
+        //------- txtRotaOrigem --- Evento Click ------------------//
+
+        // Limpa as mensagens de erro são limpas
+
+        $("#txtRotaOrigem").bind("click", function () {
+
+            if ($("#enderecoForaDeSaoPaulo").val() == "S" || $("#txtRotaOrigem").val() == "") {
+                if ($("#enderecoForaDeSaoPaulo").val() != "S") {
+
+                    $("#txtRotaOrigem").val("");
+                }
+                else {
+                    $("#enderecoForaDeSaoPaulo").val("");
+                    $("#txtRotaOrigem").val("");
+                }
+
+                $('#errosCaixaDeTextoOrigemDestino').empty();
+                $("#distanciaConsultaRota").html('<br/>');
+                $("#txtRotaOrigem").css("border", "ui-autocomplete-input");
+
+            }
+        });
+
+        //------- txtRotaOrigem --- Evento Keydown ------------------//
+
+        // Limpa as mensagens de erro são limpas
+
+        $("#txtRotaOrigem").bind("keyup", function (event) {
+
+            if ($("#enderecoForaDeSaoPaulo").val() == "S" || $("#txtRotaOrigem").val() == "") {
+                if ($("#enderecoForaDeSaoPaulo").val() == "S") {
+                    $("#enderecoForaDeSaoPaulo").val("");
+                    //$("#txtRotaOrigem").val("");
+                }
+
+                $('#errosCaixaDeTextoOrigemDestino').empty();
+                $("#distanciaConsultaRota").html('<br/>');
+                $("#txtRotaOrigem").css("border", "ui-autocomplete-input");
+                $("#divAlert").hide();
+            }
+
+
+            if (event.keyCode === $.ui.keyCode.ENTER) {
+                $("#btnComoChegar").click();
+                $("#txtRotaOrigem").blur();
+            }
+
+        })
+      .autocomplete({
+          minLength: 0,
+          max: 10,
+          source: function (request, response) {
+
+              return PesquisaEnderecoRota(request.term, response);
+          },
+          focus: function () {
+
+              // Ao receber o foco as mensagens de erro são limpas
+
+              $('#errosCaixaDeTextoOrigemDestino').empty();
+              $("#distanciaConsultaRota").html('<br/>');
+
+              return false;
+          },
+
+          select: function (event, ui) {
+
+              // Atribui na caixa de texto o valor da origem selecionada.
+
+              $("#txtRotaOrigem").val(ui.item.label);
+              ValidaEnderecoCapitalSaoPaulo(ui.item.latitude, ui.item.longitude, 'origem');
+              AbrirInformarErro();
+
+
+              return false;
+          }
+
+      });
+
+
+        //------- txtRotaDestino --- Evento Mouse Up ------------------//
+
+        // Ao receber o foco as mensagens de erro são limpas
+
+
+        $("#txtRotaDestino").bind("focus", function () {
+
+            if ($("#enderecoForaDeSaoPaulo").val() == "S" || $("#txtRotaDestino").val() == "") {
+                if ($("#enderecoForaDeSaoPaulo").val() == "S") {
+                    $("#enderecoForaDeSaoPaulo").val("");
+                    $("#txtRotaDestino").val("");
+                }
+                //  $("#txtRotaDestino").val("");
+                //  $("#enderecoForaDeSaoPaulo").val("");
+                $('#errosCaixaDeTextoOrigemDestino').empty();
+                $("#distanciaConsultaRota").html('<br/>');
+                $("#txtRotaDestino").css("border", "ui-autocomplete-input");
+            }
+        });
+
+
+        //------- txtRotaDestino --- Evento Click ------------------//
+
+        // Limpa as mensagens de erro são limpas
+
+        $("#txtRotaDestino").bind("click", function () {
+
+            if ($("#enderecoForaDeSaoPaulo").val() == "S" || $("#txtRotaDestino").val() == "") {
+                if ($("#enderecoForaDeSaoPaulo").val() != "S") {
+
+                    $("#txtRotaDestino").val("");
+                }
+                else {
+                    $("#enderecoForaDeSaoPaulo").val("");
+                    $("#txtRotaDestino").val("");
+                }
+                $('#errosCaixaDeTextoOrigemDestino').empty();
+                $("#distanciaConsultaRota").html('<br/>');
+                $("#txtRotaDestino").css("border", "ui-autocomplete-input");
+            }
+        });
+
+        //------- txtRotaDestino --- Evento KeyDown ------------------//
+
+        // Limpa as mensagens de erro
+
+        $("#txtRotaDestino").bind("keyup", function (event) {
+
+            if ($("#enderecoForaDeSaoPaulo").val() == "S" || $("#txtRotaDestino").val() == "") {
+                //  $("#txtRotaDestino").val("");
+                $("#enderecoForaDeSaoPaulo").val("");
+                if ($("#enderecoForaDeSaoPaulo").val() == "S") {
+                    $("#enderecoForaDeSaoPaulo").val("");
+                    //  $("#txtRotaDestino").val("");
+                }
+                $('#errosCaixaDeTextoOrigemDestino').empty();
+                $("#distanciaConsultaRota").html('<br/>');
+                $("#txtRotaDestino").css("border", "ui-autocomplete-input");
+            }
+
+            if (event.keyCode === $.ui.keyCode.ENTER) {
+                $("#btnComoChegar").click();
+                $("#txtRotaDestino").blur();
+            }
+        })
+      .autocomplete({
+          minLength: 0,
+          max: 10,
+          source: function (request, response) {
+              $("#txtRotaDestino").css("border", "ui-autocomplete-input");
+              return PesquisaEnderecoRota(request.term, response);
+          },
+          focus: function () {
+
+              // Ao receber o foco as mensagens de erro são limpas
+
+
+              return false;
+          },
+          select: function (event, ui) {
+              // Atribui na caixa de texto o valor do destino selecionado
+              $("#txtRotaDestino").val(ui.item.label);
+              ValidaEnderecoCapitalSaoPaulo(ui.item.latitude, ui.item.longitude, 'destino');
+              AbrirInformarErro();
+              return false;
+          }
+      });
+
+
+
+
+        $("#txtBuscaTipo").bind("keydown", function (event) {
+            $("#txtBuscaTipo").css("border", "ui-autocomplete-input");
+            $("#divAlert").hide();
+            $("#hdnAutoCompleteBuscaTipo").val("");
+
+            if (event.keyCode === $.ui.keyCode.ENTER) {
+                $("#btnBuscar").click();
+                $("#txtBuscaTipo").focus();
+            }
+        })
+    .autocomplete({
+        minLength: 0,
+        max: 10,
+        source: function (request, response) {
+            return PesquisaUnidadeSaude(request.term, response);
+        },
+        focus: function (event, ui) {
+            // prevent value inserted on focus
+            return false;
+        },
+        select: function (event, ui) {
+            $("#txtBuscaTipo").val(ui.item.label);
+            $("#hdnAutoCompleteBuscaTipo").val("S");
+            $("#btnBuscar").click();
+
+            return false;
+        }
+    });
+
+
+        $("#btnComoChegar").click(function () {
+            $("#divAlert").hide();
+            if ($("#txtRotaOrigem").val() == "") {
+                //set_text_modal("Por favor informe o endereço do ponto de partida da rota.");
+                // $("#divAlertOrigem").hide();
+                //   $('#errosCaixaDeTextoOrigemDestino').empty();
+                $('#errosCaixaDeTextoOrigemDestino').html('<p>' + "Por favor informe o endereço do ponto de partida da rota." + '</p>');
+                $("#txtRotaDestino").css("border", "ui-autocomplete-input");
+                $("#txtRotaOrigem").css("border", "3px solid #FF0000");
+                $("#distanciaConsultaRota").html('<br/><br/>');
+                return;
+            }
+
+
+            if ($("#txtRotaDestino").val() == "") {
+                //set_text_modal("Por favor informe o endereço do ponto de destino da rota.");
+                // $("#divAlertDestino").hide();
+                //   $('#errosCaixaDeTextoOrigemDestino').empty();
+                $('#errosCaixaDeTextoOrigemDestino').html('<p>' + "Por favor informe o endereço do ponto de partida da rota." + '</p>');
+                $("#txtRotaOrigem").css("border", "ui-autocomplete-input");
+                $("#txtRotaDestino").css("border", "3px solid #FF0000");
+                $("#distanciaConsultaRota").html('<br/><br/>');
+                return;
+            }
+
+            var geocoderOrigem = new google.maps.Geocoder();
+            var geocoderDestino = new google.maps.Geocoder();
+            botaoComoChegarOrigemChamada = true;
+            geocoderOrigem.geocode({ 'address': $("#txtRotaOrigem").val(), 'region': 'br', 'componentRestrictions': { 'country': 'BR', 'administrativeArea': 'SP'} }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    latitudeDe_sel = results[0].geometry.location.lat();
+                    longitudeDe_sel = results[0].geometry.location.lng();
+
+                    // Valida de o endereço está na capital.
+                    if (!$("#txtRotaOrigem").is('[readonly]')) {
+
+                        if (!ValidaEnderecoCapitalSaoPaulo(latitudeDe_sel, longitudeDe_sel, 'origem')) return;
+
+                    }
+
+                    // $("#txtRotaOrigem").val(results[0].formatted_address);
+
+                    unidadeAtendimentoSelecionada = true;
+                    geocoderDestino.geocode({ 'address': $("#txtRotaDestino").val(), 'region': 'br', 'componentRestrictions': { 'country': 'BR', 'administrativeArea': 'SP'} }, function (results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            latitudePara_sel = results[0].geometry.location.lat();
+                            longitudePara_sel = results[0].geometry.location.lng();
+
+                            // Valida de o endereço está na capital.
+                            if (!$("#txtRotaDestino").is('[readonly]')) {
+
+                                if (!ValidaEnderecoCapitalSaoPaulo(latitudePara_sel, longitudePara_sel, 'destino')) return;
+                            }
+
+
+                            //   $("#txtRotaDestino").val(results[0].formatted_address);
+
+                            directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+                            VerificacaoCalculoRota(((tipoRota_sel == '') ? 'carro' : tipoRota_sel), latitudeDe_sel, longitudeDe_sel, latitudePara_sel, longitudePara_sel, $("#txtRotaDestino").val());
+
+                            //  results[0].formatted_address;
+                        }
+                        else {
+                            set_text_modal('Endereço de ponto de destino da rota não encontrado.');
+                            javascript: show_modal_foco(false, 'txtRotaOrigem', 'modal', '150', '');
+                            return;
+                        }
+                    });
+                }
+                else {
+                    set_text_modal('Endereço de ponto de partida da rota não encontrado.');
+                    javascript: show_modal_foco(false, 'txtRotaOrigem', 'modal', '150', '');
+                    return;
+                }
+            });
+        });
+    }); *@

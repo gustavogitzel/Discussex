@@ -177,6 +177,7 @@
     <Content Include="Content\forumRespostas.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\mapa.css" />
     <Content Include="Content\mitos.css" />
     <Content Include="Content\nice-select.css" />
     <Content Include="Content\nomeResposta.css" />

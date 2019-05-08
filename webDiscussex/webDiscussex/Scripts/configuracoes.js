@@ -23,11 +23,11 @@
             "id='txtSenha' class='Input-text' placeholder= 'Senha'><label for='input' class='Input-label'>Senha</label></div><input class='btn concluir' " +
             "type='submit' name= 'btnSubmitAlteraEmail' id= 'btnSubmitAlteraEmail' value= 'Altera Email'><button class='btn' id='btnCancelar'>Cancelar" +
 
-            $("#pagina").append(txt);
+        $("#pagina").append(txt);
 
         fundoPreto();
 
-        botao()
+        botao();
     });
 
 
