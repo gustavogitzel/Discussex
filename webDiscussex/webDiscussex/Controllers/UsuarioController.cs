@@ -7,6 +7,7 @@ using webDiscussex.Models;
 using webDiscussex.DAO;
 using System.Web.Mvc;
 using System.Drawing;
+using System.Text.RegularExpressions;
 
 namespace webDiscussex.Controllers
 {
@@ -25,16 +26,38 @@ namespace webDiscussex.Controllers
             return View();
         }
 
-        public JsonResult ChecarEmailDisponibilidade(string emailDigitado)
+        public JsonResult EmailDisponivel(string digitado)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            var data = dao.BuscaPorEmail(emailDigitado);
+            var data = dao.BuscaPorEmail(digitado);
             if (data != null)
-            {
-                return Json(1);
-            }
+                return Json(false);
 
-            return Json(0);
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(digitado);
+
+            if (!match.Success)
+                return Json(false);
+            
+            return Json(true);
+        }
+
+        public JsonResult NomeDisponivel(string digitado)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            var data = dao.BuscaPorNome(digitado);
+            if (data != null)
+                return Json(false);
+
+            return Json(true);
+        }
+
+        public JsonResult SenhaDisponivel(string digitado)
+        {
+            if (digitado.Length < 8)
+                return Json(false);
+
+            return Json(true);
         }
 
         [HttpPost]
@@ -46,11 +69,9 @@ namespace webDiscussex.Controllers
 
             //if (ModelState.IsValid)
             //{
-
-            string caminhoArquivo = null;
-
             if (upload != null)
             {
+                string caminhoArquivo = null;
                 var uploadPath = Server.MapPath("~/img/imgUsers");
                 caminhoArquivo = Path.Combine(@uploadPath, user.NomeUsuario + Path.GetExtension(upload.FileName));
 
@@ -62,8 +83,12 @@ namespace webDiscussex.Controllers
                         upload.SaveAs(caminhoArquivo);
                         break;
                     }
+                user.ImgPerfil = "img/imgUsers/" + user.NomeUsuario + Path.GetExtension(upload.FileName);
             }
-            user.ImgPerfil = "img/imgUsers/" + user.NomeUsuario + Path.GetExtension(upload.FileName);
+            else
+            {
+                user.ImgPerfil = "img/UsuarioPadrao.png";
+            }
             dao.Adiciona(user);
             Session["emailUsuario"] = user.Email;
             Session["nomeUsuario"] = user.NomeUsuario;

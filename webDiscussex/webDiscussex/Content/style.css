@@ -282,7 +282,7 @@ footer#rodape {
 }
 
 .Input-text {
-    padding: .7em 1.2em;
+    padding: .7em 3em .7em 1.2em;
     color: inherit;
     font-family: "Yanone Kaffeesatz";
     font-size: 1em;
@@ -301,18 +301,18 @@ footer#rodape {
         box-shadow: 0.1rem 0.4rem .8rem #5e35b1;
     }
 
+    
 .Input-label {
     position: absolute;
     color: #fff;
     font-family: "Yanone Kaffeesatz";
     font-size: 1.5em;
-    margin-left: -8.5em;
+    margin-left: -9.8em;
     margin-top: 1.5em;
     opacity: 0;
     transform-origin: 0 0;
     transition: opacity .3s cubic-bezier(0.645, 0.045, 0.355, 1), transform .3s cubic-bezier(0.645, 0.045, 0.355, .5), visibility 0ms .3s cubic-bezier(0.645, 0.045, 0.355, 1), z-index 0ms .3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-
 
 .Input-text:placeholder-shown + .Input-label {
     visibility: hidden;
@@ -325,6 +325,16 @@ footer#rodape {
     z-index: 1;
     opacity: 1;
     transform: translate3d(0, calc( (50%) - (.7em * .8) - (1.7em * 1) ), 0) scale(.8);
+    transition: transform .3s, visibility 0ms, z-index 0ms;
+}
+
+
+.Input-text:not(:placeholder-shown) + .labelErro,
+.Input-text:focus:not(:placeholder-shown) + .labelErro {
+    visibility: visible;
+    z-index: 1;
+    opacity: 1;
+    transform: translate3d(0, -calc( (50%) - (.7em * .8) - (1.7em * 1) ), 0) scale(.8);
     transition: transform .3s, visibility 0ms, z-index 0ms;
 }
 label.big {

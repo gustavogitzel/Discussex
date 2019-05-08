@@ -19,16 +19,17 @@
                 <span>Cadastrar com o Google</span>
             </button>
             <div class="campoTexto">
-                <input type="text" name="user.Email" id="txtLoginEmail" class="Input-text" placeholder="Email"  data-request-url="@Url.Action("ChecarEmailDisponibilidade", "Usuario")">
-                <label for="input" class="Input-label" id="lbCadastroEmail">Email @Html.ValidationMessage("user.Email")</label>
+                <input type="text" defaultValue="Email" name="user.Email" id="txtCadastroEmail" class="Input-text" placeholder="Email" data-request-url="@Url.Action("EmailDisponivel", "Usuario")" required>
+                <label for="input"  class="Input-label" id="lbCadastroEmail">Email</label>
+
             </div>
             <div class="campoTexto">
-                <input type="text" name="user.NomeUsuario" id="txtSenha" class="Input-text" placeholder="Nome de usuário">
-                <label for="input" class="Input-label">Nome de usuário</label>
+                <input type="text" defaultValue="Nome de Usuário" name="user.NomeUsuario" id="txtCadastroNome" class="Input-text" placeholder="Nome de usuário" data-request-url="@Url.Action("NomeDisponivel", "Usuario")" required>
+                <label for="input" class="Input-label" id="lbCadastroNome">Nome de usuário</label>
             </div>
             <div class="campoTexto">
-                <input type="password" name="user.Senha" id="txtSenhaCadastro" class="Input-text" placeholder="Senha">
-                <label for="input" class="Input-label">Senha</label>
+                <input type="password" defaultValue="Senha" name="user.Senha" id="txtCadastroSenha" class="Input-text" placeholder="Senha" data-request-url="@Url.Action("SenhaDisponivel", "Usuario")" required>
+                <label for="input" class="Input-label" id="lbCadastroSenha">Senha</label>
             </div>
             <div id="fileInput">
                 <input type="file" id="file" name="upload" />

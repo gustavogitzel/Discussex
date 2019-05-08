@@ -100,12 +100,14 @@
     box-shadow: 0 4px darken(#f79159, 10%);
 }
 
-label.disponivel {
-    color: #1de9b6 !important;
+.disponivel {
+    border-bottom: solid .2em #43a047;
+    border-right: solid .2em #43a047;
 }
 
-label.indisponivel {
-    color: #1de9b6 !important;
+.indisponivel {
+    border-bottom: solid .2em #e53935;
+    border-right: solid .2em #e53935;
 }
 
 #fileInput{

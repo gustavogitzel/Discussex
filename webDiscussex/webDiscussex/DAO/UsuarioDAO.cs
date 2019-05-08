@@ -118,6 +118,16 @@ namespace webDiscussex.DAO
             }
         }
 
+        public Usuario BuscaPorNome(string nome)
+        {
+            using (var contexto = new EducacaoSexualContext())
+            {
+                var user = contexto.PP2_Usuario.Where(p => p.NomeUsuario == nome).FirstOrDefault();
+                
+                 return user;
+            }
+        }
+
         public Usuario BuscaPorId(int id)
         {
             using(var contexto = new EducacaoSexualContext())
