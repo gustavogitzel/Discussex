@@ -334,8 +334,6 @@
     //Função de verificação do traçamento de rota,
     //obtenção das coordenadas do ponto de partida, caso seja a opção "como chegar".
     function VerificacaoCalculoRota(tipoRota, latitudeDe, longitudeDe, latitudePara, longitudePara, enderecoUnidade) {
-
-
         if ($("#enderecoForaDeSaoPaulo").val() == "S") return;
 
         if ((($("#hdnTipoBusca").val() == "1") || ($("#hdnTipoBusca").val() == "2")) && $("#txtBusca").val() == "Digite o endereço") {
