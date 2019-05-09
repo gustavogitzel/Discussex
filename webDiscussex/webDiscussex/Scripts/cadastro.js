@@ -1,4 +1,7 @@
-﻿$(document).ready(() => {
+﻿var inputs = { "Email": false, "Nome de Usuário": false, "Senha": false };
+
+$(document).ready(() => {
+    
     $("#txtCadastroEmail").on("blur",() => {
         checar($("#txtCadastroEmail"));
     });
@@ -10,25 +13,28 @@
     });
 
     $("#frmCadastro").submit((e) => {
-        checarTodos();
-        e.preventDefault();
+        if (checarTodos() == false) {
+            alert("não vou dar submit");
+            e.preventDefault();
+        }
     });
 });
 
 function checarTodos()
 {
-    var a = checar($("#txtCadastroEmail"));
-    if (a == true)
-        alert("true");
+    for (var input in inputs)
+        if (inputs[input] == false)
+            return false;
+
+    return true;
 }
 
 function checar($obj) {
-    var result;
     if ($obj.val() == "") {
         $obj.removeClass("disponivel");
         $obj.removeClass("indisponivel");
         $obj.text($obj.attr("defaultValue"));
-        result = false;
+        inputs[$obj.attr("defaultValue")] = false;
     }
     else {
         var url = $obj.data('request-url');
@@ -39,7 +45,7 @@ function checar($obj) {
                 if (data) {
                     $obj.addClass("disponivel");
                     $obj.removeClass("indisponivel");
-                    result= true;
+                    inputs[$obj.attr("defaultValue")] = true;
                 }
                 else {
                     if ($obj.attr("defaultValue") == "Senha")
@@ -49,12 +55,9 @@ function checar($obj) {
                     $obj.removeClass("disponivel");
                     $obj.addClass("indisponivel");
 
-                    result =  false;
+                    inputs[$obj.attr("defaultValue")] = false;
                 }
             });
 
-
     }
-
-    return result;
 }

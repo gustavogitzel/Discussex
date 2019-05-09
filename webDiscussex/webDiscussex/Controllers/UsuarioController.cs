@@ -26,6 +26,36 @@ namespace webDiscussex.Controllers
             return View();
         }
 
+        public JsonResult NomeOuEmailExistente(string digitado)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            Usuario data;
+            if (digitado.IndexOf("@") == -1)
+                data = dao.BuscaPorNome(digitado);
+            else
+                data = dao.BuscaPorEmail(digitado);
+
+            if (data != null)
+                return Json(true);
+
+            return Json(false);
+        }
+
+        public JsonResult SenhaCorreta(string digitado)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            Usuario data;
+            if (digitado.IndexOf("@") == -1)
+                data = dao.BuscaPorNome(digitado);
+            else
+                data = dao.BuscaPorEmail(digitado);
+
+            if (data != null)
+                return Json(true);
+
+            return Json(false);
+        }
+
         public JsonResult EmailDisponivel(string digitado)
         {
             UsuarioDAO dao = new UsuarioDAO();
