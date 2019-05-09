@@ -241,6 +241,7 @@
     <Content Include="img\remediosHIV.png" />
     <Content Include="img\responder.png" />
     <Content Include="img\UsuarioPadrao.png" />
+    <Content Include="Scripts\mapa.js" />
     <Content Include="Scripts\fundoForum.js" />
     <Content Include="Scripts\jquery.nice-select.js" />
     <Content Include="Scripts\Pareto.js" />
