@@ -5,117 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <style>
-        #right-panel {
-            font-family: 'Roboto','sans-serif';
-            line-height: 30px;
-            padding-left: 10px;
-        }
-
-            #right-panel select, #right-panel input {
-                font-size: 15px;
-            }
-
-            #right-panel select {
-                width: 100%;
-            }
-
-            #right-panel i {
-                font-size: 12px;
-            }
-
-        #right-panel {
-            float: right;
-            width: 34%;
-            height: 100%;
-        }
-
-        .panel {
-            height: 100%;
-            overflow: auto;
-        }
-    </style>
-</head>
-<body>
-    <div id="right-panel">
-        <p>Total Distance: <span id="total"></span></p>
-    </div>
-    <script>
-        var directionsService;
-        var directionsDisplay;
-        function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 3.5,
-                center: { lat: -15.7801, lng: -47.9292 }
-            });
-
-            directionsService = new google.maps.DirectionsService;
-            directionsDisplay = new google.maps.DirectionsRenderer({
-                draggable: true,
-                map: map,
-                panel: document.getElementById('right-panel')
-            });
-        }
-
-        function Rota() {
-            directionsDisplay.addListener('directions_changed', function () {
-                computeTotalDistance(directionsDisplay.getDirections());
-            });
-
-            var localizacaoUsuario = document.getElementById("txtCep").value;
-
-            displayRoute(localizacaoUsuario, '13030420', directionsService,
-                directionsDisplay);
-        }
-
-        function displayRoute(origin, destination, service, display) {
-            service.route({
-                origin: origin,
-                destination: destination,
-                waypoints: null,
-                travelMode: 'DRIVING',
-                avoidTolls: true
-            }, function (response, status) {
-                if (status === 'OK') {
-                    display.setDirections(response);
-                } else {
-                    alert('Could not display directions due to: ' + status);
-                }
-            });
-        }
-
-        function computeTotalDistance(result) {
-            var total = 0;
-            var myroute = result.routes[0];
-            for (var i = 0; i < myroute.legs.length; i++) {
-                total += myroute.legs[i].distance.value;
-            }
-            total = total / 1000;
-            document.getElementById('total').innerHTML = total + ' km';
-        }
-    </script>
-</body>
-</html>
-
-
-
+<script src="~/Scripts/mapa.js"></script>
 <div class="campoEndereco">
     <input type="text" id="txtCep" class="Input-text" placeholder="CEP">
     <label for="input" class="Input-label">CEP</label>
 </div>
-<div class="campoEndereco">
-    <input type="text" id="txtNumero" class="Input-text" placeholder="Número">
-    <label for="input" class="Input-label">Número</label>
-</div>
+
 <div class="campoBotao">
     <button class="btn" onclick="Rota()">Pesquisar Casa</button>
 </div>
 
-<div id="floating-panel">
+
+<div id="opcoes">
     <b>Como Deseja Ir: </b>
     <select id="mode">
         <option value="DRIVING">Carro</option>
@@ -125,39 +26,11 @@
     </select>
 </div>
 
-<div id="map">
+<div id="rota"><p>Distânica Total: <span id="total"></span></p></div>
+<div id="map"></div>
 
-</div>
 <link href="~/Content/mapa.css" type="text/css" rel="stylesheet">
-@*<script>
-        var map;
-
-        function initMap() {
-            calculateAndDisplayRoute(directionsService, directionsDisplay);
-            document.getElementById('mode').addEventListener('change', function () {
-                calculateAndDisplayRoute(directionsService, directionsDisplay);
-            });
-        }
-
-        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-            var selectedMode = document.getElementById('mode').value;
-            directionsService.route({
-                origin: { lat: 37.77, lng: -122.447 },  // Haight.
-                destination: { lat: 37.768, lng: -122.511 },  // Ocean Beach.
-
-                travelMode: google.maps.TravelMode[selectedMode]
-            }, function (response, status) {
-                if (status == 'OK') {
-                    directionsDisplay.setDirections(response);
-                } else {
-                    window.alert('Directions request failed due to ' + status);
-                }
-            });
-        }
-    </script>*@
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4&callback=initMap">
-</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4&callback=iniciarMapa"></script>
 
 @*
     //Instanciando o mapa com as informações definidas e adicionando a instância do mapa no elemento 'map-canvas'
@@ -268,36 +141,8 @@
         this.horario = horario;
     }
 
-
-        //função criada para não exibir o link para reportar um erro no mapa
-        //é necessário criar um evento dentro do outro
-
-
-        //    google.maps.event.addListenerOnce(map, 'tilesloaded', function(){
-        //      google.maps.event.addListenerOnce(map, 'tilesloaded', function(){
-        //          OcultaInformarErro();
-        //      });
-
-        //      //para funcionar no Chrome
-        //      google.maps.event.addListenerOnce(map, 'idle', function(){
-        //          OcultaInformarErro();
-        //      });
-
-        //      google.maps.event.addListenerOnce(map, 'tilt_changed', function(){
-        //          OcultaInformarErro();
-        //      });
-        //
-        //      google.maps.event.addListenerOnce(map, 'projection_changed', function(){
-        //          OcultaInformarErro();
-        //      });
-
-        //      google.maps.event.addListenerOnce(map, 'bounds_changed', function(){
-        //   OcultaInformarErro();
-        //      });
-        //    });
-        // OcultaInformarErro();
-            AbrirInformarErro();
-        }
+           AbrirInformarErro();
+   }
 
     function AbrirInformarErro() {
 
@@ -440,8 +285,6 @@
 
     }
 
-
-
     function IsNumber(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
     }
@@ -504,11 +347,6 @@
         $("#directionsPanel").html("");
         $("#legal-warning").hide();
         directionsDisplay.setMap(null);
-        //  if (($("#hdnTipoBusca").val() == "3") && (($("#txtBusca").val() == "") || ($("#txtBusca").val() == "Digite o endereço")) && (unidadeAtendimentoSelecionada == false))
-        //  {
-        //    latitudeDe = null;
-        //    longitudeDe = null;
-        //  }
 
         if ($("#hdnTipoBusca").val() == "3") {
             if (botaoComoChegarOrigemChamada == false) {
