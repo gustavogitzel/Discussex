@@ -5,16 +5,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<link href="~/Content/mapa.css" type="text/css" rel="stylesheet">
 <script src="~/Scripts/mapa.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4&callback=iniciarMapa"></script>
 <div class="campoEndereco">
     <input type="text" id="txtCep" class="Input-text" placeholder="CEP">
     <label for="input" class="Input-label">CEP</label>
 </div>
 
 <div class="campoBotao">
-    <button class="btn" onclick="Rota()">Pesquisar Casa</button>
+    <button class="btn" id="pesquisarCasa">Pesquisar Casa</button>
 </div>
 
+<div class="campoBotao">
+    <button class="btn" id="pesquisarPosto">Buscar Camisinha</button>
+</div>
 
 <div id="opcoes">
     <b>Como Deseja Ir: </b>
@@ -28,7 +33,7 @@
 
 <div id="rota"><p>Distânica Total: <span id="total"></span></p></div>
 <div id="map"></div>
+<a href="https://maps.googleapis.com/maps/api/geocode/xml?address=13060033&key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4">AAAA</a>
 
-<link href="~/Content/mapa.css" type="text/css" rel="stylesheet">
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4&callback=iniciarMapa"></script>
-<a href = "https://maps.googleapis.com/maps/api/place/textsearch/xml?query==posto+de+saude+near+Jardim Campos Elíseos+Campinas&rankyby=distance&radius=10000&key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4"> Clica aqui</a>
+
+<a href="https://maps.googleapis.com/maps/api/place/textsearch/xml?query==posto+de+saude+near+Jardim Campos Elíseos+Campinas&rankyby=distance&radius=10000&key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4"> Clica aqui</a>

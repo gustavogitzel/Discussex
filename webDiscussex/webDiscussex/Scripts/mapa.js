@@ -1,5 +1,16 @@
 ﻿var servico;
 var direcao;
+var localizacaoUsuario;
+
+$(document).ready(() => {
+    $("#pesquisarCasa").click(() => {
+        localUsuario();
+    });
+
+    $("#pesquisarPosto").click(() => {
+        rota();
+    });
+})
 
 function iniciarMapa() {
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -15,18 +26,42 @@ function iniciarMapa() {
     });
 }
 
+function localUsuario() {
+    localizacaoUsuario = document.getElementById("txtCep").value;
+    exibirLocalizacao(localizacaoUsuario);
+}
 
-function Rota() {
+function rota() {
     direcao.addListener('direcoes', function () {
         calcularDistancia(direcao.getDirections());
     });
 
-    var localizacaoUsuario = document.getElementById("txtCep").value;
-    var modo = document.getElementById("mode").value;
-
-    exibirLocalizao(localizacaoUsuario);
-
     exibirRota(localizacaoUsuario, 'Saúde, Campinas', modo, servico, direcao);
+}
+
+
+function exibirLocalizacao(cep) {
+    $.ajax({
+        type: "GET",
+        url: "https://maps.googleapis.com/maps/api/geocode/xml?address=" + cep + "&key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4",
+        dataType: "xml",
+        success: function (xml) {
+            $(xml).find('result').each(function () {
+                var endereco = $(this).find('formatted_address').text();
+                var lat = $(this).find('location').find('lat').text();
+                var long = $(this).find('location').find('lng').text();
+
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(lat, long),
+                    title: 'Casa',
+                    map: map
+                });
+            });
+        },
+        error: function () {
+            alert("Ocorreu um erro inesperado durante o processamento.");
+        }
+    });
 }
 
 function exibirRota(origem, destino, modo, service, exibicao) {
@@ -37,7 +72,7 @@ function exibirRota(origem, destino, modo, service, exibicao) {
         avoidTolls: true
     }, function (response, status) {
         if (status === 'OK') {
-            exibicao.setDirections(response);
+            exibicao.setDirectionss(response);
         } else {
             alert('Não podemos exibir a rota, pois:  ' + status);
         }
