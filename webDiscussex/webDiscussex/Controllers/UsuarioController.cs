@@ -7,7 +7,9 @@ using webDiscussex.Models;
 using webDiscussex.DAO;
 using System.Web.Mvc;
 using System.Drawing;
+using Microsoft.Owin.Host.SystemWeb;
 using System.Text.RegularExpressions;
+using System.Security.Claims;
 
 namespace webDiscussex.Controllers
 {
@@ -137,11 +139,39 @@ namespace webDiscussex.Controllers
             return View();
         }
 
+        public void SignIn(string ReturnUrl = "/", string type = "")
+        {
+            if(!Request.IsAuthenticated)
+            {
+                if(type == "Google")
+                {
+                    HttpContext.GetOwinContext().Authentication.Challenge(new Microsoft.Owin.Security.AuthenticationProperties { RedirectUri = "/LoginWithGoogle"}, "Google");
+                }
+            }
+        }
+
+        public ActionResult LoginWithGoogle()
+        {
+            var claimsPrincipal = HttpContext.User.Identity as ClaimsIdentity;
+            var loginInfo = Usuario.GetLoginInfo(claimsPrincipal);
+            if (loginInfo == null)
+                return RedirectToAction("Index");
+
+            return RedirectToAction("index");
+
+        }
+
         public ActionResult Configuracoes()
         {
             ViewBag.EhCadastro = true;
             ViewBag.EstaLogado = true;
             return View();
+        }]
+
+        public ActionResult SignOut()
+        {
+            HttpContext.GetOwinContext().Authentication.SignOut();
+            return RedirectToAction("Index");
         }
 
         public ActionResult Sair()

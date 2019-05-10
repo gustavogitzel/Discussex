@@ -152,5 +152,15 @@ namespace webDiscussex.DAO
             }
                 
         }
+
+        public IList<Usuario> Lista()
+        {
+            using (var contexto = new EducacaoSexualContext())
+            {
+                IList<Usuario> lista = contexto.PP2_Usuario.ToList();
+                
+                return lista;
+            }
+        }
     }
 }

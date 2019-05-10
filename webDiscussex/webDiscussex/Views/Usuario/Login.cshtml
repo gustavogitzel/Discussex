@@ -13,10 +13,10 @@
         <div class="col col-2">
             <form id="frmLogin" method="post" action="/Usuario/Logar">
                 <h1 id="tituloLogin">INSIRA SEUS DADOS</h1>
-                <button class="btn google" type="button" name="btnLoginGoogle" id="btnLoginGoogle" value="Entrar">
+                <a class="btn google" href="@ActionUrl("")" name="btnLoginGoogle" id="btnLoginGoogle" value="Entrar">
                     <i class="fab fa-google"></i>
                     <span>Entrar com o Google</span>
-                </button>
+                </a>
                 <div class="campoTexto">
                     <input type="text" name="logar" id="txtLoginEmailNome" class="Input-text" placeholder="Usuário ou email" data-request-url="@Url.Action("ChecarEmailDisponibilidade", "Usuario")">
                     <label for="input" class="Input-label">Usuário ou email</label>

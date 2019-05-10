@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Google;
@@ -17,8 +18,22 @@ namespace webDiscussex.App_Start
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
                 ClientId = "114939003485-il8iu10ogk6qifvh9mnmumfdr5i34n8b.apps.googleusercontent.com",
-                ClientSecret = "rMeUYsLvrPfvzU0sW6X3NJTQ"
+                ClientSecret = "rMeUYsLvrPfvzU0sW6X3NJTQ",
+                CallbackPath = new PathString("/GoogleLoginCallback"),
+                Provider = new GoogleOAuth2AuthenticationProvider()
+                {
+                    OnAuthenticated = (context) =>
+                    {
+                        context.Identity.AddClaim(new Claim("urn:google:accesstoken", context.AccessToken,
+                            ClaimValueTypes.String, "Google"));
+                        return Task.FromResult(0);
+                    }
+                }
+
+
             });
+
+
         }
     }
 }

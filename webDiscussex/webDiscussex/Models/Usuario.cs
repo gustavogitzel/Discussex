@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net;
+using System.Security.Claims;
 using System.Web;
+using webDiscussex.DAO;
 
 namespace webDiscussex.Models
 {
@@ -23,5 +27,32 @@ namespace webDiscussex.Models
         public string Senha { get; set; }
 
         public string ImgPerfil { get; set; }
+
+        public static Usuario GetLoginInfo(ClaimsIdentity identity)
+        {
+            if(identity.Claims.Count() == 0 || identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Email) == null)
+                return null;
+            var dao = new UsuarioDAO();
+            var usuarios = dao.Lista();
+            string codAtual = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value;
+            var usuarioAtual = usuarios.ToList().Find(u => u.CodUsuario == codAtual);
+            string foto = "";
+            var accessToken = identity.Claims.Where(c => c.Type.Equals("urn:google:accesstoken")).Select(c => c.Value).FirstOrDefault();
+            Uri apiRequestUri = new Uri("https://www.google.com/oauth2/v2/userinfo?access token=" + accessToken);
+            using (var webClient = new WebClient())
+            {
+                var json = webClient.DownloadString(apiRequestUri);
+                dynamic result = JsonConvert.DeserializeObject(json);
+                foto = result.picture;
+            }
+            if(usuarioAtual == null)
+            {
+                usuarioAtual = new Usuario();
+                usuarioAtual.CodUsuario = codAtual;
+                usuarioAtual.NomeUsuario = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name).Value;
+                usuarioAtual.Email = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Email).Value;
+               // usuarioAtual.Senha = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.).Value;
+            }
+        }
     }
 }
