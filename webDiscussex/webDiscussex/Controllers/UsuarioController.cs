@@ -219,10 +219,17 @@ namespace webDiscussex.Controllers
         {
             UsuarioDAO dao = new UsuarioDAO();
             Usuario user = dao.Login(logar, senha);
-            Session["emailUsuario"] = user.Email;
-            Session["nomeUsuario"] = user.NomeUsuario;
-            Session["imgPerfil"] = user.ImgPerfil;
-            return RedirectToAction("Index", "Home");
+            if (user != null)
+            {
+                Session["emailUsuario"] = user.Email;
+                Session["nomeUsuario"] = user.NomeUsuario;
+                Session["imgPerfil"] = user.ImgPerfil;
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View("Login");
         }
+        
+
     }
 }

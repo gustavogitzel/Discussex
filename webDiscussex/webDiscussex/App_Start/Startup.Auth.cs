@@ -16,9 +16,8 @@ namespace webDiscussex.App_Start
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "781467258809-pqp31ot7hutff31m4p3a5nceld3illf3.apps.googleusercontent.com",
-                ClientSecret = "G5Osq0DeQSd2yJNxQx8IRiWK"
-
+                ClientId = "114939003485-il8iu10ogk6qifvh9mnmumfdr5i34n8b.apps.googleusercontent.com",
+                ClientSecret = "rMeUYsLvrPfvzU0sW6X3NJTQ"
             });
         }
     }

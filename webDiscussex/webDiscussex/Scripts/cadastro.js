@@ -1,7 +1,9 @@
 ﻿var inputs = { "Email": false, "Nome de Usuário": false, "Senha": false };
 
 $(document).ready(() => {
-    
+    $("#btnLoginGoogle").click(() => {
+        window.location.href = "/api/Account/ExternalLogins?provider=Google&response_type=token&client_id=self&redirect_uri=http%3a%2f%2flocalhost%3a61358%2fLogin.html&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
+        });
     $("#txtCadastroEmail").on("blur",() => {
         checar($("#txtCadastroEmail"));
     });
@@ -14,7 +16,6 @@ $(document).ready(() => {
 
     $("#frmCadastro").submit((e) => {
         if (checarTodos() == false) {
-            alert("não vou dar submit");
             e.preventDefault();
         }
     });

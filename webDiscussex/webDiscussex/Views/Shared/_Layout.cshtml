@@ -40,6 +40,11 @@
                             Login
                         </li>
                     </a>
+                    <a href="~/Usuario/Cadastro">
+                        <li>
+                            Cadastro
+                        </li>
+                    </a>
                 }
                 else
                 {
@@ -54,20 +59,10 @@
                         </li>
                     </a>
                 }
-
-                @if (!ViewBag.EhCadastro)
-                 {
-                    <a href="~/Usuario/Cadastro">
-                        <li>
-                            Cadastro
-                        </li>
-                    </a>
-                 }
-
             </ul>
         </nav>
     </header>
-  
+
     @RenderBody()
     <footer id="rodape">
         <div id="footerContent">

@@ -71,14 +71,15 @@
 }
 
     [type="file"] + label {
-        background: #f15d22;
-        border: none;
+        background-color: transparent;
+        border: .2em solid #42a5f5;
         border-radius: 5px;
         color: #fff;
         cursor: pointer;
         display: inline-block;
         font-family: 'Yanone Kaffeesatz', sans-serif;
-        font-size: 1em;
+        font-size: 1.3em;
+        letter-spacing: .05em;
         font-weight: bold;
         outline: none;
         padding: 1rem 50px;
@@ -86,19 +87,11 @@
         vertical-align: middle
     }
 
-[type="file"] + label:hover{
-    background-color: darken(#f15d22, 10%);
-}
+        [type="file"] + label:hover {
+            background: #42a5f5;
+        }
 
-[type="file"] + label.btn-1 {
-    background-color: #f79159;
-    box-shadow: 0 6px darken(#f79159, 10%);
-}
 
-[type="file"] + label.btn-1:hover
-{
-    box-shadow: 0 4px darken(#f79159, 10%);
-}
 
 .disponivel {
     border-bottom: solid .2em #43a047;

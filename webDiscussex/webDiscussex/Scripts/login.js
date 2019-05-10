@@ -1,62 +1,56 @@
-﻿var inputs = { "Email": false, "Nome de Usuário": false, "Senha": false };
-
+﻿
 $(document).ready(() => {
-
-    $("#txtCadastroEmail").on("blur", () => {
-        checar($("#txtCadastroEmail"));
-    });
-    $("#txtCadastroNome").on("blur", () => {
-        checar($("#txtCadastroNome"));
-    });
-    $("#txtCadastroSenha").on("blur", () => {
-        checar($("#txtCadastroSenha"));
-    });
-
     $("#frmCadastro").submit((e) => {
-        if (checarTodos() == false) {
-            alert("não vou dar submit");
             e.preventDefault();
-        }
+        
     });
 });
 
-function checarTodos() {
-    for (var input in inputs)
-        if (inputs[input] == false)
-            return false;
 
-    return true;
+function getAccessToken() {
+    if (location.hash) {
+        if (location.hash.split('access_token=')) {
+            var accessToken = location.hash.split('access_token=')[1].split('&')[0];
+            if (accessToken) {
+                isUserRegistered(accessToken);
+            }
+        }
+    }
 }
 
-function checar($obj) {
-    if ($obj.val() == "") {
-        $obj.removeClass("disponivel");
-        $obj.removeClass("indisponivel");
-        $obj.text($obj.attr("defaultValue"));
-        inputs[$obj.attr("defaultValue")] = false;
-    }
-    else {
-        var url = $obj.data('request-url');
-        $.post(url, {
-            digitado: $obj.val()
+function isUserRegistered(accessToken) {
+    $.ajax({
+        url: '/api/Account/UserInfo',
+        method: 'GET',
+        headers: {
+            'content-type': 'application/JSON',
+            'Authorization': 'Bearer ' + accessToken
         },
-            function (data) {
-                if (data) {
-                    $obj.addClass("disponivel");
-                    $obj.removeClass("indisponivel");
-                    inputs[$obj.attr("defaultValue")] = true;
-                }
-                else {
-                    if ($obj.attr("defaultValue") == "Senha")
-                        $obj.siblings().text($obj.attr("defaultValue") + " inválida - 8 dígitos no mínimo");
-                    else
-                        $obj.siblings().text($obj.attr("defaultValue") + " inválido");
-                    $obj.removeClass("disponivel");
-                    $obj.addClass("indisponivel");
+        success: function (response) {
+            if (response.HasRegistered) {
+                localStorage.setItem('accessToken', accessToken);
+                localStorage.setItem('userName', response.Email);
+                window.location.href = "Data.html";
+            }
+            else {
+                signupExternalUser(accessToken);
+            }
+        }
+    });
+}
 
-                    inputs[$obj.attr("defaultValue")] = false;
-                }
-            });
 
-    }
+function signupExternalUser(accessToken) {
+    $.ajax({
+        url: '/api/Account/RegisterExternal',
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        },
+        success: function () {
+            window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3a%2f%2flocalhost%3a61358%2fLogin.html&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
+        }
+    });
+
 }
