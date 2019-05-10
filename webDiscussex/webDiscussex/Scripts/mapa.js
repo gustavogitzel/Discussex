@@ -23,8 +23,10 @@ function Rota() {
 
     var localizacaoUsuario = document.getElementById("txtCep").value;
     var modo = document.getElementById("mode").value;
-    
-    exibirRota(localizacaoUsuario, '13030420', modo, servico, direcao);
+
+    exibirLocalizao(localizacaoUsuario);
+
+    exibirRota(localizacaoUsuario, 'Saúde, Campinas', modo, servico, direcao);
 }
 
 function exibirRota(origem, destino, modo, service, exibicao) {
