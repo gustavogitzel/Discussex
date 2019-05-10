@@ -336,6 +336,7 @@
     <Content Include="img\LoginImg.png" />
     <Content Include="img\Logo.png" />
     <Content Include="img\LogoDark.png" />
+    <Content Include="Scripts\imagensGoogle\markerCasa.png" />
     <Content Include="img\mitosEVerdades.png" />
     <Content Include="img\perguntar.png" />
     <Content Include="img\quizIntro.png" />

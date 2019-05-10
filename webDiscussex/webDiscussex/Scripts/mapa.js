@@ -2,6 +2,9 @@
 var direcao;
 var localizacaoUsuario;
 
+var marcadorCasa;
+
+
 $(document).ready(() => {
     $("#pesquisarCasa").click(() => {
         localUsuario();
@@ -13,7 +16,7 @@ $(document).ready(() => {
 })
 
 function iniciarMapa() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var mapa = new google.maps.Map(document.getElementById('map'), {
         zoom: 3.5,
         center: { lat: -15.7801, lng: -47.9292 }
     });
@@ -51,17 +54,37 @@ function exibirLocalizacao(cep) {
                 var lat = $(this).find('location').find('lat').text();
                 var long = $(this).find('location').find('lng').text();
 
-                marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(lat, long),
+                var minhaLatlng = new google.maps.LatLng(lat, long);
+
+                var mapOptions = {
+                    zoom: 16,
+                    center: minhaLatlng
+                }
+                var mapas = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                //var imagem = "~/imagensGoogle/markerCasa.png"
+                marcadorCasa = new google.maps.Marker({
+                    position: minhaLatlng,
                     title: 'Casa',
-                    map: map
+                    animation: google.maps.Animation.DROP,
+                    //icone: imagem
                 });
+                marcadorCasa.addListener('click', toggleBounce);
+                marcadorCasa.setMap(mapas);
             });
         },
         error: function () {
             alert("Ocorreu um erro inesperado durante o processamento.");
         }
     });
+}
+
+function toggleBounce() {
+    if (marcadorCasa.getAnimation() !== null) {
+        marcadorCasa.setAnimation(null);
+    } else {
+        marcadorCasa.setAnimation(google.maps.Animation.BOUNCE);
+    }
 }
 
 function exibirRota(origem, destino, modo, service, exibicao) {
