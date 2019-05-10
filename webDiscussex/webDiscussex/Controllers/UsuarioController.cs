@@ -145,7 +145,7 @@ namespace webDiscussex.Controllers
             {
                 if(type == "Google")
                 {
-                    HttpContext.GetOwinContext().Authentication.Challenge(new Microsoft.Owin.Security.AuthenticationProperties { RedirectUri = "/LoginWithGoogle"}, "Google");
+                    HttpContext.GetOwinContext().Authentication.Challenge(new Microsoft.Owin.Security.AuthenticationProperties { RedirectUri = "/Usuario/LoginWithGoogle" }, "Google");
                 }
             }
         }
@@ -155,9 +155,9 @@ namespace webDiscussex.Controllers
             var claimsPrincipal = HttpContext.User.Identity as ClaimsIdentity;
             var loginInfo = Usuario.GetLoginInfo(claimsPrincipal);
             if (loginInfo == null)
-                return RedirectToAction("Index");
+                return RedirectToAction("Login", "Usuario");
 
-            return RedirectToAction("index");
+            return RedirectToAction("Index", "Home");
 
         }
 
@@ -166,7 +166,7 @@ namespace webDiscussex.Controllers
             ViewBag.EhCadastro = true;
             ViewBag.EstaLogado = true;
             return View();
-        }]
+        }
 
         public ActionResult SignOut()
         {

@@ -162,5 +162,25 @@ namespace webDiscussex.DAO
                 return lista;
             }
         }
+
+        public void Atualiza(Usuario user)
+        {
+            using (var contexto = new EducacaoSexualContext())
+            {
+                contexto.Entry(user).State = EntityState.Modified;
+                contexto.SaveChanges();
+            }
+        }
+
+        public int AddAndReturn(Usuario novo)
+        {
+            using (var contexto = new EducacaoSexualContext())
+            {
+                contexto.PP2_Usuario.Add(novo);
+                contexto.SaveChanges();
+            }
+
+            return novo.Id;
+        }
     }
 }
