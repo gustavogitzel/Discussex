@@ -29,49 +29,5 @@ namespace webDiscussex.Models
         public string ImgPerfil { get; set; }
 
         public string CodUsuario { get; set; }
-
-        public static Usuario GetLoginInfo(ClaimsIdentity identity)
-        {
-            if(identity.Claims.Count() == 0 || identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Email) == null)
-                return null;
-            var dao = new UsuarioDAO();
-            var usuarios = dao.Lista();
-            string codAtual = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value;
-            var usuarioAtual = usuarios.ToList().Find(u => u.CodUsuario == codAtual);
-            string foto = null;
-            /*var accessToken = identity.Claims.Where(c => c.Type.Equals("urn:google:accesstoken")).Select(c => c.Value).FirstOrDefault();
-            Uri apiRequestUri = new Uri("https://www.google.com/oauth2/v2/userinfo?access token=" + accessToken);
-            using (var webClient = new WebClient())
-            {
-                var json = webClient.DownloadString(apiRequestUri);
-                dynamic result = JsonConvert.DeserializeObject(json);
-                foto = result.picture;
-            }*/
-            if(usuarioAtual == null)
-            {
-                usuarioAtual = new Usuario();
-                usuarioAtual.CodUsuario = codAtual;
-                usuarioAtual.NomeUsuario = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name).Value;
-                usuarioAtual.Email = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Email).Value;
-                usuarioAtual.Senha = null;
-                usuarioAtual.Id = dao.AddAndReturn(usuarioAtual);
-            }
-            else
-            {
-                string email = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Email).Value;
-                string nome = identity.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name).Value;
-
-                if(usuarioAtual.Email != email || usuarioAtual.NomeUsuario != nome || usuarioAtual.ImgPerfil != foto)
-                {
-                    usuarioAtual.Email = email;
-                    usuarioAtual.NomeUsuario = nome;
-                    usuarioAtual.ImgPerfil = foto;
-                    dao.Atualiza(usuarioAtual);
-                }
-
-            }
-
-            return usuarioAtual;
-        }
     }
 }
