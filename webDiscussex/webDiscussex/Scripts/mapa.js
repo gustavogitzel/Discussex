@@ -62,7 +62,7 @@ function exibirLocalizacao(cep) {
                 }
                 var mapas = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-                //var imagem = "~/imagensGoogle/markerCasa.png"
+                //var imagem = "..imagensGoogle/markerCasa.png"
                 marcadorCasa = new google.maps.Marker({
                     position: minhaLatlng,
                     title: 'Casa',
