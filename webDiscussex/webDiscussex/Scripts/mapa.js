@@ -1,9 +1,7 @@
 ﻿var servico;
 var direcao;
-var localizacaoUsuario;
-
-var marcadorCasa;
-
+var endereco;
+var latLngUser;
 
 $(document).ready(() => {
     $("#pesquisarCasa").click(() => {
@@ -11,7 +9,7 @@ $(document).ready(() => {
     });
 
     $("#pesquisarPosto").click(() => {
-        rota();
+        acharPostos();
     });
 })
 
@@ -34,15 +32,6 @@ function localUsuario() {
     exibirLocalizacao(localizacaoUsuario);
 }
 
-function rota() {
-    direcao.addListener('direcoes', function () {
-        calcularDistancia(direcao.getDirections());
-    });
-
-    exibirRota(localizacaoUsuario, 'Saúde, Campinas', modo, servico, direcao);
-}
-
-
 function exibirLocalizacao(cep) {
     $.ajax({
         type: "GET",
@@ -50,26 +39,25 @@ function exibirLocalizacao(cep) {
         dataType: "xml",
         success: function (xml) {
             $(xml).find('result').each(function () {
-                var endereco = $(this).find('formatted_address').text();
+                endereco = $(this).find('formatted_address').text();
                 var lat = $(this).find('location').find('lat').text();
                 var long = $(this).find('location').find('lng').text();
 
-                var minhaLatlng = new google.maps.LatLng(lat, long);
+                latLngUser = new google.maps.LatLng(lat, long);
 
                 var mapOptions = {
                     zoom: 16,
-                    center: minhaLatlng
+                    center: latLngUser
                 }
                 var mapas = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-                //var imagem = "..imagensGoogle/markerCasa.png"
-                marcadorCasa = new google.maps.Marker({
-                    position: minhaLatlng,
+                var image = '../img/markerCasa.png'
+
+                var marcadorCasa = new google.maps.Marker({
+                    position: latLngUser,
                     title: 'Casa',
-                    animation: google.maps.Animation.DROP,
-                    //icone: imagem
+                    icon: image
                 });
-                marcadorCasa.addListener('click', toggleBounce);
                 marcadorCasa.setMap(mapas);
             });
         },
@@ -79,13 +67,51 @@ function exibirLocalizacao(cep) {
     });
 }
 
-function toggleBounce() {
-    if (marcadorCasa.getAnimation() !== null) {
-        marcadorCasa.setAnimation(null);
-    } else {
-        marcadorCasa.setAnimation(google.maps.Animation.BOUNCE);
-    }
+function acharPostos() {
+    $.ajax({
+        type: "GET",
+        url: "https://maps.googleapis.com/maps/api/place/textsearch/xml?query==posto+de+saude+near+" + endereco + "&rankyby=distance&radius=10000&key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4",
+        dataType: "xml",
+        success: function (xml) {
+            $(xml).find('result').each(function () {
+                var nomes = $(this).find('name').text();
+            });
+        },
+        error: function () {
+            alert("Ocorreu um erro inesperado durante o processamento.");
+        }
+    });
 }
+
+function adicionarMarcador(latitude, longitude) {
+    var minhaLatlng = new google.maps.LatLng(latitude, longitude);
+
+    var mapOptions = {
+        zoom: 8,
+        center: latLngUser
+    }
+
+    var mapas = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+    var image = '../img/markerPosto.png'
+
+    var marcadorPosto = new google.maps.Marker({
+        position: minhaLatlng,
+        title: 'Camisinha aqui',
+        icon: image
+    });
+    marcadorPosto.setMap(mapas);
+}
+
+
+function rota() {
+    direcao.addListener('direcoes', function () {
+        calcularDistancia(direcao.getDirections());
+    });
+
+    exibirRota(endereco, 'Saúde, Campinas', modo, servico, direcao);
+}
+
 
 function exibirRota(origem, destino, modo, service, exibicao) {
     service.route({
