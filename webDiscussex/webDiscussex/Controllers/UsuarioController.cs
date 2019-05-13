@@ -149,18 +149,14 @@ namespace webDiscussex.Controllers
                 }
             }
         }
+        
 
         public ActionResult LoginWithGoogle()
         {
             var claimsPrincipal = HttpContext.User.Identity as ClaimsIdentity;
-            var user = UsuarioGoogle.GetLoginInfo(claimsPrincipal);
+            var user = Usuario.GetLoginInfo(claimsPrincipal);
             if (user == null)
                 return RedirectToAction("Login", "Usuario");
-
-            Session["emailUsuario"] = user.Email;
-            Session["nomeUsuario"] = user.Nome;
-            Session["imgPerfil"] = user.ImgPerfil;
-            Session["ehGoogle"] = true;
 
             return RedirectToAction("Index", "Home");
 
@@ -184,9 +180,6 @@ namespace webDiscussex.Controllers
             Session["emailUsuario"] = null;
             Session["nomeUsuario"] = null;
             Session["imgPerfil"] = null;
-
-            if (Session["EhGoogle"] != null)
-                return SignOut();
 
 
             return RedirectToAction("Index", "Home");
