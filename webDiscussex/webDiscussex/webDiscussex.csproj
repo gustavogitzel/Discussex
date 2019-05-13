@@ -291,6 +291,30 @@
     <Content Include="Content\style.css" />
     <Content Include="Content\tema.css" />
     <Content Include="Global.asax" />
+    <Content Include="imgBastidores\1.jpeg" />
+    <Content Include="imgBastidores\10.jpg" />
+    <Content Include="imgBastidores\11.jpg" />
+    <Content Include="imgBastidores\12.jpeg" />
+    <Content Include="imgBastidores\13.jpg" />
+    <Content Include="imgBastidores\14.jpg" />
+    <Content Include="imgBastidores\15.jpg" />
+    <Content Include="imgBastidores\16.jpg" />
+    <Content Include="imgBastidores\17.jpg" />
+    <Content Include="imgBastidores\18.jpg" />
+    <Content Include="imgBastidores\19.jpg" />
+    <Content Include="imgBastidores\2.jpeg" />
+    <Content Include="imgBastidores\20.jpeg" />
+    <Content Include="imgBastidores\21.jpg" />
+    <Content Include="imgBastidores\22.jpeg" />
+    <Content Include="imgBastidores\23.jpg" />
+    <Content Include="imgBastidores\24.jpg" />
+    <Content Include="imgBastidores\3.jpg" />
+    <Content Include="imgBastidores\4.jpeg" />
+    <Content Include="imgBastidores\5.jpeg" />
+    <Content Include="imgBastidores\6.jpg" />
+    <Content Include="imgBastidores\7.jpeg" />
+    <Content Include="imgBastidores\8.jpeg" />
+    <Content Include="imgBastidores\9.jpeg" />
     <Content Include="img\aa.png" />
     <Content Include="img\corpo\imgCorpo.png" />
     <Content Include="img\corpo\imgHomemExterno.png" />
@@ -425,6 +449,7 @@
     <Content Include="Views\ForumDiscussex\Responder.cshtml" />
     <Content Include="Views\Home\Pareto.cshtml" />
     <Content Include="Views\Home\Mapa.cshtml" />
+    <Content Include="Views\Home\Bastidores.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

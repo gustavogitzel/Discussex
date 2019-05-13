@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Bastidores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["emailUsuario"] == null)
+    {
+        ViewBag.EhCadastro = false;
+    }
+    else
+    {
+        ViewBag.EhCadastro = true;
+    }
+}
+<link type="text/css" rel="stylesheet" href="~/Content/sobreNos.css">
+<div class="container textoSobreNos">
+    <div class="row">
+        <div class="col" id="bordao">
+            <h3><span class="azul">Estudar</span><span class="vermelho">Compartilhar</span><span class="verde">Promover</span><span class="amarelo">Pesquisar</span></h3>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+
+</div>
+
