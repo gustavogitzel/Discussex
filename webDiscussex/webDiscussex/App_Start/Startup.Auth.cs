@@ -18,7 +18,6 @@ namespace webDiscussex.App_Start
             // Para obter mais informações sobre como configurar seu aplicativo, visite https://go.microsoft.com/fwlink/?LinkID=316888
             app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
             
-
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
                 ClientId = "114939003485-il8iu10ogk6qifvh9mnmumfdr5i34n8b.apps.googleusercontent.com",

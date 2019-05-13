@@ -153,17 +153,17 @@ namespace webDiscussex.DAO
                 
         }
 
-        public IList<UsuarioGoogle> Lista()
+        public IList<Usuario> Lista()
         {
             using (var contexto = new EducacaoSexualContext())
             {
-                IList<UsuarioGoogle> lista = contexto.PP2_UsuarioGoogle.ToList();
+                IList<Usuario> lista = contexto.PP2_Usuario.ToList();
                 
                 return lista;
             }
         }
 
-        public void Atualiza(UsuarioGoogle user)
+        public void Atualiza(Usuario user)
         {
             using (var contexto = new EducacaoSexualContext())
             {
