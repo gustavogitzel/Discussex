@@ -5,7 +5,8 @@
     ViewBag.EstaLogado = false;
 }
 <link href="~/Content/login.css" type="text/css" rel="stylesheet">
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="114939003485-s5ne981iaavopp7op4t51b25tkih1eg0.apps.googleusercontent.com">
     <article id="corpo" class="container row">
         <div class="col col-2" id="imgLogin">
             <img src="~/img/LoginImg.png">
@@ -13,10 +14,7 @@
         <div class="col col-2">
             <form id="frmLogin" method="post" action="/Usuario/Logar">
                 <h1 id="tituloLogin">INSIRA SEUS DADOS</h1>
-                <a class="btn google" href="@Url.Action("SignIn", new { type = "Google"})" name="btnLoginGoogle" id="btnLoginGoogle" value="Entrar">
-                    <i class="fab fa-google"></i>
-                    <span>Entrar com o Google</span>
-                </a>
+                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-onload="false"></div>
                 <div class="campoTexto">
                     <input type="text" name="logar" id="txtLoginEmailNome" class="Input-text" placeholder="Usuário ou email" data-request-url="@Url.Action("ChecarEmailDisponibilidade", "Usuario")">
                     <label for="input" class="Input-label">Usuário ou email</label>
@@ -32,3 +30,26 @@
            
         </div>
     </article>
+
+
+<script>
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        $.ajax({
+            url: "/Usuario/LogarGoogle",
+            type: "POST",
+            data: { email: profile.getEmail(), nome: profile.getName(), imgPerfil: profile.getImageUrl()},
+            success: function (mydata) {
+                alert("Success");
+            }
+        });
+
+        alert("oi")
+    }
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
+    }
+</script>
