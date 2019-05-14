@@ -41,5 +41,14 @@ namespace webDiscussex.Controllers
         {
             return View();
         }
+
+        public ActionResult Bastidores()
+        {
+            var dao = new BastidoresDAO();
+
+            ViewBag.Bastidores = dao.Lista();
+
+            return View();
+        }
     }
 }

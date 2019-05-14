@@ -28,7 +28,8 @@ namespace webDiscussex.DAO
         public DbSet<Pergunta> PP2_Pergunta { get; set; }
 
         public DbSet<TResposta> PP2_Resposta { get; set; }
-        
+
+        public DbSet<Bastidores> PP2_Bastidores { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

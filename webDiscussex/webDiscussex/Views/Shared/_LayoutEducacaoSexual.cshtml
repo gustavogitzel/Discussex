@@ -82,18 +82,17 @@
                     </div>
                     <div class="col col-2 texto">
                         <h1 class="tituloTema">@ViewBag.Tabela[i].Titulo</h1>
-                        @{
-        string source = ViewBag.Tabela[i].Texto;
-        string[] stringSeparators = new string[] { "<p>", "</p>" };
-        string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
-        foreach (string paragrafo in result)
-        {
-                    <p>
-                        @paragrafo
-                    </p>
-}
-
-                        }
+               @{
+                    string source = ViewBag.Tabela[i].Texto;
+                    string[] stringSeparators = new string[] { "<p>", "</p>" };
+                    string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (string paragrafo in result)
+                    {
+                        <p>
+                            @paragrafo
+                        </p>
+                    }
+                }
                     </div>
                 </section>
             }
@@ -102,26 +101,26 @@
                 <section class='b row'>
                     <div class="col col-2 texto">
                         <h1 class="tituloTema">@ViewBag.Tabela[i].Titulo</h1>
-                        @{
-        string source = ViewBag.Tabela[i].Texto;
-        string[] stringSeparators = new string[] { "<p>", "</p>" };
-        string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
-        foreach (string paragrafo in result)
-        {
-                    <p>
-                        @paragrafo
-                    </p>
-}
-
-                        }
-                    </div>
-                    <div class="col col-2 divImagem">
-                        <img  src="~/@ViewBag.ListaImagens[i].Link">
-                    </div>
+               @{
+                    string source = ViewBag.Tabela[i].Texto;
+                    string[] stringSeparators = new string[] { "<p>", "</p>" };
+                    string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (string paragrafo in result)
+                    {
+                        <p>
+                            @paragrafo
+                        </p>
+                    }
+                }
+                </div>
+                   <div class="col col-2 divImagem">
+                      <img  src="~/@ViewBag.ListaImagens[i].Link">
+                   </div>
                 </section>
             }
-        }
+         }
     </div>
+
     @RenderBody()
 
     <footer id="rodape">
@@ -135,7 +134,7 @@
                         <a href="">SOBRE NÓS</a>
                     </li>
                     <li>
-                        <a href="">BACKEND</a>
+                        <a href="~/Home/Bastidores">BACKEND</a>
                     </li>
                     <li class="iconSocialMedia">
                         <a href="">

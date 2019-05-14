@@ -1,114 +1,115 @@
 ﻿
 @{
     ViewBag.Title = "Quiz";
-    Layout = "~/Views/Shared/_LayoutQuiz.cshtml";
+    Layout = "~/Views/Shared/_LayoutQuizMito.cshtml";
 }
-
+<link href="~/Content/quiz.css" type="text/css" rel="stylesheet" />
+<script src="~/Scripts/quiz.js"></script>
 <div id='intros' class="container">
     @for (int i = 0; i < ViewBag.Tabela.Count; i++)
     {
         if (ViewBag.Tabela[i].Id % 2 != 0)
-            {
-                <section class='a row'>
-                    <div class="col quiz">
-                        <p class="pergunta">@ViewBag.Tabela[i].Pergunta</p>
-                        <ul>
+        {
+            <section class='a row'>
+                <div class="col quiz">
+                    <p class="pergunta">@ViewBag.Tabela[i].Pergunta</p>
+                    <ul>
+                        <li>
+                            <label class="radioContainer" for="selA_@i" id="opcaoA_@i">
+                                <input type="radio" name="opcao_@i" id="selA_@i">
+                                <span class="circle"></span>
+                                @ViewBag.Tabela[i].OpcaoA
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radioContainer" for="selB_@i" id="opcaoB_@i">
+
+                                <input type="radio" name="opcao_@i" id="selB_@i">
+                                <span class="circle"></span>
+                                @ViewBag.Tabela[i].OpcaoB
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radioContainer" for="selC_@i" id="opcaoC_@i">
+
+                                <input type="radio" name="opcao_@i" id="selC_@i">
+                                <span class="circle"></span>
+                                @ViewBag.Tabela[i].OpcaoC
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radioContainer" for="selD_@i" id="opcaoD_@i">
+
+                                <input type="radio" name="opcao_@i" id="selD_@i">
+                                <span class="circle"></span>
+                                @ViewBag.Tabela[i].OpcaoD
+                            </label>
+                        </li>
+
+                        @if (ViewBag.Tabela[i].OpcaoE != null)
+                        {
                             <li>
-                                <label class="radioContainer" for="selA_@i" id="opcaoA_@i">
-                                    <input type="radio" name="opcao_@i" id="selA_@i">
+                                <label class="radioContainer" for="selE_@i" id="opcaoE_@i">
+
+                                    <input type="radio" name="opcao_@i" id="selE_@i" />
                                     <span class="circle"></span>
-                                    @ViewBag.Tabela[i].OpcaoA
+                                    @ViewBag.Tabela[i].OpcaoE
                                 </label>
                             </li>
+                        }
+                    </ul>
+                </div>
+            </section>
+        }
+        else
+        {
+            <section class='b row'>
+                <div class="col quiz">
+                    <p class="pergunta">@ViewBag.Tabela[i].Pergunta</p>
+                    <ul>
+                        <li>
+                            <label class="radioContainer" for="selA_@i" id="opcaoA_@i">
+
+                                <input type="radio" name="opcao_@i" id="selA_@i">
+                                <span class="circle"></span> @ViewBag.Tabela[i].OpcaoA
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radioContainer" for="selB_@i" id="opcaoB_@i">
+
+                                <input type="radio" name="opcao_@i" id="selB_@i">
+                                <span class="circle"></span>@ViewBag.Tabela[i].OpcaoB
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radioContainer" for="selC_@i" id="opcaoC_@i">
+
+                                <input type="radio" name="opcao_@i" id="selC_@i">
+                                <span class="circle"></span>@ViewBag.Tabela[i].OpcaoC
+                            </label>
+                        </li>
+                        <li>
+                            <label class="radioContainer" for="selD_@i" id="opcaoD_@i">
+
+                                <input type="radio" name="opcao_@i" id="selD_@i">
+                                <span class="circle"></span>@ViewBag.Tabela[i].OpcaoD
+                            </label>
+                        </li>
+
+                        @if (ViewBag.Tabela[i].OpcaoE != null)
+                        {
                             <li>
-                                <label class="radioContainer" for="selB_@i" id="opcaoB_@i">
+                                <label class="radioContainer" for="selE_@i" id="opcaoE_@i">
 
-                                    <input type="radio" name="opcao_@i" id="selB_@i">
-                                    <span class="circle"></span>
-                                    @ViewBag.Tabela[i].OpcaoB
+                                    <input type="radio" name="opcao_@i" id="selE_@i" />
+                                    <span class="circle"></span> @ViewBag.Tabela[i].OpcaoE
                                 </label>
                             </li>
-                            <li>
-                                <label class="radioContainer" for="selC_@i" id="opcaoC_@i">
-
-                                    <input type="radio" name="opcao_@i" id="selC_@i">
-                                    <span class="circle"></span>
-                                    @ViewBag.Tabela[i].OpcaoC
-                                </label>
-                            </li>
-                            <li>
-                                <label class="radioContainer" for="selD_@i" id="opcaoD_@i">
-
-                                    <input type="radio" name="opcao_@i" id="selD_@i">
-                                    <span class="circle"></span>
-                                    @ViewBag.Tabela[i].OpcaoD
-                                </label>
-                            </li>
-
-                            @if (ViewBag.Tabela[i].OpcaoE != null)
-                            {
-                                <li>
-                                    <label class="radioContainer" for="selE_@i" id="opcaoE_@i">
-
-                                        <input type="radio" name="opcao_@i" id="selE_@i" />
-                                        <span class="circle"></span>
-                                        @ViewBag.Tabela[i].OpcaoE
-                                    </label>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </section>
-            }
-            else
-            {
-                <section class='b row'>
-                    <div class="col quiz">
-                        <p class="pergunta">@ViewBag.Tabela[i].Pergunta</p>
-                        <ul>
-                            <li>
-                                <label class="radioContainer" for="selA_@i" id="opcaoA_@i">
-
-                                    <input type="radio" name="opcao_@i" id="selA_@i">
-                                    <span class="circle"></span> @ViewBag.Tabela[i].OpcaoA
-                                </label>
-                            </li>
-                            <li>
-                                <label class="radioContainer" for="selB_@i" id="opcaoB_@i">
-
-                                    <input type="radio" name="opcao_@i" id="selB_@i">
-                                    <span class="circle"></span>@ViewBag.Tabela[i].OpcaoB
-                                </label>
-                            </li>
-                            <li>
-                                <label class="radioContainer" for="selC_@i" id="opcaoC_@i">
-
-                                    <input type="radio" name="opcao_@i" id="selC_@i">
-                                    <span class="circle"></span>@ViewBag.Tabela[i].OpcaoC
-                                </label>
-                            </li>
-                            <li>
-                                <label class="radioContainer" for="selD_@i" id="opcaoD_@i">
-
-                                    <input type="radio" name="opcao_@i" id="selD_@i">
-                                    <span class="circle"></span>@ViewBag.Tabela[i].OpcaoD
-                                </label>
-                            </li>
-
-                            @if (ViewBag.Tabela[i].OpcaoE != null)
-                            {
-                                <li>
-                                    <label class="radioContainer" for="selE_@i" id="opcaoE_@i">
-
-                                        <input type="radio" name="opcao_@i" id="selE_@i" />
-                                        <span class="circle"></span> @ViewBag.Tabela[i].OpcaoE
-                                    </label>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </section>
-            }
+                        }
+                    </ul>
+                </div>
+            </section>
+        }
     }
 
     <div class="row">

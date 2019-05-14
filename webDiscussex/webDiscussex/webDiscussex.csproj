@@ -302,13 +302,13 @@
     <Content Include="imgBastidores\17.jpg" />
     <Content Include="imgBastidores\18.jpg" />
     <Content Include="imgBastidores\19.jpg" />
-    <Content Include="imgBastidores\2.jpeg" />
+    <Content Include="imgBastidores\2.jpg" />
     <Content Include="imgBastidores\20.jpeg" />
     <Content Include="imgBastidores\21.jpg" />
     <Content Include="imgBastidores\22.jpeg" />
     <Content Include="imgBastidores\23.jpg" />
     <Content Include="imgBastidores\24.jpg" />
-    <Content Include="imgBastidores\3.jpg" />
+    <Content Include="imgBastidores\3.jpeg" />
     <Content Include="imgBastidores\4.jpeg" />
     <Content Include="imgBastidores\5.jpeg" />
     <Content Include="imgBastidores\6.jpg" />
@@ -388,6 +388,7 @@
     <Compile Include="Controllers\ForumDiscussexController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="DAO\BastidoresDAO.cs" />
     <Compile Include="DAO\RespostaDAO.cs" />
     <Compile Include="DAO\PerguntaDAO.cs" />
     <Compile Include="DAO\MitosEVerdades.cs" />
@@ -404,6 +405,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Bastidores.cs" />
     <Compile Include="Models\Pergunta.cs" />
     <Compile Include="Models\TResposta.cs" />
     <Compile Include="Models\Quiz.cs" />
@@ -438,8 +440,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\EducacaoSexual\Quiz.cshtml" />
     <Content Include="Views\EducacaoSexual\Mitos.cshtml" />
-    <Content Include="Views\Shared\_LayoutMitos.cshtml" />
-    <Content Include="Views\Shared\_LayoutQuiz.cshtml" />
+    <Content Include="Views\Shared\_LayoutQuizMito.cshtml" />
     <Content Include="Views\ForumDiscussex\Perguntar.cshtml" />
     <Content Include="Views\ForumDiscussex\Respostas.cshtml" />
     <Content Include="Views\Shared\_LayoutForum.cshtml" />

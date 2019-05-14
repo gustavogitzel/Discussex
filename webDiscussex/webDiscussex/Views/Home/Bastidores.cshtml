@@ -19,7 +19,14 @@
         </div>
     </div>
     <div class="row">
-        
+        @foreach (var i in ViewBag.Bastidores)
+         {
+            <div class="col col-3">
+
+                <img src="~/@i.Img">
+                <p>@i.Texto</p>
+            </div>
+         }
     </div>
 
 </div>

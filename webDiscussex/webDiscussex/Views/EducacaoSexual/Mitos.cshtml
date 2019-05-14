@@ -1,11 +1,11 @@
 ﻿
 @{
     ViewBag.Title = "MITOS E VERDADES";
-    Layout = "~/Views/Shared/_LayoutMitos.cshtml";
+    Layout = "~/Views/Shared/_LayoutQuizMito.cshtml";
 }
 
-
-
+<link href="~/Content/mitos.css" type="text/css" rel="stylesheet" />
+<script src="~/Scripts/mitos.js"></script>
 <div id='intros' class="container">
     @foreach (var mito in ViewBag.Tabela)
     {
@@ -19,37 +19,37 @@
                 </div>
                 <div class="col col-2 texto" style="display:none;" name="aparecer">
                     <div class="escondida">
-                        
-                    @if (mito.Mentira == null)
-                    {
-                        <h1>Verdade</h1>
-                        <p class="verdade">@mito.Verdade</p>
-                    }
-                    else
-                    {
-                        <h1>Mito</h1>
-                        <p class="mentira">@mito.Mentira</p>
-                    }
-                        </div>
+
+                        @if (mito.Mentira == null)
+                        {
+                            <h1>Verdade</h1>
+                            <p class="verdade">@mito.Verdade</p>
+                        }
+                        else
+                        {
+                            <h1>Mito</h1>
+                            <p class="mentira">@mito.Mentira</p>
+                        }
+                    </div>
                 </div>
             </section>
         }
         else
         {
             <section class='b row'>
-                <div class="col col-2 texto"  name="texto">
+                <div class="col col-2 texto" name="texto">
                     <div class="escondida" name="aparecer" style="display:none;">
-                        
-                    @if (mito.Mentira == null)
-                    {
-                        <h1>Verdade</h1>
-                        <p  class="verdade">@mito.Verdade</p>
-                    }
-                    else
-                    {
-                        <h1>Mito</h1>
-                        <p  class="mentira">@mito.Mentira</p>
-                    }
+
+                        @if (mito.Mentira == null)
+                        {
+                            <h1>Verdade</h1>
+                            <p class="verdade">@mito.Verdade</p>
+                        }
+                        else
+                        {
+                            <h1>Mito</h1>
+                            <p class="mentira">@mito.Mentira</p>
+                        }
                     </div>
                 </div>
                 <div class="col col-2">
