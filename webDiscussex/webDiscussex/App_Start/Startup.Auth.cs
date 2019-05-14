@@ -20,8 +20,8 @@ namespace webDiscussex.App_Start
             
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "114939003485-il8iu10ogk6qifvh9mnmumfdr5i34n8b.apps.googleusercontent.com",
-                ClientSecret = "rMeUYsLvrPfvzU0sW6X3NJTQ",
+                ClientId = "114939003485-s5ne981iaavopp7op4t51b25tkih1eg0.apps.googleusercontent.com",
+                ClientSecret = "kDvwf2ymzHLvW_4GA8T5gEmP",
                 CallbackPath = new PathString("/GoogleLoginCallback"),
                 Provider = new GoogleOAuth2AuthenticationProvider()
                 {

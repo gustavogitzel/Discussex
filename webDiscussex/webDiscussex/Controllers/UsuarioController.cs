@@ -139,47 +139,20 @@ namespace webDiscussex.Controllers
             return View();
         }
 
-        public void SignIn(string ReturnUrl = "/", string type = "")
-        {
-            if(!Request.IsAuthenticated)
-            {
-                if(type == "Google")
-                {
-                    HttpContext.GetOwinContext().Authentication.Challenge(new Microsoft.Owin.Security.AuthenticationProperties { RedirectUri = "/Usuario/LoginWithGoogle" }, "Google");
-                }
-            }
-        }
-        
-
-        public ActionResult LoginWithGoogle()
-        {
-            var claimsPrincipal = HttpContext.User.Identity as ClaimsIdentity;
-            var user = Usuario.GetLoginInfo(claimsPrincipal);
-            if (user == null)
-                return RedirectToAction("Login", "Usuario");
-
-            return RedirectToAction("Index", "Home");
-
-        }
-
         public ActionResult Configuracoes()
         {
             ViewBag.EhCadastro = true;
             ViewBag.EstaLogado = true;
             return View();
         }
-
-        public ActionResult SignOut()
-        {
-            HttpContext.GetOwinContext().Authentication.SignOut();
-            return RedirectToAction("Index");
-        }
+        
 
         public ActionResult Sair()
         {
             Session["emailUsuario"] = null;
             Session["nomeUsuario"] = null;
             Session["imgPerfil"] = null;
+
 
 
             return RedirectToAction("Index", "Home");
@@ -262,7 +235,28 @@ namespace webDiscussex.Controllers
 
             return View("Login");
         }
-        
+
+        public ActionResult LogarGoogle(string email, string nome, string imgPerfil)
+        {
+            UsuarioGoogleDAO dao = new UsuarioGoogleDAO();
+            UsuarioGoogle user = dao.BuscaPorEmail(email);
+            if (user == null)
+            {
+                user = new UsuarioGoogle();
+                user.Nome = nome;
+                user.Email = email;
+                user.ImgPerfil = imgPerfil;
+                dao.Adiciona(user);
+            }
+
+            dao.Login(email);
+            Session["emailUsuario"] = user.Email;
+            Session["nomeUsuario"] = user.Nome;
+            Session["imgPerfil"] = user.ImgPerfil;
+            Session["EhGoogle"] = true;
+            return RedirectToAction("Index", "Home");
+        }
+
 
     }
 }
