@@ -28,7 +28,5 @@ namespace webDiscussex.Models
 
         public string ImgPerfil { get; set; }
 
-        public string CodigoUsuario { get; set; }
-
     }
 }

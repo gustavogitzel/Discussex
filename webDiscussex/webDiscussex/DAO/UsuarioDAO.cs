@@ -13,8 +13,7 @@ namespace webDiscussex.DAO
         {
             using (var contexto = new EducacaoSexualContext())
             {
-                UsuarioGoogleDAO googleDAO = new UsuarioGoogleDAO();
-                if (BuscaPorEmail(us.Email) == null && googleDAO.BuscaPorEmail(us.Email) == null)
+                if (BuscaPorEmail(us.Email) == null)
                 {
                     contexto.Database.ExecuteSqlCommand("cadastrarDiscussex_sp @p0, @p1, @p2, @p3", 
                     parameters: new[] {us.NomeUsuario, us.Senha, us.Email, us.ImgPerfil});
@@ -60,8 +59,7 @@ namespace webDiscussex.DAO
             using (var contexto = new EducacaoSexualContext())
             {
                 Usuario user;
-                UsuarioGoogleDAO googleDAO = new UsuarioGoogleDAO();
-                if ((user = BuscaPorEmailSenha(e, s)) != null && googleDAO.BuscaPorEmail(ne) == null)
+                if ((user = BuscaPorEmailSenha(e, s)) != null)
                 {
                     user.Email = ne;
                     contexto.Update(user);
@@ -173,16 +171,6 @@ namespace webDiscussex.DAO
                 contexto.SaveChanges();
             }
         }
-
-        public int AddAndReturn(Usuario novo)
-        {
-            using (var contexto = new EducacaoSexualContext())
-            {
-                contexto.PP2_Usuario.Add(novo);
-                contexto.SaveChanges();
-            }
-
-            return novo.Id;
-        }
+        
     }
 }

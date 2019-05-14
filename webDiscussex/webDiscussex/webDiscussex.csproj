@@ -401,7 +401,6 @@
     <Compile Include="DAO\DoencaDAO.cs" />
     <Compile Include="DAO\GravidezDAO.cs" />
     <Compile Include="DAO\ImagemDAO.cs" />
-    <Compile Include="DAO\UsuarioGoogleDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -418,7 +417,6 @@
     <Compile Include="Models\Hiv.cs" />
     <Compile Include="Models\Imagem.cs" />
     <Compile Include="Models\Prevencao.cs" />
-    <Compile Include="Models\UsuarioGoogle.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

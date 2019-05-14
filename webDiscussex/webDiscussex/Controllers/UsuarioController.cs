@@ -183,7 +183,7 @@ namespace webDiscussex.Controllers
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.AlterarSenha(novaSenha, Session["emailUsuario"].ToString(), senha);
-            return RedirectToAction("Configuracoes", "Usuario");
+            return RedirectToAction("Configuracoes", "Uuario");
         }
         public ActionResult AtualizarEmail(string novoEmail, string senha)
         {
@@ -235,28 +235,6 @@ namespace webDiscussex.Controllers
 
             return View("Login");
         }
-
-        public ActionResult LogarGoogle(string email, string nome, string imgPerfil)
-        {
-            UsuarioGoogleDAO dao = new UsuarioGoogleDAO();
-            UsuarioGoogle user = dao.BuscaPorEmail(email);
-            if (user == null)
-            {
-                user = new UsuarioGoogle();
-                user.Nome = nome;
-                user.Email = email;
-                user.ImgPerfil = imgPerfil;
-                dao.Adiciona(user);
-            }
-
-            dao.Login(email);
-            Session["emailUsuario"] = user.Email;
-            Session["nomeUsuario"] = user.Nome;
-            Session["imgPerfil"] = user.ImgPerfil;
-            Session["EhGoogle"] = true;
-            return RedirectToAction("Index", "Home");
-        }
-
 
     }
 }

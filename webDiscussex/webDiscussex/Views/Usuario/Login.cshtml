@@ -14,7 +14,6 @@
         <div class="col col-2">
             <form id="frmLogin" method="post" action="/Usuario/Logar">
                 <h1 id="tituloLogin">INSIRA SEUS DADOS</h1>
-                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-onload="false"></div>
                 <div class="campoTexto">
                     <input type="text" name="logar" id="txtLoginEmailNome" class="Input-text" placeholder="Usuário ou email" data-request-url="@Url.Action("ChecarEmailDisponibilidade", "Usuario")">
                     <label for="input" class="Input-label">Usuário ou email</label>
@@ -30,26 +29,3 @@
            
         </div>
     </article>
-
-
-<script>
-    function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        $.ajax({
-            url: "/Usuario/LogarGoogle",
-            type: "POST",
-            data: { email: profile.getEmail(), nome: profile.getName(), imgPerfil: profile.getImageUrl()},
-            success: function (mydata) {
-                alert("Success");
-            }
-        });
-
-        alert("oi")
-    }
-    function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-            console.log('User signed out.');
-        });
-    }
-</script>

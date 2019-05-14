@@ -9,8 +9,6 @@ namespace webDiscussex.DAO
 
         public DbSet<Usuario> PP2_Usuario { get; set; }
 
-        public DbSet<UsuarioGoogle> PP2_UsuarioGoogle { get; set; }
-
         public DbSet<EducacaoSexual> PP2_EducacaoSexual { get; set; }
 
         public DbSet<Corpo> PP2_Corpo{ get; set; }

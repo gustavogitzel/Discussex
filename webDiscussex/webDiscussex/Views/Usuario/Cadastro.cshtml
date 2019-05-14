@@ -14,10 +14,6 @@
     <div class="col col-2">
         <form id="frmCadastro" method="post" action="/Usuario/Adiciona" enctype="multipart/form-data">
             <h1 id="tituloLogin">CADASTRO</h1>
-            <button class="btn google" type="button" name="btnLoginGoogle" id="btnLoginGoogle" value="Entrar">
-                <i class="fab fa-google"></i>
-                <span>Cadastrar com o Google</span>
-            </button>
             <div class="campoTexto">
                 <input type="text" defaultValue="Email" name="user.Email" id="txtCadastroEmail" class="Input-text" placeholder="Email" data-request-url="@Url.Action("EmailDisponivel", "Usuario")" required>
                 <label for="input"  class="Input-label" id="lbCadastroEmail">Email</label>
