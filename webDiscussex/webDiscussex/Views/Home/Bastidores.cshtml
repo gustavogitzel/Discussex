@@ -12,21 +12,77 @@
     }
 }
 <link type="text/css" rel="stylesheet" href="~/Content/sobreNos.css">
+<link type="text/css" rel="stylesheet" href="~/Content/backend.css">
 <div class="container textoSobreNos">
-    <div class="row">
-        <div class="col" id="bordao">
-            <h3><span class="azul">Estudar</span><span class="vermelho">Compartilhar</span><span class="verde">Promover</span><span class="amarelo">Pesquisar</span></h3>
-        </div>
-    </div>
-    <div class="row">
-        @foreach (var i in ViewBag.Bastidores)
-         {
-            <div class="col col-3">
+    <div class="row imagens">
 
-                <img src="~/@i.Img">
-                <p>@i.Texto</p>
-            </div>
-         }
+        @{
+            Random rdn = new Random();
+            foreach (var i in ViewBag.Bastidores)
+            {
+                int indice = rdn.Next(6);
+                if (indice == 0)
+                {
+                    <div class="col col-3">
+                         <div class="a umaImagem">
+                            <img src="~/@i.Img" class="imagemBackend">
+                            <p>@i.Texto</p>
+                        </div>
+                    </div>
+                }
+                else
+                if (indice == 1)
+                {
+                    <div class="col col-3">
+                        <div class="b umaImagem">
+                            <img src="~/@i.Img" class="imagemBackend">
+                            <p>@i.Texto</p>
+                        </div>
+                    </div>
+                }
+                else
+                if (indice == 2)
+                {
+                    <div class="col col-3 ">
+                        <div class="c umaImagem">
+                            <img src="~/@i.Img" class="imagemBackend">
+                            <p>@i.Texto</p>
+                        </div>
+                       
+                    </div>
+                }
+                else
+                if (indice == 3)
+                {
+                    <div class="col col-3">
+                        <div class="d umaImagem">
+                            <img src="~/@i.Img" class="imagemBackend">
+                            <p>@i.Texto</p>
+                        </div>
+                    </div>
+                }
+                else
+                 if (indice == 4)
+                {
+                    <div class="col col-3">
+                        <div class="e umaImagem">
+                            <img src="~/@i.Img" class="imagemBackend">
+                            <p>@i.Texto</p>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="col col-3">
+                        <div class="f umaImagem">
+                            <img src="~/@i.Img" class="imagemBackend">
+                            <p>@i.Texto</p>
+                        </div>
+                    </div>
+                }
+            }
+
+        }
     </div>
 
 </div>
