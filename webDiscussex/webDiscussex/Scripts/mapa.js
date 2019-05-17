@@ -70,16 +70,13 @@ function exibirLocalizacao(cep) {
 function acharPostos() {
     $.ajax({
         type: "GET",
-        url: "https://maps.googleapis.com/maps/api/place/textsearch/xml?query==posto+de+saude+near+" + endereco + "&rankyby=distance&radius=10000&key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4",
-        dataType: "xml",
-        success: function (xml) {
-            $(xml).find('result').each(function () {
-                var nomes = $(this).find('name').text();
-            });
-        },
-        error: function () {
-            alert("Ocorreu um erro inesperado durante o processamento.");
-        }
+        url: "http://localhost:61322/api/maps/" + endereco 
+    }).done(function (data) {
+        var json = JSON.parse(data);
+        alert(json);
+    }).fail(function (erro) {
+
+        alert(erro);
     });
 }
 
