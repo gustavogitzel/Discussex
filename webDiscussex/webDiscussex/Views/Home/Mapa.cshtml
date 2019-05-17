@@ -8,30 +8,36 @@
 <link href="~/Content/mapa.css" type="text/css" rel="stylesheet">
 <script src="~/Scripts/mapa.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4&callback=iniciarMapa"></script>
-<div class="campoEndereco">
-    <input type="text" id="txtCep" class="Input-text" placeholder="CEP">
-    <label for="input" class="Input-label">CEP</label>
+<link rel="stylesheet" type="text/css" href="~/Content/nice-select.css" />
+<script src="~/Scripts/jquery.nice-select.js"></script>
+<div class="row">
+    <div class="col col-4">
+        <div class="campoEndereco">
+            <input type="text" id="txtCep" class="Input-text" placeholder="CEP">
+            <label for="input" class="Input-label">CEP</label>
+        </div>
+    </div>
+    <div class="col col-4"> <button class="btn" id="pesquisarCasa">Pesquisar Casa</button></div>
+    <div class="col col-4">
+        <select id="mode">
+            <option value="DRIVING">Carro</option>
+            <option value="WALKING">A pé</option>
+            <option value="BICYCLING">Bicicleta</option>
+            <option value="TRANSIT">Ônibus</option>
+        </select>
+    </div>
+    <div class="col col-4"><button class="btn" id="pesquisarPosto">Buscar Camisinha</button></div>
+   
+   
+    
+    
+</div>
 </div>
 
-<div class="campoBotao">
-    <button class="btn" id="pesquisarCasa">Pesquisar Casa</button>
-</div>
 
-<div class="campoBotao">
-    <button class="btn" id="pesquisarPosto">Buscar Camisinha</button>
-</div>
 
-<div id="opcoes">
-    <b>Como Deseja Ir: </b>
-    <select id="mode">
-        <option value="DRIVING">Carro</option>
-        <option value="WALKING">A pé</option>
-        <option value="BICYCLING">Bicicleta</option>
-        <option value="TRANSIT">Ônibus</option>
-    </select>
-</div>
 
-<div id="rota"><p>Distânica Total: <span id="total"></span></p></div>
+@*<div id="rota"><p>Distânica Total: <span id="total"></span></p></div>*@
 <div id="map"></div>
 
-<a href="https://maps.googleapis.com/maps/api/place/textsearch/xml?query==posto+de+saude+near+jardim campos eliseos, campinas&rankyby=distance&radius=10000&key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4">AAA</a>
+@*<a href="https://maps.googleapis.com/maps/api/place/textsearch/xml?query==posto+de+saude+near+jardim campos eliseos, campinas&rankyby=distance&radius=10000&key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4">AAA</a>*@
