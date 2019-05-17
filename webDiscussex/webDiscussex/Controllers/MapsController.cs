@@ -7,7 +7,7 @@ using System.Net.Http;
 
 namespace webDiscussex.Controllers
 {
-    [RoutePrefix("api/maps")]
+    
     [EnableCors(origins: "http://localhost:61322", headers: "*", methods: "*")]
     public class MapsController : ApiController
     {
@@ -28,9 +28,7 @@ namespace webDiscussex.Controllers
         //        return (responseFromServer);
         //    }
         //}
-
-        [Route("")]
-
+        
         public HttpResponseMessage Get()
         {
             return new HttpResponseMessage()

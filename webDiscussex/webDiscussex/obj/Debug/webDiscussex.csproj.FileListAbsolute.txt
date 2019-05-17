@@ -1417,3 +1417,8 @@ C:\Users\u18194\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.
 C:\Users\u18194\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Web.Http.xml
 C:\Users\u18194\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Web.Http.Cors.xml
 C:\Users\u18194\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Web.Http.WebHost.xml
+C:\Users\u18194\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\Antlr3.Runtime.dll
+C:\Users\u18194\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Web.Optimization.dll
+C:\Users\u18194\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\WebGrease.dll
+C:\Users\u18194\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\Antlr3.Runtime.pdb
+C:\Users\u18194\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Web.Optimization.xml
