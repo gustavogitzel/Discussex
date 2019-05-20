@@ -2,6 +2,8 @@
 var direcao;
 var endereco;
 var latLngUser;
+var latLngRef;
+var enderecoRef;
 
 $(document).ready(() => {
     $("#pesquisarCasa").click(() => {
@@ -58,6 +60,8 @@ function exibirLocalizacao(cep) {
                     title: 'Casa',
                     icon: image
                 });
+
+
                 marcadorCasa.setMap(mapas);
             });
         },
@@ -72,8 +76,18 @@ function acharPostos() {
         type: "GET",
         url: "http://localhost:61322/api/maps/" + endereco 
     }).done(function (data) {
-        var json = JSON.parse(data);
-        alert(json);
+        enderecoRef = $(data).find('result').find('formatted_address').first().text();
+
+        var lat = $(data).find('result').find('location').find('lat').first().text();
+        var lng = $(data).find('result').find('location').find('lng').first().text();
+
+        latLngRef = new google.maps.LatLng(lat, lng);
+
+        $(data).find('result').each(function () {
+            $(this).find('location').each(function () {
+                adicionarMarcador($(this).find('lat').text(), $(this).find('lng').text());    
+            });    
+        });
     }).fail(function (erro) {
 
         alert(erro);
@@ -84,7 +98,7 @@ function adicionarMarcador(latitude, longitude) {
     var minhaLatlng = new google.maps.LatLng(latitude, longitude);
 
     var mapOptions = {
-        zoom: 8,
+        zoom: 16,
         center: latLngUser
     }
 
@@ -95,8 +109,10 @@ function adicionarMarcador(latitude, longitude) {
     var marcadorPosto = new google.maps.Marker({
         position: minhaLatlng,
         title: 'Camisinha aqui',
-        icon: image
+        icon: image,
+        map: mapas
     });
+
     marcadorPosto.setMap(mapas);
 }
 

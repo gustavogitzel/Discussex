@@ -15,7 +15,7 @@ namespace webDiscussex.Controllers
     public class MapsController : ApiController
     {
         // GET: Maps
-        public XmlDocument Get(string id)
+        public string Get(string id)
         {
             id.Replace(" ", "%20");
             WebRequest request = WebRequest.Create(
@@ -28,17 +28,11 @@ namespace webDiscussex.Controllers
             {
                 StreamReader reader = new StreamReader(dataStream);
                 string responseFromServer = reader.ReadToEnd();
-
-                XmlDocument xml = new XmlDocument();
-                xml.LoadXml(responseFromServer);
+                
                 response.Close();
 
-                return xml;
+                return responseFromServer;
             }
         }
     }
 }
-
-// 708, 728
-
-    //19728
