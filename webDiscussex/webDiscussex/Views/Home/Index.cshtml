@@ -1,9 +1,15 @@
 ﻿
 @{
     ViewBag.Title = "HOME";
-    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/home.css" type="text/css" rel="stylesheet" />
+<section id='home-hero' class="container">
+    <h1>
+        Vamos falar de sexo?
+        <hr>
+    </h1>
+</section>
 <div id='intros' class="container">
     @foreach (var tema in ViewBag.Temas)
     {

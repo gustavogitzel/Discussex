@@ -2,14 +2,7 @@
 @{
     ViewBag.Title = "Bastidores";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    if (Session["emailUsuario"] == null)
-    {
-        ViewBag.EhCadastro = false;
-    }
-    else
-    {
-        ViewBag.EhCadastro = true;
-    }
+    
 }
 <link type="text/css" rel="stylesheet" href="~/Content/sobreNos.css">
 <link type="text/css" rel="stylesheet" href="~/Content/backend.css">

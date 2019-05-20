@@ -337,7 +337,6 @@
     <Content Include="Content\pergunta.css" />
     <Content Include="Content\quiz.css" />
     <Content Include="Content\responderPergunta.css" />
-    <Content Include="Content\Site.css" />
     <Content Include="Content\sobreNos.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\tema.css" />
@@ -437,7 +436,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Classes\StringCipher.cs" />
     <Compile Include="Controllers\EducacaoSexualController.cs" />
     <Compile Include="Controllers\ForumDiscussexController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -491,14 +489,11 @@
     <Content Include="Views\EducacaoSexual\Corpo.cshtml" />
     <Content Include="Views\EducacaoSexual\HIV.cshtml" />
     <Content Include="Views\EducacaoSexual\Infeccoes.cshtml" />
-    <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\EducacaoSexual\Quiz.cshtml" />
     <Content Include="Views\EducacaoSexual\Mitos.cshtml" />
-    <Content Include="Views\Shared\_LayoutQuizMito.cshtml" />
     <Content Include="Views\ForumDiscussex\Perguntar.cshtml" />
     <Content Include="Views\ForumDiscussex\Respostas.cshtml" />
-    <Content Include="Views\Shared\_LayoutForum.cshtml" />
     <Content Include="Views\Home\SobreNos.cshtml" />
     <Content Include="Views\ForumDiscussex\Responder.cshtml" />
     <Content Include="Views\Home\Pareto.cshtml" />
