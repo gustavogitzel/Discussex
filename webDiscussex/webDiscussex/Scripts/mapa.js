@@ -21,7 +21,7 @@ $(document).ready(() => {
 })
 
 function iniciarMapa() {
-    var mapa = new google.maps.Map(document.getElementById('map'), {
+    var mapa = new google.maps.Map(document.getElementById("map"), {
         zoom: 3.5,
         center: { lat: -15.7801, lng: -47.9292 },
         mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -35,7 +35,7 @@ function iniciarMapa() {
 }
 
 function localUsuario() {
-    localizacaoUsuario = document.getElementById("txtCep").value;
+    localizacaoUsuario = $("#txtCep").val();
     exibirLocalizacao(localizacaoUsuario);
 }
 
@@ -47,9 +47,9 @@ function exibirLocalizacao(cep) {
         success: function (xml) {
             servico = new google.maps.DirectionsService;
 
-            document.getElementById('rota').innerHTML = '';
+            $('#rota').html('');
 
-            document.getElementById('distancia').style.display = 'none';
+            $("#distancia").css("display", "none");
 
             direcao = new google.maps.DirectionsRenderer({
                 draggable: true,
@@ -159,7 +159,7 @@ function buscarCaminho() {
 
     modo = document.getElementById('mode').value;
 
-    document.getElementById('distancia').style.display = 'block';
+    $("#distancia").css("display", "block");
 
     exibirRota(endereco, enderecoRef, modo);
 }
@@ -187,5 +187,5 @@ function calcularDistancia(resultado) {
         total += minhaRota.legs[i].distance.value;
     }
     total = total / 1000;
-    document.getElementById('total').innerHTML = total + ' km';
+    $('#total').html(total + ' km');
 }
