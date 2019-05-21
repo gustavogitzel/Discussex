@@ -19,7 +19,7 @@ namespace webDiscussex.Controllers
         {
             id.Replace(" ", "%20");
             WebRequest request = WebRequest.Create(
-            "https://maps.googleapis.com/maps/api/place/textsearch/xml?query==posto+de+saude+near+"+id+"&rankyby=distance&radius=10000&key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4");
+            "https://maps.googleapis.com/maps/api/place/textsearch/json?query=posto+de+saude+in+"+id+"&rankyby=distance&radius=3000&type=health_center&keyword=saude&key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4");
             request.Credentials = CredentialCache.DefaultCredentials;
 
             WebResponse response = request.GetResponse();

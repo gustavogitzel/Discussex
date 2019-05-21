@@ -13,6 +13,10 @@ $(document).ready(() => {
     $("#pesquisarPosto").click(() => {
         acharPostos();
     });
+
+    $("#buscarCaminho").click(() => {
+        buscarCaminho();
+    });
 })
 
 function iniciarMapa() {
@@ -76,18 +80,20 @@ function acharPostos() {
         type: "GET",
         url: "http://localhost:61322/api/maps/" + endereco 
     }).done(function (data) {
-        enderecoRef = $(data).find('result').find('formatted_address').first().text();
+        var json = JSON.parse(data);
+        var result = json['results'];
 
-        var lat = $(data).find('result').find('location').find('lat').first().text();
-        var lng = $(data).find('result').find('location').find('lng').first().text();
+        enderecoRef = result[0].formatted_address;
 
+        var lat = result[0].geometry.location.lat;
+        var lng = result[0].geometry.location.lng;
+
+ 
         latLngRef = new google.maps.LatLng(lat, lng);
 
-        $(data).find('result').each(function () {
-            $(this).find('location').each(function () {
-                adicionarMarcador($(this).find('lat').text(), $(this).find('lng').text());    
-            });    
-        });
+        for (var i = 0; i < 5 && i < result.length; i++) {
+            adicionarMarcador(result[i].geometry.location.lat, result[i].geometry.location.lng);    
+        }
     }).fail(function (erro) {
 
         alert(erro);
