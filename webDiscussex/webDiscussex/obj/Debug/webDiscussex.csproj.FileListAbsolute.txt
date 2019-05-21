@@ -1438,4 +1438,3 @@ C:\Users\u18189\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.
 C:\Users\u18189\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Web.Http.Cors.xml
 C:\Users\u18189\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Web.Http.WebHost.xml
 C:\Users\u18189\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\System.Web.Optimization.xml
-C:\Users\u18189\Documents\GitHub\Discussex\webDiscussex\webDiscussex\bin\pt-br\System.Net.Http.Formatting.resources.dll

@@ -112,9 +112,7 @@ function acharPostos() {
             marcadores[i] = {
                 lat: result[i].geometry.location.lat,
                 lng: result[i].geometry.location.lng,
-                nome: result[i].name,
-                aberto: result[i].opening_hours.open_now,
-                fotos: result[i].photos
+                nome: result[i].name
             }
         }
         mapas.setZoom(14);
