@@ -3,6 +3,7 @@ var direcao;
 var endereco;
 var latLngUser;
 var latLngRef;
+var mapas;
 var enderecoRef;
 
 $(document).ready(() => {
@@ -22,14 +23,14 @@ $(document).ready(() => {
 function iniciarMapa() {
     var mapa = new google.maps.Map(document.getElementById('map'), {
         zoom: 3.5,
-        center: { lat: -15.7801, lng: -47.9292 }
+        center: { lat: -15.7801, lng: -47.9292 },
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
-    servico = new google.maps.DirectionsService;
-    direcao = new google.maps.DirectionsRenderer({
-        draggable: true,
-        map: map,
-        panel: document.getElementById('rota')
+    infoWindow = new google.maps.InfoWindow();
+
+    google.maps.event.addListener(mapa, 'click', function () {
+        infoWindow.close();
     });
 }
 
@@ -44,6 +45,19 @@ function exibirLocalizacao(cep) {
         url: "https://maps.googleapis.com/maps/api/geocode/xml?address=" + cep + "&key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4",
         dataType: "xml",
         success: function (xml) {
+            servico = new google.maps.DirectionsService;
+
+            document.getElementById('rota').innerHTML = '';
+
+            document.getElementById('distancia').style.display = 'none';
+
+            direcao = new google.maps.DirectionsRenderer({
+                draggable: true,
+                map: map,
+                panel: document.getElementById('rota'),
+                suppressMarkers: true
+            });
+
             $(xml).find('result').each(function () {
                 endereco = $(this).find('formatted_address').text();
                 var lat = $(this).find('location').find('lat').text();
@@ -55,7 +69,10 @@ function exibirLocalizacao(cep) {
                     zoom: 16,
                     center: latLngUser
                 }
-                var mapas = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                mapas = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                direcao.setMap(mapas);
 
                 var image = '../img/markerCasa.png'
 
@@ -64,7 +81,6 @@ function exibirLocalizacao(cep) {
                     title: 'Casa',
                     icon: image
                 });
-
 
                 marcadorCasa.setMap(mapas);
             });
@@ -78,7 +94,7 @@ function exibirLocalizacao(cep) {
 function acharPostos() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:61322/api/maps/" + endereco 
+        url: "http://localhost:61322/api/maps/" + endereco
     }).done(function (data) {
         var json = JSON.parse(data);
         var result = json['results'];
@@ -88,59 +104,78 @@ function acharPostos() {
         var lat = result[0].geometry.location.lat;
         var lng = result[0].geometry.location.lng;
 
- 
         latLngRef = new google.maps.LatLng(lat, lng);
 
-        for (var i = 0; i < 5 && i < result.length; i++) {
-            adicionarMarcador(result[i].geometry.location.lat, result[i].geometry.location.lng);    
-        }
-    }).fail(function (erro) {
+        var marcadores = [];
 
+        for (var i = 0; i < 5 && i < result.length; i++) {
+            marcadores[i] = {
+                lat: result[i].geometry.location.lat,
+                lng: result[i].geometry.location.lng,
+                nome: result[i].name,
+                aberto: result[i].opening_hours.open_now,
+                fotos: result[i].photos
+            }
+        }
+        mapas.setZoom(14);
+
+        adicionarMarcador(marcadores);
+    }).fail(function (erro) {
         alert(erro);
     });
 }
 
-function adicionarMarcador(latitude, longitude) {
-    var minhaLatlng = new google.maps.LatLng(latitude, longitude);
-
-    var mapOptions = {
-        zoom: 16,
-        center: latLngUser
-    }
-
-    var mapas = new google.maps.Map(document.getElementById("map"), mapOptions);
-
+function adicionarMarcador(markers) {
     var image = '../img/markerPosto.png'
 
-    var marcadorPosto = new google.maps.Marker({
-        position: minhaLatlng,
-        title: 'Camisinha aqui',
-        icon: image,
-        map: mapas
-    });
+    for (var i = 0; i < markers.length; i++) {
 
-    marcadorPosto.setMap(mapas);
+        var minhaLatlng = new google.maps.LatLng(markers[i].lat, markers[i].lng);
+
+        var marcadorPosto = new google.maps.Marker({
+            position: minhaLatlng,
+            title: 'Camisinha aqui',
+            icon: image,
+            map: mapas
+        });
+
+
+        google.maps.event.addListener(marcadorPosto, 'click', (function (marker, nome) {
+            return function () {
+                var iwContent = '<div id="iw_container">' +
+                    '<div class="iw_title">' + nome + '</div>';
+
+                infoWindow.setContent(iwContent);
+
+                infoWindow.open(mapas, marker);
+            }
+        })(marcadorPosto, markers[i].nome));
+    }
 }
 
 
-function rota() {
+function buscarCaminho() {
     direcao.addListener('direcoes', function () {
         calcularDistancia(direcao.getDirections());
     });
 
-    exibirRota(endereco, 'Saúde, Campinas', modo, servico, direcao);
+    modo = document.getElementById('mode').value;
+
+    document.getElementById('distancia').style.display = 'block';
+
+    exibirRota(endereco, enderecoRef, modo);
 }
 
-
-function exibirRota(origem, destino, modo, service, exibicao) {
-    service.route({
+function exibirRota(origem, destino, modo) {
+    var requisicao = {
         origin: origem,
         destination: destino,
         travelMode: modo,
-        avoidTolls: true
-    }, function (response, status) {
+    };
+
+    servico.route(requisicao, function (response, status) {
         if (status === 'OK') {
-            exibicao.setDirectionss(response);
+            direcao.setDirections(response);
         } else {
             alert('Não podemos exibir a rota, pois:  ' + status);
         }
