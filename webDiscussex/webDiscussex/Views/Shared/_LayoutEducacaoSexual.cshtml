@@ -50,7 +50,12 @@
                 }
                 else
                 {
-                    <a href="~/Usuario/Login">
+                    <a href="~/Usuario/Configuracoes">
+                        <li>
+                            Configurações
+                        </li>
+                    </a>
+                    <a href="~/Usuario/Sair">
                         <li id="btnDeslogar">
                             Sair
                         </li>
@@ -77,18 +82,17 @@
                     </div>
                     <div class="col col-2 texto">
                         <h1 class="tituloTema">@ViewBag.Tabela[i].Titulo</h1>
-                        @{
-        string source = ViewBag.Tabela[i].Texto;
-        string[] stringSeparators = new string[] { "<p>", "</p>" };
-        string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
-        foreach (string paragrafo in result)
-        {
-                    <p>
-                        @paragrafo
-                    </p>
-}
-
-                        }
+               @{
+                    string source = ViewBag.Tabela[i].Texto;
+                    string[] stringSeparators = new string[] { "<p>", "</p>" };
+                    string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (string paragrafo in result)
+                    {
+                        <p>
+                            @paragrafo
+                        </p>
+                    }
+                }
                     </div>
                 </section>
             }
@@ -97,26 +101,26 @@
                 <section class='b row'>
                     <div class="col col-2 texto">
                         <h1 class="tituloTema">@ViewBag.Tabela[i].Titulo</h1>
-                        @{
-        string source = ViewBag.Tabela[i].Texto;
-        string[] stringSeparators = new string[] { "<p>", "</p>" };
-        string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
-        foreach (string paragrafo in result)
-        {
-                    <p>
-                        @paragrafo
-                    </p>
-}
-
-                        }
-                    </div>
-                    <div class="col col-2 divImagem">
-                        <img  src="~/@ViewBag.ListaImagens[i].Link">
-                    </div>
+               @{
+                    string source = ViewBag.Tabela[i].Texto;
+                    string[] stringSeparators = new string[] { "<p>", "</p>" };
+                    string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (string paragrafo in result)
+                    {
+                        <p>
+                            @paragrafo
+                        </p>
+                    }
+                }
+                </div>
+                   <div class="col col-2 divImagem">
+                      <img  src="~/@ViewBag.ListaImagens[i].Link">
+                   </div>
                 </section>
             }
-        }
+         }
     </div>
+
     @RenderBody()
 
     <footer id="rodape">
@@ -127,23 +131,18 @@
                         <a href="~/Home">HOME</a>
                     </li>
                     <li>
-                        <a href="">SOBRE NÓS</a>
+                        <a href="~/Home/SobreNos">SOBRE NÓS</a>
                     </li>
                     <li>
-                        <a href="">BACKEND</a>
+                        <a href="~/Home/Bastidores">BACKEND</a>
                     </li>
                     <li class="iconSocialMedia">
-                        <a href="">
+                        <a href="https://www.facebook.com/Discussex-2373787056014589">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </li>
                     <li class="iconSocialMedia">
-                        <a href="">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="iconSocialMedia">
-                        <a href="">
+                        <a href="https://twitter.com/discussex">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>

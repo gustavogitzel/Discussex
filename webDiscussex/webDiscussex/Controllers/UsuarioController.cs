@@ -7,6 +7,9 @@ using webDiscussex.Models;
 using webDiscussex.DAO;
 using System.Web.Mvc;
 using System.Drawing;
+using Microsoft.Owin.Host.SystemWeb;
+using System.Text.RegularExpressions;
+using System.Security.Claims;
 
 namespace webDiscussex.Controllers
 {
@@ -25,46 +28,106 @@ namespace webDiscussex.Controllers
             return View();
         }
 
-        public JsonResult ChecarEmailDisponibilidade(string emailDigitado)
+        public JsonResult NomeOuEmailExistente(string digitado)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            var data = dao.BuscaPorEmail(emailDigitado);
-            if (data != null)
-            {
-                return Json(1);
-            }
+            Usuario data;
+            if (digitado.IndexOf("@") == -1)
+                data = dao.BuscaPorNome(digitado);
+            else
+                data = dao.BuscaPorEmail(digitado);
 
-            return Json(0);
+            if (data != null)
+                return Json(true);
+
+            return Json(false);
+        }
+
+        public JsonResult SenhaCorreta(string digitado)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            Usuario data;
+            if (digitado.IndexOf("@") == -1)
+                data = dao.BuscaPorNome(digitado);
+            else
+                data = dao.BuscaPorEmail(digitado);
+
+            if (data != null)
+                return Json(true);
+
+            return Json(false);
+        }
+
+        public JsonResult EmailDisponivel(string digitado)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            var data = dao.BuscaPorEmail(digitado);
+            if (data != null)
+                return Json(false);
+
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(digitado);
+
+            if (!match.Success)
+                return Json(false);
+            
+            return Json(true);
+        }
+
+        public JsonResult NomeDisponivel(string digitado)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            var data = dao.BuscaPorNome(digitado);
+            if (data != null)
+                return Json(false);
+
+            return Json(true);
+        }
+
+        public JsonResult SenhaDisponivel(string digitado)
+        {
+            if (digitado.Length < 8)
+                return Json(false);
+
+            return Json(true);
         }
 
         [HttpPost]
         public ActionResult Adiciona(Usuario user, HttpPostedFileBase upload)
         {
-            string caminhoArquivo = null;
-
-            if (upload != null)
-            {
-                var uploadPath = Server.MapPath("~/img/imgUsers");
-                caminhoArquivo = Path.Combine(@uploadPath, Path.GetFileName(upload.FileName));
-
-                upload.SaveAs(caminhoArquivo);
-            }
-
-
             UsuarioDAO dao = new UsuarioDAO();
             //if (dao.BuscaPorEmail(user.Email) == null)
             //  return RedirectToAction("Home", "HomePagina");
 
             //if (ModelState.IsValid)
             //{
-            user.ImgPerfil = "img/imgUsers/" + upload.FileName;
+            if (upload != null)
+            {
+                string caminhoArquivo = null;
+                var uploadPath = Server.MapPath("~/img/imgUsers");
+                caminhoArquivo = Path.Combine(@uploadPath, user.NomeUsuario + Path.GetExtension(upload.FileName));
+
+                string[] extensãoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
+
+                for (int i = 0; i < extensãoPermitida.Length; i++)
+                    if (Path.GetExtension(caminhoArquivo) == extensãoPermitida[i])
+                    {
+                        upload.SaveAs(caminhoArquivo);
+                        break;
+                    }
+                user.ImgPerfil = "img/imgUsers/" + user.NomeUsuario + Path.GetExtension(upload.FileName);
+            }
+            else
+            {
+                user.ImgPerfil = "img/UsuarioPadrao.png";
+            }
             dao.Adiciona(user);
             Session["emailUsuario"] = user.Email;
             Session["nomeUsuario"] = user.NomeUsuario;
             Session["imgPerfil"] = user.ImgPerfil;
 
             return RedirectToAction("Index", "Home");
-            //}
+            // }
 
             //return RedirectToAction("Cadastro", "Usuario");
         }
@@ -82,6 +145,18 @@ namespace webDiscussex.Controllers
             ViewBag.EstaLogado = true;
             return View();
         }
+        
+
+        public ActionResult Sair()
+        {
+            Session["emailUsuario"] = null;
+            Session["nomeUsuario"] = null;
+            Session["imgPerfil"] = null;
+
+
+
+            return RedirectToAction("Index", "Home");
+        }
 
         public ActionResult Excluir(string email, string senha)
         {
@@ -90,7 +165,7 @@ namespace webDiscussex.Controllers
             Session["emailUsuario"] = null;
             Session["nomeUsuario"] = null;
             Session["imgPerfil"] = null;
-            Session["pontos"] = null;
+           
             return RedirectToAction("Configuracoes", "Usuario");
         }
 
@@ -108,7 +183,7 @@ namespace webDiscussex.Controllers
         {
             UsuarioDAO dao = new UsuarioDAO();
             dao.AlterarSenha(novaSenha, Session["emailUsuario"].ToString(), senha);
-            return RedirectToAction("Configuracoes", "Usuario");
+            return RedirectToAction("Configuracoes", "Uuario");
         }
         public ActionResult AtualizarEmail(string novoEmail, string senha)
         {
@@ -119,12 +194,29 @@ namespace webDiscussex.Controllers
 
             return RedirectToAction("Configuracoes", "Usuario");
         }
-        public ActionResult AtualizarImagem(string novaFoto, string senha)
+        public ActionResult AtualizarImagem(HttpPostedFileBase upload, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            dao.AlterarImagem(novaFoto, Session["emailUsuario"].ToString(), senha);
 
-            Session["imgPerfil"] = novaFoto;
+            Usuario user = new Usuario();
+
+            user = dao.BuscaPorEmail(Session["emailUsuario"].ToString());
+
+            string caminhoArquivo = null;
+
+            var uploadPath = Server.MapPath("~/img/imgUsers");
+            caminhoArquivo = Path.Combine(@uploadPath, user.NomeUsuario + Path.GetExtension(upload.FileName));
+
+            string[] extensãoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
+
+            for (int i = 0; i < extensãoPermitida.Length; i++)
+                if (Path.GetExtension(caminhoArquivo) == extensãoPermitida[i])
+                {
+                    upload.SaveAs(caminhoArquivo);
+                    break;
+                }
+
+            upload.SaveAs(caminhoArquivo);
 
             return RedirectToAction("Configuracoes", "Usuario");
         }
@@ -133,10 +225,16 @@ namespace webDiscussex.Controllers
         {
             UsuarioDAO dao = new UsuarioDAO();
             Usuario user = dao.Login(logar, senha);
-            Session["emailUsuario"] = user.Email;
-            Session["nomeUsuario"] = user.NomeUsuario;
-            Session["imgPerfil"] = user.ImgPerfil;
-            return RedirectToAction("Index", "Home");
+            if (user != null)
+            {
+                Session["emailUsuario"] = user.Email;
+                Session["nomeUsuario"] = user.NomeUsuario;
+                Session["imgPerfil"] = user.ImgPerfil;
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View("Login");
         }
+
     }
 }

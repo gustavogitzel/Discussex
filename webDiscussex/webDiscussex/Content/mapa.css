@@ -1,0 +1,76 @@
+﻿#map {
+    width: 95%;
+    height: 60%;
+    margin: 0 0 1em 2.5%;
+    border-radius: 10pt;
+    border: solid .5em white;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#floating-panel {
+    position: absolute;
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+#rota {
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+#rota select, #rota input {
+    font-size: 15px;
+}
+
+#rota select {
+    width: 100%;
+}
+
+#rota i {
+    font-size: 12px;
+}
+
+#rota {
+    float: right;
+    width: 34%;
+    height: 100%;
+}
+
+.panel {
+    height: 100%;
+    overflow: auto;
+}
+
+
+.nice-select
+{
+    float: initial !important;
+    width: 10em !important;
+    margin-left: calc(50% - 5em);
+}
+
+
+.campoEndereco
+{
+    width: 0 !important;
+}
+
+#pesquisarCasa 
+{
+
+    display: inline-block !important;
+}

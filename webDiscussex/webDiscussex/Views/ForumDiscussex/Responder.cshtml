@@ -1,9 +1,9 @@
 ﻿
 @{
     ViewBag.Title = "Responder";
-    Layout = "~/Views/Shared/_LayoutForum.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<link type="text/css" rel="stylesheet" href="~/Content/responderPergunta.css">
 <article id="corpo" class="container">
     <div class="row">
         <div class="col col-2">
@@ -12,11 +12,11 @@
         <div class="col col-2">
             <form action="/ForumDiscussex/AdicionarResposta/@ViewBag.Pergunta.Id" method="post">
                 <div class="col col-2">
-                    <h1>@ViewBag.Pergunta.Titulo</h1>
+                    <h1 class="titulo">@ViewBag.Pergunta.Titulo</h1>
                 </div>
-                <div class="campoTexto">
-                    <textarea cols="60" rows="10" name="resp" id="txtPergunta" class="Input-text" placeholder="Resposta"></textarea>
-                    <label for="input" class="Input-label">Resposta</label>
+                <div class="campoTexto" id="areaTexto">
+                    <textarea cols="60" rows="10" name="resp" id="txtPergunta" class="Input-text" placeholder="Resposta" required></textarea>
+                    <label for="input" class="Input-label" id="lbPergunta">Resposta</label>
                 </div>
                 <input type="submit" class="btn" value="Responder">
             </form>

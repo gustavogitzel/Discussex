@@ -5,7 +5,8 @@
     ViewBag.EstaLogado = false;
 }
 <link href="~/Content/login.css" type="text/css" rel="stylesheet">
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="114939003485-s5ne981iaavopp7op4t51b25tkih1eg0.apps.googleusercontent.com">
     <article id="corpo" class="container row">
         <div class="col col-2" id="imgLogin">
             <img src="~/img/LoginImg.png">
@@ -13,16 +14,12 @@
         <div class="col col-2">
             <form id="frmLogin" method="post" action="/Usuario/Logar">
                 <h1 id="tituloLogin">INSIRA SEUS DADOS</h1>
-                <button class="btn google" type="button" name="btnLoginGoogle" id="btnLoginGoogle" value="Entrar">
-                    <i class="fab fa-google"></i>
-                    <span>Entrar com o Google</span>
-                </button>
                 <div class="campoTexto">
-                    <input type="text" name="logar" id="txtLoginEmail" class="Input-text" placeholder="Usuário ou email" data-request-url="@Url.Action("ChecarEmailDisponibilidade", "Usuario")">
+                    <input type="text" name="logar" id="txtLoginEmailNome" class="Input-text" placeholder="Usuário ou email" data-request-url="@Url.Action("ChecarEmailDisponibilidade", "Usuario")">
                     <label for="input" class="Input-label">Usuário ou email</label>
                 </div>
                 <div class="campoTexto">
-                    <input type="password" name="senha" id="txtSenha" class="Input-text" placeholder="Senha">
+                    <input type="password" name="senha" id="txtLoginSenha" class="Input-text" placeholder="Senha" data-request-url="@Url.Action("ChecarEmailDisponibilidade", "Usuario")">
                     <label for="input" class="Input-label">Senha</label>
                 </div>
 

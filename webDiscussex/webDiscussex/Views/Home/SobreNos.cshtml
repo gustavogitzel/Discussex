@@ -2,14 +2,6 @@
 @{
     ViewBag.Title = "SobreNos";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    if (Session["emailUsuario"] == null)
-    {
-        ViewBag.EhCadastro = false;
-    }
-    else
-    {
-        ViewBag.EhCadastro = true;
-    }
 }
 <link type="text/css" rel="stylesheet" href="~/Content/sobreNos.css">
 <div class="container textoSobreNos">

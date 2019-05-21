@@ -29,6 +29,8 @@ namespace webDiscussex.DAO
 
         public DbSet<TResposta> PP2_Resposta { get; set; }
 
+        public DbSet<Bastidores> PP2_Bastidores { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=regulus.cotuca.unicamp.br;Initial Catalog=PR118194;User ID=PR118194;Password=guisa2019");

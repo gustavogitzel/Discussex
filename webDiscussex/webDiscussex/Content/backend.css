@@ -1,0 +1,40 @@
+﻿.imagemBackend
+{
+    width: 26em;
+    height: 20em;
+    border-radius: 1em;
+    border: solid white 1em;
+}
+
+
+.a {
+    background: #81d4fa;
+}
+
+.b {
+    background: #f4511e;
+}
+
+.c {
+    background: #d81b60;
+}
+
+.d {
+    background: #388e3c;
+}
+
+.e {
+    background: #d32f2f;
+}
+
+.f {
+    background: #8854d0;
+}
+
+.umaImagem
+{
+    margin: .5em;
+    padding: 1em;
+    border-radius: 1em;
+    height: 40em;
+}

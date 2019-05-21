@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Mapa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/mapa.css" type="text/css" rel="stylesheet">
+<script src="~/Scripts/mapa.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBh6JK23HFsrPff9iyGpdfzztePcfRhq4&callback=iniciarMapa"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/nice-select.css" />
+<script src="~/Scripts/jquery.nice-select.js"></script>
+<div class="row">
+    <div class="col col-4">
+        <div class="campoEndereco">
+            <input type="text" id="txtCep" class="Input-text" placeholder="CEP">
+            <label for="input" class="Input-label">CEP</label>
+        </div>
+    </div>
+    <div class="col col-4"> <button class="btn" id="pesquisarCasa">Pesquisar Casa</button></div>
+    <div class="col col-4">
+        <select id="mode">
+            <option value="DRIVING">Carro</option>
+            <option value="WALKING">A pé</option>
+            <option value="BICYCLING">Bicicleta</option>
+            <option value="TRANSIT">Ônibus</option>
+        </select>
+    </div>
+    <div class="col col-4"><button class="btn" id="pesquisarPosto">Buscar Camisinha</button></div>   
+    <div class="col col-4"><button class="btn" id="buscarCaminho">Buscar camihno camisinha mais próxima</button></div>
+</div>
+
+<div id="distancia" style="display:none"><p>Distância Total: </p>
+<div id="rota"><p> <span id="total"></span></p></div></div>
+<div id="map"></div>

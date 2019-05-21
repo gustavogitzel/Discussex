@@ -40,30 +40,31 @@
                             Login
                         </li>
                     </a>
-                }
-                else
-                {
-                    <a href="~/Usuario/Login">
-                        <li id="btnDeslogar">
-                            Sair
-                        </li>
-                    </a>
-                }
-
-                @if (!ViewBag.EhCadastro)
-                 {
                     <a href="~/Usuario/Cadastro">
                         <li>
                             Cadastro
                         </li>
                     </a>
-                 }
-
+                }
+                else
+                {
+                    <a href="~/Usuario/Configuracoes">
+                        <li>
+                            Configurações
+                        </li>
+                    </a>
+                    <a href="~/Usuario/Sair">
+                        <li id="btnDeslogar">
+                            Sair
+                        </li>
+                    </a>
+                }
             </ul>
         </nav>
     </header>
-  
+
     @RenderBody()
+
     <footer id="rodape">
         <div id="footerContent">
             <div class="container">
@@ -78,20 +79,15 @@
                         <a href="~/Home/Pareto">Gráfico de Pareto</a>
                     </li>
                     <li>
-                        <a href="">BACKEND</a>
+                        <a href="~/Home/Bastidores">BACKEND</a>
                     </li>
                     <li class="iconSocialMedia">
-                        <a href="">
+                        <a href="https://www.facebook.com/Discussex-2373787056014589">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </li>
                     <li class="iconSocialMedia">
-                        <a href="">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="iconSocialMedia">
-                        <a href="">
+                        <a href="https://twitter.com/discussex">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>

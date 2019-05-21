@@ -1,0 +1,23 @@
+﻿.nomeResposta {
+    color: white;
+    font-size: 2em;
+}
+
+.tituloPergunta
+{
+    color: white;
+    font-size: 3em;
+    margin-bottom: .1em;
+}
+.resposta,
+.descricaoPergunta
+{
+    color: white;
+    font-size: 1.4em;
+}
+
+.semResposta {
+    color: #0d47a1;
+    font-size: 2.6em;
+    margin-top: 25%;
+}

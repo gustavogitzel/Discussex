@@ -1,3 +1,10 @@
+create table PP2_Bastidores
+(
+    id int primary key not null,
+    texto ntext not null,
+    img varchar(max)
+)
+
 create table PP2_Usuario
 (
 	id int identity(1,1) primary key not null,
