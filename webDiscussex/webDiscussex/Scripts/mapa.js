@@ -4,7 +4,6 @@ var endereco;
 var latLngUser;
 var latLngRef;
 var mapas;
-var enderecoRef;
 
 $(document).ready(() => {
     $("#pesquisarCasa").click(() => {
@@ -99,7 +98,10 @@ function acharPostos() {
         var json = JSON.parse(data);
         var result = json['results'];
 
-        enderecoRef = result[0].formatted_address;
+        var lat = result[0].geometry.location.lat;
+        var lng = result[0].geometry.location.lng;
+
+        latLngRef = new google.maps.LatLng(lat, lng);
 
        var marcadores = [];
 
@@ -107,9 +109,7 @@ function acharPostos() {
             marcadores[i] = {
                 lat: result[i].geometry.location.lat,
                 lng: result[i].geometry.location.lng,
-                nome: result[i].name,
-                aberto: result[i].opening_hours.open_now,
-                fotos: result[i].photos
+                nome: result[i].name
             }
         }
         mapas.setZoom(14);
@@ -158,7 +158,7 @@ function buscarCaminho() {
 
     document.getElementById('distancia').style.display = 'block';
 
-    exibirRota(endereco, enderecoRef, modo);
+    exibirRota(latLngUser, latLngRef, modo);
 }
 
 function exibirRota(origem, destino, modo) {
