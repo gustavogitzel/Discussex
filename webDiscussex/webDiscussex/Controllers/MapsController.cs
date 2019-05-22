@@ -6,11 +6,10 @@ using System.IO;
 using System.Net.Http;
 using System.Xml;
 using Newtonsoft.Json;
-using System.Web.Mvc;
+
 
 namespace webDiscussex.Controllers
 {
-    
     [EnableCors(origins: "http://localhost:61322", headers: "*", methods: "*")]
     public class MapsController : ApiController
     {

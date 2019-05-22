@@ -101,12 +101,7 @@ function acharPostos() {
 
         enderecoRef = result[0].formatted_address;
 
-        var lat = result[0].geometry.location.lat;
-        var lng = result[0].geometry.location.lng;
-
-        latLngRef = new google.maps.LatLng(lat, lng);
-
-        var marcadores = [];
+       var marcadores = [];
 
         for (var i = 0; i < 5 && i < result.length; i++) {
             marcadores[i] = {
@@ -126,6 +121,7 @@ function acharPostos() {
 }
 
 function adicionarMarcador(markers) {
+    var foto = null;
     var image = '../img/markerPosto.png'
 
     for (var i = 0; i < markers.length; i++) {
@@ -138,7 +134,6 @@ function adicionarMarcador(markers) {
             icon: image,
             map: mapas
         });
-
 
         google.maps.event.addListener(marcadorPosto, 'click', (function (marker, nome) {
             return function () {
