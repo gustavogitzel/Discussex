@@ -21,3 +21,13 @@
     font-size: 2.6em;
     margin-top: 25%;
 }
+
+.imagemUsuario {
+    max-width: 80%;
+}
+
+
+.logado {
+    border-radius: 10pt;
+    border: .3em white solid;
+}

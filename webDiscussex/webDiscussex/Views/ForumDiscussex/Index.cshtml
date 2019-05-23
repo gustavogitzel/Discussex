@@ -13,7 +13,14 @@
             <div>
                 @if (Session["emailUsuario"] != null)
                 {
-                    <img class="imgPerfil" src="@Session["imgPerfil"]" />
+                   if (Session["imgPerfil"].ToString() == "img/UsuarioPadrao.png")
+                    {
+                        <img class="imgPerfil" src="/@Session["imgPerfil"]" />
+                    }
+                    else
+                    {
+                        <img class="imgPerfil logado" src="/@Session["imgPerfil"]" />
+                    }
                     <h2 id="nomeUsuarioForum">@Session["nomeUsuario"]</h2>
                 }
                 else
