@@ -112,3 +112,13 @@
 {
     margin-bottom: 1em;
 }
+
+.disponivel {
+    border-bottom: solid .2em #43a047;
+    border-right: solid .2em #43a047;
+}
+
+.indisponivel {
+    border-bottom: solid .2em #e53935;
+    border-right: solid .2em #e53935;
+}

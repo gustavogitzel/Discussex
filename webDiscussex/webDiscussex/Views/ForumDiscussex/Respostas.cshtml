@@ -12,7 +12,14 @@
             <div class="col col-2">
                 @if (ViewBag.UsuarioPerguntador != null)
                 {
-                    <img class="imagemUsuario" src="/@ViewBag.UsuarioPerguntador.ImgPerfil" />
+                    if (ViewBag.UsuarioPerguntador.ImgPerfil == "img/UsuarioPadrao.png")
+                    {
+                        <img class="imagemUsuario" src="/@ViewBag.UsuarioPerguntador.ImgPerfil" />
+                    }
+                    else
+                    {
+                        <img class="imagemUsuario logado" src="/@ViewBag.UsuarioPerguntador.ImgPerfil" />
+                    }
                     <h1 class="nomeResposta">@ViewBag.UsuarioPerguntador.NomeUsuario</h1>
                 }
                 else
@@ -49,7 +56,14 @@
                         <h3 class="descricaoPergunta">@resposta.Resposta</h3>
                     </div>
                     <div class="col col-2">
-                        <img class="imagemUsuario" src="/@ViewBag.ListaRespondedor[i].ImgPerfil" />
+                        @if (ViewBag.ListaRespondedor[i].ImgPerfil == "img/UsuarioPadrao.png")
+                        {
+                            <img class="imagemUsuario" src="/@ViewBag.ListaRespondedor[i].ImgPerfil" />
+                        }
+                        else
+                        {
+                            <img class="imagemUsuario logado" src="/@ViewBag.ListaRespondedor[i].ImgPerfil" />
+                        }
                         <h1>@ViewBag.ListaRespondedor[i].NomeUsuario</h1>
                     </div>
                 </div>
@@ -59,7 +73,14 @@
             {
                 <div class="row b resposta">
                     <div class="col col-2">
-                        <img class="imagemUsuario" src="/@ViewBag.ListaRespondedor[i].ImgPerfil" />
+                        @if (ViewBag.ListaRespondedor[i].ImgPerfil == "img/UsuarioPadrao.png")
+                        {
+                            <img class="imagemUsuario" src="/@ViewBag.ListaRespondedor[i].ImgPerfil" />
+                        }
+                        else
+                        {
+                            <img class="imagemUsuario logado" src="/@ViewBag.ListaRespondedor[i].ImgPerfil" />
+                        }
                         <h1>@ViewBag.ListaRespondedor[i].NomeUsuario</h1>
                     </div>
                     <div class="col col-2">

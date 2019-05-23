@@ -10,25 +10,29 @@
 <link rel="stylesheet" type="text/css" href="~/Content/nice-select.css" />
 <script src="~/Scripts/jquery.nice-select.js"></script>
 <div class="row">
-    <div class="col col-4">
+    <div class="col col-3">
         <div class="campoEndereco">
             <input type="text" id="txtCep" class="Input-text" placeholder="CEP">
-            <label for="input" class="Input-label">CEP</label>
+
         </div>
+        <button class="btn" id="pesquisarCasa">Pesquisar Casa</button>
+
+
     </div>
-    <div class="col col-4"> <button class="btn" id="pesquisarCasa">Pesquisar Casa</button></div>
-    <div class="col col-4">
+    <div class="col col-3">
         <select id="mode">
             <option value="DRIVING">Carro</option>
             <option value="WALKING">A pé</option>
             <option value="BICYCLING">Bicicleta</option>
             <option value="TRANSIT">Ônibus</option>
         </select>
+        <button class="btn" id="pesquisarPosto">Buscar Camisinha</button>
     </div>
-    <div class="col col-4"><button class="btn" id="pesquisarPosto">Buscar Camisinha</button></div>   
-    <div class="col col-4"><button class="btn" id="buscarCaminho">Buscar camihno camisinha mais próxima</button></div>
+    <div class="col col-3"><button class="btn" id="buscarCaminho">Buscar caminho camisinha mais próxima</button></div>
 </div>
-
-<div id="distancia" style="display:none"><p>Distância Total: </p>
-<div id="rota"><p> <span id="total"></span></p></div></div>
 <div id="map"></div>
+<div class="row">
+    <div id="distancia">
+        <div id="rota"><p> <span id="total"></span></p></div>
+    </div>
+</div>
