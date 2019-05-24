@@ -1,30 +1,24 @@
 ﻿
 @{
-    ViewBag.Title = "HOME";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Pesquisa";
 }
-<link href="~/Content/home.css" type="text/css" rel="stylesheet" />
-<section id='home-hero' class="container">
-    <h1>
-        Vamos falar de sexo?
-        <hr>
-    </h1>
-</section>
-<div id='intros' class="container">
-    @foreach (var tema in ViewBag.Temas)
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="~/Scripts/Pareto.js"></script>
+<link href="~/Content/pareto.css" type="text/css" rel="stylesheet">
+
+<div class="container linhaTema">
+    @for (int i = 1; i < ViewBag.Tabela.Count; i++)
     {
-        if (tema.Id % 2 != 0)
+        if (ViewBag.Tabela[i].Id % 2 != 0)
         {
             <section class='a row'>
-                <div class="col col-2">
-                    <a href="~/EducacaoSexual/@tema.Titulo">
-                        <img src="~/@tema.ImgTema">
-                    </a>
+                <div class="col col-2 divImagem">
+                    <img src="~/@ViewBag.ListaImagens[i].Link">
                 </div>
                 <div class="col col-2 texto">
-                    <h1 class="tituloTema">@tema.NomTema</h1>
+                    <h1 class="tituloTema">@ViewBag.Tabela[i].Titulo</h1>
                     @{
-                        string source = tema.Descricao;
+                        string source = ViewBag.Tabela[i].Texto;
                         string[] stringSeparators = new string[] { "<p>", "</p>" };
                         string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
                         foreach (string paragrafo in result)
@@ -33,7 +27,6 @@
                                 @paragrafo
                             </p>
                         }
-
                     }
                 </div>
             </section>
@@ -42,9 +35,9 @@
         {
             <section class='b row'>
                 <div class="col col-2 texto">
-                    <h1 class="tituloTema">@tema.NomTema</h1>
+                    <h1 class="tituloTema">@ViewBag.Tabela[i].Titulo</h1>
                     @{
-                        string source = tema.Descricao;
+                        string source = ViewBag.Tabela[i].Texto;
                         string[] stringSeparators = new string[] { "<p>", "</p>" };
                         string[] result = source.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
                         foreach (string paragrafo in result)
@@ -55,12 +48,16 @@
                         }
                     }
                 </div>
-                <div class="col col-2">
-                    <a href="~/EducacaoSexual/@tema.Titulo">
-                        <img src="~/@tema.ImgTema">
-                    </a>
+                <div class="col col-2 divImagem">
+                    <img src="~/@ViewBag.ListaImagens[i].Link">
                 </div>
             </section>
         }
     }
 </div>
+<div class="row">
+    <div class="col"><h1 class="titulo">GRÁFICO DE PARETO</h1>
+        <canvas id="pareto"></canvas>
+    </div>
+</div>
+

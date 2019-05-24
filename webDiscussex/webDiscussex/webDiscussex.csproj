@@ -501,6 +501,7 @@
     <Content Include="Views\Home\Pareto.cshtml" />
     <Content Include="Views\Home\Mapa.cshtml" />
     <Content Include="Views\Home\Bastidores.cshtml" />
+    <Content Include="Views\EducacaoSexual\Pesquisa.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
