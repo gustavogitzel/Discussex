@@ -6,7 +6,7 @@
 <script src="~/Scripts/Pareto.js"></script>
 <link href="~/Content/pareto.css" type="text/css" rel="stylesheet">
 
-<div class="container linhaTema">
+@*<div class="container linhaTema">
     @for (int i = 1; i < ViewBag.Tabela.Count; i++)
     {
         if (ViewBag.Tabela[i].Id % 2 != 0)
@@ -54,8 +54,8 @@
             </section>
         }
     }
-</div>
-<div class="row">
+</div>*@
+<div class="container row">
     <div class="col"><h1 class="titulo">GRÁFICO DE PARETO</h1>
         <canvas id="pareto"></canvas>
     </div>

@@ -18,6 +18,11 @@ namespace webDiscussex.Controllers
 
         public ActionResult Pesquisa()
         {
+            var dao = new PesquisaDAO();
+
+            IList<Pesquisa> lista = dao.Lista();
+
+            ViewBag.Tabela = lista;
             return View();
         }
 

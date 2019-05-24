@@ -86,6 +86,22 @@ namespace webDiscussex.DAO
             }
         }
 
+        public void AlterarImagem(string nI, string e, string s)
+        {
+            using (var contexto = new EducacaoSexualContext())
+            {
+                Usuario user;
+                if ((user = BuscaPorEmailSenha(e, s)) != null)
+                {
+                    user.ImgPerfil = nI;
+                    contexto.Update(user);
+                    contexto.SaveChanges();
+                }
+                else
+                    throw new Exception("Senha Inválida");
+            }
+        }
+
         public Usuario BuscaPorEmailSenha(string email, string senha)
         {
             using (var contexto = new EducacaoSexualContext())

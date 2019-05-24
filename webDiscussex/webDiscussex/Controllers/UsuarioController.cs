@@ -70,7 +70,7 @@ namespace webDiscussex.Controllers
 
             if (!match.Success)
                 return Json(false);
-            
+
             return Json(true);
         }
 
@@ -96,7 +96,7 @@ namespace webDiscussex.Controllers
         public ActionResult Adiciona(Usuario user, HttpPostedFileBase upload)
         {
             UsuarioDAO dao = new UsuarioDAO();
-          
+
             if (upload != null)
             {
                 var uploadPath = Server.MapPath("~/img/imgUsers");
@@ -105,7 +105,7 @@ namespace webDiscussex.Controllers
                 string[] extensaoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
 
                 for (int i = 0; i < extensaoPermitida.Length; i++)
-                    if (Path.GetExtension(caminhoArquivo) == extensãoPermitida[i])
+                    if (Path.GetExtension(caminhoArquivo) == extensaoPermitida[i])
                     {
                         upload.SaveAs(caminhoArquivo);
                         break;
@@ -138,7 +138,7 @@ namespace webDiscussex.Controllers
             ViewBag.EstaLogado = true;
             return View();
         }
-        
+
 
         public ActionResult Sair()
         {
@@ -158,58 +158,93 @@ namespace webDiscussex.Controllers
             Session["emailUsuario"] = null;
             Session["nomeUsuario"] = null;
             Session["imgPerfil"] = null;
-           
+
             return RedirectToAction("Configuracoes", "Usuario");
         }
 
         public ActionResult AtualizarNome(string nomeUser, string senha)
         {
-            UsuarioDAO dao = new UsuarioDAO();
-            dao.AlterarNome(nomeUser, Session["emailUsuario"].ToString(), senha);
+            try
+            {
+                UsuarioDAO dao = new UsuarioDAO();
+                Usuario user; 
+                if ((user = dao.BuscaPorNome(Session["nomeUsuario"].ToString())).ImgPerfil != "img/usuarioPadrao.png")
+                {
+                    var imagem = Server.MapPath("~/"+user.ImgPerfil);
 
-            Session["nomeUsuario"] = nomeUser;
+                    //Path.
+                    //Session["imgPerfil"] = caminhoImg;
+                }
+                
+                dao.AlterarNome(nomeUser, Session["emailUsuario"].ToString(), senha);
+         
+                Session["nomeUsuario"] = nomeUser;
+            }
+            catch (Exception)
+            { }
 
             return RedirectToAction("Configuracoes", "Usuario");
         }
 
         public ActionResult AtualizarSenha(string novaSenha, string senha)
         {
-            UsuarioDAO dao = new UsuarioDAO();
-            dao.AlterarSenha(novaSenha, Session["emailUsuario"].ToString(), senha);
+            try
+            {
+                UsuarioDAO dao = new UsuarioDAO();
+                dao.AlterarSenha(novaSenha, Session["emailUsuario"].ToString(), senha);
+
+            }
+            catch (Exception)
+            { }
             return RedirectToAction("Configuracoes", "Uuario");
         }
         public ActionResult AtualizarEmail(string novoEmail, string senha)
         {
-            UsuarioDAO dao = new UsuarioDAO();
-            dao.AlterarEmail(novoEmail, Session["emailUsuario"].ToString(), senha);
+            try
+            {
+                UsuarioDAO dao = new UsuarioDAO();
+                dao.AlterarEmail(novoEmail, Session["emailUsuario"].ToString(), senha);
 
-            Session["emailUsuario"] = novoEmail;
-
+                Session["emailUsuario"] = novoEmail;
+            }
+            catch (Exception)
+            { }
             return RedirectToAction("Configuracoes", "Usuario");
         }
         public ActionResult AtualizarImagem(HttpPostedFileBase upload, string senha)
         {
-            UsuarioDAO dao = new UsuarioDAO();
+            try
+            {
+                UsuarioDAO dao = new UsuarioDAO();
 
-            Usuario user = new Usuario();
+                Usuario user = new Usuario();
 
-            user = dao.BuscaPorEmail(Session["emailUsuario"].ToString());
+                user = dao.BuscaPorEmail(Session["emailUsuario"].ToString());
 
-            string caminhoArquivo = null;
+                string caminhoArquivo = null;
 
-            var uploadPath = Server.MapPath("~/img/imgUsers");
-            caminhoArquivo = Path.Combine(@uploadPath, user.NomeUsuario + Path.GetExtension(upload.FileName));
+                var uploadPath = Server.MapPath("~/img/imgUsers");
+                caminhoArquivo = Path.Combine(@uploadPath, user.NomeUsuario + Path.GetExtension(upload.FileName));
 
-            string[] extensãoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
+                string[] extensãoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
 
-            for (int i = 0; i < extensãoPermitida.Length; i++)
-                if (Path.GetExtension(caminhoArquivo) == extensãoPermitida[i])
-                {
-                    upload.SaveAs(caminhoArquivo);
-                    break;
-                }
+                for (int i = 0; i < extensãoPermitida.Length; i++)
+                    if (Path.GetExtension(caminhoArquivo) == extensãoPermitida[i])
+                    {
+                        upload.SaveAs(caminhoArquivo);
+                        break;
+                    }
 
-            upload.SaveAs(caminhoArquivo);
+                upload.SaveAs(caminhoArquivo);
+
+                user.ImgPerfil = "img/imgUsers/" + user.NomeUsuario + Path.GetExtension(upload.FileName);
+
+
+                dao.AlterarImagem(user.ImgPerfil, user.Email, user.Senha);
+                Session["imgPerfil"] = user.ImgPerfil;
+            }
+            catch (Exception)
+            { }
 
             return RedirectToAction("Configuracoes", "Usuario");
         }

@@ -1,6 +1,10 @@
 ﻿var inputs = { "Email": false, "Nome de Usuário": false, "Senha": false };
 
 $(document).ready(() => {
+
+    checar($("#txtCadastroEmail"));
+    checar($("#txtCadastroSenha"));
+    checar($("#txtCadastroNome"));
     $("#btnLoginGoogle").click(() => {
         window.location.href = "/api/Account/ExternalLogins?provider=Google&response_type=token&client_id=self&redirect_uri=http%3a%2f%2flocalhost%3a61358%2fLogin.html&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
         });

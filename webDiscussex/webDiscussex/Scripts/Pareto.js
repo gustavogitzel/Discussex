@@ -33,7 +33,7 @@ var data = {
             });
         }
     },
-    labels: ["Erro de Servidor no Aplicativo '/'", "SQL Exception", "Rotas inválidas","Validaçaõ de Formulário"],
+    labels: ["Uso de Anticoncepcional", "Transmissão do HIV", "Uso de duas camisinhas", "Total Proteção"],
     datasets: [{
         type: "line",
         label: "ACUMULADO",
@@ -41,14 +41,14 @@ var data = {
         backgroundColor: "#ea80fc",
         pointBorderWidth: 5,
         fill: false,
-        data: [44.23, 73.07, 88.45, 100],
+        data: [39.36, 64.89, 87.23, 100],
         yAxisID: 'y-axis-2'
     }, {
         type: "bar",
         label: "ASSISTENCIA",
         borderColor: "#4a148c",
         backgroundColor: "#4a148c",
-        data: [23, 15, 8, 6],
+        data: [37, 24, 21, 12],
         yAxisID: 'y-axis-1'
     }]
 };
@@ -59,7 +59,7 @@ var options = {
             stacked: true,
             ticks: {
                 fontColor: "white",
-                fontSize: 20
+                fontSize: 15
             }
         }],
 
@@ -71,13 +71,13 @@ var options = {
             ticks: {
                 suggestedMin: 0,
                 fontColor: "white",
-                fontSize: 20
+                fontSize: 15
             },
             scaleLabel: {
                 display: true,
                 labelString: "FREQUÊNCIA",
                 fontColor: "white",
-                fontSize: 20
+                fontSize: 15
             }
         }, {
             type: "linear",
@@ -89,13 +89,13 @@ var options = {
                     return value + "%";
                 },
                 fontColor: "white",
-                fontSize: 20
+                fontSize: 15
             },
             scaleLabel: {
                 display: true,
                 labelString: "PORCENTAGEM",
                 fontColor: "white",
-                fontSize: 20
+                fontSize: 15
             }
         }]
     },
@@ -103,7 +103,7 @@ var options = {
         labels: {
             // This more specific font property overrides the global property
             fontColor: 'white',
-            fontSize: 20
+            fontSize: 15
         }
     }
 };
