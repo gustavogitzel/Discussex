@@ -441,6 +441,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MapsController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="DAO\PesquisaDAO.cs" />
     <Compile Include="DAO\BastidoresDAO.cs" />
     <Compile Include="DAO\RespostaDAO.cs" />
     <Compile Include="DAO\PerguntaDAO.cs" />
@@ -460,6 +461,7 @@
     </Compile>
     <Compile Include="Models\Bastidores.cs" />
     <Compile Include="Models\Pergunta.cs" />
+    <Compile Include="Models\Pesquisa.cs" />
     <Compile Include="Models\TResposta.cs" />
     <Compile Include="Models\Quiz.cs" />
     <Compile Include="Models\MitosEVerdades.cs" />
