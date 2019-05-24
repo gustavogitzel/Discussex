@@ -16,6 +16,11 @@ namespace webDiscussex.Controllers
             return View();
         }
 
+        public ActionResult Pesquisa()
+        {
+            return View();
+        }
+
         public ActionResult Gravidez()
         {
             var dao = new GravidezDAO();
