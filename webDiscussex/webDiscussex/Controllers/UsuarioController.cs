@@ -154,6 +154,15 @@ namespace webDiscussex.Controllers
         public ActionResult Excluir(string email, string senha)
         {
             UsuarioDAO dao = new UsuarioDAO();
+            Usuario user;
+
+            if ((user = dao.BuscaPorNome(Session["nomeUsuario"].ToString())).ImgPerfil != "img/usuarioPadrao.png")
+            {
+                var imagem = Server.MapPath("~/" + user.ImgPerfil);
+
+                System.IO.File.Delete(imagem);
+            }
+
             dao.Excluir(email, senha);
             Session["emailUsuario"] = null;
             Session["nomeUsuario"] = null;
@@ -167,17 +176,23 @@ namespace webDiscussex.Controllers
             try
             {
                 UsuarioDAO dao = new UsuarioDAO();
-                Usuario user; 
+                Usuario user;
                 if ((user = dao.BuscaPorNome(Session["nomeUsuario"].ToString())).ImgPerfil != "img/usuarioPadrao.png")
                 {
-                    var imagem = Server.MapPath("~/"+user.ImgPerfil);
+                    var imagem = Server.MapPath("~/" + user.ImgPerfil);
 
-                    //Path.
-                    //Session["imgPerfil"] = caminhoImg;
+                    var extensao = Path.GetExtension(imagem);
+
+                    var novoCaminho = imagem.Replace(user.NomeUsuario, nomeUser);
+
+                    System.IO.File.Move(imagem, novoCaminho);
+
+                    user.ImgPerfil = "img/imgUsers/" + nomeUser + extensao;
+                    Session["imgPerfil"] = user.ImgPerfil;
                 }
-                
+
                 dao.AlterarNome(nomeUser, Session["emailUsuario"].ToString(), senha);
-         
+
                 Session["nomeUsuario"] = nomeUser;
             }
             catch (Exception)
@@ -235,10 +250,7 @@ namespace webDiscussex.Controllers
                         break;
                     }
 
-                upload.SaveAs(caminhoArquivo);
-
                 user.ImgPerfil = "img/imgUsers/" + user.NomeUsuario + Path.GetExtension(upload.FileName);
-
 
                 dao.AlterarImagem(user.ImgPerfil, user.Email, user.Senha);
                 Session["imgPerfil"] = user.ImgPerfil;
