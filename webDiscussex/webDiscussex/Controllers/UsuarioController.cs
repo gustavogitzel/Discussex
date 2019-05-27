@@ -108,9 +108,10 @@ namespace webDiscussex.Controllers
                     if (Path.GetExtension(caminhoArquivo) == extensaoPermitida[i])
                     {
                         upload.SaveAs(caminhoArquivo);
+                        user.ImgPerfil = "img/imgUsers/" + user.NomeUsuario + Path.GetExtension(upload.FileName);
                         break;
                     }
-                user.ImgPerfil = "img/imgUsers/" + user.NomeUsuario + Path.GetExtension(upload.FileName);
+                
             }
             else
             {
@@ -247,13 +248,12 @@ namespace webDiscussex.Controllers
                     if (Path.GetExtension(caminhoArquivo) == extensãoPermitida[i])
                     {
                         upload.SaveAs(caminhoArquivo);
+                        user.ImgPerfil = "img/imgUsers/" + user.NomeUsuario + Path.GetExtension(upload.FileName);
+
+                        dao.AlterarImagem(user.ImgPerfil, user.Email, user.Senha);
+                        Session["imgPerfil"] = user.ImgPerfil;
                         break;
                     }
-
-                user.ImgPerfil = "img/imgUsers/" + user.NomeUsuario + Path.GetExtension(upload.FileName);
-
-                dao.AlterarImagem(user.ImgPerfil, user.Email, user.Senha);
-                Session["imgPerfil"] = user.ImgPerfil;
             }
             catch (Exception)
             { }
