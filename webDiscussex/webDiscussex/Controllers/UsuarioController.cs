@@ -95,33 +95,37 @@ namespace webDiscussex.Controllers
         [HttpPost]
         public ActionResult Adiciona(Usuario user, HttpPostedFileBase upload)
         {
-            UsuarioDAO dao = new UsuarioDAO();
-
-            if (upload != null)
+            try
             {
-                var uploadPath = Server.MapPath("~/img/imgUsers");
-                string caminhoArquivo = Path.Combine(@uploadPath, user.NomeUsuario + Path.GetExtension(upload.FileName));
+                UsuarioDAO dao = new UsuarioDAO();
 
-                string[] extensaoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
+                if (upload != null)
+                {
+                    var uploadPath = Server.MapPath("~/img/imgUsers");
+                    string caminhoArquivo = Path.Combine(@uploadPath, user.NomeUsuario + Path.GetExtension(upload.FileName));
 
-                for (int i = 0; i < extensaoPermitida.Length; i++)
-                    if (Path.GetExtension(caminhoArquivo) == extensaoPermitida[i])
-                    {
-                        upload.SaveAs(caminhoArquivo);
-                        user.ImgPerfil = "img/imgUsers/" + user.NomeUsuario + Path.GetExtension(upload.FileName);
-                        break;
-                    }
-                
+                    string[] extensaoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
+
+                    for (int i = 0; i < extensaoPermitida.Length; i++)
+                        if (Path.GetExtension(caminhoArquivo) == extensaoPermitida[i])
+                        {
+                            upload.SaveAs(caminhoArquivo);
+                            user.ImgPerfil = "img/imgUsers/" + user.NomeUsuario + Path.GetExtension(upload.FileName);
+                            break;
+                        }
+                }
+                else
+                {
+                    user.ImgPerfil = "img/UsuarioPadrao.png";
+                }
+
+                dao.Adiciona(user);
+                Session["emailUsuario"] = user.Email;
+                Session["nomeUsuario"] = user.NomeUsuario;
+                Session["imgPerfil"] = user.ImgPerfil;
             }
-            else
-            {
-                user.ImgPerfil = "img/UsuarioPadrao.png";
-            }
-
-            dao.Adiciona(user);
-            Session["emailUsuario"] = user.Email;
-            Session["nomeUsuario"] = user.NomeUsuario;
-            Session["imgPerfil"] = user.ImgPerfil;
+            catch (Exception)
+            { }
 
             return RedirectToAction("Index", "Home");
         }

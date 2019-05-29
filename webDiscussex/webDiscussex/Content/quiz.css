@@ -127,6 +127,5 @@
 }
 
 .textoResposta {
-    text-shadow: white 1px -1px, white -1px 1px, white 1px 1px, white -1px -1px;
-    color: green !important;
+    color: #26de81 !important;
 }

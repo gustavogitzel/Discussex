@@ -4,77 +4,86 @@ html {
     overflow-x: hidden;
 }
 
-#bordao {
-    width: 100%;
-    background: white;
-    padding: 1em;
+#textoSobreNos {
+    padding: 1em 10em;
 }
 
-
-.textoSobreNos h1 {
-color: white;
-font-size: 4em;
-margin: .5em;
-}
-
-    .textoSobreNos p {
-        color: white;
-        font-family: "Nunito";
-        font-size: 1.5em;
-        margin: 1em;
-        text-align: justify;
-    }
-
-    .textoSobreNos h3 {
-        color: white;
-        font-size: 2.4em;
-        width: 10em;
-    }
-
-    .textoSobreNos span {
+    #textoSobreNos div {
+        background: white;
         border-radius: 10pt;
-        padding: .45em 1em .45em 1em;
-        margin-right: calc(100vw/6.05);
     }
 
+        #textoSobreNos div h3 {
+            padding: 1em;
+            font-size: 2em;
+            text-transform: uppercase;
+        }
 
-        .textoSobreNos span.azul:hover {
+        #textoSobreNos div.azul h3 {
             color: white;
-            background: #42a5f5;
+            background: #2bcbba;
             border-radius: 10pt;
         }
 
-        .textoSobreNos span.amarelo:hover {
+        #textoSobreNos div.amarelo h3 {
             color: white;
-            background: #fdd835;
+            background: #f7b731;
             border-radius: 10pt;
         }
 
-        .textoSobreNos span.verde:hover {
+        #textoSobreNos div.roxo h3 {
             color: white;
-            background: #66bb6a;
+            background: #a55eea;
             border-radius: 10pt;
         }
 
-        .textoSobreNos span.vermelho:hover {
+        #textoSobreNos div.vermelho h3 {
             color: white;
             background: #ef5350;
             border-radius: 10pt;
         }
 
 
+        #textoSobreNos div div.amarelo:hover h3 {
+            color: #f7b731;
+            background: white;
+        }
+
+        #textoSobreNos div div.roxo:hover h3 {
+            color: #a55eea;
+            background: white;
+        }
+
+        #textoSobreNos div div.vermelho:hover h3 {
+            color: #fc5c65;
+            background: white;
+        }
+
+        #textoSobreNos div div.azul:hover h3 {
+            color: #2bcbba;
+            background: white;
+        }
+
+
 .azul {
-    color: #42a5f5;
+    color: #2bcbba;
 }
 
 .vermelho {
-    color: #ef5350;
+    color: #fc5c65;
 }
 
-.verde {
-    color: #66bb6a;
+.roxo {
+    color: #a55eea;
 }
 
 .amarelo {
-    color: #fdd835;
+    color: #f7b731;
+}
+
+
+#areaTexto p {
+    text-align: justify;
+    font-size: 1.5em;
+    padding: 2em 1em 2em 1em;
 }
