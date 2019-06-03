@@ -9,7 +9,7 @@
 
 body {
     margin: 0;
-    background: #8854d0;
+    background: #a55eea;
     font-family: "Yanone Kaffeesatz", Arial;
     display: table;
     overflow-x: hidden !important;
@@ -282,6 +282,10 @@ footer#rodape {
     /* border-bottom: solid rgb(152, 82, 206) .2em; */
     color: white;
     cursor: pointer;
+}
+
+#btnDeslogar:hover {
+    background: #ef5350 !important;
 }
 
 .Input-text {

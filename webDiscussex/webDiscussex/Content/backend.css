@@ -38,3 +38,16 @@
     border-radius: 1em;
     height: 40em;
 }
+
+p {
+    color: white;
+    font-family: "Yanone Kaffeesatz";
+    font-size: 1.5em;
+    padding-top: 1em;
+}
+
+
+.imagemFinal {
+    height: 35em !important;
+    width: auto;
+}

@@ -358,6 +358,7 @@
     <Content Include="imgBastidores\22.jpeg" />
     <Content Include="imgBastidores\23.jpg" />
     <Content Include="imgBastidores\24.jpg" />
+    <Content Include="imgBastidores\28.jpg" />
     <Content Include="imgBastidores\3.jpeg" />
     <Content Include="imgBastidores\4.jpeg" />
     <Content Include="imgBastidores\5.jpeg" />
@@ -393,6 +394,7 @@
     <Content Include="img\iconeGravidez.png" />
     <Content Include="img\iconeHIV.png" />
     <Content Include="img\iconeIST.png" />
+    <Content Include="img\iconeMapa.png" />
     <Content Include="img\iconeMitosVerdades.png" />
     <Content Include="img\iconePrevencao.png" />
     <Content Include="img\iconeQuiz.png" />
@@ -428,6 +430,7 @@
     <Content Include="Scripts\login.js" />
     <Content Include="Scripts\menuEffects.js" />
     <Content Include="Scripts\mitos.js" />
+    <Content Include="Scripts\Select.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -499,7 +502,7 @@
     <Content Include="Views\Home\SobreNos.cshtml" />
     <Content Include="Views\ForumDiscussex\Responder.cshtml" />
     <Content Include="Views\Home\Pareto.cshtml" />
-    <Content Include="Views\Home\Mapa.cshtml" />
+    <Content Include="Views\Home\Camisinhas.cshtml" />
     <Content Include="Views\Home\Bastidores.cshtml" />
     <Content Include="Views\EducacaoSexual\Pesquisa.cshtml" />
     <None Include="Web.Debug.config">

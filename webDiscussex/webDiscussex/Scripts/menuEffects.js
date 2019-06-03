@@ -4,8 +4,6 @@ $(document).ready(() => {
     fecharMenuClick();
     gerenciarMenu();
     alterarLogo();
-    $('select').niceSelect();
-
 })
 
 function gerenciarMenu() {

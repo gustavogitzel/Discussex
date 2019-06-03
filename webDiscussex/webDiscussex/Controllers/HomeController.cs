@@ -37,7 +37,7 @@ namespace webDiscussex.Controllers
             return View();
         }
 
-        public ActionResult Mapa()
+        public ActionResult Camisinhas()
         {
             return View();
         }
